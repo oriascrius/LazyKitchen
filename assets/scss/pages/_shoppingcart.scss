@@ -1,128 +1,184 @@
 img {
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-  
-  // $link-decoration: underline !default;
-  a {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-  }
-  ul,
-  p {
-    margin: 0;
-    padding: 0;
-  }
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* 图片裁剪填充 */
-  }
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+// $link-decoration: underline !default;
+a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+ul,
+p {
+  margin: 0;
+  padding: 0;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 图片裁剪填充 */
+}
+.bannerImg {
+  background-image: url("../../images/qoq-imgs/cart-banner-lg.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 280px;
+}
+@media (max-width: 992px) {
   .bannerImg {
-    background-image: url("../images/header.png");
+    background-image: url("../../images/qoq-imgs/cart-banner-sm.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    height: 200px;
   }
-  // shoppingSteps
-  .shoppingSteps {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 60px;
-    gap: 24px;
-    color: #ad4214;
-    background-size: cover;
-    li {
+}
+// 購物車步驟 tabs
+.shoppingSteps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+  gap: 24px;
+  color: #ad4214;
+  background-size: cover;
+  li {
+    border-radius: 8px;
+    &:nth-child(1) {
       padding: 20px 47px;
-      &:first-child {
-        background-color: #fff3e5;
-      }
+      background-color: #fff3e5;
     }
-    h3 {
-      padding-bottom: 12px;
+    &:nth-child(2) {
+      padding: 20px 37px;
+    }
+    &:nth-child(3) {
+      padding: 20px 37px;
+    }
+    &:nth-child(4) {
+      padding: 20px 57px;
     }
   }
-  @media (max-width: 992px) {
-    .shoppingSteps {
-      padding: 20px 0 40px 0;
-      gap: 4px;
-      li {
+  h3 {
+    padding-bottom: 12px;
+  }
+}
+@media (max-width: 992px) {
+  .shoppingSteps {
+    padding: 20px 10px 40px 10px;
+    gap: 4px;
+    li {
+      &:nth-child(1) {
         padding: 12px 14.5px;
       }
+      &:nth-child(2) {
+        padding: 12px 9.5px;
+      }
+      &:nth-child(3) {
+        padding: 12px 9.5px;
+      }
+      &:nth-child(4) {
+        padding: 12px 19.5px;
+      }
+    }
+    h3,
+    h4 {
+      font-size: 12px;
     }
   }
-  
-  // 購物車清單
-  .cartList {
-    li:not(:first-child) {
-      padding: 20px 0;
+}
+
+// 購物車清單
+.cartList {
+  li:not(:first-child) {
+    padding: 20px 0;
+  }
+  li {
+    padding: 0 0 20px 0;
+    border-bottom: 2px solid #7e7e7e;
+    .productImage {
+      width: 196px;
+      height: 196px;
+      margin-right: 24px;
     }
-    li {
-      padding: 0 0 20px 0;
-      border-bottom: 2px solid #7e7e7e;
-      .productImage {
-        margin-right: 24px;
-      }
-      .product-quantity {
-        gap: 20px;
-      }
-      .counter-button {
-        display: inline-block;
-        width: 48px;
-        height: 48px;
-        color: white;
+    .product-quantity {
+      gap: 20px;
+      button {
         padding: 10px;
         background-color: #ad4214;
+        border-radius: 4%;
       }
-    }
-  }
-  // 總價格
-  .cart-totalPrice {
-    padding: 40px 0;
-    h4 {
-      padding-right: 20px;
-    }
-    p {
-      color: #ad4214;
-    }
-  }
-  @media (max-width: 992px) {
-    .cart-totalPrice {
-      padding: 28px 0;
-    }
-  }
-  // 繼續購物、訂單結帳
-  .cartBtn {
-    display: flex;
-    justify-content: end;
-    gap: 24px;
-    margin-bottom: 100px;
-    a {
-      padding: 12px 40px;
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
-    li:nth-child(1) {
-      border: 1px solid #ad4214;
-      a {
+      .counter-value {
         color: #ad4214;
       }
     }
-    li:nth-child(2) {
-      background-color: #ad4214;
-      a {
-        color: white;
+  }
+}
+@media (max-width: 992px) {
+  .cartList {
+    li {
+      .productImage {
+        width: 168px;
+        height: 168px;
       }
     }
   }
-  @media (max-width: 992px) {
-    .cartBtn {
-      text-align: center;
-      flex-direction: column;
+}
+
+// 單個商品總價格
+.total-price {
+  color: #ad4214;
+  flex-shrink: 0; /* 防止 total-price 被壓縮 */
+  min-width: 60px; /* 設置最小寬度，不會因為數字三位數變四位數向左推擠 */
+}
+// 全部商品總價格
+.cart-totalPrice {
+  padding: 40px 0;
+  h4 {
+    padding-right: 20px;
+  }
+  p {
+    color: #ad4214;
+  }
+}
+@media (max-width: 992px) {
+  .cart-totalPrice {
+    padding: 28px 0;
+  }
+}
+// 繼續購物、訂單結帳
+.cartBtn {
+  display: flex;
+  justify-content: end;
+  gap: 24px;
+  margin-bottom: 100px;
+  a {
+    padding: 12px 40px;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  li {
+    border-radius: 4%;
+  }
+  li:nth-child(1) {
+    border: 1px solid #ad4214;
+    a {
+      color: #ad4214;
     }
   }
-  
+  li:nth-child(2) {
+    background-color: #ad4214;
+    a {
+      color: white;
+    }
+  }
+}
+@media (max-width: 992px) {
+  .cartBtn {
+    text-align: center;
+    flex-direction: column;
+  }
+}
