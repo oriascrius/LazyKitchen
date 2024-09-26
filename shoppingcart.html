@@ -99,7 +99,7 @@
           </div>
           <!-- 右側內容 lg -->
           <div class="col col-lg-7 d-none d-lg-flex align-items-center justify-content-between product"
-            data-unit-price="168">
+            data-id="product-A" data-unit-price="168">
             <p class="m-0" id="unitPrice">$168</p>
             <div class="d-flex align-items-center product-quantity">
               <button class="minusBtn border-0">
@@ -127,7 +127,8 @@
             </button>
           </div>
           <!-- 右側內容 sm -->
-          <div class="col d-flex d-lg-none flex-column justify-content-between product" data-unit-price="168">
+          <div class="col d-flex d-lg-none flex-column justify-content-between product" data-id="product-A"
+            data-unit-price="168">
             <div class="d-flex justify-content-between align-items-center">
               <h5 class="m-0">韓式辣炒年糕</h5>
               <button class="btn p-0 delete-btn">
@@ -166,7 +167,7 @@
           </div>
           <!-- 右側內容 lg -->
           <div class="col col-lg-7 d-none d-lg-flex align-items-center justify-content-between product"
-            data-unit-price="228">
+            data-id="product-B" data-unit-price="228">
             <p class="m-0" id="unitPrice">$228</p>
             <div class="d-flex align-items-center product-quantity">
               <button class="minusBtn border-0">
@@ -194,7 +195,8 @@
             </button>
           </div>
           <!-- 右側內容 sm -->
-          <div class="col d-flex d-lg-none flex-column justify-content-between product" data-unit-price="228">
+          <div class="col d-flex d-lg-none flex-column justify-content-between product" data-id="product-B"
+            data-unit-price="228">
             <div class="d-flex justify-content-between align-items-center">
               <h5 class="m-0">滷牛腱</h5>
               <button class="btn p-0 delete-btn">
@@ -232,7 +234,7 @@
             <h5 class="m-0 d-none d-lg-block">宮保雞丁</h5>
           </div>
           <!-- 右側內容 lg -->
-          <div class="col col-lg-7 d-none d-lg-flex align-items-center justify-content-between product"
+          <div class="col col-lg-7 d-none d-lg-flex align-items-center justify-content-between product" data-id="product-C"
             data-unit-price="128">
             <p class="m-0" id="unitPrice">$128</p>
             <div class="d-flex align-items-center product-quantity">
@@ -261,7 +263,7 @@
             </button>
           </div>
           <!-- 右側內容 sm -->
-          <div class="col d-flex d-lg-none flex-column justify-content-between product" data-unit-price="128">
+          <div class="col d-flex d-lg-none flex-column justify-content-between product" data-id="product-C" data-unit-price="128">
             <div class="d-flex justify-content-between align-items-center">
               <h5 class="m-0">宮保雞丁</h5>
               <button class="btn p-0 delete-btn">
@@ -299,7 +301,7 @@
             <h5 class="m-0 d-none d-lg-block">奶油雞肉燉飯</h5>
           </div>
           <!-- 右側內容 lg -->
-          <div class="col col-lg-7 d-none d-lg-flex align-items-center justify-content-between product"
+          <div class="col col-lg-7 d-none d-lg-flex align-items-center justify-content-between product" data-id="product-D"
             data-unit-price="128">
             <p class="m-0" id="unitPrice">$128</p>
             <div class="d-flex align-items-center product-quantity">
@@ -328,7 +330,7 @@
             </button>
           </div>
           <!-- 右側內容 sm -->
-          <div class="col d-flex d-lg-none flex-column justify-content-between product" data-unit-price="128">
+          <div class="col d-flex d-lg-none flex-column justify-content-between product" data-id="product-D" data-unit-price="128">
             <div class="d-flex justify-content-between align-items-center">
               <h5 class="m-0">奶油雞肉燉飯</h5>
               <button class="btn p-0 delete-btn">
@@ -366,7 +368,7 @@
             <h5 class="m-0 d-none d-lg-block">松露薯條</h5>
           </div>
           <!-- 右側內容 lg -->
-          <div class="col col-lg-7 d-none d-lg-flex align-items-center justify-content-between product"
+          <div class="col col-lg-7 d-none d-lg-flex align-items-center justify-content-between product" data-id="product-E"
             data-unit-price="98">
             <p class="m-0" id="unitPrice">$98</p>
             <div class="d-flex align-items-center product-quantity">
@@ -395,7 +397,7 @@
             </button>
           </div>
           <!-- 右側內容 sm -->
-          <div class="col d-flex d-lg-none flex-column justify-content-between product" data-unit-price="98">
+          <div class="col d-flex d-lg-none flex-column justify-content-between product" data-id="product-E" data-unit-price="98">
             <div class="d-flex justify-content-between align-items-center">
               <h5 class="m-0">松露薯條</h5>
               <button class="btn p-0 delete-btn">
@@ -564,47 +566,61 @@
       
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <script>
-        // 1. 計算單一商品單價 * 數量 = 單一商品總價格
-        // 2. 計算 單一商品總價格 * 全部商品 = 全部商品總價格
         $(document).ready(function () {
           // 計算總金額
           function updateGrandTotal() {
             let grandTotal = 0;
-            $('.product').each(function () {
+            const productTotals = {};
+
+            // 目前固定有五個商品 = 五個 product 包住判斷每一個單獨商品總價
+            // 酖因為大小尺寸各有五個 product，所以這裡加上 :visible，代表看的到的 product 才做計算
+            $('.product:visible').each(function () {
+              const productId = $(this).data('id');
               const totalPrice = parseInt($(this).find('.total-price').text().replace('$', ''));
-              grandTotal += totalPrice;
+
+              // 因大小尺寸的 product 要做同步不能分開，要不然數量不同
+              // 在大享尺寸同個商品中加上 data-id="product-A"，才能連動大小尺寸
+              if (productTotals[productId]) {
+                productTotals[productId] += totalPrice;
+              } else {
+                productTotals[productId] = totalPrice;
+              }
             });
+            // 同上
+            for (const id in productTotals) {
+              grandTotal += productTotals[id];
+            }
+
             $('#grandTotal').text('$' + grandTotal);
           }
 
           // 處理商品數量的變動
           $('.product-quantity button').click(function () {
             const product = $(this).closest('.product');
+            const productId = product.data('id');
             const unitPrice = parseInt(product.data('unit-price')); // 獲取單價
             const counter = product.find('.counter-value');
             let value = parseInt(counter.text());
 
             // 增加或減少數量
             if ($(this).hasClass('plusBtn') && value < 9) {
-              counter.text(value + 1); // 增加1
+              value += 1;
             } else if ($(this).hasClass('minusBtn') && value > 1) {
-              counter.text(value - 1); // 減少1
+              value -= 1;
             }
 
+            // 同步更新相同 data-id 的其他元素
+            $(`.product[data-id="${productId}"] .counter-value`).text(value);
+
             // 更新單一商品的總價
-            const totalPrice = unitPrice * parseInt(counter.text());
-            product.find('.total-price').text('$' + totalPrice);
+            const totalPrice = unitPrice * value;
+            $(`.product[data-id="${productId}"] .total-price`).text('$' + totalPrice);
 
             // 更新所有商品的總計
             updateGrandTotal();
           });
 
-          // 初次載入頁面時更新總計
-          updateGrandTotal();
-        });
-      </script>
-      <script>
-        $(document).ready(function () {
+          // 刪除功能
           const deleteButtons = $('.delete-btn');
 
           deleteButtons.each(function () {
@@ -612,13 +628,16 @@
               const listItem = $(this).closest('li');
               if (listItem.length) {
                 listItem.remove();
+                // 更新所有商品的總計
+                updateGrandTotal();
               }
             });
           });
+
+          // 初次載入頁面時更新總計
+          updateGrandTotal();
         });
       </script>
-
-
 </body>
 
 </html>
