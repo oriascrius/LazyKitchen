@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'GenSenRounded';
+    src: url('../../../assets/fonts/gensen-font-master/otf/TW/GenSenRounded2TW-EL.otf') format('opentype');
+    font-weight: 200; /* ExtraLight */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GenSenRounded';
+    src: url('../../../assets/fonts/gensen-font-master/otf/TW/GenSenRounded2TW-L.otf') format('opentype');
+    font-weight: 300; /* Light */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GenSenRounded';
+    src: url('../../../assets/fonts/gensen-font-master/otf/TW/GenSenRounded2TW-R.otf') format('opentype');
+    font-weight: 400; /* Regular */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GenSenRounded';
+    src: url('../../../assets/fonts/gensen-font-master/otf/TW/GenSenRounded2TW-M.otf') format('opentype');
+    font-weight: 500; /* Medium */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GenSenRounded';
+    src: url('../../../assets/fonts/gensen-font-master/otf/TW/GenSenRounded2TW-B.otf') format('opentype');
+    font-weight: 700; /* Bold */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GenSenRounded';
+    src: url('../../../assets/fonts/gensen-font-master/otf/TW/GenSenRounded2TW-H.otf') format('opentype');
+    font-weight: 900; /* Heavy */
+    font-style: normal;
+}
+
+body{
+    font-family: "GenSenRounded","cwTeXYen", sans-serif;
+    font-weight: medium;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .h1{
+    font-weight: bold;
+    font-size: 48px;
+    letter-spacing: 0.15rem;
+    line-height: 1.2;
+  }
+  .h2{
+    font-weight: bold;
+    font-size: 36px;
+    //letter-spacing: 0.15rem;
+    line-height: 1.2;
+  }
+  .h3{
+    font-weight: bold;
+    font-size: 24px;
+    //letter-spacing: 0.15rem;
+    line-height: 1.2;
+  }
+  .h4{
+    font-weight: bold;
+    font-size: 20px;
+    //letter-spacing: 0.15rem;
+    line-height: 1.2;
+  }

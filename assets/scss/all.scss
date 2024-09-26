@@ -1,0 +1,16 @@
+// 引入 bootstrap icon
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+
+@import "../node_modules/bootstrap/scss/functions";
+@import "./utils/variables";
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+@import './layout/header.scss';
+@import './layout/footer.scss';
+
+
+/* 引入源泉圓體 */ 
+@import "./utils/fonts";
+/* 引入google圓體字體cwTeXYen 文字備案，以防源泉圓體套不到 */
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
