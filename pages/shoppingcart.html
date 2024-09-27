@@ -6,8 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>購物車</title>
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
@@ -19,7 +17,7 @@
       <div class="row">
         <div class="col">
           <ul class="shoppingSteps text-center list-unstyled m-0">
-            <li>
+            <li class="current">
               <h3 class="m-0">STEP 1</h3>
               <h4 class="m-0">確認購物車</h4>
             </li>
@@ -29,7 +27,7 @@
             </li>
             <li>
               <h3 class="m-0">STEP 3</h3>
-              <h4 class="m-0">填寫訂單資訊</h4>
+              <h4 class="m-0">確認付款資訊</h4>
             </li>
             <li>
               <h3 class="m-0">STEP 4</h3>
@@ -387,17 +385,18 @@
       </div>
       <ul class="cartBtn list-unstyled text-center">
         <li>
-          <a href="#">繼續購物</a>
+          <a href="./productAll.html">繼續購物</a>
         </li>
         <li>
-          <a href="#">訂單結帳</a>
+          <a href="./orderInfo.html">訂單結帳</a>
         </li>
       </ul>
     </div>
     <%- include('./layout/footer'); -%>
 
-      <script type="module" src="../qoq-main.js"></script>
+    
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script type="module" src="../qoq-main.js"></script>
       <script>
         $(document).ready(function () {
           // 計算總金額
