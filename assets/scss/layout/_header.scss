@@ -1,6 +1,75 @@
-
 .header{
   width: 100%;
+  height: 100px;  
   background: #AD4214;
-  // height: 100px;
+  display: flex;
+  align-items: center;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+}
+.nav-item .nav-link {
+  margin: 0;
+  font-weight: 500;
+}
+
+
+/* 手機版樣式 */
+@media (max-width: 991.98px) { /* Bootstrap's 'lg' breakpoint */
+  .header{
+    height: 72px;
+  }
+  .navbar-collapse {
+    background-color: white; /* 背景顏色設為白色 */
+    border: none; /* 去掉邊框 */
+    position: fixed; /* 使菜單位置為固定 */
+    top: 72px; /* 調整菜單的頂部位置為72px */
+    left: 0; /* 左邊對齊 */
+    right: 0; /* 右邊對齊 */
+    z-index: 1000; /* 提高層級以蓋住其他內容 */
+    display: none; /* 預設不顯示 */
+    transition: none; /* 取消過渡動畫以消除延遲 */
+    width: 100%; /* 確保寬度為100% */
+  }
+  .navbar-collapse.show {
+    display: block; /* 展開時顯示 */
+  }
+  .navbar-nav {
+    flex-direction: column; /* 垂直排列 */
+    align-items: center; /* 連結水平置中 */
+    width: 100%; /* 確保菜單寬度為100% */
+    padding: 20px 0; /* 增加內邊距 */
+  }
+  .nav-link.active {
+    color: #AD4214 !important; /* 文字顏色設為 #AD4214 */
+    text-align: center; /* 文字置中 */
+    padding: 10px 0; /* 增加上下內邊距以改善觸控區域 */
+    margin: 10px 0;
+    width: 100%; /* 確保每個連結佔滿整行 */
+  }
+  .nav-link.active {
+    font-weight: 500; /* 活躍連結加粗 */
+  }
+}
+
+/* 修改漢堡選單圖示 */
+.navbar-toggler {
+  width: 40px; /* 漢堡選單按鈕寬度 */
+  height: 40px; /* 漢堡選單按鈕高度 */
+  border: none; /* 去掉按鈕邊框 */
+  padding: 7px 5px; /* 上下內距7px，左右內距5px */
+  display: flex; /* 使用 flex 來對齊內容 */
+  align-items: center; /* 垂直置中 */
+  justify-content: center; /* 水平置中 */
+}
+
+.navbar-toggler-icon {
+  background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="none" width="34" height="34" viewBox="0 0 30 30"%3E%3Cpath stroke="white" stroke-width="4" stroke-linecap="round" d="M5 7h20M5 15h20M5 23h20"/%3E%3C/svg%3E'); /* 漢堡圖示，邊線加粗為4px，圓角 */
+  width: 30px; /* 設置圖示寬度 */
+  height: 26px; /* 設置圖示高度 */
+}
+
+.navbar-toggler-icon.open {
+  background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="none" width="34" height="34" viewBox="0 0 30 30"%3E%3Cpath stroke="white" stroke-width="4" stroke-linecap="round" d="M5 5l20 20M5 25l20-20"/%3E%3C/svg%3E'); /* 叉叉圖示，邊線加粗為4px，圓角 */
 }
