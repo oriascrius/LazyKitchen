@@ -5,60 +5,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>懶人廚房</title>
-    <script type="module" crossorigin src="/LazyKitchen/assets/bootstrap.min-b31562f6.js"></script>
-    <link rel="stylesheet" href="/LazyKitchen/assets/bootstrap-62084f3f.css">
+    <script type="module" crossorigin src="/LazyKitchen/assets/bootstrap.min-9a96afdd.js"></script>
+    <link rel="stylesheet" href="/LazyKitchen/assets/bootstrap-150ba10b.css">
     <link rel="stylesheet" href="/LazyKitchen/assets/_index-06753984.css">
   </head>
 
   <body>
     <!-- header -->
     <header class="header" style="background: #AD4214;">
-    <div class="container">
+  <div class="container-fluid">
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark">
-  <div class="container-fluid">
-    <!-- 左邊的Logo -->
-    <a class="navbar-brand" href="#">
-      <img src="/LazyKitchen/assets/logo-white-34d9aeac.svg" alt="懶人廚房">
+<div class="container-fluid">
+  <!-- 左邊的Logo -->
+  <a class="navbar-brand" href="index.html">
+    <img src="/LazyKitchen/assets/logo-white-34d9aeac.svg" alt="懶人廚房">
+  </a>
+
+  <!-- 手機版右側購物車圖示 + 漢堡按鈕，兩者並排並且保持 16px 間距 -->
+  <div class="d-lg-none d-flex justify-content-end align-items-center">
+    <!-- 購物車圖示 -->
+    <a class="nav-link me-3" href="shoppingcart.html">
+      <img src="/LazyKitchen/assets/shoppingcart-d4c436a0.svg" alt="Cart" class="購物車">
     </a>
 
-    <!-- 漢堡選單按鈕 (手機版) -->
+    <!-- 漢堡選單按鈕 -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
-    <!-- 右側內容 -->
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <!-- 文字連結 -->
-        <li class="nav-item">
-          <a class="nav-link active" href="#">懶人商品</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="feature.html">懶人特色</a>
-        </li>
-
-        <!-- 購物車圖示 -->
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <img src="/LazyKitchen/assets/shoppingcart-d4c436a0.svg" alt="Cart" class="購物車">
-          </a>
-        </li>
-      </ul>
-    </div>
-<!-- 購物車圖示 (手機版右側) -->
-    <div class="d-lg-none">
-      <a class="nav-link" href="#">
-        <img src="/LazyKitchen/assets/shoppingcart-d4c436a0.svg" alt="Cart" class="購物車">
-      </a>
-    </div>
   </div>
-</nav>
-    
 
-    </div>
+  <!-- 右側內容 -->
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ms-auto">
+      <!-- 文字連結 -->
+      <li class="nav-item">
+        <a class="nav-link active h4" href="productAll.html">懶人商品</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active h4" href="feature.html">懶人特色</a>
+      </li>
+
+      <!-- 購物車圖示 (桌面版顯示) -->
+      <li class="nav-item d-none d-lg-block">
+        <a class="nav-link" href="shoppingcart.html">
+          <img src="/LazyKitchen/assets/shoppingcart-d4c436a0.svg" alt="Cart" class="購物車">
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+</nav>
+  
+  </div>
 </header>
+
+<script>
+// 監聽漢堡選單按鈕的點擊事件
+document.querySelector('.navbar-toggler').addEventListener('click', function () {
+  // 切換自定義的叉叉圖示
+  const togglerIcon = this.querySelector('.navbar-toggler-icon');
+  togglerIcon.classList.toggle('open'); // 切換 'open' 類別
+});
+</script>
+
     <!-- banner -->
     <h1 class="h1">banner測試用可刪掉</h1>
 
