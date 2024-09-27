@@ -3,7 +3,6 @@ img {
   height: auto;
   object-fit: cover;
 }
-
 // $link-decoration: underline !default;
 a {
   text-decoration: none;
@@ -47,9 +46,12 @@ img {
   background-size: cover;
   li {
     border-radius: 8px;
+    // 例外加上 current 判斷為當前頁面給予背景顏色，不做動態
+    &.current {
+      background-color: #fff3e5;
+    }
     &:nth-child(1) {
       padding: 20px 47px;
-      background-color: #fff3e5;
     }
     &:nth-child(2) {
       padding: 20px 37px;
@@ -181,4 +183,27 @@ img {
     text-align: center;
     flex-direction: column;
   }
+}
+
+// 訂購資訊
+.orderInfo-form {
+  label {
+    padding-bottom: 10px;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+}
+
+// 確認訂單資訊
+.card-custom {
+  margin-bottom: 12px;
+  .card-img {
+    width: 88px;
+    height: 88px;
+  }
+}
+
+.info-item {
+  padding-bottom: 30px;
 }

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh_TW">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>訂購資訊</title>
+</head>
+
+<body>
+  <%- include('./layout/header'); -%>
+    <!-- banner -->
+    <div class="bannerImg"></div>
+    <!-- 購物車步驟 -->
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <ul class="shoppingSteps text-center list-unstyled m-0">
+            <li>
+              <h3 class="m-0">STEP 1</h3>
+              <h4 class="m-0">確認購物車</h4>
+            </li>
+            <li class="current">
+              <h3 class="m-0">STEP 2</h3>
+              <h4 class="m-0">填寫訂單資訊</h4>
+            </li>
+            <li>
+              <h3 class="m-0">STEP 3</h3>
+              <h4 class="m-0">確認付款資訊</h4>
+            </li>
+            <li>
+              <h3 class="m-0">STEP 4</h3>
+              <h4 class="m-0">完成訂購</h4>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <h2 class="m-0 text-center" style="padding-bottom: 40px; color:#AD4214;">訂購資訊</h2>
+    <!-- 訂購資訊表單 -->
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <form class="orderInfo-form" id="orderForm">
+            <div class="form-group">
+              <label for="name">收件人姓名</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="王小明" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">收件人電話</label>
+              <input type="text" class="form-control" id="phone" name="phone" placeholder="0912-123-123" required>
+            </div>
+            <div class="form-group">
+              <label for="email">電子信箱</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="例：123@mail.com" required>
+            </div>
+            <div class="form-group">
+              <label for="address">收件地址</label>
+              <input type="text" class="form-control" id="address" name="address" placeholder="請輸入收件地址" required>
+            </div>
+            <div class="form-group">
+              <label for="payment">付款方式</label>
+              <select class="form-control" id="payment" name="payment" required>
+                <option value="">請選擇付款方式</option>
+                <option value="credit-card">信用卡</option>
+                <option value="cod">貨到付款</option>
+                <option value="bank-transfer">銀行轉帳</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="note">備註</label>
+              <textarea class="form-control" id="note" name="note" rows="3" placeholder="請輸入備註"></textarea>
+            </div>
+            <ul class="cartBtn list-unstyled text-center">
+              <li>
+                <a href="./shoppingCart.html">回上一頁</a>
+              </li>
+              <li>
+                <a href="./paymentConfirmation.html">前往付款</a>
+              </li>
+            </ul>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <%- include('./layout/footer'); -%>
+      <!-- 引入 jQuery -->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <!-- 引入 jQuery Validation Plugin -->
+      <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+      <script type="module" src="../qoq-main.js"></script>
+      <script>
+        $(document).ready(function () {
+          // jquery 驗證
+          $.validator.addMethod("phonePattern", function (value, element) {
+            return this.optional(element) || /^09\d{2}-\d{3}-\d{3}$/.test(value);
+          }, "請輸入有效的電話號碼，格式為 0912-123-123。");
+
+          $('#orderForm').validate({
+            rules: {
+              name: {
+                required: true
+              },
+              phone: {
+                required: true,
+                phonePattern: true
+              },
+              email: {
+                required: true,
+                email: true
+              },
+              address: {
+                required: true
+              },
+              payment: {
+                required: true
+              }
+            },
+            messages: {
+              name: "請輸入收件人姓名。",
+              phone: {
+                required: "請輸入收件人電話。",
+                phonePattern: "請輸入有效的電話號碼，格式為 0912-123-123。"
+              },
+              email: {
+                required: "請輸入電子信箱。",
+                email: "請輸入有效的電子信箱。"
+              },
+              address: "請輸入收件地址。",
+              payment: "請選擇付款方式。"
+            },
+            errorElement: 'div',
+            errorPlacement: function (error, element) {
+              error.addClass('invalid-feedback');
+              element.closest('.form-group').append(error);
+            },
+            highlight: function (element, errorClass, validClass) {
+              $(element).addClass('is-invalid').removeClass('is-valid');
+            },
+            unhighlight: function (element, errorClass, validClass) {
+              $(element).addClass('is-valid').removeClass('is-invalid');
+            }
+          });
+        });
+      </script>
+</body>
+
+</html>
