@@ -1,28 +1,158 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>懶人特色</title>
-    <!-- 首頁寫完等同寫完 -->
-  </head>
-  <body>
-    <!-- header -->
-    <%- include('./layout/header'); -%>
-    
+<html lang="zh_TW">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>懶人特色</title>
+</head>
+
+<body class="position-relative">
+  <%- include('./layout/header'); -%>
+    <div class="position-absolute backTotop">
+      <img src="../assets/images/qoq-imgs/backTotop.png" alt="返回上方按鈕" style="width: 48px; height: 48px;">
+    </div>
     <!-- banner -->
+    <section class="feature-banner">
+      <img src="../assets/images/qoq-imgs/indexBanner.png" alt="indexBanner">
+      <h2 class="position-relative"><span>懶人必備!</span>下單即送到府</h2>
+      <ul class="cartBtn list-unstyled text-center position-relative">
+        <li>
+          <a href="./productAll.html">懶人指引</a>
+        </li>
+        <li>
+          <a href="./productAll.html">前往商品</a>
+        </li>
+      </ul>
 
+    </section>
+    <!-- 圖、文介紹 -->
+    <section class="container featureIntroduce">
+      <div class="row d-flex flex-column align-items-center">
+        <ul class="col-12 col-lg-12 featureIntroduce-list list-unstyled">
+          <li class="">
+            <p>1. 平日繁忙，沒時間料理?</p>
+            <img src="../assets/images/qoq-imgs/featureIntroduce_1.png" alt="featureIntroduce_1">
+          </li>
+          <li class="">
+            <p>2. 稍稍下單，選擇你喜愛的餐點</p>
+            <img src="../assets/images/qoq-imgs/featureIntroduce_2.png" alt="featureIntroduce_2">
+          </li>
+        </ul>
+        <ul class="col-12 col-lg-12 featureIntroduce-list list-unstyled">
+          <li class="">
+            <p>3. 新鮮食材沒煩惱，無壓享受</p>
+            <img src="../assets/images/qoq-imgs/featureIntroduce_3.png" alt="featureIntroduce_3">
+          </li>
+          <li class="">
+            <p>4. 立即享受健康美味，輕鬆自在!</p>
+            <img src="../assets/images/qoq-imgs/featureIntroduce_4.png" alt="featureIntroduce_4">
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- Q & A -->
+    <section class="container text-center faq">
+      <h2>Q & A</h2>
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+              aria-expanded="true" aria-controls="collapseOne">
+              1. 訂購後的配送和運送時間是多久？
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              我們的配送服務就像一個神秘的快遞精靈,通常需要3-5個工作日將您的美味食材送到家!訂單處理一般需要1-2個工作日,您可以使用訂單追蹤功能來查看您的食材旅行到您家的進度哦!
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              2. 收到的商品有問題，我該怎麼辦？
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              萬一您的食材遇到了“小麻煩”,別擔心,我們的客服小天使會幫您解決!請在收到後的48小時內聯繫我們,告訴我們問題,我們會迅速處理退換貨或退款事宜。
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              3. 付款方式有什麼選擇？
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              我們提供多種付款選擇,包括信用卡、網路銀行轉帳、行動支付(如Apple Pay、Google Pay)和貨到付款。您可以在結帳時選擇最適合您的付款方式。
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              4.商品如何保存 ?
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              所有產品都會根據其特性進行適當包裝。半成品食材通常會有保鮮包裝或冷藏。收到包裹後,請按照包裝上的保存說明進行處理,以保持食材的新鮮度。
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFire">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseFire" aria-expanded="false" aria-controls="collapseFire">
+              5. 是否提供團購服務？
+            </button>
+          </h2>
+          <div id="collapseFire" class="accordion-collapse collapse" aria-labelledby="headingFire"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              我們提供團購服務。如果您有興趣進行團購,請聯繫我們的客服團隊,我們會根據您的需求提供詳細的資訊和優惠方案。我們的客服可以幫助您安排合適的訂單量和配送安排。
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <!-- feature-introduction 特色四格漫畫 -->
-    <%- include('./layout/feature-introduction'); -%>
+    </section>
 
-    <!-- QA -->
-    <%- include('./layout/Q&A'); -%>
-    
-    <!-- footer -->
     <%- include('./layout/footer'); -%>
+      <!-- 引入 jQuery -->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <!-- 引入 jQuery Validation Plugin -->
+      <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+      <script type="module" src="../qoq-main.js"></script>
+      <script>
+        $(document).ready(function () {
+            // 當滾動到一定高度時顯示按鈕
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 300) {
+                    $('.backTotop').fadeIn().css('top', $(window).scrollTop() + $(window).height() / 2 - $('#backtotop').outerHeight() / 2 + 'px'); // 固定在視窗中間位置
+                } else {
+                    $('.backTotop').fadeOut(); // 隱藏按鈕
+                }
+            });
 
-    <script type="module" src="../ccc-main.js"></script>
-  </body>
+            // 點擊按鈕返回最上方
+            $('.backTotop').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 300); 
+            });
+        });
+    </script>
+</body>
+
 </html>
