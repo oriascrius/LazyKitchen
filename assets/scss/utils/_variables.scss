@@ -310,14 +310,14 @@ $dark:          $gray-900 !default;
 
 // scss-docs-start theme-colors-map
 $theme-colors: (
-  "primary":    $primary,
-  "secondary":  $secondary,
-  "success":    $success,
+  "primary":   #AD4214, //$primary,
+  "secondary": #FFF7EB, //$secondary,
+  "success":   #8A3510, //$success,
   "info":       $info,
   "warning":    $warning,
-  "danger":     $danger,
-  "light":      $light,
-  "dark":       $dark
+  "danger":    #FFFEFA, //$danger,
+  "gray":      #7E7E7E, //$light,
+  "dark":      #201B11, //$dark
 ) !default;
 // scss-docs-end theme-colors-map
 
