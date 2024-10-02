@@ -50,6 +50,13 @@ img {
   letter-spacing: 0.02em;
   line-height: 1.5;
 }
+.custom-fsBody{
+  font-weight: medium;
+  font-size: 16px;
+  //letter-spacing: 0.15rem;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+}
 // footer
 .footer-bg {
   background-color: #ad4214;
@@ -67,7 +74,7 @@ img {
   li {
     &:hover {
       svg rect {
-        fill: #ffffff;
+        fill: #FAFCFE;
       }
     }
   }
@@ -82,7 +89,7 @@ img {
     background-color: #fff3e5;
     cursor: pointer;
     &:hover {
-      background-color: white;
+      background-color: #FAFCFE;
     }
   }
   a {

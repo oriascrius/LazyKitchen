@@ -80,7 +80,7 @@
         padding-right: 19.5px;
       }
     }
-    h3{
+    h3 {
       padding-bottom: 4px;
       font-weight: medium;
       font-size: 12px;
@@ -100,6 +100,13 @@
 
 // 購物車清單
 .cartList {
+  h5 {
+    font-weight: medium;
+    font-size: 16px;
+    //letter-spacing: 0.15rem;
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+  }
   li:not(:first-child) {
     padding: 20px 0;
   }
@@ -204,6 +211,33 @@
   }
   .form-group {
     margin-bottom: 20px;
+  }
+  input::placeholder,
+  textarea::placeholder {
+    color: #c7c7c7; /* 设置占位符的颜色 */
+    opacity: 1; /* 确保颜色的透明度 */
+  }
+  /* 預設情況下，select 元素的顯示文字顏色 */
+  select.form-control {
+    color: #c7c7c7;
+  }
+  /* 當未選擇任何有效選項時 */
+  select.form-control:invalid {
+    color: #c7c7c7;
+  }
+  /* 當選擇了有效選項後，顯示的文字顏色 */
+  select.form-control:valid {
+    color: #000000;
+  }
+  /* 所有下拉選項中的文字顏色 */
+  select.form-control option {
+    color: #c7c7c7;
+  }
+  /* 設置 input 聚焦時的邊框和陰影顏色 */
+  .form-control:focus {
+    border-color: #7E7E7E; /* 邊框顏色 */
+    box-shadow: 0 0 5px #7E7E7E; /* 光圈陰影效果 */
+    // outline: none; /* 移除默認的 outline */
   }
 }
 
