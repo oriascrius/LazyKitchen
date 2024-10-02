@@ -8,16 +8,16 @@
   <title>懶人特色</title>
 </head>
 
-<body class="position-relative">
+<body>
   <%- include('./layout/header'); -%>
     <div class="position-absolute backTotop">
       <img src="../assets/images/qoq-imgs/backTotop.png" alt="返回上方按鈕" style="width: 48px; height: 48px;">
     </div>
     <!-- banner -->
-    <section class="feature-banner">
+    <section class="container-fluid feature-banner">
       <img src="../assets/images/qoq-imgs/indexBanner.png" alt="indexBanner">
       <h2 class="position-relative"><span>懶人必備!</span>下單即送到府</h2>
-      <ul class="cartBtn list-unstyled text-center position-relative">
+      <ul class="feature-cartBtn list-unstyled text-center position-relative">
         <li>
           <a href="./productAll.html">懶人指引</a>
         </li>
@@ -29,35 +29,31 @@
     </section>
     <!-- 圖、文介紹 -->
     <section class="container featureIntroduce">
-      <div class="row d-flex flex-column align-items-center">
-        <ul class="col-12 col-lg-12 featureIntroduce-list list-unstyled">
-          <li class="">
-            <p>1. 平日繁忙，沒時間料理?</p>
-            <img src="../assets/images/qoq-imgs/featureIntroduce_1.png" alt="featureIntroduce_1">
-          </li>
-          <li class="">
-            <p>2. 稍稍下單，選擇你喜愛的餐點</p>
-            <img src="../assets/images/qoq-imgs/featureIntroduce_2.png" alt="featureIntroduce_2">
-          </li>
-        </ul>
-        <ul class="col-12 col-lg-12 featureIntroduce-list list-unstyled">
-          <li class="">
-            <p>3. 新鮮食材沒煩惱，無壓享受</p>
-            <img src="../assets/images/qoq-imgs/featureIntroduce_3.png" alt="featureIntroduce_3">
-          </li>
-          <li class="">
-            <p>4. 立即享受健康美味，輕鬆自在!</p>
-            <img src="../assets/images/qoq-imgs/featureIntroduce_4.png" alt="featureIntroduce_4">
-          </li>
-        </ul>
-      </div>
+      <ul class="row featureIntroduce-list list-unstyled">
+        <li class="col-6 col-lg-12">
+          <p class="custom-fs2">1. 平日繁忙，沒時間料理?</p>
+          <img src="../assets/images/qoq-imgs/featureIntroduce_1.png" alt="平日繁忙，沒時間料理?">
+        </li>
+        <li class="col-6 col-lg-12">
+          <p class="custom-fs2">2. 稍稍下單，選擇你喜愛的餐點</p>
+          <img src="../assets/images/qoq-imgs/featureIntroduce_2.png" alt="稍稍下單，選擇你喜愛的餐點">
+        </li>
+        <li class="col-6 col-lg-12">
+          <p class="custom-fs2">3. 新鮮食材沒煩惱，無壓享受</p>
+          <img src="../assets/images/qoq-imgs/featureIntroduce_3.png" alt="新鮮食材沒煩惱，無壓享受">
+        </li>
+        <li class="col-6 col-lg-12">
+          <p class="custom-fs2">4. 立即享受健康美味，輕鬆自在!</p>
+          <img src="../assets/images/qoq-imgs/featureIntroduce_4.png" alt="立即享受健康美味，輕鬆自在!">
+        </li>
+      </ul>
     </section>
     <!-- Q & A -->
-    <section class="container text-center faq">
+    <section class="container faq">
       <h2>Q & A</h2>
       <div class="accordion" id="accordionExample">
         <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
+          <h2 class="accordion-header m-0" id="headingOne">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
               aria-expanded="true" aria-controls="collapseOne">
               1. 訂購後的配送和運送時間是多久？
@@ -71,7 +67,7 @@
           </div>
         </div>
         <div class="accordion-item">
-          <h2 class="accordion-header" id="headingTwo">
+          <h2 class="accordion-header m-0" id="headingTwo">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
               2. 收到的商品有問題，我該怎麼辦？
@@ -85,7 +81,7 @@
           </div>
         </div>
         <div class="accordion-item">
-          <h2 class="accordion-header" id="headingThree">
+          <h2 class="accordion-header m-0" id="headingThree">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
               3. 付款方式有什麼選擇？
@@ -99,7 +95,7 @@
           </div>
         </div>
         <div class="accordion-item">
-          <h2 class="accordion-header" id="headingFour">
+          <h2 class="accordion-header m-0" id="headingFour">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
               4.商品如何保存 ?
@@ -138,21 +134,27 @@
       <script type="module" src="../qoq-main.js"></script>
       <script>
         $(document).ready(function () {
-            // 當滾動到一定高度時顯示按鈕
-            $(window).scroll(function () {
-                if ($(this).scrollTop() > 300) {
-                    $('.backTotop').fadeIn().css('top', $(window).scrollTop() + $(window).height() / 2 - $('#backtotop').outerHeight() / 2 + 'px'); // 固定在視窗中間位置
-                } else {
-                    $('.backTotop').fadeOut(); // 隱藏按鈕
-                }
-            });
+          // 當滾動到文件中間時顯示按鈕
+          $(window).scroll(function () {
+            var windowScrollTop = $(this).scrollTop(); // 取得當前滾動高度
+            var documentHeight = $(document).height(); // 取得文件總高度
+            var windowHeight = $(this).height(); // 取得視窗高度
+            var windowWidth = $(this).width(); // 取得視窗寬度
 
-            // 點擊按鈕返回最上方
-            $('.backTotop').click(function () {
-                $('html, body').animate({ scrollTop: 0 }, 300); 
-            });
+            // 只有當視窗寬度大於等於 992px 並且滾動高度超過文件的一半時顯示按鈕
+            if (windowWidth >= 992 && windowScrollTop > documentHeight / 2 - windowHeight / 2) {
+              $('.backTotop').fadeIn().css('top', windowScrollTop + windowHeight / 2 - $('.backTotop').outerHeight() / 2 - 100 + 'px'); // 固定按鈕在視窗中間偏上一點 (-100px)
+            } else {
+              $('.backTotop').fadeOut(); // 隱藏按鈕
+            }
+          });
+
+          // 點擊按鈕返回頁面最上方
+          $('.backTotop').click(function () {
+            $('html, body').animate({ scrollTop: 0 }, 300); // 滑動動畫將頁面返回最頂端
+          });
         });
-    </script>
+      </script>
 </body>
 
 </html>
