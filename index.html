@@ -4,14 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>懶人廚房</title>
-    <script type="module" crossorigin src="/LazyKitchen/assets/bootstrap.min-d8fef17b.js"></script>
-    <link rel="stylesheet" href="/LazyKitchen/assets/bootstrap-522088db.css">
-    <link rel="stylesheet" href="/LazyKitchen/assets/index-06753984.css">
+    <title>👑懶人廚房✨</title>
+    <script type="module" crossorigin src="/LazyKitchen/assets/bootstrap.min-0bb71d9b.js"></script>
+    <link rel="stylesheet" href="/LazyKitchen/assets/bootstrap-af2cb282.css">
+    <link rel="stylesheet" href="/LazyKitchen/assets/index-5689cea4.css">
   </head>
 
   <body>
     <!-- header -->
+
+
+
     <header class="header" style="background: #AD4214;">
   <div class="container">
 
@@ -70,12 +73,140 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
 });
 </script>
 
-    <!-- banner -->
-    <h1 class="h1">banner測試用可刪掉</h1>
-
-    <!-- feature-introduction 特色四格漫畫 -->
     
-    <!-- 搜尋列 -->
+
+    <!-----   Banner   ----->
+    
+    
+    <div class="container banner-my-60 mx-auto">
+      <img class="w-100 banner-img" src="/LazyKitchen/assets/banner-4fdfeedf.png" alt="banner-img">
+
+      <div class="d-flex flex-column text-center flex-sm-row justify-content-sm-center banner-h2-mb">
+        <h2 class="text-primary fw-bold me-sm-2 mb-sm-0">懶人必備!</h2>
+        <h2 class="fw-bold mb-0">下單即送到府</h2>
+      </div>
+
+      <div class="row row-cols-1 flex-column align-items-center justify-content-center flex-sm-row ">
+        <div class="col w-auto">
+          <a class="d-block bg-danger text-primary border border-3 border-primary rounded-1 banner-a banner-a-p banner-a-mb" href="#">懶人指引</a>
+        </div>
+
+        <div class="col w-auto">
+          <a class="d-block bg-primary text-danger border border-3 border-primary rounded-1 banner-a banner-a-p" href="#">前往商品</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="intro-bg-img">
+      <div class="position-relative">
+
+
+
+    <!-----   Feature-introduction 特色四格漫畫   ----->
+
+
+
+        <div class="container">
+  <div class="row row-cols-2 row-cols-sm-1 g-3 justify-content-sm-center intro-comic-py">
+    <div class="col col-sm-8 mt-0 intro-col-mb">
+      <div class="d-flex flex-column flex-sm-row-reverse align-items-center justify-content-sm-end p-2 p-sm-0 intro-comic">
+        <h3 class="text-primary fw-bold m-0 intro-h3">1. 平日繁忙,沒時間料理?</h3>
+
+        <img class="intro-img" src="/LazyKitchen/assets/img_1-085252c5.png" alt="">
+      </div>
+    </div>
+
+
+
+    <div class="col col-sm-8 mt-0 intro-col-mb">
+      <div class="d-flex flex-column flex-sm-row align-items-center justify-content-sm-start p-2 p-sm-0 intro-comic">
+        <h3 class="text-primary fw-bold m-0 intro-h3">2. 輕鬆下單,選擇你喜愛的餐點</h3>
+
+        <img class="intro-img" src="/LazyKitchen/assets/img_2-b469281a.png" alt="">
+      </div>
+    </div>
+
+
+
+    <div class="col col-sm-8 mt-sm-0 intro-col-mb">
+      <div class="d-flex flex-column flex-sm-row-reverse align-items-center justify-content-sm-end p-2 p-sm-0 intro-comic">
+        <h3 class="text-primary fw-bold m-0 intro-h3">3.新鮮食材送到府,簡單烹飪</h3>
+
+        <img class="intro-img" src="/LazyKitchen/assets/img_3-036bf062.png" alt="">
+      </div>
+    </div>
+
+
+
+    <div class="col col-sm-8 mt-sm-0 intro-col-mb">
+      <div class="d-flex flex-column flex-sm-row align-items-center justify-content-sm-start p-2 p-sm-0 intro-comic">
+        <h3 class="text-primary fw-bold m-0 intro-h3">4. 立即享受健康美味,輕鬆自在!</h3>
+
+        <img class="intro-img" src="/LazyKitchen/assets/img_4-af4d4bec.png" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+        
+        <!-- 搜尋列 -->
+
+
+
+        <div class="container position-relative z-2">
+          <div class="row flex-column flex-md-row justify-content-center w-100 mx-auto bg-danger search-py search-box shadow-lg">
+            <div class="col col-md-2 search-mb mb-md-0">
+              <div class="dropdown border border-3 border-primary rounded-1">
+                <a class="d-flex justify-content-between align-items-center text-primary dropdown-a" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  請選擇分類
+                  <img class="p-2" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAHCAYAAAA8sqwkAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACcSURBVHgBdY7BDYJAEEVnlpsnEqQAO9lgBxDPbAl2IHRAB8LZQAlmO7EAMd487jhjIhmS5Z9+5r8/MzgWuQOgKwZypX8NENF0zGoi7Ni2BgKlMiSD/WSzegPu2aYY8G0qP3eBm7GSgkVt6Z8D/sNbsW8MwEW8vAcJL1BwdZ+bX6bP65LSAouSVeHx8afDDnmLjcGbGm3u+No5ln0BuNs+kqRgJbsAAAAASUVORK5CYII=" alt="down-arrow">
+                </a>
+              
+                <ul class="dropdown-menu w-100 border border-3 border-primary mt-1 dropdown-ul">
+                  <li><a class="dropdown-item mb-3 p-1 rounded-1" href="#">牛肉</a></li>
+  
+                  <li><a class="dropdown-item mb-3 p-1 rounded-1" href="#">豬肉</a></li>
+  
+                  <li><a class="dropdown-item mb-3 p-1 rounded-1" href="#">雞肉</a></li>
+  
+                  <li><a class="dropdown-item mb-3 p-1 rounded-1" href="#">電鍋料理</a></li>
+  
+                  <li><a class="dropdown-item mb-3 p-1 rounded-1" href="#">氣炸鍋料理</a></li>
+  
+                  <li><a class="dropdown-item p-1 rounded-1" href="#">微波料理</a></li>
+                </ul>
+              </div>
+            </div>
+
+
+            <div class="col col-md-5">
+              <div class="input-group border border-3 border-primary rounded-1 mb-md-0">
+                <label for="search-input">
+                  <img class="input-group-text border-0 bg-danger me-2 input-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGgSURBVHgB7VRBUsJQDE1+u3aqcgC8Ad6g4gWsjGvwBHgD6AnoDaRrBnsDp57AegPc40zHrW1ifikiI+3vCEveDMzvT/NekiYBOMIArDJEruOAsocEOADgtr5jhASZE0W578XpAv4rEF2fDYnVWI5OhV8qP7/3vAzAAFVBHpTkL0RwpSg7FTLUZ2YMS9tk3m09mAS2MpCytEnZryWBjnC8y2nWbY0lspHO5JOyi/s4TaFJBmRZoxU5TqvINe7EhgixfvdE2bVZqO10sFNcEodgQJ6DX3r1GwswQyHgxcsYDLAhS0qvdmOBNR51ixrg1dS9RgAX+t8Bu2NynLktt/BATBoLEKxqz1bRIfWRWVzUXsraXMCmLEDgVJzcqNuqFJlrG+NAejxV9OXXCfyZ5Lkrw6NgsnriqSIM9UfXqyOT0lmSnQ7gh4B4cBt/hI0F1iKoeMSAToVTylDMwY1JZGcX9eJlgJRflmvhbX0vpO8kE44yvTKInj4X9wqnT+55vyKY/fBrbezMZG8Bk4iCA0Dvpk25Ng1wcOjhixpsgSO28A18uLM9sZn5WwAAAABJRU5ErkJggg==" alt="search-img">
+                </label>
+                
+                <input type="text" id="search-input" class="form-control border-0 bg-danger" placeholder="我想來點..." aria-label="我想來點..." aria-describedby="basic-addon1">
+              </div>
+            </div>
+
+
+
+            <div class="col col-md-1">
+              <button type="button" class="btn btn-primary w-100 border border-3 border-primary rounded-1">查詢</button>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-----   底部背景圖片   ----->
+
+        <img class="w-100 intro-bottom-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXcAAACECAYAAABrsWv9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAVeSURBVHgB7dvdamRVGoDhb9WP3QyBKZjIhCFgYHIwl9F6PgfDgNfiNYnigRdgLqWEUiKWUkKBaetnudauVCf4B9qt3fnyPFBdO1WVhJDwrtrf2h0BQDrlt5785NnsYhfjp+MoZ3UcJ7WW0/74PurF3Reosyij2a9+g33d7kssjh+Pomzb3eL2k9ejXV3WSdmW7Waxj9H2/1ffLgKAl1I+eu/tD1quz0opZ1HjrD120W5/b7dZvD7rdvumRizb6rOupcyj7lc1ymrUFoZa6nK8K6uI7XwT0+X7V1+vA4AXysfvndZ44NoCsG0/xBft8LotUMs6Ksu2GCxKtPu+IOzrfDMtq+lms/rf1WoewKP22bOYrGJ2fv+xzXQ6m27qS72p3UW9Hsfu5v5js5hdv3s1v4m/WIq4/wHDmUH0xSDipp8ZtPHRTRsfXbcF4aYtFte17Lft7GBxHBn1T7IwwJvh02f/Ov3+yWY2fV7P9+M2Lq5x0sfFbUw8aWPi83b/9HYS0V0c7upJS94/4rUqLfL1q350nEy0g/XwhnTfpxR12aYTq/6mtDVoEaOyGm+2y1msFu9exfZ3fadHGveX0s8Sbs8WbsdGh1/GcYG4v6/Qf0FtkdjWt8bL8sPz9ST+tv7v1ZfLAH5R3+uLmFzsxvW81NFF7ZEe9eMh1v32TjxObTQdXx3efA6j6t6Y6+h7mqOyeLJ5a36/LeL+mtwbJXX9l7RtG9bLtuO8Pq7g/Ym2UMyH1+/7WUW9OY6XbD7zUH347O2z8WTXol0uh3iXaPfDRRr99ljD/YqUmxr189KnEeL+8B3PJGI4nRtW922Ucgh/W93bRvT23qneMG7qT22elMX0+Wb4vDZyWgW8Ij3gk0lc1n39T/v7u2x/pJel1Mv21L/b7ST404k7L/zkbGLYj3gxD2xqrfPb1w17E8dLWQ8v3w7PuXrp8RgulR6PW7hbvKNcCPibRdz5k9xtHMVx7HS3N/Hi/z5YKN5Md1eT3M2+2+reRyht03K4vdPCMQneWOLOA/DzheKXziiOo6fheH947LiRbY/ioL3b7pf6zW6jPSu1nO4jzkc1+mWBZy3eZy3c/fifwYMm7jxGfQH47vZ4Pvxb+kbUMIqKtrm33B8ul707s4i7Te1+vJvGul+i9tOv+yr3Ltrc+mQam9P7j+2mk9Px5jDyaLPsp3V0uNyvxv6kfXx6+FHKxfDi2t5xH95d94+fhmA/KuIOkNAoAEhH3AESEneAhMQdICFxB0hI3AESEneAhMQdICFxB0hI3AESEneAhMQdICFxB0hI3AESEneAhMQdICFxB0hI3AESEneAhMQdICFxB0hI3AESEneAhMQdICFxB0hI3AESEneAhMQdICFxB0hI3AESEneAhMQdICFxB0hI3AESEneAhMQdICFxB0hI3AESEneAhMQdICFxB0hI3AESEneAhMQdICFxB0hI3AESEneAhMQdICFxB0hI3AESEneAhMQdICFxB0hI3AESEneAhMQdICFxB0hI3AESEneAhMQdICFxB0hI3AESEneAhMQdICFxB0hI3AESEneAhMQdICFxB0hI3AESEneAhMQdICFxB0hI3AESEneAhMQdICFxB0hI3AESEneAhMQdICFxB0hI3AESEneAhMQdICFxB0hI3AESEneAhMQdICFxB0hI3AESEneAhMQdICFxB0hI3AESEneAhMQdICFxB0hI3AESEneAhMQdICFxB0hI3AESEneAhMQdICFxB0hI3AESEneAhMQdICFxB0hI3AESEneAhMQdICFxB0hI3AESEneAhMQdICFxB0hI3AESEneAhH4EjPrC0zBSEMoAAAAASUVORK5CYII=" alt="bottom-bg-img">
+      </div>
+    </div>
+
+    
 
     <!-- 商品 -->
 
