@@ -73,7 +73,7 @@ a {
 
 
 
-// <-----   搜尋列   -----> //
+// <-----   搜尋區塊   -----> //
 
 
 
@@ -335,6 +335,83 @@ a {
 
 // <-----   快速烹飪   -----> //
 
+// 快速烹飪區塊 CSS 沿用 懶人分類區塊 的CSS
+// 沒有 新增CSS
+
+
+
+
+
+
+
+// <-----   Q & A 區塊   -----> //
+
+
+
+.qa-fz {
+  font-size: 32px;
+
+  margin-bottom: 20px;
+}
+
+
+
+.accordion-item {
+  padding: 20px 20px 0px 20px;
+}
+
+
+
+.accordion-button {
+  padding: 0;
+
+  padding-bottom: 20px;
+}
+
+
+
+.accordion-button::after {
+  background-image: url(/assets/images/dog-house/down-arrow.png);
+}
+
+
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url(/assets/images/dog-house/down-arrow.png);
+}
+
+
+
+.accordion {
+  height: 480px;
+}
+
+
+
+.accordion-body {
+  padding: 0;
+
+  padding-bottom: 20px;
+}
+
+
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+
+
+.accordion-item,
+.accordion-button {
+  border-radius: 20px !important;
+
+  --bs-accordion-border-color: transparent;
+
+  border: none;
+}
+
+
 
 
 
@@ -387,7 +464,10 @@ a {
 
 
 
-  // <-----   Feature-introduction   -----> //
+
+
+
+  // <-----   Feature-introduction 特色四格漫畫   -----> //
 
 
 
@@ -417,7 +497,10 @@ a {
 
 
 
-  // <-----   Search－box   -----> //
+
+
+
+  // <-----   搜尋區塊   -----> //
 
 
 
@@ -439,7 +522,10 @@ a {
 
 
 
-  // <-----   Hot Items   -----> //
+
+
+
+  // <-----   熱門商品   -----> //
 
 
 
@@ -483,8 +569,42 @@ a {
 
 
 
+
+
+
+  // <-----   懶人分類   -----> //
+
+
+
   .lazy-f-bg {
-    background-image: url(/assets/images/dog-house/bg-sm-5.png);
+    background-image: url(/assets/images/dog-house/bg-sm-1.png);
+  }
+
+
+
+
+
+
+  // <-----   Q & A 區塊   -----> //
+
+
+
+  .qa-bg {
+    background-image: url(/assets/images/dog-house/bg-sm-1.png);
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+    background-position: center;
+
+    
+  }
+
+
+
+  .qa-py {
+    padding: 60px 12px;
   }
 }
 
@@ -515,7 +635,10 @@ a {
 
 
 
-  // <-----   Feature-introduction   -----> //
+
+
+
+  // <-----   Feature-introduction 特色四格漫畫   -----> //
 
 
 
@@ -569,7 +692,10 @@ a {
 
 
 
-  // <-----   Search－box   -----> //
+
+
+
+  // <-----   搜尋區塊   -----> //
 
 
 
@@ -591,7 +717,10 @@ a {
 
 
 
-  // <-----   Hot Items   -----> //
+
+
+
+  // <-----   熱門商品   -----> //
 
 
 
@@ -652,6 +781,13 @@ a {
 
 
 
+
+
+
+  // <-----   懶人分類   -----> //
+
+
+
   .lazy-f-bg {
     background-image: url(/assets/images/dog-house/bg-md-5.png);
 
@@ -659,6 +795,35 @@ a {
 
     background-size: cover;
   }
+
+
+
+
+
+
+  // <-----   Q & A 區塊   -----> //
+
+
+
+  .qa-bg {
+    background-image: url(/assets/images/dog-house/bg-md-5.png);
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+    background-position: center;
+  }
+
+
+
+  .qa-py {
+    padding: 100px 12px;
+  }
+
+
+
+
 
 
 
