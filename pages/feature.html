@@ -11,7 +11,7 @@
 <body>
   <%- include('./layout/header'); -%>
     <!-- 回到上方按鈕 -->
-    <div class="position-absolute backTotop">
+    <div class="backTotop">
       <img src="../assets/images/qoq-imgs/backTotop.png" alt="返回上方按鈕" style="width: 48px; height: 48px;">
     </div>
     <!-- banner -->
@@ -59,8 +59,8 @@
             <div class="accordion" id="accordionExample">
               <div class="accordion-item">
                 <h2 class="accordion-header m-0" id="headingOne">
-                  <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                    aria-expanded="true" aria-controls="collapseOne">
+                  <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     1. 訂購後的配送和運送時間是多久？
                   </button>
                 </h2>
@@ -139,37 +139,6 @@
       <!-- 引入 jQuery Validation Plugin -->
       <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
       <script type="module" src="../qoq-main.js"></script>
-      <script>
-        $(document).ready(function () {
-          // 當滾動到文件中間時顯示按鈕
-          $(window).scroll(function () {
-            var windowScrollTop = $(this).scrollTop(); // 取得當前滾動高度
-            var documentHeight = $(document).height(); // 取得文件總高度
-            var windowHeight = $(this).height(); // 取得視窗高度
-            var windowWidth = $(this).width(); // 取得視窗寬度
-
-            // 只有當視窗寬度大於等於 992px 並且滾動高度超過文件的一半時顯示按鈕
-            if (windowScrollTop > documentHeight / 2 - windowHeight / 2) {
-              $('.backTotop').fadeIn().css('top', windowScrollTop + windowHeight / 2 - $('.backTotop').outerHeight() / 2 - 100 + 'px'); // 固定按鈕在視窗中間偏上一點 (-100px)
-
-              // 根據視窗寬度設置不同的 right 值
-              if (windowWidth >= 992) {
-                $('.backTotop').css('right', '40px'); // 視窗寬度大於等於992時，right設為40px
-              } else {
-                $('.backTotop').css('right', '24px'); // 視窗寬度小於992時，right設為24px
-              }
-            } else {
-              $('.backTotop').fadeOut(); // 隱藏按鈕
-            }
-          });
-
-          // 點擊按鈕返回頁面最上方
-          $('.backTotop').click(function () {
-            $('html, body').animate({ scrollTop: 0 }, 300); // 滑動動畫將頁面返回最頂端
-          });
-        });
-
-      </script>
 </body>
 
 </html>

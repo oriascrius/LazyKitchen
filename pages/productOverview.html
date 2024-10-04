@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh_TW">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>商品列表</title>
+</head>
+
+<body>
+    <%- include('./layout/header'); -%>
+        <!-- 回到上方按鈕 -->
+        <div class="backTotop">
+            <img src="../assets/images/qoq-imgs/backTotop.png" alt="返回上方按鈕" style="width: 48px; height: 48px;">
+        </div>
+        <!-- banner -->
+        <section class="container-fluid p-0">
+            <picture>
+                <source media="(max-width: 576px)" srcset="../assets/images/qoq-imgs/productOverview-sm.png">
+                <!-- 默認圖片 -->
+                <img src="../assets/images/qoq-imgs/productOverview-lg.png" alt="商品列表banner圖">
+            </picture>
+        </section>
+        <!-- 搜尋框 + 熱門商品 -->
+        <section class="popularProducts">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <select class="form-control" id="categorySelect">
+                                <option disabled selected value="">請選擇分類</option>
+                                <option value="option2">選項 2</option>
+                                <option value="option3">選項 3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="我想來點..." aria-label="Search">
+                        </div>
+                    </div>
+                    <div class="col-12"> <button class="btn btn-primary w-100" type="button">查詢</button></div>
+                </div>
+            </div>
+
+        </section>
+        <%- include('./layout/footer'); -%>
+
+            <!-- 引入 jQuery -->
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <!-- 引入 jQuery Validation Plugin -->
+            <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+            <script type="module" src="../qoq-main.js"></script>
+</body>
+</body>
+
+</html>

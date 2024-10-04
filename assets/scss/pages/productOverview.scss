@@ -1,0 +1,50 @@
+// 回上方按鈕
+.backTotop {
+    position: fixed;
+    display: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.popularProducts {
+    background-image: url("../../images/qoq-imgs/bigBg.png");
+    padding: 60px 0 100px 0;
+
+    .form-group {
+        border-radius: 4px;
+        margin-bottom: 20px;
+        border: 3px solid #AD4214;
+
+        select {
+            border: none;
+            outline: none;
+            background-color: #fff;
+            border-radius: 4px;
+            color: #AD4214; // 確保選中的文字顏色
+
+            option {
+                color: #AD4214 !important; // 使用 !important 確保優先級
+            }
+        }
+    }
+
+    .input-group {
+        border-radius: 4px;
+        margin-bottom: 20px;
+        border: 3px solid #AD4214;
+
+        input {
+            border: none;
+            outline: none;
+            padding: 10px;
+
+            &::placeholder {
+                color: #AD4214;
+            }
+        }
+    }
+
+    @media (max-width: 576px) {
+        padding: 40px 0 60px 0;
+    }
+}
