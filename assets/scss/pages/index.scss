@@ -218,6 +218,7 @@ a {
 }
 
 
+
 .swiper-slide {
   transition: transform 0.5s ease;
 
@@ -249,7 +250,8 @@ a {
 
 .swiper-button-prev,
 .swiper-button-next {
-  transition: transform 0.3s ease, filter 0.3s ease;
+  transition: transform 0.3s ease, 
+              filter 0.3s ease;
 }
 
 
@@ -416,26 +418,59 @@ a {
 
 
 
+// <-----   回到最上面按鈕   -----> //
+
+
+
+.btt-btn {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  position: fixed;
+
+  top: 30px;
+
+  right: 30px;
+
+  z-index: 4;
+
+  opacity: 0;
+  
+  transition: opacity   0.5s ease, 
+              transform 0.5s ease,
+              filter    0.5s ease;
+}
+
+
+
+.scrolled {
+  opacity: 1;
+
+  transform: translateY(-5px) translateX(-5px);
+
+  filter: drop-shadow(4px 4px 4px rgb(0, 0, 0));
+}
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
+// ----------------------------------------------------> //
+// ----------------------------------------------------> //
+// ----------------------------------------------------> //
 
 
 
 // <-----   R－W－D   -----> //
+
+
+
+// ----------------------------------------------------> //
+// ----------------------------------------------------> //
+// ----------------------------------------------------> //
 
 
 
