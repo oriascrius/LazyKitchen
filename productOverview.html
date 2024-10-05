@@ -2,10 +2,10 @@
 <html lang="zh_TW">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>購物車</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>商品列表</title>
   <script type="module" crossorigin src="/LazyKitchen/assets/bootstrap.min-a386f140.js"></script>
   <script type="module" crossorigin src="/LazyKitchen/assets/qoq-main-3f41dc51.js"></script>
   <link rel="stylesheet" href="/LazyKitchen/assets/bootstrap-4ca768ae.css">
@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <header class="header" style="background: #AD4214;">
+    <header class="header" style="background: #AD4214;">
   <div class="container">
 
 <!-- Navbar -->
@@ -70,392 +70,280 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
   togglerIcon.classList.toggle('open'); // 切換 'open' 類別
 });
 </script>
-    <!-- banner -->
-    <section class="bannerImg"></section>
-    <!-- 購物車步驟 -->
-    <section class="container">
-      <div class="row">
-        <div class="col">
-          <ul class="shoppingSteps text-center list-unstyled m-0">
-            <li class="current">
-              <h3 class="m-0">STEP 1</h3>
-              <h4 class="m-0">確認購物車</h4>
-            </li>
-            <li>
-              <h3 class="m-0">STEP 2</h3>
-              <h4 class="m-0">填寫訂單資訊</h4>
-            </li>
-            <li>
-              <h3 class="m-0">STEP 3</h3>
-              <h4 class="m-0">確認付款資訊</h4>
-            </li>
-            <li>
-              <h3 class="m-0">STEP 4</h3>
-              <h4 class="m-0">完成訂購</h4>
-            </li>
-          </ul>
+        <!-- 回到上方按鈕 -->
+        <div class="backTotop">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAQBSURBVHgB1Zq9bxNJGMafdzZBOXPifCJIp9NJ2IiGKjldc6JhkwLRQQgQKIAgQZ0gQKLD6SnCX0CoEIRg6IAmG5Cg4cOiosMIhIJIxCoQC7A9wzuL1vgrtne9a3t/zX7afp6dd2bfmdeEAEib8Xhe9B8woIZASEDRMEHFFRD/dRdllVJZImSIKENFY2nMWs6iTQg+0aKl6JtmQXuUggkf8OcyQtBsO2Y8GygJB6Yqn3C70JyQxoxXI54MLIwOpoIXXomUmDlsraRavb8lA2nzr4SiQloRhtEBiPsLSWOkldYQzW5YMLdOKlF40SnxGgWVkPybN8ytB5rd29CADhkIuhpmyDQg3icoPW+yhgYYG11wxAOX0GV4lDMPb4/RfDZn1b1e7+Qtbjpi9+ghSKrJg9bqtZrz1SecDqtjvjth0whbyL5/qzt2TR9QorjYg+I18SKPhNUnKwzouNcjAHoU7g/DC+ZgRb8shZAOHR66XqP3sddkIXnKsm19UGoBKYpdH3FaJL4FfVPugdMCEXr6LqVWcFqAn76JaFFqBccA5+5TiBic2ph6S2GGz7ah3ejfvAXvH99DGHAY/Wkc2fGbTpiaJk1e2XXiHP67MIt/RvY7xysvnyBoNgl6ZUwkYyd5/38EiBa/6/i50rFuCU3QJnTabRzdEbvI+wkERLn49eW3KHxZQ//vf4RlYtk4ktycQkCpQ7X4R+fH8ebBPP7evS8kE2pAh9AsAqCe+NyHd8ivr3Envh+SCYI2kEKbbCTeJUQTA20baCbeJSwTxtFkbJq3A/BBq+JdwjAhFMiGD7yKd8l9eIuH5w8hx59xv2fn2Gn4Q2U5lVAZ+GD73gln60W8S7WJnQfPwA9K8XuA+4B+iXl+ka2zCPntK55dnvYk3sUNJ15DwfLTRXx69Rxe4QnOHbo5um2SF2WvIoIonuiLfpm/g4iSR3FJjPGkgJvCQsTQK9vHLDv7cz6gomeAHTgZxM85sSxc4bmlr+G0W+jw0VvHgBNGQCA5UWdQczp89N6vdaEItcJ3WZxx90sGItMKEin36Wtq1kZvjwx2tBbgCS4Sji+uJstP1ayNflOFsR4NJfu7Ko5Un6wxoJtHSTqLHqMg1any0HGpW6EZtz7O8YUUegWO+wlrtW7GsGGF5sbr3NKxZEznWia6CYsft1ZmNrrctEqpqzWiO3Uym6sy0/WqMuW0VGa9bsYTm8hY5Pw1gQ6g85w8Dyb1Yr4aT4Xu9OjgJRlu37A5ZGYbhUw1nv9q4LSGMLiWQJMIDkf4GgpX3MJFq/j+s4c2YsAwBdEU+XzxcahYOhP2I9zFt4FyXDOGoCFthueqCVTW2licXjxw5t9ZRZT5XMzf9Su6nB+GEfSUXjR78wAAAABJRU5ErkJggg==" alt="返回上方按鈕">
         </div>
-      </div>
-    </section>
-    <h2 class="m-0 text-center" style="padding-bottom: 40px; color:#AD4214;">購物清單</h2>
-    <!-- 購物車清單 -->
-    <section class="container">
-      <ul class="row m-0 list-unstyled cartList">
-        <li class="d-flex">
-          <!-- 左側圖片、標題 -->
-          <div class="col col-lg-5 d-flex align-items-center">
-            <img src="/LazyKitchen/assets/carts-img_1-b6373969.png" alt="韓式辣炒年糕" class="productImage">
-            <h5 class="m-0 d-none d-lg-block productName">韓式辣炒年糕</h5>
-          </div>
-          <!-- 右側內容 lg -->
-          <div class="col col-lg-7 d-none d-lg-flex align-items-center justify-content-between product"
-            data-id="product-A" data-unit-price="168">
-            <p class="m-0" id="unitPrice">$168</p>
-            <div class="d-flex align-items-center product-quantity">
-              <button class="minusBtn border-0">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABFSURBVHgB7c0xCgAhEEPRzLKw7R5NT+gVPJqtIIw2goWljfBflUAgEgDgOrYWbzXILI346xT3aO+XZ302k3NnUhEA4H4d4XUIBJeJ+CcAAAAASUVORK5CYII=" alt="減號">
-              </button>
-              <div class="counter-value custom-fs4" id="counter">1</div>
-              <button class="plusBtn border-0">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACCSURBVHgB7ZZLCoAwDEQnonuP4FW8/8Ij6BFcK3b8oIiKViOULvKWoeVR6CQBjBggmSMkdH3FoaugIIUK/QsTBMaEJoxfKOfCHGpvzohivd3gmRaSlSLSboVD8JeW5Xq8hv4jkuwyNXRdPbW2Ggrsl5rQhBd0E5/4H+bPztCLlHHHCN99KHIPINTNAAAAAElFTkSuQmCC" alt="加號">
-              </button>
+        <!-- banner -->
+        <section class="container-fluid p-0">
+            <picture>
+                <source media="(max-width: 576px)" srcset="/LazyKitchen/assets/productOverview-sm-bd5d360e.png ">
+                <!-- 默認圖片 -->
+                <img src="/LazyKitchen/assets/productOverview-lg-4caa3ee0.png" alt="商品列表banner圖">
+            </picture>
+        </section>
+        <!-- 搜尋框  -->
+        <section class="searchBox">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-2">
+                        <div class="dropdown position-relative">
+                            <button class="btn btn-outline-primary dropdown-toggle" type="button"
+                                id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                請選擇分類
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="#" data-value="option2">牛肉</a></li>
+                                <li><a class="dropdown-item" href="#" data-value="option3">豬肉</a></li>
+                                <li><a class="dropdown-item" href="#" data-value="option4">雞肉</a></li>
+                                <li><a class="dropdown-item" href="#" data-value="option5">電鍋料理</a></li>
+                                <li><a class="dropdown-item" href="#" data-value="option6">氣炸鍋料理</a></li>
+                                <li><a class="dropdown-item" href="#" data-value="option7">微波料理</a></li>
+                            </ul>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="position-absolute"
+                                style="right: 10px; top: 50%; transform: translateY(-50%);"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M15.88 9.29006L12 13.1701L8.11998 9.29006C7.72998 8.90006 7.09998 8.90006 6.70998 9.29006C6.31998 9.68006 6.31998 10.3101 6.70998 10.7001L11.3 15.2901C11.69 15.6801 12.32 15.6801 12.71 15.2901L17.3 10.7001C17.69 10.3101 17.69 9.68006 17.3 9.29006C16.91 8.91006 16.27 8.90006 15.88 9.29006Z"
+                                    fill="#AD4214" />
+                            </svg>
+                        </div>
+
+                    </div>
+                    <div class="col-12 col-lg-5">
+                        <div class="input-group position-relative">
+                            <input type="text" class="form-control" placeholder="我想來點..." aria-label="Search">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="position-absolute"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_520_1598)">
+                                    <path
+                                        d="M10 16C13.3137 16 16 13.3137 16 10C16 6.68629 13.3137 4 10 4C6.68629 4 4 6.68629 4 10C4 13.3137 6.68629 16 10 16Z"
+                                        stroke="#AD4214" stroke-width="2" stroke-miterlimit="10" />
+                                    <path d="M14.707 14.2929L19.707 19.2929" stroke="#AD4214" stroke-width="2"
+                                        stroke-linecap="round" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_520_1598">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-2"> <button class="btn btn-primary" type="button">查詢</button></div>
+                </div>
             </div>
-            <p class="m-0 total-price" id="totalPrice">$168</p>
-            <button class="btn p-0 delete-btn">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_524_3968)">
-                  <path
-                    d="M4 8H20V21C20 21.2652 19.8946 21.5196 19.7071 21.7071C19.5196 21.8946 19.2652 22 19 22H5C4.73478 22 4.48043 21.8946 4.29289 21.7071C4.10536 21.5196 4 21.2652 4 21V8ZM6 10V20H18V10H6ZM9 12H11V18H9V12ZM13 12H15V18H13V12ZM7 5V3C7 2.73478 7.10536 2.48043 7.29289 2.29289C7.48043 2.10536 7.73478 2 8 2H16C16.2652 2 16.5196 2.10536 16.7071 2.29289C16.8946 2.48043 17 2.73478 17 3V5H22V7H2V5H7ZM9 4V5H15V4H9Z"
-                    fill="#7E7E7E" />
-                </g>
-                <defs>
-                  <clipPath id="clip0_524_3968">
-                    <rect width="24" height="24" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </button>
-          </div>
-          <!-- 右側內容 sm -->
-          <div class="col d-flex d-lg-none flex-column justify-content-between product" data-id="product-A"
-            data-unit-price="168">
-            <div class="d-flex justify-content-between align-items-center">
-              <h5 class="m-0 productName">韓式辣炒年糕</h5>
-              <button class="btn p-0 delete-btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_524_3968)">
-                    <path
-                      d="M4 8H20V21C20 21.2652 19.8946 21.5196 19.7071 21.7071C19.5196 21.8946 19.2652 22 19 22H5C4.73478 22 4.48043 21.8946 4.29289 21.7071C4.10536 21.5196 4 21.2652 4 21V8ZM6 10V20H18V10H6ZM9 12H11V18H9V12ZM13 12H15V18H13V12ZM7 5V3C7 2.73478 7.10536 2.48043 7.29289 2.29289C7.48043 2.10536 7.73478 2 8 2H16C16.2652 2 16.5196 2.10536 16.7071 2.29289C16.8946 2.48043 17 2.73478 17 3V5H22V7H2V5H7ZM9 4V5H15V4H9Z"
-                      fill="#7E7E7E" />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_524_3968">
-                      <rect width="24" height="24" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-              </button>
+
+        </section>
+        <!-- 熱門商品 -->
+        <section class="popularProducts">
+            <h2 class="text-primary text-center custom-fs2 m-0">熱門商品</h2>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-6 col-lg-3">
+                        <a href="#">
+                            <div class="card position-relative">
+                                <img src="/LazyKitchen/assets/img_lemonSalmon-11c6f954.png" class="position-absolute"
+                                    alt="香草檸檬鮭魚">
+                                <div class="card-body d-flex">
+                                    <div>
+                                        <p class="card-title">香草檸檬鮭魚</p>
+                                        <p class="text-primary">$168</p>
+                                    </div>
+                                    <button class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg width="28"
+                                            height="28" viewBox="0 0 28 28" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_893_540)">
+                                                <path
+                                                    d="M18.1418 15.1666C19.0168 15.1666 19.7867 14.6883 20.1834 13.965L24.3601 6.39331C24.7917 5.62331 24.2318 4.66665 23.3451 4.66665H6.07841L5.61194 3.67414C5.2273 2.85577 4.40446 2.33331 3.50021 2.33331H2.33341C1.68908 2.33331 1.16675 2.85565 1.16675 3.49998C1.16675 4.14431 1.68908 4.66665 2.33341 4.66665H3.50008L7.70008 13.5216L6.12508 16.3683C5.27342 17.9316 6.39341 19.8333 8.16675 19.8333H21.0001C21.6444 19.8333 22.1667 19.311 22.1667 18.6666C22.1667 18.0223 21.6444 17.5 21.0001 17.5H8.16675L9.45008 15.1666H18.1418ZM7.18675 6.99998H21.3617L18.1418 12.8333H9.95175L7.18675 6.99998ZM8.16675 21C6.88342 21 5.84508 22.05 5.84508 23.3333C5.84508 24.6166 6.88342 25.6666 8.16675 25.6666C9.45008 25.6666 10.5001 24.6166 10.5001 23.3333C10.5001 22.05 9.45008 21 8.16675 21ZM19.8334 21C18.5501 21 17.5117 22.05 17.5117 23.3333C17.5117 24.6166 18.5501 25.6666 19.8334 25.6666C21.1167 25.6666 22.1667 24.6166 22.1667 23.3333C22.1667 22.05 21.1167 21 19.8334 21Z"
+                                                    fill="#FFFDFA" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_893_540">
+                                                    <rect width="28" height="28" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <a href="#">
+                            <div class="card position-relative">
+                                <img src="/LazyKitchen/assets/img_curryChicken-09083451.png" class="position-absolute"
+                                    alt="泰式咖哩雞">
+                                <div class="card-body d-flex">
+                                    <div>
+                                        <p class="card-title">泰式咖哩雞</p>
+                                        <p class="text-primary">$168</p>
+                                    </div>
+                                    <button class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg width="28"
+                                            height="28" viewBox="0 0 28 28" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_893_540)">
+                                                <path
+                                                    d="M18.1418 15.1666C19.0168 15.1666 19.7867 14.6883 20.1834 13.965L24.3601 6.39331C24.7917 5.62331 24.2318 4.66665 23.3451 4.66665H6.07841L5.61194 3.67414C5.2273 2.85577 4.40446 2.33331 3.50021 2.33331H2.33341C1.68908 2.33331 1.16675 2.85565 1.16675 3.49998C1.16675 4.14431 1.68908 4.66665 2.33341 4.66665H3.50008L7.70008 13.5216L6.12508 16.3683C5.27342 17.9316 6.39341 19.8333 8.16675 19.8333H21.0001C21.6444 19.8333 22.1667 19.311 22.1667 18.6666C22.1667 18.0223 21.6444 17.5 21.0001 17.5H8.16675L9.45008 15.1666H18.1418ZM7.18675 6.99998H21.3617L18.1418 12.8333H9.95175L7.18675 6.99998ZM8.16675 21C6.88342 21 5.84508 22.05 5.84508 23.3333C5.84508 24.6166 6.88342 25.6666 8.16675 25.6666C9.45008 25.6666 10.5001 24.6166 10.5001 23.3333C10.5001 22.05 9.45008 21 8.16675 21ZM19.8334 21C18.5501 21 17.5117 22.05 17.5117 23.3333C17.5117 24.6166 18.5501 25.6666 19.8334 25.6666C21.1167 25.6666 22.1667 24.6166 22.1667 23.3333C22.1667 22.05 21.1167 21 19.8334 21Z"
+                                                    fill="#FFFDFA" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_893_540">
+                                                    <rect width="28" height="28" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <a href="#">
+                            <div class="card position-relative">
+                                <img src="/LazyKitchen/assets/img_spicyRiceCake-8403a33f.png" class="position-absolute"
+                                    alt="韓式辣炒年糕">
+                                <div class="card-body d-flex">
+                                    <div>
+                                        <p class="card-title">韓式辣炒年糕</p>
+                                        <p class="text-primary">$168</p>
+                                    </div>
+                                    <button class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg width="28"
+                                            height="28" viewBox="0 0 28 28" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_893_540)">
+                                                <path
+                                                    d="M18.1418 15.1666C19.0168 15.1666 19.7867 14.6883 20.1834 13.965L24.3601 6.39331C24.7917 5.62331 24.2318 4.66665 23.3451 4.66665H6.07841L5.61194 3.67414C5.2273 2.85577 4.40446 2.33331 3.50021 2.33331H2.33341C1.68908 2.33331 1.16675 2.85565 1.16675 3.49998C1.16675 4.14431 1.68908 4.66665 2.33341 4.66665H3.50008L7.70008 13.5216L6.12508 16.3683C5.27342 17.9316 6.39341 19.8333 8.16675 19.8333H21.0001C21.6444 19.8333 22.1667 19.311 22.1667 18.6666C22.1667 18.0223 21.6444 17.5 21.0001 17.5H8.16675L9.45008 15.1666H18.1418ZM7.18675 6.99998H21.3617L18.1418 12.8333H9.95175L7.18675 6.99998ZM8.16675 21C6.88342 21 5.84508 22.05 5.84508 23.3333C5.84508 24.6166 6.88342 25.6666 8.16675 25.6666C9.45008 25.6666 10.5001 24.6166 10.5001 23.3333C10.5001 22.05 9.45008 21 8.16675 21ZM19.8334 21C18.5501 21 17.5117 22.05 17.5117 23.3333C17.5117 24.6166 18.5501 25.6666 19.8334 25.6666C21.1167 25.6666 22.1667 24.6166 22.1667 23.3333C22.1667 22.05 21.1167 21 19.8334 21Z"
+                                                    fill="#FFFDFA" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_893_540">
+                                                    <rect width="28" height="28" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="d-none d-lg-block"></div>
+                    <div class="col-6 col-lg-3">
+                        <a href="#">
+                            <div class="card position-relative">
+                                <img src="/LazyKitchen/assets/img_chickenNuggets-c7b19a75.png" class="position-absolute"
+                                    alt="冷凍雞塊">
+                                <div class="card-body d-flex">
+                                    <div>
+                                        <p class="card-title">冷凍雞塊</p>
+                                        <p class="text-primary">$168</p>
+                                    </div>
+                                    <button class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg width="28"
+                                            height="28" viewBox="0 0 28 28" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_893_540)">
+                                                <path
+                                                    d="M18.1418 15.1666C19.0168 15.1666 19.7867 14.6883 20.1834 13.965L24.3601 6.39331C24.7917 5.62331 24.2318 4.66665 23.3451 4.66665H6.07841L5.61194 3.67414C5.2273 2.85577 4.40446 2.33331 3.50021 2.33331H2.33341C1.68908 2.33331 1.16675 2.85565 1.16675 3.49998C1.16675 4.14431 1.68908 4.66665 2.33341 4.66665H3.50008L7.70008 13.5216L6.12508 16.3683C5.27342 17.9316 6.39341 19.8333 8.16675 19.8333H21.0001C21.6444 19.8333 22.1667 19.311 22.1667 18.6666C22.1667 18.0223 21.6444 17.5 21.0001 17.5H8.16675L9.45008 15.1666H18.1418ZM7.18675 6.99998H21.3617L18.1418 12.8333H9.95175L7.18675 6.99998ZM8.16675 21C6.88342 21 5.84508 22.05 5.84508 23.3333C5.84508 24.6166 6.88342 25.6666 8.16675 25.6666C9.45008 25.6666 10.5001 24.6166 10.5001 23.3333C10.5001 22.05 9.45008 21 8.16675 21ZM19.8334 21C18.5501 21 17.5117 22.05 17.5117 23.3333C17.5117 24.6166 18.5501 25.6666 19.8334 25.6666C21.1167 25.6666 22.1667 24.6166 22.1667 23.3333C22.1667 22.05 21.1167 21 19.8334 21Z"
+                                                    fill="#FFFDFA" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_893_540">
+                                                    <rect width="28" height="28" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <a href="#">
+                            <div class="card position-relative">
+                                <img src="/LazyKitchen/assets/img_chickenBreast-6eaec8b5.png" class="position-absolute"
+                                    alt="香草烤雞胸">
+                                <div class="card-body d-flex">
+                                    <div>
+                                        <p class="card-title">香草烤雞胸</p>
+                                        <p class="text-primary">$168</p>
+                                    </div>
+                                    <button class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg width="28"
+                                            height="28" viewBox="0 0 28 28" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_893_540)">
+                                                <path
+                                                    d="M18.1418 15.1666C19.0168 15.1666 19.7867 14.6883 20.1834 13.965L24.3601 6.39331C24.7917 5.62331 24.2318 4.66665 23.3451 4.66665H6.07841L5.61194 3.67414C5.2273 2.85577 4.40446 2.33331 3.50021 2.33331H2.33341C1.68908 2.33331 1.16675 2.85565 1.16675 3.49998C1.16675 4.14431 1.68908 4.66665 2.33341 4.66665H3.50008L7.70008 13.5216L6.12508 16.3683C5.27342 17.9316 6.39341 19.8333 8.16675 19.8333H21.0001C21.6444 19.8333 22.1667 19.311 22.1667 18.6666C22.1667 18.0223 21.6444 17.5 21.0001 17.5H8.16675L9.45008 15.1666H18.1418ZM7.18675 6.99998H21.3617L18.1418 12.8333H9.95175L7.18675 6.99998ZM8.16675 21C6.88342 21 5.84508 22.05 5.84508 23.3333C5.84508 24.6166 6.88342 25.6666 8.16675 25.6666C9.45008 25.6666 10.5001 24.6166 10.5001 23.3333C10.5001 22.05 9.45008 21 8.16675 21ZM19.8334 21C18.5501 21 17.5117 22.05 17.5117 23.3333C17.5117 24.6166 18.5501 25.6666 19.8334 25.6666C21.1167 25.6666 22.1667 24.6166 22.1667 23.3333C22.1667 22.05 21.1167 21 19.8334 21Z"
+                                                    fill="#FFFDFA" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_893_540">
+                                                    <rect width="28" height="28" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <a href="#">
+                            <div class="card position-relative">
+                                <img src="/LazyKitchen/assets/img_truffleFrenchFries-fa52a35d.png"
+                                    class="position-absolute" alt="松露薯條">
+                                <div class="card-body d-flex">
+                                    <div>
+                                        <p class="card-title">松露薯條</p>
+                                        <p class="text-primary">$168</p>
+                                    </div>
+                                    <button class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg width="28"
+                                            height="28" viewBox="0 0 28 28" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_893_540)">
+                                                <path
+                                                    d="M18.1418 15.1666C19.0168 15.1666 19.7867 14.6883 20.1834 13.965L24.3601 6.39331C24.7917 5.62331 24.2318 4.66665 23.3451 4.66665H6.07841L5.61194 3.67414C5.2273 2.85577 4.40446 2.33331 3.50021 2.33331H2.33341C1.68908 2.33331 1.16675 2.85565 1.16675 3.49998C1.16675 4.14431 1.68908 4.66665 2.33341 4.66665H3.50008L7.70008 13.5216L6.12508 16.3683C5.27342 17.9316 6.39341 19.8333 8.16675 19.8333H21.0001C21.6444 19.8333 22.1667 19.311 22.1667 18.6666C22.1667 18.0223 21.6444 17.5 21.0001 17.5H8.16675L9.45008 15.1666H18.1418ZM7.18675 6.99998H21.3617L18.1418 12.8333H9.95175L7.18675 6.99998ZM8.16675 21C6.88342 21 5.84508 22.05 5.84508 23.3333C5.84508 24.6166 6.88342 25.6666 8.16675 25.6666C9.45008 25.6666 10.5001 24.6166 10.5001 23.3333C10.5001 22.05 9.45008 21 8.16675 21ZM19.8334 21C18.5501 21 17.5117 22.05 17.5117 23.3333C17.5117 24.6166 18.5501 25.6666 19.8334 25.6666C21.1167 25.6666 22.1667 24.6166 22.1667 23.3333C22.1667 22.05 21.1167 21 19.8334 21Z"
+                                                    fill="#FFFDFA" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_893_540">
+                                                    <rect width="28" height="28" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div></div>
+                </div>
+                <!-- 上下頁 -->
+                <nav class="d-flex justify-content-center" aria-label="navigation">
+                    <ul class="pagination d-flex align-items-center">
+                        <a href="#">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="pe-2">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M15.7071 3.79289C16.0976 4.18342 16.0976 4.81658 15.7071 5.20711L8.91421 12L15.7071 18.7929C16.0976 19.1834 16.0976 19.8166 15.7071 20.2071C15.3166 20.5976 14.6834 20.5976 14.2929 20.2071L6.79289 12.7071C6.40237 12.3166 6.40237 11.6834 6.79289 11.2929L14.2929 3.79289C14.6834 3.40237 15.3166 3.40237 15.7071 3.79289Z"
+                                    fill="#AD4214" />
+                            </svg>
+                        </a>
+                        <li class="page-item"><a class="page-link border-0 custom-fs4 pageActive" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link border-0 custom-fs4" href="#">2</a></li>
+                        <a href="#">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="ps-2">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M8.29289 3.79289C8.68342 3.40237 9.31658 3.40237 9.70711 3.79289L17.2071 11.2929C17.5976 11.6834 17.5976 12.3166 17.2071 12.7071L9.70711 20.2071C9.31658 20.5976 8.68342 20.5976 8.29289 20.2071C7.90237 19.8166 7.90237 19.1834 8.29289 18.7929L15.0858 12L8.29289 5.20711C7.90237 4.81658 7.90237 4.18342 8.29289 3.79289Z"
+                                    fill="#AD4214" />
+                            </svg>
+                        </a>
+                    </ul>
+                </nav>
             </div>
-            <p class="m-0" id="unitPrice">$168</p>
-            <p class="m-0 total-price" id="totalPrice">$168</p>
-            <div class="d-flex align-items-center product-quantity">
-              <button class="minusBtn border-0">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABFSURBVHgB7c0xCgAhEEPRzLKw7R5NT+gVPJqtIIw2goWljfBflUAgEgDgOrYWbzXILI346xT3aO+XZ302k3NnUhEA4H4d4XUIBJeJ+CcAAAAASUVORK5CYII=" alt="減號">
-              </button>
-              <div class="counter-value custom-fs4" id="counter">1</div>
-              <button class="plusBtn border-0">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACCSURBVHgB7ZZLCoAwDEQnonuP4FW8/8Ij6BFcK3b8oIiKViOULvKWoeVR6CQBjBggmSMkdH3FoaugIIUK/QsTBMaEJoxfKOfCHGpvzohivd3gmRaSlSLSboVD8JeW5Xq8hv4jkuwyNXRdPbW2Ggrsl5rQhBd0E5/4H+bPztCLlHHHCN99KHIPINTNAAAAAElFTkSuQmCC" alt="加號">
-              </button>
-            </div>
-          </div>
-        </li>
-        <li class="d-flex">
-          <!-- 左側圖片、標題 -->
-          <div class="col col-lg-5 d-flex align-items-center">
-            <img src="/LazyKitchen/assets/carts-img_2-688d2d1f.png" alt="滷牛腱" class="productImage">
-            <h5 class="m-0 d-none d-lg-block">滷牛腱</h5>
-          </div>
-          <!-- 右側內容 lg -->
-          <div class="col col-lg-7 d-none d-lg-flex align-items-center justify-content-between product"
-            data-id="product-B" data-unit-price="228">
-            <p class="m-0" id="unitPrice">$228</p>
-            <div class="d-flex align-items-center product-quantity">
-              <button class="minusBtn border-0">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABFSURBVHgB7c0xCgAhEEPRzLKw7R5NT+gVPJqtIIw2goWljfBflUAgEgDgOrYWbzXILI346xT3aO+XZ302k3NnUhEA4H4d4XUIBJeJ+CcAAAAASUVORK5CYII=" alt="減號">
-              </button>
-              <div class="counter-value custom-fs4" id="counter">1</div>
-              <button class="plusBtn border-0">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACCSURBVHgB7ZZLCoAwDEQnonuP4FW8/8Ij6BFcK3b8oIiKViOULvKWoeVR6CQBjBggmSMkdH3FoaugIIUK/QsTBMaEJoxfKOfCHGpvzohivd3gmRaSlSLSboVD8JeW5Xq8hv4jkuwyNXRdPbW2Ggrsl5rQhBd0E5/4H+bPztCLlHHHCN99KHIPINTNAAAAAElFTkSuQmCC" alt="加號">
-              </button>
-            </div>
-            <p class="m-0 total-price" id="totalPrice">$228</p>
-            <button class="btn p-0 delete-btn">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_524_3968)">
-                  <path
-                    d="M4 8H20V21C20 21.2652 19.8946 21.5196 19.7071 21.7071C19.5196 21.8946 19.2652 22 19 22H5C4.73478 22 4.48043 21.8946 4.29289 21.7071C4.10536 21.5196 4 21.2652 4 21V8ZM6 10V20H18V10H6ZM9 12H11V18H9V12ZM13 12H15V18H13V12ZM7 5V3C7 2.73478 7.10536 2.48043 7.29289 2.29289C7.48043 2.10536 7.73478 2 8 2H16C16.2652 2 16.5196 2.10536 16.7071 2.29289C16.8946 2.48043 17 2.73478 17 3V5H22V7H2V5H7ZM9 4V5H15V4H9Z"
-                    fill="#7E7E7E" />
-                </g>
-                <defs>
-                  <clipPath id="clip0_524_3968">
-                    <rect width="24" height="24" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </button>
-          </div>
-          <!-- 右側內容 sm -->
-          <div class="col d-flex d-lg-none flex-column justify-content-between product" data-id="product-B"
-            data-unit-price="228">
-            <div class="d-flex justify-content-between align-items-center">
-              <h5 class="m-0">滷牛腱</h5>
-              <button class="btn p-0 delete-btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_524_3968)">
-                    <path
-                      d="M4 8H20V21C20 21.2652 19.8946 21.5196 19.7071 21.7071C19.5196 21.8946 19.2652 22 19 22H5C4.73478 22 4.48043 21.8946 4.29289 21.7071C4.10536 21.5196 4 21.2652 4 21V8ZM6 10V20H18V10H6ZM9 12H11V18H9V12ZM13 12H15V18H13V12ZM7 5V3C7 2.73478 7.10536 2.48043 7.29289 2.29289C7.48043 2.10536 7.73478 2 8 2H16C16.2652 2 16.5196 2.10536 16.7071 2.29289C16.8946 2.48043 17 2.73478 17 3V5H22V7H2V5H7ZM9 4V5H15V4H9Z"
-                      fill="#7E7E7E" />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_524_3968">
-                      <rect width="24" height="24" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-              </button>
-            </div>
-            <p class="m-0" id="unitPrice">$228</p>
-            <p class="m-0 total-price" id="totalPrice">$228</p>
-            <div class="d-flex align-items-center product-quantity">
-              <button class="minusBtn border-0">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABFSURBVHgB7c0xCgAhEEPRzLKw7R5NT+gVPJqtIIw2goWljfBflUAgEgDgOrYWbzXILI346xT3aO+XZ302k3NnUhEA4H4d4XUIBJeJ+CcAAAAASUVORK5CYII=" alt="減號">
-              </button>
-              <div class="counter-value custom-fs4" id="counter">1</div>
-              <button class="plusBtn border-0">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACCSURBVHgB7ZZLCoAwDEQnonuP4FW8/8Ij6BFcK3b8oIiKViOULvKWoeVR6CQBjBggmSMkdH3FoaugIIUK/QsTBMaEJoxfKOfCHGpvzohivd3gmRaSlSLSboVD8JeW5Xq8hv4jkuwyNXRdPbW2Ggrsl5rQhBd0E5/4H+bPztCLlHHHCN99KHIPINTNAAAAAElFTkSuQmCC" alt="加號">
-              </button>
-            </div>
-          </div>
-        </li>
-        <li class="d-flex">
-          <!-- 左側圖片、標題 -->
-          <div class="col col-lg-5 d-flex align-items-center">
-            <img src="/LazyKitchen/assets/carts-img_3-157ce501.png" alt="宮保雞丁" class="productImage">
-            <h5 class="m-0 d-none d-lg-block">宮保雞丁</h5>
-          </div>
-          <!-- 右側內容 lg -->
-          <div class="col col-lg-7 d-none d-lg-flex align-items-center justify-content-between product"
-            data-id="product-C" data-unit-price="128">
-            <p class="m-0" id="unitPrice">$128</p>
-            <div class="d-flex align-items-center product-quantity">
-              <button class="minusBtn border-0">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABFSURBVHgB7c0xCgAhEEPRzLKw7R5NT+gVPJqtIIw2goWljfBflUAgEgDgOrYWbzXILI346xT3aO+XZ302k3NnUhEA4H4d4XUIBJeJ+CcAAAAASUVORK5CYII=" alt="減號">
-              </button>
-              <div class="counter-value custom-fs4" id="counter">1</div>
-              <button class="plusBtn border-0">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACCSURBVHgB7ZZLCoAwDEQnonuP4FW8/8Ij6BFcK3b8oIiKViOULvKWoeVR6CQBjBggmSMkdH3FoaugIIUK/QsTBMaEJoxfKOfCHGpvzohivd3gmRaSlSLSboVD8JeW5Xq8hv4jkuwyNXRdPbW2Ggrsl5rQhBd0E5/4H+bPztCLlHHHCN99KHIPINTNAAAAAElFTkSuQmCC" alt="加號">
-              </button>
-            </div>
-            <p class="m-0 total-price" id="totalPrice">$128</p>
-            <button class="btn p-0 delete-btn">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_524_3968)">
-                  <path
-                    d="M4 8H20V21C20 21.2652 19.8946 21.5196 19.7071 21.7071C19.5196 21.8946 19.2652 22 19 22H5C4.73478 22 4.48043 21.8946 4.29289 21.7071C4.10536 21.5196 4 21.2652 4 21V8ZM6 10V20H18V10H6ZM9 12H11V18H9V12ZM13 12H15V18H13V12ZM7 5V3C7 2.73478 7.10536 2.48043 7.29289 2.29289C7.48043 2.10536 7.73478 2 8 2H16C16.2652 2 16.5196 2.10536 16.7071 2.29289C16.8946 2.48043 17 2.73478 17 3V5H22V7H2V5H7ZM9 4V5H15V4H9Z"
-                    fill="#7E7E7E" />
-                </g>
-                <defs>
-                  <clipPath id="clip0_524_3968">
-                    <rect width="24" height="24" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </button>
-          </div>
-          <!-- 右側內容 sm -->
-          <div class="col d-flex d-lg-none flex-column justify-content-between product" data-id="product-C"
-            data-unit-price="128">
-            <div class="d-flex justify-content-between align-items-center">
-              <h5 class="m-0">宮保雞丁</h5>
-              <button class="btn p-0 delete-btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_524_3968)">
-                    <path
-                      d="M4 8H20V21C20 21.2652 19.8946 21.5196 19.7071 21.7071C19.5196 21.8946 19.2652 22 19 22H5C4.73478 22 4.48043 21.8946 4.29289 21.7071C4.10536 21.5196 4 21.2652 4 21V8ZM6 10V20H18V10H6ZM9 12H11V18H9V12ZM13 12H15V18H13V12ZM7 5V3C7 2.73478 7.10536 2.48043 7.29289 2.29289C7.48043 2.10536 7.73478 2 8 2H16C16.2652 2 16.5196 2.10536 16.7071 2.29289C16.8946 2.48043 17 2.73478 17 3V5H22V7H2V5H7ZM9 4V5H15V4H9Z"
-                      fill="#7E7E7E" />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_524_3968">
-                      <rect width="24" height="24" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-              </button>
-            </div>
-            <p class="m-0" id="unitPrice">$128</p>
-            <p class="m-0 total-price" id="totalPrice">$128</p>
-            <div class="d-flex align-items-center product-quantity">
-              <button class="minusBtn border-0">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABFSURBVHgB7c0xCgAhEEPRzLKw7R5NT+gVPJqtIIw2goWljfBflUAgEgDgOrYWbzXILI346xT3aO+XZ302k3NnUhEA4H4d4XUIBJeJ+CcAAAAASUVORK5CYII=" alt="減號">
-              </button>
-              <div class="counter-value custom-fs4" id="counter">1</div>
-              <button class="plusBtn border-0">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACCSURBVHgB7ZZLCoAwDEQnonuP4FW8/8Ij6BFcK3b8oIiKViOULvKWoeVR6CQBjBggmSMkdH3FoaugIIUK/QsTBMaEJoxfKOfCHGpvzohivd3gmRaSlSLSboVD8JeW5Xq8hv4jkuwyNXRdPbW2Ggrsl5rQhBd0E5/4H+bPztCLlHHHCN99KHIPINTNAAAAAElFTkSuQmCC" alt="加號">
-              </button>
-            </div>
-          </div>
-        </li>
-        <li class="d-flex">
-          <!-- 左側圖片、標題 -->
-          <div class="col col-lg-5 d-flex align-items-center">
-            <img src="/LazyKitchen/assets/carts-img_4-f7f623af.png" alt="奶油雞肉燉飯" class="productImage">
-            <h5 class="m-0 d-none d-lg-block">奶油雞肉燉飯</h5>
-          </div>
-          <!-- 右側內容 lg -->
-          <div class="col col-lg-7 d-none d-lg-flex align-items-center justify-content-between product"
-            data-id="product-D" data-unit-price="128">
-            <p class="m-0" id="unitPrice">$128</p>
-            <div class="d-flex align-items-center product-quantity">
-              <button class="minusBtn border-0">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABFSURBVHgB7c0xCgAhEEPRzLKw7R5NT+gVPJqtIIw2goWljfBflUAgEgDgOrYWbzXILI346xT3aO+XZ302k3NnUhEA4H4d4XUIBJeJ+CcAAAAASUVORK5CYII=" alt="減號">
-              </button>
-              <div class="counter-value custom-fs4" id="counter">1</div>
-              <button class="plusBtn border-0">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACCSURBVHgB7ZZLCoAwDEQnonuP4FW8/8Ij6BFcK3b8oIiKViOULvKWoeVR6CQBjBggmSMkdH3FoaugIIUK/QsTBMaEJoxfKOfCHGpvzohivd3gmRaSlSLSboVD8JeW5Xq8hv4jkuwyNXRdPbW2Ggrsl5rQhBd0E5/4H+bPztCLlHHHCN99KHIPINTNAAAAAElFTkSuQmCC" alt="加號">
-              </button>
-            </div>
-            <p class="m-0 total-price" id="totalPrice">$128</p>
-            <button class="btn p-0 delete-btn">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_524_3968)">
-                  <path
-                    d="M4 8H20V21C20 21.2652 19.8946 21.5196 19.7071 21.7071C19.5196 21.8946 19.2652 22 19 22H5C4.73478 22 4.48043 21.8946 4.29289 21.7071C4.10536 21.5196 4 21.2652 4 21V8ZM6 10V20H18V10H6ZM9 12H11V18H9V12ZM13 12H15V18H13V12ZM7 5V3C7 2.73478 7.10536 2.48043 7.29289 2.29289C7.48043 2.10536 7.73478 2 8 2H16C16.2652 2 16.5196 2.10536 16.7071 2.29289C16.8946 2.48043 17 2.73478 17 3V5H22V7H2V5H7ZM9 4V5H15V4H9Z"
-                    fill="#7E7E7E" />
-                </g>
-                <defs>
-                  <clipPath id="clip0_524_3968">
-                    <rect width="24" height="24" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </button>
-          </div>
-          <!-- 右側內容 sm -->
-          <div class="col d-flex d-lg-none flex-column justify-content-between product" data-id="product-D"
-            data-unit-price="128">
-            <div class="d-flex justify-content-between align-items-center">
-              <h5 class="m-0">奶油雞肉燉飯</h5>
-              <button class="btn p-0 delete-btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_524_3968)">
-                    <path
-                      d="M4 8H20V21C20 21.2652 19.8946 21.5196 19.7071 21.7071C19.5196 21.8946 19.2652 22 19 22H5C4.73478 22 4.48043 21.8946 4.29289 21.7071C4.10536 21.5196 4 21.2652 4 21V8ZM6 10V20H18V10H6ZM9 12H11V18H9V12ZM13 12H15V18H13V12ZM7 5V3C7 2.73478 7.10536 2.48043 7.29289 2.29289C7.48043 2.10536 7.73478 2 8 2H16C16.2652 2 16.5196 2.10536 16.7071 2.29289C16.8946 2.48043 17 2.73478 17 3V5H22V7H2V5H7ZM9 4V5H15V4H9Z"
-                      fill="#7E7E7E" />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_524_3968">
-                      <rect width="24" height="24" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-              </button>
-            </div>
-            <p class="m-0" id="unitPrice">$128</p>
-            <p class="m-0 total-price" id="totalPrice">$128</p>
-            <div class="d-flex align-items-center product-quantity">
-              <button class="minusBtn border-0">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABFSURBVHgB7c0xCgAhEEPRzLKw7R5NT+gVPJqtIIw2goWljfBflUAgEgDgOrYWbzXILI346xT3aO+XZ302k3NnUhEA4H4d4XUIBJeJ+CcAAAAASUVORK5CYII=" alt="減號">
-              </button>
-              <div class="counter-value custom-fs4" id="counter">1</div>
-              <button class="plusBtn border-0">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACCSURBVHgB7ZZLCoAwDEQnonuP4FW8/8Ij6BFcK3b8oIiKViOULvKWoeVR6CQBjBggmSMkdH3FoaugIIUK/QsTBMaEJoxfKOfCHGpvzohivd3gmRaSlSLSboVD8JeW5Xq8hv4jkuwyNXRdPbW2Ggrsl5rQhBd0E5/4H+bPztCLlHHHCN99KHIPINTNAAAAAElFTkSuQmCC" alt="加號">
-              </button>
-            </div>
-          </div>
-        </li>
-        <li class="d-flex">
-          <!-- 左側圖片、標題 -->
-          <div class="col col-lg-5 d-flex align-items-center">
-            <img src="/LazyKitchen/assets/carts-img_5-c09631bd.png" alt="松露薯條" class="productImage">
-            <h5 class="m-0 d-none d-lg-block">松露薯條</h5>
-          </div>
-          <!-- 右側內容 lg -->
-          <div class="col col-lg-7 d-none d-lg-flex align-items-center justify-content-between product"
-            data-id="product-E" data-unit-price="98">
-            <p class="m-0" id="unitPrice">$98</p>
-            <div class="d-flex align-items-center product-quantity">
-              <button class="minusBtn border-0">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABFSURBVHgB7c0xCgAhEEPRzLKw7R5NT+gVPJqtIIw2goWljfBflUAgEgDgOrYWbzXILI346xT3aO+XZ302k3NnUhEA4H4d4XUIBJeJ+CcAAAAASUVORK5CYII=" alt="減號">
-              </button>
-              <div class="counter-value custom-fs4" id="counter">1</div>
-              <button class="plusBtn border-0">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACCSURBVHgB7ZZLCoAwDEQnonuP4FW8/8Ij6BFcK3b8oIiKViOULvKWoeVR6CQBjBggmSMkdH3FoaugIIUK/QsTBMaEJoxfKOfCHGpvzohivd3gmRaSlSLSboVD8JeW5Xq8hv4jkuwyNXRdPbW2Ggrsl5rQhBd0E5/4H+bPztCLlHHHCN99KHIPINTNAAAAAElFTkSuQmCC" alt="加號">
-              </button>
-            </div>
-            <p class="m-0 total-price" id="totalPrice">$98</p>
-            <button class="btn p-0 delete-btn">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_524_3968)">
-                  <path
-                    d="M4 8H20V21C20 21.2652 19.8946 21.5196 19.7071 21.7071C19.5196 21.8946 19.2652 22 19 22H5C4.73478 22 4.48043 21.8946 4.29289 21.7071C4.10536 21.5196 4 21.2652 4 21V8ZM6 10V20H18V10H6ZM9 12H11V18H9V12ZM13 12H15V18H13V12ZM7 5V3C7 2.73478 7.10536 2.48043 7.29289 2.29289C7.48043 2.10536 7.73478 2 8 2H16C16.2652 2 16.5196 2.10536 16.7071 2.29289C16.8946 2.48043 17 2.73478 17 3V5H22V7H2V5H7ZM9 4V5H15V4H9Z"
-                    fill="#7E7E7E" />
-                </g>
-                <defs>
-                  <clipPath id="clip0_524_3968">
-                    <rect width="24" height="24" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </button>
-          </div>
-          <!-- 右側內容 sm -->
-          <div class="col d-flex d-lg-none flex-column justify-content-between product" data-id="product-E"
-            data-unit-price="98">
-            <div class="d-flex justify-content-between align-items-center">
-              <h5 class="m-0">松露薯條</h5>
-              <button class="btn p-0 delete-btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_524_3968)">
-                    <path
-                      d="M4 8H20V21C20 21.2652 19.8946 21.5196 19.7071 21.7071C19.5196 21.8946 19.2652 22 19 22H5C4.73478 22 4.48043 21.8946 4.29289 21.7071C4.10536 21.5196 4 21.2652 4 21V8ZM6 10V20H18V10H6ZM9 12H11V18H9V12ZM13 12H15V18H13V12ZM7 5V3C7 2.73478 7.10536 2.48043 7.29289 2.29289C7.48043 2.10536 7.73478 2 8 2H16C16.2652 2 16.5196 2.10536 16.7071 2.29289C16.8946 2.48043 17 2.73478 17 3V5H22V7H2V5H7ZM9 4V5H15V4H9Z"
-                      fill="#7E7E7E" />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_524_3968">
-                      <rect width="24" height="24" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-              </button>
-            </div>
-            <p class="m-0" id="unitPrice">$98</p>
-            <p class="m-0 total-price" id="totalPrice">$98</p>
-            <div class="d-flex align-items-center product-quantity">
-              <button class="minusBtn border-0">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABFSURBVHgB7c0xCgAhEEPRzLKw7R5NT+gVPJqtIIw2goWljfBflUAgEgDgOrYWbzXILI346xT3aO+XZ302k3NnUhEA4H4d4XUIBJeJ+CcAAAAASUVORK5CYII=" alt="減號">
-              </button>
-              <div class="counter-value custom-fs4" id="counter">1</div>
-              <button class="plusBtn border-0">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACCSURBVHgB7ZZLCoAwDEQnonuP4FW8/8Ij6BFcK3b8oIiKViOULvKWoeVR6CQBjBggmSMkdH3FoaugIIUK/QsTBMaEJoxfKOfCHGpvzohivd3gmRaSlSLSboVD8JeW5Xq8hv4jkuwyNXRdPbW2Ggrsl5rQhBd0E5/4H+bPztCLlHHHCN99KHIPINTNAAAAAElFTkSuQmCC" alt="加號">
-              </button>
-            </div>
-          </div>
-        </li>
-      </ul>
-      <div class="d-flex justify-content-end align-items-center cart-totalPrice">
-        <h4 class="m-0">總金額</h4>
-        <p id="grandTotal"></p>
-      </div>
-      <ul class="cartBtn list-unstyled text-center">
-        <li>
-          <a href="./productAll.html" class="custom-fs4">繼續購物</a>
-        </li>
-        <li>
-          <a href="./orderInfo.html" class="custom-fs4" id="saveCart">訂單結帳</a>
-        </li>
-      </ul>
-    </section>
-    <footer class="footer-bg">
+
+        </section>
+        <footer class="footer-bg">
     <div class="container p-0 footerWrapper">
         <h1> <a href="./index.html"><svg width="180" height="40" viewBox="0 0 180 40" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -574,82 +462,12 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
         </div>
     </div>
 </footer>
-
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-      
-      <script>
-        $(document).ready(function () {
-          // 計算總金額
-          function updateGrandTotal() {
-            let grandTotal = 0;
-            const productTotals = {};
-
-            // 目前固定有五個商品 = 五個 product 包住判斷每一個單獨商品總價
-            // 酖因為大小尺寸各有五個 product，所以這裡加上 :visible，代表看的到的 product 才做計算
-            $('.product:visible').each(function () {
-              const productId = $(this).data('id');
-              const totalPrice = parseInt($(this).find('.total-price').text().replace('$', ''));
-
-              // 因大小尺寸的 product 要做同步不能分開，要不然數量不同
-              // 在大享尺寸同個商品中加上 data-id="product-A"，才能連動大小尺寸
-              if (productTotals[productId]) {
-                productTotals[productId] += totalPrice;
-              } else {
-                productTotals[productId] = totalPrice;
-              }
-            });
-            // 同上
-            for (const id in productTotals) {
-              grandTotal += productTotals[id];
-            }
-
-            $('#grandTotal').text('$' + grandTotal);
-          }
-
-          // 處理商品數量的變動
-          $('.product-quantity button').click(function () {
-            const product = $(this).closest('.product');
-            const productId = product.data('id');
-            const unitPrice = parseInt(product.data('unit-price')); // 獲取單價
-            const counter = product.find('.counter-value');
-            let value = parseInt(counter.text());
-
-            // 增加或減少數量
-            if ($(this).hasClass('plusBtn') && value < 9) {
-              value += 1;
-            } else if ($(this).hasClass('minusBtn') && value > 1) {
-              value -= 1;
-            }
-
-            // 同步更新相同 data-id 的其他元素
-            $(`.product[data-id="${productId}"] .counter-value`).text(value);
-
-            // 更新單一商品的總價
-            const totalPrice = unitPrice * value;
-            $(`.product[data-id="${productId}"] .total-price`).text('$' + totalPrice);
-
-            // 更新所有商品的總計
-            updateGrandTotal();
-          });
-
-          // 刪除功能
-          const deleteButtons = $('.delete-btn');
-
-          deleteButtons.each(function () {
-            $(this).on('click', function () {
-              const listItem = $(this).closest('li');
-              if (listItem.length) {
-                listItem.remove();
-                // 更新所有商品的總計
-                updateGrandTotal();
-              }
-            });
-          });
-
-          // 初次載入頁面時更新總計
-          updateGrandTotal();
-        });
-      </script>
+            <!-- 引入 jQuery -->
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <!-- 引入 jQuery Validation Plugin -->
+            <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+            
+</body>
 </body>
 
 </html>
