@@ -68,8 +68,6 @@ img {
       line-height: 1.2;
     }
   }
-
-
 }
 
 @media (max-width: 992px) {
@@ -113,8 +111,6 @@ img {
         line-height: 1.5;
       }
     }
-
-
   }
 }
 
@@ -203,7 +199,6 @@ img {
   justify-content: end;
   gap: 24px;
   margin-bottom: 100px;
-
   a {
     padding: 12px 40px;
     width: 100%;
@@ -217,25 +212,25 @@ img {
 
   li:nth-child(1) {
     border: 1px solid #ad4214;
-
+    background-color: #fff3e5;
     a {
       color: #ad4214;
     }
 
     &:hover {
-      background-color: #fff3e5;
+      background-color: #fafcfe;
     }
   }
 
   li:nth-child(2) {
-    background-color: #8a3510;
+    background-color: #ad4214;
 
     a {
       color: white;
     }
 
     &:hover {
-      background-color: #ad4214;
+      background-color: #8a3510;
     }
   }
 }
@@ -287,9 +282,9 @@ img {
 
   /* 設置 input 聚焦時的邊框和陰影顏色 */
   .form-control:focus {
-    border-color: #7E7E7E;
+    border-color: #7e7e7e;
     /* 邊框顏色 */
-    box-shadow: 0 0 5px #7E7E7E;
+    box-shadow: 0 0 5px #7e7e7e;
     /* 光圈陰影效果 */
     // outline: none; /* 移除默認的 outline */
   }

@@ -1,3 +1,10 @@
+// 回上方按鈕
+.backTotop {
+  position: fixed;
+  display: none;
+  cursor: pointer;
+  z-index: 1000;
+}
 .feature-banner {
   padding: 80px 0;
   background-color: #fff3e5;
@@ -39,7 +46,7 @@
   }
 }
 
-.feature-cartBtn {
+.featureBtn {
   display: flex;
   justify-content: end;
   gap: 24px;
@@ -69,10 +76,9 @@
   }
 
   li:nth-child(2) {
-    background-color: #8a3510;
-
+    background-color: #ad4214;
     &:hover {
-      background-color: #ad4214;
+      background-color: #8a3510;
     }
 
     a {
@@ -206,12 +212,4 @@
       padding: 20px;
     }
   }
-}
-
-// 回上方按鈕
-.backTotop {
-  position: fixed;
-  display: none;
-  cursor: pointer;
-  z-index: 1000;
 }
