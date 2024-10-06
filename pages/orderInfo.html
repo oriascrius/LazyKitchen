@@ -10,81 +10,82 @@
 
 <body>
   <%- include('./layout/header'); -%>
-    <!-- banner -->
-    <section class="bannerImg"></section>
-    <!-- 購物車步驟 -->
-    <section class="container">
-      <div class="row">
-        <div class="col">
-          <ul class="shoppingSteps text-center list-unstyled m-0">
-            <li>
-              <h3 class="m-0">STEP 1</h3>
-              <h4 class="m-0">確認購物車</h4>
-            </li>
-            <li class="current">
-              <h3 class="m-0">STEP 2</h3>
-              <h4 class="m-0">填寫訂單資訊</h4>
-            </li>
-            <li>
-              <h3 class="m-0">STEP 3</h3>
-              <h4 class="m-0">確認付款資訊</h4>
-            </li>
-            <li>
-              <h3 class="m-0">STEP 4</h3>
-              <h4 class="m-0">完成訂購</h4>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <h2 class="m-0 text-center" style="padding-bottom: 40px; color:#AD4214;">訂購資訊</h2>
-    <!-- 訂購資訊表單 -->
-    <section class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-6">
-          <form class="orderInfo-form" id="orderForm">
-            <div class="form-group">
-              <label for="name">收件人姓名</label>
-              <input type="text" class="form-control" id="name" name="name" placeholder="王小明" required>
-            </div>
-            <div class="form-group">
-              <label for="phone">收件人電話</label>
-              <input type="text" class="form-control" id="phone" name="phone" placeholder="0912-123-123" required>
-            </div>
-            <div class="form-group">
-              <label for="email">電子信箱</label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="例：123@mail.com" required>
-            </div>
-            <div class="form-group">
-              <label for="address">收件地址</label>
-              <input type="text" class="form-control" id="address" name="address" placeholder="請輸入收件地址" required>
-            </div>
-            <div class="form-group">
-              <label for="payment">付款方式</label>
-              <select class="form-control" id="payment" name="payment" required>
-                <option value="" disabled selected hidden>請選擇付款方式</option>
-                <option value="credit-card">信用卡</option>
-                <option value="cod">貨到付款</option>
-                <option value="bank-transfer">銀行轉帳</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="note">備註</label>
-              <textarea class="form-control" id="note" name="note" rows="3" placeholder="請輸入備註"></textarea>
-            </div>
-            <ul class="cartBtn list-unstyled text-center">
+    <main>
+      <!-- banner -->
+      <section class="bannerImg"></section>
+      <!-- 購物車步驟 -->
+      <section class="container">
+        <div class="row">
+          <div class="col">
+            <ul class="shoppingSteps text-center list-unstyled m-0">
               <li>
-                <a href="./shoppingCart.html" class="custom-fs4">回上一頁</a>
+                <h3 class="m-0">STEP 1</h3>
+                <h4 class="m-0">確認購物車</h4>
+              </li>
+              <li class="current">
+                <h3 class="m-0">STEP 2</h3>
+                <h4 class="m-0">填寫訂單資訊</h4>
               </li>
               <li>
-                <a href="./paymentConfirmation.html" class="custom-fs4">前往付款</a>
+                <h3 class="m-0">STEP 3</h3>
+                <h4 class="m-0">確認付款資訊</h4>
+              </li>
+              <li>
+                <h3 class="m-0">STEP 4</h3>
+                <h4 class="m-0">完成訂購</h4>
               </li>
             </ul>
-          </form>
+          </div>
         </div>
-      </div>
-    </section>
-
+      </section>
+      <h2 class="m-0 text-center" style="padding-bottom: 40px; color:#AD4214;">訂購資訊</h2>
+      <!-- 訂購資訊表單 -->
+      <section class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <form class="orderInfo-form" id="orderForm">
+              <div class="form-group">
+                <label for="name">收件人姓名</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="王小明" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">收件人電話</label>
+                <input type="text" class="form-control" id="phone" name="phone" placeholder="0912-123-123" required>
+              </div>
+              <div class="form-group">
+                <label for="email">電子信箱</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="例：123@mail.com" required>
+              </div>
+              <div class="form-group">
+                <label for="address">收件地址</label>
+                <input type="text" class="form-control" id="address" name="address" placeholder="請輸入收件地址" required>
+              </div>
+              <div class="form-group">
+                <label for="payment">付款方式</label>
+                <select class="form-control" id="payment" name="payment" required>
+                  <option value="" disabled selected hidden>請選擇付款方式</option>
+                  <option value="credit-card">信用卡</option>
+                  <option value="cod">貨到付款</option>
+                  <option value="bank-transfer">銀行轉帳</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="note">備註</label>
+                <textarea class="form-control" id="note" name="note" rows="3" placeholder="請輸入備註"></textarea>
+              </div>
+              <ul class="cartBtn list-unstyled text-center">
+                <li>
+                  <a href="./shoppingCart.html" class="custom-fs4">回上一頁</a>
+                </li>
+                <li>
+                  <a href="./paymentConfirmation.html" class="custom-fs4">前往付款</a>
+                </li>
+              </ul>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
     <%- include('./layout/footer'); -%>
       <!-- 引入 jQuery -->
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

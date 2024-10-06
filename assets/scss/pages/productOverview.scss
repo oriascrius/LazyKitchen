@@ -12,7 +12,7 @@
   .row {
     gap: 20px;
   }
-  //  分類選擇框
+  //  分類搜尋框
   .dropdown {
     .btn {
       border-radius: 4px;
@@ -23,8 +23,8 @@
       text-align: left;
 
       &:focus {
-        box-shadow: none; /* 去除阴影或光圈 */
-        outline: none; /* 去除默认轮廓 */
+        box-shadow: none;
+        outline: none;
         background-color: transparent;
       }
       &:hover {
@@ -75,7 +75,7 @@
         color: #ad4214;
       }
       &:focus {
-        box-shadow: none; /* 去除陰影或光圈 */
+        box-shadow: none;
       }
     }
     svg {
@@ -98,6 +98,7 @@
   }
 }
 
+// 熱門商品
 .popularProducts {
   background-image: url("../../images/qoq-imgs/bigBg.png");
   padding: 0 0 143px 0;
@@ -127,7 +128,7 @@
         font-size: 24px;
         letter-spacing: 0.02em;
         line-height: 1.2;
-        @media (max-width: 375px) {
+        @media (max-width: 1200px) {
           font-weight: bold;
           font-size: 20px;
           letter-spacing: 0.02em;
@@ -141,7 +142,7 @@
     img {
       width: 198px;
       height: 198px;
-      left: 50%; /* 移动到容器的中间 */
+      left: 50%;
       transform: translateX(-50%);
       top: -116px;
       @media (max-width: 992px) {
@@ -170,6 +171,72 @@
     }
     .pageActive {
       color: #ad4214;
+    }
+    .page-link:focus {
+      background-color: 0;
+      box-shadow: 0;
+    }
+  }
+}
+// 懶人分類
+.productCategory {
+  background-image: url("../../images/qoq-imgs/productCategoryBg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding: 100px 0;
+  @media (max-width: 992px) {
+    padding: 60px 0;
+  }
+  h2,
+  h3 {
+    padding: 0 0 40px 0;
+    @media (max-width: 992px) {
+      padding: 0 0 28px 0;
+    }
+  }
+  // 分類內容
+  .tab-content {
+    img {
+      width: 198px;
+      height: 198px;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -116px;
+      @media (max-width: 992px) {
+        width: 128px;
+        height: 128px;
+        transform: translateX(-50%);
+        top: -64px;
+      }
+    }
+  }
+  // 分類標籤
+  .nav-tabs {
+    gap: 40px;
+    font-size: 24px;
+    @media (max-width: 992px) {
+      font-size: 20px;
+    }
+  }
+  .nav-link {
+    padding: 0 0 4px 0;
+  }
+  .nav-tabs .nav-link {
+    color: #7e7e7e;
+  }
+  .nav-tabs .nav-link.active {
+    color: #ad4214;
+    background-color: transparent;
+    border-color: transparent;
+    border-bottom: 3px solid #ad4214;
+  }
+  .quickCooking {
+    h2 {
+      padding: 100px 0 40px 0;
+      @media (max-width: 992px) {
+        padding: 60px 0 28px 0;
+      }
     }
   }
 }
