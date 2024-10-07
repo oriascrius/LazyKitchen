@@ -676,11 +676,36 @@
     </div>
      
 
-    <!-- QA -->
+    <!-----    Q & A   ----->
+
+
+
     <%- include('./layout/Q&A'); -%>
 
-    <!-- footer -->
+
+
+    <!-----   Footer   ----->
+
+
+
     <%- include('./layout/footer'); -%>
+
+
+
+
+
+
+    <!-----   回到最上面按鈕   ----->
+
+
+
+    <a id="btt" class="border-0 p-0 btt-btn" href="#">
+      <img class="w-100" src="/assets/images/dog-house/back-to-top.png" alt="back-to-top-img">
+    </a>
+
+
+
+
 
 
 
@@ -696,11 +721,13 @@
 
 
 
-    <!-----   熱門商品   ----->
-
-
-
     <script>
+
+      // <-----   熱門商品   -----> //
+
+
+
+
       var swiper = new Swiper(".hot-swiper", {
         slidesPerView: 3,
         spaceBetween: 40,
@@ -747,6 +774,26 @@
         
         centeredSlides: true,
       });
+    </script>
+
+
+
+    <!-----   回到最上面按鈕   ----->
+
+
+
+    <script>
+      window.onscroll = function() {
+
+        let button = document.getElementById('btt');
+
+
+        if (window.scrollY > 700) {
+          button.classList.add('scrolled');
+          } else {
+            button.classList.remove('scrolled');
+          }
+        };
     </script>
   </body>
 </html>

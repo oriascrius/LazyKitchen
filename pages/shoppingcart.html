@@ -10,77 +10,58 @@
 
 <body>
   <%- include('./layout/header'); -%>
-    <!-- banner -->
-    <section class="bannerImg"></section>
-    <!-- 購物車步驟 -->
-    <section class="container">
-      <div class="row">
-        <div class="col">
-          <ul class="shoppingSteps text-center list-unstyled m-0">
-            <li class="current">
-              <h3 class="m-0">STEP 1</h3>
-              <h4 class="m-0">確認購物車</h4>
-            </li>
-            <li>
-              <h3 class="m-0">STEP 2</h3>
-              <h4 class="m-0">填寫訂單資訊</h4>
-            </li>
-            <li>
-              <h3 class="m-0">STEP 3</h3>
-              <h4 class="m-0">確認付款資訊</h4>
-            </li>
-            <li>
-              <h3 class="m-0">STEP 4</h3>
-              <h4 class="m-0">完成訂購</h4>
-            </li>
-          </ul>
+    <main>
+      <!-- banner -->
+      <section class="bannerImg"></section>
+      <!-- 購物車步驟 -->
+      <section class="container">
+        <div class="row">
+          <div class="col">
+            <ul class="shoppingSteps text-center list-unstyled m-0">
+              <li class="current">
+                <h3 class="m-0">STEP 1</h3>
+                <h4 class="m-0">確認購物車</h4>
+              </li>
+              <li>
+                <h3 class="m-0">STEP 2</h3>
+                <h4 class="m-0">填寫訂單資訊</h4>
+              </li>
+              <li>
+                <h3 class="m-0">STEP 3</h3>
+                <h4 class="m-0">確認付款資訊</h4>
+              </li>
+              <li>
+                <h3 class="m-0">STEP 4</h3>
+                <h4 class="m-0">完成訂購</h4>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </section>
-    <h2 class="m-0 text-center" style="padding-bottom: 40px; color:#AD4214;">購物清單</h2>
-    <!-- 購物車清單 -->
-    <section class="container">
-      <ul class="row m-0 list-unstyled cartList">
-        <li class="d-flex">
-          <!-- 左側圖片、標題 -->
-          <div class="col col-lg-5 d-flex align-items-center">
-            <img src="../assets/images/qoq-imgs/carts-img_1.png" alt="韓式辣炒年糕" class="productImage">
-            <h5 class="m-0 d-none d-lg-block">韓式辣炒年糕</h5>
-          </div>
-          <!-- 右側內容 lg -->
-          <div class="col col-lg-7 d-none d-lg-flex align-items-center justify-content-between product"
-            data-id="product-A" data-unit-price="168">
-            <p class="m-0" id="unitPrice">$168</p>
-            <div class="d-flex align-items-center product-quantity">
-              <button class="minusBtn border-0">
-                <img src="../assets/images/qoq-imgs/minusBtn.png" alt="減號">
-              </button>
-              <div class="counter-value" id="counter">1</div>
-              <button class="plusBtn border-0">
-                <img src="../assets/images/qoq-imgs/plusBtn.png" alt="加號">
-              </button>
+      </section>
+      <h2 class="m-0 text-center" style="padding-bottom: 40px; color:#AD4214;">購物清單</h2>
+      <!-- 購物車清單 -->
+      <section class="container">
+        <ul class="row m-0 list-unstyled cartList">
+          <li class="d-flex">
+            <!-- 左側圖片、標題 -->
+            <div class="col col-lg-5 d-flex align-items-center">
+              <img src="../assets/images/qoq-imgs/carts-img_1.png" alt="韓式辣炒年糕" class="productImage">
+              <h5 class="m-0 d-none d-lg-block productName">韓式辣炒年糕</h5>
             </div>
-            <p class="m-0 total-price" id="totalPrice">$168</p>
-            <button class="btn p-0 delete-btn">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_524_3968)">
-                  <path
-                    d="M4 8H20V21C20 21.2652 19.8946 21.5196 19.7071 21.7071C19.5196 21.8946 19.2652 22 19 22H5C4.73478 22 4.48043 21.8946 4.29289 21.7071C4.10536 21.5196 4 21.2652 4 21V8ZM6 10V20H18V10H6ZM9 12H11V18H9V12ZM13 12H15V18H13V12ZM7 5V3C7 2.73478 7.10536 2.48043 7.29289 2.29289C7.48043 2.10536 7.73478 2 8 2H16C16.2652 2 16.5196 2.10536 16.7071 2.29289C16.8946 2.48043 17 2.73478 17 3V5H22V7H2V5H7ZM9 4V5H15V4H9Z"
-                    fill="#7E7E7E" />
-                </g>
-                <defs>
-                  <clipPath id="clip0_524_3968">
-                    <rect width="24" height="24" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </button>
-          </div>
-          <!-- 右側內容 sm -->
-          <div class="col d-flex d-lg-none flex-column justify-content-between product" data-id="product-A"
-            data-unit-price="168">
-            <div class="d-flex justify-content-between align-items-center">
-              <h5 class="m-0">韓式辣炒年糕</h5>
+            <!-- 右側內容 lg -->
+            <div class="col col-lg-7 d-none d-lg-flex align-items-center justify-content-between product"
+              data-id="product-A" data-unit-price="168">
+              <p class="m-0" id="unitPrice">$168</p>
+              <div class="d-flex align-items-center product-quantity">
+                <button class="minusBtn border-0">
+                  <img src="../assets/images/qoq-imgs/minusBtn.png" alt="減號">
+                </button>
+                <div class="counter-value custom-fs4" id="counter">1</div>
+                <button class="plusBtn border-0">
+                  <img src="../assets/images/qoq-imgs/plusBtn.png" alt="加號">
+                </button>
+              </div>
+              <p class="m-0 total-price" id="totalPrice">$168</p>
               <button class="btn p-0 delete-btn">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_524_3968)">
@@ -96,59 +77,59 @@
                 </svg>
               </button>
             </div>
-            <p class="m-0" id="unitPrice">$168</p>
-            <p class="m-0 total-price" id="totalPrice">$168</p>
-            <div class="d-flex align-items-center product-quantity">
-              <button class="minusBtn border-0">
-                <img src="../assets/images/qoq-imgs/minusBtn.png" alt="減號">
-              </button>
-              <div class="counter-value" id="counter">1</div>
-              <button class="plusBtn border-0">
-                <img src="../assets/images/qoq-imgs/plusBtn.png" alt="加號">
-              </button>
+            <!-- 右側內容 sm -->
+            <div class="col d-flex d-lg-none flex-column justify-content-between product" data-id="product-A"
+              data-unit-price="168">
+              <div class="d-flex justify-content-between align-items-center">
+                <h5 class="m-0 productName">韓式辣炒年糕</h5>
+                <button class="btn p-0 delete-btn">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_524_3968)">
+                      <path
+                        d="M4 8H20V21C20 21.2652 19.8946 21.5196 19.7071 21.7071C19.5196 21.8946 19.2652 22 19 22H5C4.73478 22 4.48043 21.8946 4.29289 21.7071C4.10536 21.5196 4 21.2652 4 21V8ZM6 10V20H18V10H6ZM9 12H11V18H9V12ZM13 12H15V18H13V12ZM7 5V3C7 2.73478 7.10536 2.48043 7.29289 2.29289C7.48043 2.10536 7.73478 2 8 2H16C16.2652 2 16.5196 2.10536 16.7071 2.29289C16.8946 2.48043 17 2.73478 17 3V5H22V7H2V5H7ZM9 4V5H15V4H9Z"
+                        fill="#7E7E7E" />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_524_3968">
+                        <rect width="24" height="24" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
+              </div>
+              <p class="m-0" id="unitPrice">$168</p>
+              <p class="m-0 total-price" id="totalPrice">$168</p>
+              <div class="d-flex align-items-center product-quantity">
+                <button class="minusBtn border-0">
+                  <img src="../assets/images/qoq-imgs/minusBtn.png" alt="減號">
+                </button>
+                <div class="counter-value custom-fs4" id="counter">1</div>
+                <button class="plusBtn border-0">
+                  <img src="../assets/images/qoq-imgs/plusBtn.png" alt="加號">
+                </button>
+              </div>
             </div>
-          </div>
-        </li>
-        <li class="d-flex">
-          <!-- 左側圖片、標題 -->
-          <div class="col col-lg-5 d-flex align-items-center">
-            <img src="../assets/images/qoq-imgs/carts-img_1.png" alt="滷牛腱" class="productImage">
-            <h5 class="m-0 d-none d-lg-block">滷牛腱</h5>
-          </div>
-          <!-- 右側內容 lg -->
-          <div class="col col-lg-7 d-none d-lg-flex align-items-center justify-content-between product"
-            data-id="product-B" data-unit-price="228">
-            <p class="m-0" id="unitPrice">$228</p>
-            <div class="d-flex align-items-center product-quantity">
-              <button class="minusBtn border-0">
-                <img src="../assets/images/qoq-imgs/minusBtn.png" alt="減號">
-              </button>
-              <div class="counter-value" id="counter">1</div>
-              <button class="plusBtn border-0">
-                <img src="../assets/images/qoq-imgs/plusBtn.png" alt="加號">
-              </button>
+          </li>
+          <li class="d-flex">
+            <!-- 左側圖片、標題 -->
+            <div class="col col-lg-5 d-flex align-items-center">
+              <img src="../assets/images/qoq-imgs/carts-img_2.png" alt="滷牛腱" class="productImage">
+              <h5 class="m-0 d-none d-lg-block">滷牛腱</h5>
             </div>
-            <p class="m-0 total-price" id="totalPrice">$228</p>
-            <button class="btn p-0 delete-btn">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_524_3968)">
-                  <path
-                    d="M4 8H20V21C20 21.2652 19.8946 21.5196 19.7071 21.7071C19.5196 21.8946 19.2652 22 19 22H5C4.73478 22 4.48043 21.8946 4.29289 21.7071C4.10536 21.5196 4 21.2652 4 21V8ZM6 10V20H18V10H6ZM9 12H11V18H9V12ZM13 12H15V18H13V12ZM7 5V3C7 2.73478 7.10536 2.48043 7.29289 2.29289C7.48043 2.10536 7.73478 2 8 2H16C16.2652 2 16.5196 2.10536 16.7071 2.29289C16.8946 2.48043 17 2.73478 17 3V5H22V7H2V5H7ZM9 4V5H15V4H9Z"
-                    fill="#7E7E7E" />
-                </g>
-                <defs>
-                  <clipPath id="clip0_524_3968">
-                    <rect width="24" height="24" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </button>
-          </div>
-          <!-- 右側內容 sm -->
-          <div class="col d-flex d-lg-none flex-column justify-content-between product" data-id="product-B"
-            data-unit-price="228">
-            <div class="d-flex justify-content-between align-items-center">
-              <h5 class="m-0">滷牛腱</h5>
+            <!-- 右側內容 lg -->
+            <div class="col col-lg-7 d-none d-lg-flex align-items-center justify-content-between product"
+              data-id="product-B" data-unit-price="228">
+              <p class="m-0" id="unitPrice">$228</p>
+              <div class="d-flex align-items-center product-quantity">
+                <button class="minusBtn border-0">
+                  <img src="../assets/images/qoq-imgs/minusBtn.png" alt="減號">
+                </button>
+                <div class="counter-value custom-fs4" id="counter">1</div>
+                <button class="plusBtn border-0">
+                  <img src="../assets/images/qoq-imgs/plusBtn.png" alt="加號">
+                </button>
+              </div>
+              <p class="m-0 total-price" id="totalPrice">$228</p>
               <button class="btn p-0 delete-btn">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_524_3968)">
@@ -164,58 +145,59 @@
                 </svg>
               </button>
             </div>
-            <p class="m-0" id="unitPrice">$228</p>
-            <p class="m-0 total-price" id="totalPrice">$228</p>
-            <div class="d-flex align-items-center product-quantity">
-              <button class="minusBtn border-0">
-                <img src="../assets/images/qoq-imgs/minusBtn.png" alt="減號">
-              </button>
-              <div class="counter-value" id="counter">1</div>
-              <button class="plusBtn border-0">
-                <img src="../assets/images/qoq-imgs/plusBtn.png" alt="加號">
-              </button>
+            <!-- 右側內容 sm -->
+            <div class="col d-flex d-lg-none flex-column justify-content-between product" data-id="product-B"
+              data-unit-price="228">
+              <div class="d-flex justify-content-between align-items-center">
+                <h5 class="m-0">滷牛腱</h5>
+                <button class="btn p-0 delete-btn">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_524_3968)">
+                      <path
+                        d="M4 8H20V21C20 21.2652 19.8946 21.5196 19.7071 21.7071C19.5196 21.8946 19.2652 22 19 22H5C4.73478 22 4.48043 21.8946 4.29289 21.7071C4.10536 21.5196 4 21.2652 4 21V8ZM6 10V20H18V10H6ZM9 12H11V18H9V12ZM13 12H15V18H13V12ZM7 5V3C7 2.73478 7.10536 2.48043 7.29289 2.29289C7.48043 2.10536 7.73478 2 8 2H16C16.2652 2 16.5196 2.10536 16.7071 2.29289C16.8946 2.48043 17 2.73478 17 3V5H22V7H2V5H7ZM9 4V5H15V4H9Z"
+                        fill="#7E7E7E" />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_524_3968">
+                        <rect width="24" height="24" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
+              </div>
+              <p class="m-0" id="unitPrice">$228</p>
+              <p class="m-0 total-price" id="totalPrice">$228</p>
+              <div class="d-flex align-items-center product-quantity">
+                <button class="minusBtn border-0">
+                  <img src="../assets/images/qoq-imgs/minusBtn.png" alt="減號">
+                </button>
+                <div class="counter-value custom-fs4" id="counter">1</div>
+                <button class="plusBtn border-0">
+                  <img src="../assets/images/qoq-imgs/plusBtn.png" alt="加號">
+                </button>
+              </div>
             </div>
-          </div>
-        </li>
-        <li class="d-flex">
-          <!-- 左側圖片、標題 -->
-          <div class="col col-lg-5 d-flex align-items-center">
-            <img src="../assets/images/qoq-imgs/carts-img_1.png" alt="宮保雞丁" class="productImage">
-            <h5 class="m-0 d-none d-lg-block">宮保雞丁</h5>
-          </div>
-          <!-- 右側內容 lg -->
-          <div class="col col-lg-7 d-none d-lg-flex align-items-center justify-content-between product" data-id="product-C"
-            data-unit-price="128">
-            <p class="m-0" id="unitPrice">$128</p>
-            <div class="d-flex align-items-center product-quantity">
-              <button class="minusBtn border-0">
-                <img src="../assets/images/qoq-imgs/minusBtn.png" alt="減號">
-              </button>
-              <div class="counter-value" id="counter">1</div>
-              <button class="plusBtn border-0">
-                <img src="../assets/images/qoq-imgs/plusBtn.png" alt="加號">
-              </button>
+          </li>
+          <li class="d-flex">
+            <!-- 左側圖片、標題 -->
+            <div class="col col-lg-5 d-flex align-items-center">
+              <img src="../assets/images/qoq-imgs/carts-img_3.png" alt="宮保雞丁" class="productImage">
+              <h5 class="m-0 d-none d-lg-block">宮保雞丁</h5>
             </div>
-            <p class="m-0 total-price" id="totalPrice">$128</p>
-            <button class="btn p-0 delete-btn">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_524_3968)">
-                  <path
-                    d="M4 8H20V21C20 21.2652 19.8946 21.5196 19.7071 21.7071C19.5196 21.8946 19.2652 22 19 22H5C4.73478 22 4.48043 21.8946 4.29289 21.7071C4.10536 21.5196 4 21.2652 4 21V8ZM6 10V20H18V10H6ZM9 12H11V18H9V12ZM13 12H15V18H13V12ZM7 5V3C7 2.73478 7.10536 2.48043 7.29289 2.29289C7.48043 2.10536 7.73478 2 8 2H16C16.2652 2 16.5196 2.10536 16.7071 2.29289C16.8946 2.48043 17 2.73478 17 3V5H22V7H2V5H7ZM9 4V5H15V4H9Z"
-                    fill="#7E7E7E" />
-                </g>
-                <defs>
-                  <clipPath id="clip0_524_3968">
-                    <rect width="24" height="24" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </button>
-          </div>
-          <!-- 右側內容 sm -->
-          <div class="col d-flex d-lg-none flex-column justify-content-between product" data-id="product-C" data-unit-price="128">
-            <div class="d-flex justify-content-between align-items-center">
-              <h5 class="m-0">宮保雞丁</h5>
+            <!-- 右側內容 lg -->
+            <div class="col col-lg-7 d-none d-lg-flex align-items-center justify-content-between product"
+              data-id="product-C" data-unit-price="128">
+              <p class="m-0" id="unitPrice">$128</p>
+              <div class="d-flex align-items-center product-quantity">
+                <button class="minusBtn border-0">
+                  <img src="../assets/images/qoq-imgs/minusBtn.png" alt="減號">
+                </button>
+                <div class="counter-value custom-fs4" id="counter">1</div>
+                <button class="plusBtn border-0">
+                  <img src="../assets/images/qoq-imgs/plusBtn.png" alt="加號">
+                </button>
+              </div>
+              <p class="m-0 total-price" id="totalPrice">$128</p>
               <button class="btn p-0 delete-btn">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_524_3968)">
@@ -231,58 +213,59 @@
                 </svg>
               </button>
             </div>
-            <p class="m-0" id="unitPrice">$128</p>
-            <p class="m-0 total-price" id="totalPrice">$128</p>
-            <div class="d-flex align-items-center product-quantity">
-              <button class="minusBtn border-0">
-                <img src="../assets/images/qoq-imgs/minusBtn.png" alt="減號">
-              </button>
-              <div class="counter-value" id="counter">1</div>
-              <button class="plusBtn border-0">
-                <img src="../assets/images/qoq-imgs/plusBtn.png" alt="加號">
-              </button>
+            <!-- 右側內容 sm -->
+            <div class="col d-flex d-lg-none flex-column justify-content-between product" data-id="product-C"
+              data-unit-price="128">
+              <div class="d-flex justify-content-between align-items-center">
+                <h5 class="m-0">宮保雞丁</h5>
+                <button class="btn p-0 delete-btn">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_524_3968)">
+                      <path
+                        d="M4 8H20V21C20 21.2652 19.8946 21.5196 19.7071 21.7071C19.5196 21.8946 19.2652 22 19 22H5C4.73478 22 4.48043 21.8946 4.29289 21.7071C4.10536 21.5196 4 21.2652 4 21V8ZM6 10V20H18V10H6ZM9 12H11V18H9V12ZM13 12H15V18H13V12ZM7 5V3C7 2.73478 7.10536 2.48043 7.29289 2.29289C7.48043 2.10536 7.73478 2 8 2H16C16.2652 2 16.5196 2.10536 16.7071 2.29289C16.8946 2.48043 17 2.73478 17 3V5H22V7H2V5H7ZM9 4V5H15V4H9Z"
+                        fill="#7E7E7E" />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_524_3968">
+                        <rect width="24" height="24" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
+              </div>
+              <p class="m-0" id="unitPrice">$128</p>
+              <p class="m-0 total-price" id="totalPrice">$128</p>
+              <div class="d-flex align-items-center product-quantity">
+                <button class="minusBtn border-0">
+                  <img src="../assets/images/qoq-imgs/minusBtn.png" alt="減號">
+                </button>
+                <div class="counter-value custom-fs4" id="counter">1</div>
+                <button class="plusBtn border-0">
+                  <img src="../assets/images/qoq-imgs/plusBtn.png" alt="加號">
+                </button>
+              </div>
             </div>
-          </div>
-        </li>
-        <li class="d-flex">
-          <!-- 左側圖片、標題 -->
-          <div class="col col-lg-5 d-flex align-items-center">
-            <img src="../assets/images/qoq-imgs/carts-img_1.png" alt="奶油雞肉燉飯" class="productImage">
-            <h5 class="m-0 d-none d-lg-block">奶油雞肉燉飯</h5>
-          </div>
-          <!-- 右側內容 lg -->
-          <div class="col col-lg-7 d-none d-lg-flex align-items-center justify-content-between product" data-id="product-D"
-            data-unit-price="128">
-            <p class="m-0" id="unitPrice">$128</p>
-            <div class="d-flex align-items-center product-quantity">
-              <button class="minusBtn border-0">
-                <img src="../assets/images/qoq-imgs/minusBtn.png" alt="減號">
-              </button>
-              <div class="counter-value" id="counter">1</div>
-              <button class="plusBtn border-0">
-                <img src="../assets/images/qoq-imgs/plusBtn.png" alt="加號">
-              </button>
+          </li>
+          <li class="d-flex">
+            <!-- 左側圖片、標題 -->
+            <div class="col col-lg-5 d-flex align-items-center">
+              <img src="../assets/images/qoq-imgs/carts-img_4.png" alt="奶油雞肉燉飯" class="productImage">
+              <h5 class="m-0 d-none d-lg-block">奶油雞肉燉飯</h5>
             </div>
-            <p class="m-0 total-price" id="totalPrice">$128</p>
-            <button class="btn p-0 delete-btn">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_524_3968)">
-                  <path
-                    d="M4 8H20V21C20 21.2652 19.8946 21.5196 19.7071 21.7071C19.5196 21.8946 19.2652 22 19 22H5C4.73478 22 4.48043 21.8946 4.29289 21.7071C4.10536 21.5196 4 21.2652 4 21V8ZM6 10V20H18V10H6ZM9 12H11V18H9V12ZM13 12H15V18H13V12ZM7 5V3C7 2.73478 7.10536 2.48043 7.29289 2.29289C7.48043 2.10536 7.73478 2 8 2H16C16.2652 2 16.5196 2.10536 16.7071 2.29289C16.8946 2.48043 17 2.73478 17 3V5H22V7H2V5H7ZM9 4V5H15V4H9Z"
-                    fill="#7E7E7E" />
-                </g>
-                <defs>
-                  <clipPath id="clip0_524_3968">
-                    <rect width="24" height="24" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </button>
-          </div>
-          <!-- 右側內容 sm -->
-          <div class="col d-flex d-lg-none flex-column justify-content-between product" data-id="product-D" data-unit-price="128">
-            <div class="d-flex justify-content-between align-items-center">
-              <h5 class="m-0">奶油雞肉燉飯</h5>
+            <!-- 右側內容 lg -->
+            <div class="col col-lg-7 d-none d-lg-flex align-items-center justify-content-between product"
+              data-id="product-D" data-unit-price="128">
+              <p class="m-0" id="unitPrice">$128</p>
+              <div class="d-flex align-items-center product-quantity">
+                <button class="minusBtn border-0">
+                  <img src="../assets/images/qoq-imgs/minusBtn.png" alt="減號">
+                </button>
+                <div class="counter-value custom-fs4" id="counter">1</div>
+                <button class="plusBtn border-0">
+                  <img src="../assets/images/qoq-imgs/plusBtn.png" alt="加號">
+                </button>
+              </div>
+              <p class="m-0 total-price" id="totalPrice">$128</p>
               <button class="btn p-0 delete-btn">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_524_3968)">
@@ -298,58 +281,59 @@
                 </svg>
               </button>
             </div>
-            <p class="m-0" id="unitPrice">$128</p>
-            <p class="m-0 total-price" id="totalPrice">$128</p>
-            <div class="d-flex align-items-center product-quantity">
-              <button class="minusBtn border-0">
-                <img src="../assets/images/qoq-imgs/minusBtn.png" alt="減號">
-              </button>
-              <div class="counter-value" id="counter">1</div>
-              <button class="plusBtn border-0">
-                <img src="../assets/images/qoq-imgs/plusBtn.png" alt="加號">
-              </button>
+            <!-- 右側內容 sm -->
+            <div class="col d-flex d-lg-none flex-column justify-content-between product" data-id="product-D"
+              data-unit-price="128">
+              <div class="d-flex justify-content-between align-items-center">
+                <h5 class="m-0">奶油雞肉燉飯</h5>
+                <button class="btn p-0 delete-btn">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_524_3968)">
+                      <path
+                        d="M4 8H20V21C20 21.2652 19.8946 21.5196 19.7071 21.7071C19.5196 21.8946 19.2652 22 19 22H5C4.73478 22 4.48043 21.8946 4.29289 21.7071C4.10536 21.5196 4 21.2652 4 21V8ZM6 10V20H18V10H6ZM9 12H11V18H9V12ZM13 12H15V18H13V12ZM7 5V3C7 2.73478 7.10536 2.48043 7.29289 2.29289C7.48043 2.10536 7.73478 2 8 2H16C16.2652 2 16.5196 2.10536 16.7071 2.29289C16.8946 2.48043 17 2.73478 17 3V5H22V7H2V5H7ZM9 4V5H15V4H9Z"
+                        fill="#7E7E7E" />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_524_3968">
+                        <rect width="24" height="24" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
+              </div>
+              <p class="m-0" id="unitPrice">$128</p>
+              <p class="m-0 total-price" id="totalPrice">$128</p>
+              <div class="d-flex align-items-center product-quantity">
+                <button class="minusBtn border-0">
+                  <img src="../assets/images/qoq-imgs/minusBtn.png" alt="減號">
+                </button>
+                <div class="counter-value custom-fs4" id="counter">1</div>
+                <button class="plusBtn border-0">
+                  <img src="../assets/images/qoq-imgs/plusBtn.png" alt="加號">
+                </button>
+              </div>
             </div>
-          </div>
-        </li>
-        <li class="d-flex">
-          <!-- 左側圖片、標題 -->
-          <div class="col col-lg-5 d-flex align-items-center">
-            <img src="../assets/images/qoq-imgs/carts-img_1.png" alt="松露薯條" class="productImage">
-            <h5 class="m-0 d-none d-lg-block">松露薯條</h5>
-          </div>
-          <!-- 右側內容 lg -->
-          <div class="col col-lg-7 d-none d-lg-flex align-items-center justify-content-between product" data-id="product-E"
-            data-unit-price="98">
-            <p class="m-0" id="unitPrice">$98</p>
-            <div class="d-flex align-items-center product-quantity">
-              <button class="minusBtn border-0">
-                <img src="../assets/images/qoq-imgs/minusBtn.png" alt="減號">
-              </button>
-              <div class="counter-value" id="counter">1</div>
-              <button class="plusBtn border-0">
-                <img src="../assets/images/qoq-imgs/plusBtn.png" alt="加號">
-              </button>
+          </li>
+          <li class="d-flex">
+            <!-- 左側圖片、標題 -->
+            <div class="col col-lg-5 d-flex align-items-center">
+              <img src="../assets/images/qoq-imgs/carts-img_5.png" alt="松露薯條" class="productImage">
+              <h5 class="m-0 d-none d-lg-block">松露薯條</h5>
             </div>
-            <p class="m-0 total-price" id="totalPrice">$98</p>
-            <button class="btn p-0 delete-btn">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_524_3968)">
-                  <path
-                    d="M4 8H20V21C20 21.2652 19.8946 21.5196 19.7071 21.7071C19.5196 21.8946 19.2652 22 19 22H5C4.73478 22 4.48043 21.8946 4.29289 21.7071C4.10536 21.5196 4 21.2652 4 21V8ZM6 10V20H18V10H6ZM9 12H11V18H9V12ZM13 12H15V18H13V12ZM7 5V3C7 2.73478 7.10536 2.48043 7.29289 2.29289C7.48043 2.10536 7.73478 2 8 2H16C16.2652 2 16.5196 2.10536 16.7071 2.29289C16.8946 2.48043 17 2.73478 17 3V5H22V7H2V5H7ZM9 4V5H15V4H9Z"
-                    fill="#7E7E7E" />
-                </g>
-                <defs>
-                  <clipPath id="clip0_524_3968">
-                    <rect width="24" height="24" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </button>
-          </div>
-          <!-- 右側內容 sm -->
-          <div class="col d-flex d-lg-none flex-column justify-content-between product" data-id="product-E" data-unit-price="98">
-            <div class="d-flex justify-content-between align-items-center">
-              <h5 class="m-0">松露薯條</h5>
+            <!-- 右側內容 lg -->
+            <div class="col col-lg-7 d-none d-lg-flex align-items-center justify-content-between product"
+              data-id="product-E" data-unit-price="98">
+              <p class="m-0" id="unitPrice">$98</p>
+              <div class="d-flex align-items-center product-quantity">
+                <button class="minusBtn border-0">
+                  <img src="../assets/images/qoq-imgs/minusBtn.png" alt="減號">
+                </button>
+                <div class="counter-value custom-fs4" id="counter">1</div>
+                <button class="plusBtn border-0">
+                  <img src="../assets/images/qoq-imgs/plusBtn.png" alt="加號">
+                </button>
+              </div>
+              <p class="m-0 total-price" id="totalPrice">$98</p>
               <button class="btn p-0 delete-btn">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_524_3968)">
@@ -365,36 +349,57 @@
                 </svg>
               </button>
             </div>
-            <p class="m-0" id="unitPrice">$98</p>
-            <p class="m-0 total-price" id="totalPrice">$98</p>
-            <div class="d-flex align-items-center product-quantity">
-              <button class="minusBtn border-0">
-                <img src="../assets/images/qoq-imgs/minusBtn.png" alt="減號">
-              </button>
-              <div class="counter-value" id="counter">1</div>
-              <button class="plusBtn border-0">
-                <img src="../assets/images/qoq-imgs/plusBtn.png" alt="加號">
-              </button>
+            <!-- 右側內容 sm -->
+            <div class="col d-flex d-lg-none flex-column justify-content-between product" data-id="product-E"
+              data-unit-price="98">
+              <div class="d-flex justify-content-between align-items-center">
+                <h5 class="m-0">松露薯條</h5>
+                <button class="btn p-0 delete-btn">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_524_3968)">
+                      <path
+                        d="M4 8H20V21C20 21.2652 19.8946 21.5196 19.7071 21.7071C19.5196 21.8946 19.2652 22 19 22H5C4.73478 22 4.48043 21.8946 4.29289 21.7071C4.10536 21.5196 4 21.2652 4 21V8ZM6 10V20H18V10H6ZM9 12H11V18H9V12ZM13 12H15V18H13V12ZM7 5V3C7 2.73478 7.10536 2.48043 7.29289 2.29289C7.48043 2.10536 7.73478 2 8 2H16C16.2652 2 16.5196 2.10536 16.7071 2.29289C16.8946 2.48043 17 2.73478 17 3V5H22V7H2V5H7ZM9 4V5H15V4H9Z"
+                        fill="#7E7E7E" />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_524_3968">
+                        <rect width="24" height="24" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
+              </div>
+              <p class="m-0" id="unitPrice">$98</p>
+              <p class="m-0 total-price" id="totalPrice">$98</p>
+              <div class="d-flex align-items-center product-quantity">
+                <button class="minusBtn border-0">
+                  <img src="../assets/images/qoq-imgs/minusBtn.png" alt="減號">
+                </button>
+                <div class="counter-value custom-fs4" id="counter">1</div>
+                <button class="plusBtn border-0">
+                  <img src="../assets/images/qoq-imgs/plusBtn.png" alt="加號">
+                </button>
+              </div>
             </div>
-          </div>
-        </li>
-      </ul>
-      <div class="d-flex justify-content-end align-items-center cart-totalPrice">
-        <h4 class="m-0">總金額</h4>
-        <p id="grandTotal"></p>
-      </div>
-      <ul class="cartBtn list-unstyled text-center">
-        <li>
-          <a href="./productAll.html" class="custom-fs4">繼續購物</a>
-        </li>
-        <li>
-          <a href="./orderInfo.html" class="custom-fs4">訂單結帳</a>
-        </li>
-      </ul>
-    </section>
+          </li>
+        </ul>
+        <div class="d-flex justify-content-end align-items-center cart-totalPrice">
+          <h4 class="m-0">總金額</h4>
+          <p id="grandTotal"></p>
+        </div>
+        <ul class="cartBtn list-unstyled text-center">
+          <li>
+            <a href="./productAll.html" class="custom-fs4">繼續購物</a>
+          </li>
+          <li>
+            <a href="./orderInfo.html" class="custom-fs4" id="saveCart">訂單結帳</a>
+          </li>
+        </ul>
+      </section>
+    </main>
     <%- include('./layout/footer'); -%>
 
-    
+
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <script type="module" src="../qoq-main.js"></script>
       <script>

@@ -10,54 +10,55 @@
 
 <body>
     <%- include('./layout/header'); -%>
-        <!-- banner -->
-        <section class="bannerImg"></section>
-        <!-- 購物車步驟 -->
-        <section class="container">
-            <div class="row">
-                <div class="col">
-                    <ul class="shoppingSteps text-center list-unstyled m-0">
-                        <li>
-                            <h3 class="m-0">STEP 1</h3>
-                            <h4 class="m-0">確認購物車</h4>
-                        </li>
-                        <li>
-                            <h3 class="m-0">STEP 2</h3>
-                            <h4 class="m-0">填寫訂單資訊</h4>
-                        </li>
-                        <li>
-                            <h3 class="m-0">STEP 3</h3>
-                            <h4 class="m-0">確認付款資訊</h4>
-                        </li>
-                        <li class="current">
-                            <h3 class="m-0">STEP 4</h3>
-                            <h4 class="m-0">完成訂購</h4>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <h2 class="m-0 text-center" style="padding-bottom: 40px; color:#AD4214;">付款完成</h2>
-        <!-- 完成訂購-->
-        <section class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6 text-center">
-                    <div class="completion-message">
-                        <p>"感謝您的購買！您的訂單已成功完成。我們會盡快處理並送達您的商品。如有任何問題，請隨時聯繫我們。祝您購物愉快！"</p>
+        <main>
+            <!-- banner -->
+            <section class="bannerImg"></section>
+            <!-- 購物車步驟 -->
+            <section class="container">
+                <div class="row">
+                    <div class="col">
+                        <ul class="shoppingSteps text-center list-unstyled m-0">
+                            <li>
+                                <h3 class="m-0">STEP 1</h3>
+                                <h4 class="m-0">確認購物車</h4>
+                            </li>
+                            <li>
+                                <h3 class="m-0">STEP 2</h3>
+                                <h4 class="m-0">填寫訂單資訊</h4>
+                            </li>
+                            <li>
+                                <h3 class="m-0">STEP 3</h3>
+                                <h4 class="m-0">確認付款資訊</h4>
+                            </li>
+                            <li class="current">
+                                <h3 class="m-0">STEP 4</h3>
+                                <h4 class="m-0">完成訂購</h4>
+                            </li>
+                        </ul>
                     </div>
-                    <ul class="cartBtn justify-content-center list-unstyled text-center" style="margin-top: 60px;">
-                        <li>
-                            <a href="./index.html" class="custom-fs4">返回首頁</a>
-                        </li>
-                        <li>
-                            <a href="./productAll.html" class="custom-fs4">繼續購物</a>
-                        </li>
-                    </ul>
                 </div>
-            </div>
-        </section>
+            </section>
+            <h2 class="m-0 text-center" style="padding-bottom: 40px; color:#AD4214;">付款完成</h2>
+            <!-- 完成訂購-->
+            <section class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 text-center">
+                        <div class="completion-message">
+                            <p>"感謝您的購買！您的訂單已成功完成。我們會盡快處理並送達您的商品。如有任何問題，請隨時聯繫我們。祝您購物愉快！"</p>
+                        </div>
+                        <ul class="cartBtn justify-content-center list-unstyled text-center" style="margin-top: 60px;">
+                            <li>
+                                <a href="./index.html" class="custom-fs4">返回首頁</a>
+                            </li>
+                            <li>
+                                <a href="./productAll.html" class="custom-fs4">繼續購物</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
         <%- include('./layout/footer'); -%>
-            <!-- 引入 jQuery -->
             <script type="module" src="../qoq-main.js"></script>
 </body>
 

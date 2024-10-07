@@ -1,20 +1,22 @@
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+// 購物車banner
 .bannerImg {
   background-image: url("../../images/qoq-imgs/cart-banner-lg.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   height: 280px;
+
   @media (max-width: 992px) {
     background-image: url("../../images/qoq-imgs/cart-banner-sm.png");
     height: 200px;
   }
 }
-// @media (max-width: 992px) {
-//   .bannerImg {
-//     background-image: url("../../images/qoq-imgs/cart-banner-sm.png");
-//     height: 200px;
-//   }
-// }
+
 // 購物車步驟 tabs
 .shoppingSteps {
   display: flex;
@@ -23,77 +25,91 @@
   padding: 60px 0;
   gap: 24px;
   color: #ad4214;
+
   li {
     border-radius: 8px;
     padding: 20px;
+
     // 例外加上 current 判斷為當前頁面給予背景顏色，不做動態
     &.current {
       background-color: #fff3e5;
     }
+
     &:nth-child(1) {
       padding-left: 47px;
       padding-right: 47px;
     }
+
     &:nth-child(2),
     &:nth-child(3) {
       padding-left: 37px;
       padding-right: 37px;
     }
+
     &:nth-child(4) {
       padding-left: 57px;
       padding-right: 57px;
     }
-  }
-  h3 {
-    padding-bottom: 12px;
-    font-weight: bold;
-    font-size: 20px;
-    //letter-spacing: 0.15rem;
-    letter-spacing: 0.02em;
-    line-height: 1.2;
-  }
-  h4 {
-    font-weight: bold;
-    font-size: 20px;
-    //letter-spacing: 0.15rem;
-    letter-spacing: 0.02em;
-    line-height: 1.2;
+
+    h3 {
+      padding-bottom: 12px;
+      font-weight: 700;
+      font-size: 20px;
+      //letter-spacing: 0.15rem;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+    }
+
+    h4 {
+      font-weight: 700;
+      font-size: 20px;
+      //letter-spacing: 0.15rem;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+    }
   }
 }
+
 @media (max-width: 992px) {
   .shoppingSteps {
-    padding: 20px 10px 40px 10px;
+    padding: 20px 0 40px;
     gap: 4px;
+
     li {
       padding: 12px;
+
       &:nth-child(1) {
         padding-left: 14.5px;
         padding-right: 14.5px;
       }
+
       &:nth-child(2),
       &:nth-child(3) {
         padding-left: 9.5px;
         padding-right: 9.5px;
       }
+
       &:nth-child(4) {
         padding-left: 19.5px;
         padding-right: 19.5px;
       }
-    }
-    h3 {
-      padding-bottom: 4px;
-      font-weight: medium;
-      font-size: 12px;
-      //letter-spacing: 0.15rem;
-      letter-spacing: 0.02em;
-      line-height: 1.5;
-    }
-    h4 {
-      font-weight: medium;
-      font-size: 12px;
-      //letter-spacing: 0.15rem;
-      letter-spacing: 0.02em;
-      line-height: 1.5;
+
+      h3 {
+        padding-bottom: 4px;
+        font-weight: 500;
+        font-size: 12px;
+        //letter-spacing: 0.15rem;
+        letter-spacing: 0.02em;
+        line-height: 1.5;
+      }
+
+      h4 {
+        font-weight: 500;
+        font-size: 12px;
+        //letter-spacing: 0.15rem;
+        letter-spacing: 0.02em;
+        line-height: 1.5;
+      }
     }
   }
 }
@@ -107,30 +123,37 @@
     letter-spacing: 0.02em;
     line-height: 1.5;
   }
+
   li:not(:first-child) {
     padding: 20px 0;
   }
+
   li {
     padding: 0 0 20px 0;
     border-bottom: 2px solid #7e7e7e;
+
     .productImage {
       width: 196px;
       height: 196px;
       margin-right: 24px;
     }
+
     .product-quantity {
       gap: 20px;
+
       button {
         padding: 10px;
         background-color: #ad4214;
         border-radius: 4%;
       }
+
       .counter-value {
         color: #ad4214;
       }
     }
   }
 }
+
 @media (max-width: 992px) {
   .cartList {
     li {
@@ -145,24 +168,31 @@
 // 單個商品總價格
 .total-price {
   color: #ad4214;
-  flex-shrink: 0; /* 防止 total-price 被壓縮 */
-  min-width: 60px; /* 設置最小寬度，不會因為數字三位數變四位數向左推擠 */
+  flex-shrink: 0;
+  /* 防止 total-price 被壓縮 */
+  min-width: 60px;
+  /* 設置最小寬度，不會因為數字三位數變四位數向左推擠 */
 }
+
 // 全部商品總價格
 .cart-totalPrice {
   padding: 40px 0;
+
   h4 {
     padding-right: 20px;
   }
+
   p {
     color: #ad4214;
   }
 }
+
 @media (max-width: 992px) {
   .cart-totalPrice {
     padding: 28px 0;
   }
 }
+
 // 繼續購物、訂單結帳
 .cartBtn {
   display: flex;
@@ -175,28 +205,36 @@
     height: 100%;
     display: block;
   }
+
   li {
     border-radius: 4%;
   }
+
   li:nth-child(1) {
     border: 1px solid #ad4214;
+    background-color: #fff3e5;
     a {
       color: #ad4214;
     }
+
     &:hover {
-      background-color: #fff3e5;
+      background-color: #fafcfe;
     }
   }
+
   li:nth-child(2) {
-    background-color: #8a3510;
+    background-color: #ad4214;
+
     a {
       color: white;
     }
+
     &:hover {
-      background-color: #ad4214;
+      background-color: #8a3510;
     }
   }
 }
+
 @media (max-width: 992px) {
   .cartBtn {
     text-align: center;
@@ -209,34 +247,45 @@
   label {
     padding-bottom: 10px;
   }
+
   .form-group {
     margin-bottom: 20px;
   }
+
   input::placeholder,
   textarea::placeholder {
-    color: #c7c7c7; /* 设置占位符的颜色 */
-    opacity: 1; /* 确保颜色的透明度 */
+    color: #c7c7c7;
+    /* 设置占位符的颜色 */
+    opacity: 1;
+    /* 确保颜色的透明度 */
   }
+
   /* 預設情況下，select 元素的顯示文字顏色 */
   select.form-control {
     color: #c7c7c7;
   }
+
   /* 當未選擇任何有效選項時 */
   select.form-control:invalid {
     color: #c7c7c7;
   }
+
   /* 當選擇了有效選項後，顯示的文字顏色 */
   select.form-control:valid {
     color: #000000;
   }
+
   /* 所有下拉選項中的文字顏色 */
   select.form-control option {
     color: #c7c7c7;
   }
+
   /* 設置 input 聚焦時的邊框和陰影顏色 */
   .form-control:focus {
-    border-color: #7E7E7E; /* 邊框顏色 */
-    box-shadow: 0 0 5px #7E7E7E; /* 光圈陰影效果 */
+    border-color: #7e7e7e;
+    /* 邊框顏色 */
+    box-shadow: 0 0 5px #7e7e7e;
+    /* 光圈陰影效果 */
     // outline: none; /* 移除默認的 outline */
   }
 }
@@ -244,6 +293,7 @@
 // 確認訂單資訊
 .card-custom {
   margin-bottom: 12px;
+
   .card-img {
     width: 88px;
     height: 88px;
