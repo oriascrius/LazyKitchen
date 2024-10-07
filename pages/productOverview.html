@@ -626,7 +626,7 @@
                             <div class="tab-pane fade show active" id="rice-cooker" role="tabpanel">
                                 <div class="row">
                                     <div class="swiper mySwiper">
-                                        <div class="swiper-wrapper justify-content-center">
+                                        <div class="swiper-wrapper">
                                             <div class="swiper-slide">
                                                 <a href="#">
                                                     <div class="card position-relative">
@@ -716,7 +716,7 @@
                                                     </div>
                                                 </a>
                                             </div>
-                                            <!-- <div class="d-none d-lg-block"></div> -->
+                                            <div class="d-none d-lg-block"></div>
                                         </div>
                                         <div class="swiper-pagination"></div>
                                     </div>
@@ -1027,7 +1027,11 @@
                         clickable: true,
                     },
                     breakpoints: {
-                        1024: {
+                        768: {
+                            slidesPerView: 3,
+                            spaceBetween: 24,
+                        },
+                        992: {
                             slidesPerView: 4,
                             spaceBetween: 24,
                         }
