@@ -9,9 +9,9 @@
     <!-- swipper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script type="module" crossorigin src="/LazyKitchen/assets/bootstrap.min-a386f140.js"></script>
-  <script type="module" crossorigin src="/LazyKitchen/assets/qoq-main-ccd461ef.js"></script>
+  <script type="module" crossorigin src="/LazyKitchen/assets/qoq-main-f7e59136.js"></script>
   <link rel="stylesheet" href="/LazyKitchen/assets/bootstrap-4ca768ae.css">
-  <link rel="stylesheet" href="/LazyKitchen/assets/qoq-main-992fe874.css">
+  <link rel="stylesheet" href="/LazyKitchen/assets/qoq-main-5674a137.css">
 </head>
 
 <body>
@@ -96,12 +96,13 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                                     請選擇分類
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <li><a class="dropdown-item" href="#" data-value="option2">牛肉</a></li>
-                                    <li><a class="dropdown-item" href="#" data-value="option3">豬肉</a></li>
-                                    <li><a class="dropdown-item" href="#" data-value="option4">雞肉</a></li>
-                                    <li><a class="dropdown-item" href="#" data-value="option5">電鍋料理</a></li>
-                                    <li><a class="dropdown-item" href="#" data-value="option6">氣炸鍋料理</a></li>
-                                    <li><a class="dropdown-item" href="#" data-value="option7">微波料理</a></li>
+                                    <li><a class="dropdown-item" href="#beef" data-value="option2">牛肉</a></li>
+                                    <li><a class="dropdown-item" href="#pork" data-value="option3">豬肉</a></li>
+                                    <li><a class="dropdown-item" href="#chicken" data-value="option4">雞肉</a></li>
+                                    <li><a class="dropdown-item" href="#rice-cooker" data-value="option5">電鍋料理</a></li>
+                                    <li><a class="dropdown-item" href="#air-fryer" data-value="option6">氣炸鍋料理</a></li>
+                                    <li><a class="dropdown-item" href="#microwave" data-value="option7">微波料理</a></li>
+                                    <li><a class="dropdown-item" href="#oven" data-value="option7">烤箱料理</a></li>
                                 </ul>
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="position-absolute"
                                     style="right: 10px; top: 50%; transform: translateY(-50%);"
@@ -805,6 +806,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                                             <div class="d-none d-lg-block"></div>
                                         </div>
                                         <div class="swiper-pagination"></div>
+                                        <!-- <div class="custom-swiper-pagination"></div> -->
                                     </div>
                                 </div>
                             </div>
@@ -1245,7 +1247,6 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                 const swiper = new Swiper('.mySwiper', {
                     loop: true,
                     slidesPerView: 2,
-                    slidesPerGroup: 1,
                     spaceBetween: 16,
                     pagination: {
                         el: '.swiper-pagination',
@@ -1255,13 +1256,53 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                         768: {
                             slidesPerView: 3,
                             spaceBetween: 24,
+                            loop: false,
                         },
                         992: {
                             slidesPerView: 4,
                             spaceBetween: 24,
+                            loop: false,
                         }
-                    }
+                    },
+
                 });
+            </script>
+            <script>
+                // 處理下拉菜單項目的點擊事件
+                document.querySelectorAll('.dropdown-item').forEach(link => {
+                    link.addEventListener('click', function (event) {
+                        // 阻止預設行為（跳轉）
+                        event.preventDefault();
+
+                        // 獲取目標元素的ID
+                        const targetId = this.getAttribute('href');
+
+                        // 啟用相應的標籤
+                        const targetTab = document.querySelector(targetId + '-tab');
+                        if (targetTab) {
+                            targetTab.click();  // 觸發標籤點擊事件
+                        }
+
+                        // 跳轉到目標位置，並向上滾動一些
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            // 計算滾動位置，向上偏移 100 像素
+                            const scrollOptions = {
+                                top: targetElement.offsetTop - 100, // 向上滾動 100 像素
+                                behavior: 'smooth'
+                            };
+                            window.scrollTo(scrollOptions);
+                        }
+                    });
+                });
+
+                // 預設啟用第一個標籤
+                const firstDropdownItem = document.querySelector('.dropdown-item');
+                if (firstDropdownItem) {
+                    firstDropdownItem.click();
+                }
+
+
             </script>
 </body>
 
