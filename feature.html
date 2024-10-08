@@ -6,10 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>懶人特色</title>
-  <script type="module" crossorigin src="/LazyKitchen/assets/bootstrap.min-f54fe11b.js"></script>
-  <script type="module" crossorigin src="/LazyKitchen/assets/qoq-main-997c7b95.js"></script>
-  <link rel="stylesheet" href="/LazyKitchen/assets/bootstrap-e0e31993.css">
-  <link rel="stylesheet" href="/LazyKitchen/assets/qoq-main-c68650b7.css">
+  <script type="module" crossorigin src="/LazyKitchen/assets/bootstrap.min-008907fd.js"></script>
+  <link rel="stylesheet" href="/LazyKitchen/assets/bootstrap-a4d6d9c8.css">
+  <link rel="stylesheet" href="/LazyKitchen/assets/feature-940fd1fb.css">
 </head>
 
 <body>
@@ -318,6 +317,34 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
       <!-- 引入 jQuery Validation Plugin -->
       <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
       
+      <script>
+        // 回到按鈕上方
+        $(document).ready(function () {
+          const $backToTop = $(".backTotop");
+
+          $(window).scroll(function () {
+            const windowScrollTop = $(this).scrollTop(); // 取得當前滾動高度
+            const documentHeight = $(document).height(); // 取得文件總高度
+            const windowHeight = $(this).height(); // 取得視窗高度
+
+            // 判斷是否需要顯示按鈕
+            if (windowScrollTop > documentHeight / 2 - windowHeight / 2) {
+              $backToTop.fadeIn();
+
+              // 根據視窗寬度設置 right 值
+              const rightValue = $(this).width() >= 992 ? "40px" : "24px";
+              $backToTop.css({ right: rightValue, top: "40px" }); // 固定 top 為 40px
+            } else {
+              $backToTop.fadeOut(); // 隱藏按鈕
+            }
+          });
+
+          $backToTop.click(function () {
+            $("html, body").animate({ scrollTop: 0 }, 100); // 返回頂端
+          });
+        });
+
+      </script>
 </body>
 
 </html>
