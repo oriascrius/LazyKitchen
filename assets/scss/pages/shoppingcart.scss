@@ -117,8 +117,15 @@ img {
 // 購物車清單
 .cartList {
   h5 {
-    font-weight: medium;
-    font-size: 16px;
+    font-weight: bold;
+    font-size: 20px;
+    //letter-spacing: 0.15rem;
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+  }
+  p {
+    font-weight: bold;
+    font-size: 20px;
     //letter-spacing: 0.15rem;
     letter-spacing: 0.02em;
     line-height: 1.5;
@@ -145,6 +152,9 @@ img {
         padding: 10px;
         background-color: #ad4214;
         border-radius: 4%;
+        &:hover {
+          background-color: #8a3510;
+        }
       }
 
       .counter-value {
@@ -302,4 +312,14 @@ img {
 
 .info-item {
   padding-bottom: 30px;
+}
+
+// 客戶資料
+.info-card {
+  height: 522px;
+  padding: 20px 30px;
+  border: 1px solid #ccc9c9;
+  @media (max-width: 992px) {
+    margin: 0 0 20px 0;
+  }
 }

@@ -11,42 +11,42 @@ p {
   padding: 0;
 }
 
-.custom-fs1{
+.custom-fs1 {
   font-weight: bold;
   font-size: 48px;
   // letter-spacing: 0.15rem;
   letter-spacing: 0.15em;
   line-height: 1.2;
 }
-.custom-fs2{
+.custom-fs2 {
   font-weight: bold;
   font-size: 36px;
   //letter-spacing: 0.15rem;
   letter-spacing: 0.02em;
   line-height: 1.2;
 }
-.custom-fs3{
+.custom-fs3 {
   font-weight: bold;
   font-size: 24px;
   //letter-spacing: 0.15rem;
   letter-spacing: 0.02em;
   line-height: 1.2;
 }
-.custom-fs4{
+.custom-fs4 {
   font-weight: bold;
   font-size: 20px;
   //letter-spacing: 0.15rem;
   letter-spacing: 0.02em;
   line-height: 1.2;
 }
-.custom-fsSmall{
+.custom-fsSmall {
   font-weight: medium;
   font-size: 12px;
   //letter-spacing: 0.15rem;
   letter-spacing: 0.02em;
   line-height: 1.5;
 }
-.custom-fsBody{
+.custom-fsBody {
   font-weight: medium;
   font-size: 16px;
   //letter-spacing: 0.15rem;
@@ -69,9 +69,13 @@ p {
   padding-bottom: 28px;
   li {
     &:hover {
-      svg rect {
-        fill: #FAFCFE;
-      }
+      // 浮起 + 陰影
+      transform: translateY(-2px) translateX(-2px);
+      filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+      // svg 變白色
+      // svg rect {
+      //   fill: #fafcfe;
+      // }
     }
   }
 }
@@ -85,7 +89,10 @@ p {
     background-color: #fff3e5;
     cursor: pointer;
     &:hover {
-      background-color: #FAFCFE;
+      // 浮起 + 陰影
+      transform: translateY(-2px) translateX(-2px);
+      filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+      // background-color: #fafcfe;
     }
   }
   a {
@@ -93,7 +100,7 @@ p {
   }
 }
 .footerText {
-  address{
+  address {
     margin-bottom: 28px;
   }
 }

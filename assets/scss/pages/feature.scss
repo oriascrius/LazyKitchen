@@ -4,6 +4,8 @@
   display: none;
   cursor: pointer;
   z-index: 1000;
+  transform: translateY(-5px) translateX(-5px);
+  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
 }
 .feature-banner {
   padding: 80px 0;
@@ -17,6 +19,8 @@
 
   img {
     margin: 0 0 60px 0;
+    width: 1076px;
+    height: 434px;
   }
 
   h2 {
@@ -67,7 +71,10 @@
     background-color: #fafcfe;
 
     &:hover {
-      background-color: #fff3e5;
+      // 浮起 + 陰影
+      transform: translateY(-2px) translateX(-2px);
+      filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+      // background-color: #fff3e5;
     }
 
     a {
@@ -78,7 +85,10 @@
   li:nth-child(2) {
     background-color: #ad4214;
     &:hover {
-      background-color: #8a3510;
+      // 浮起 + 陰影
+      transform: translateY(-2px) translateX(-2px);
+      filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+      // background-color: #8a3510;
     }
 
     a {

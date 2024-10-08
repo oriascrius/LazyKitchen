@@ -31,7 +31,7 @@
             <section class="searchBox">
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-12 col-lg-2">
+                        <div class="col-12 col-md-3 col-lg-2">
                             <div class="dropdown position-relative">
                                 <button class="btn btn-outline-primary dropdown-toggle" type="button"
                                     id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
@@ -56,7 +56,7 @@
                             </div>
 
                         </div>
-                        <div class="col-12 col-lg-5">
+                        <div class="col-12 col-md-5 col-lg-5">
                             <div class="input-group position-relative">
                                 <input type="text" class="form-control" placeholder="我想來點..." aria-label="Search">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="position-absolute"
@@ -76,7 +76,8 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="col-12 col-lg-2"> <button class="btn btn-primary" type="button">查詢</button></div>
+                        <div class="col-12 col-md-3 col-lg-2"> <button class="btn btn-primary" type="button">查詢</button>
+                        </div>
                     </div>
                 </div>
 
@@ -85,7 +86,7 @@
             <section class="popularProducts">
                 <h2 class="text-primary text-center custom-fs2 m-0">熱門商品</h2>
                 <div class="container">
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center popularProducts-list">
                         <div class="col-6 col-lg-3">
                             <a href="./productList.html">
                                 <div class="card position-relative">
@@ -1075,6 +1076,34 @@
 
             <script type="module" src="../qoq-main.js"></script>
 
+            <script>
+                // 回到按鈕上方
+                $(document).ready(function () {
+                    const $backToTop = $(".backTotop");
+
+                    $(window).scroll(function () {
+                        const windowScrollTop = $(this).scrollTop(); // 取得當前滾動高度
+                        const documentHeight = $(document).height(); // 取得文件總高度
+                        const windowHeight = $(this).height(); // 取得視窗高度
+
+                        // 判斷是否需要顯示按鈕
+                        if (windowScrollTop > documentHeight / 2 - windowHeight / 2) {
+                            $backToTop.fadeIn();
+
+                            // 根據視窗寬度設置 right 值
+                            const rightValue = $(this).width() >= 992 ? "40px" : "24px";
+                            $backToTop.css({ right: rightValue, top: "40px" }); // 固定 top 為 40px
+                        } else {
+                            $backToTop.fadeOut(); // 隱藏按鈕
+                        }
+                    });
+
+                    $backToTop.click(function () {
+                        $("html, body").animate({ scrollTop: 0 }, 100); // 返回頂端
+                    });
+                });
+
+            </script>
             <script>
                 const swiper = new Swiper('.mySwiper', {
                     loop: true,
