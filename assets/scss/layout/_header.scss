@@ -1,7 +1,7 @@
 .header {
   width: 100%;
   height: 100px;
-  background: #AD4214;
+  background: #ad4214;
   display: flex;
   align-items: center;
 }
@@ -16,10 +16,8 @@
   font-weight: 500;
 }
 
-
 /* 手機版樣式 */
 @media (max-width: 991.98px) {
-
   /* Bootstrap's 'lg' breakpoint */
   .header {
     height: 72px;
@@ -65,7 +63,7 @@
   }
 
   .nav-link.active {
-    color: #AD4214 !important;
+    color: #ad4214 !important;
     /* 文字顏色設為 #AD4214 */
     text-align: center;
     /* 文字置中 */
@@ -114,10 +112,6 @@
   /* 叉叉圖示，邊線加粗為4px，圓角 */
 }
 
-
-
-
-
 // qoq 自定義
 /* 購物車圖標的樣式 */
 .nav-link {
@@ -128,9 +122,9 @@
 .cart-count {
   position: absolute;
   top: -8px;
-  left: -8px;
-  background-color: #7E7E7E;
-  color: white;
+  right: -8px;
+  background-color: #ffaf24;
+  color: #201b11;
   border-radius: 50%;
   padding: 10px;
   font-size: 10px;

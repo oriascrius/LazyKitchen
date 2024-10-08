@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>購物車</title>
+  <!-- sweetalert2 -->
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -42,11 +44,11 @@
       <!-- 購物車清單 -->
       <section class="container">
         <ul class="row m-0 list-unstyled cartList">
-          <li class="d-flex">
+          <li class="d-flex cartListProduct">
             <!-- 左側圖片、標題 -->
             <div class="col col-lg-5 d-flex align-items-center">
               <img src="../assets/images/qoq-imgs/carts-img_1.png" alt="韓式辣炒年糕" class="productImage">
-              <h5 class="m-0 d-none d-lg-block productName">韓式辣炒年糕</h5>
+              <h5 class="m-0 d-none d-lg-block">韓式辣炒年糕</h5>
             </div>
             <!-- 右側內容 lg -->
             <div class="col col-lg-7 d-none d-lg-flex align-items-center justify-content-between product"
@@ -81,7 +83,7 @@
             <div class="col d-flex d-lg-none flex-column justify-content-between product" data-id="product-A"
               data-unit-price="168">
               <div class="d-flex justify-content-between align-items-center">
-                <h5 class="m-0 productName">韓式辣炒年糕</h5>
+                <h5 class="m-0">韓式辣炒年糕</h5>
                 <button class="btn p-0 delete-btn">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_524_3968)">
@@ -110,7 +112,7 @@
               </div>
             </div>
           </li>
-          <li class="d-flex">
+          <li class="d-flex cartListProduct">
             <!-- 左側圖片、標題 -->
             <div class="col col-lg-5 d-flex align-items-center">
               <img src="../assets/images/qoq-imgs/carts-img_2.png" alt="滷牛腱" class="productImage">
@@ -178,7 +180,7 @@
               </div>
             </div>
           </li>
-          <li class="d-flex">
+          <li class="d-flex cartListProduct">
             <!-- 左側圖片、標題 -->
             <div class="col col-lg-5 d-flex align-items-center">
               <img src="../assets/images/qoq-imgs/carts-img_3.png" alt="宮保雞丁" class="productImage">
@@ -246,7 +248,7 @@
               </div>
             </div>
           </li>
-          <li class="d-flex">
+          <li class="d-flex cartListProduct">
             <!-- 左側圖片、標題 -->
             <div class="col col-lg-5 d-flex align-items-center">
               <img src="../assets/images/qoq-imgs/carts-img_4.png" alt="奶油雞肉燉飯" class="productImage">
@@ -314,7 +316,7 @@
               </div>
             </div>
           </li>
-          <li class="d-flex">
+          <li class="d-flex cartListProduct">
             <!-- 左側圖片、標題 -->
             <div class="col col-lg-5 d-flex align-items-center">
               <img src="../assets/images/qoq-imgs/carts-img_5.png" alt="松露薯條" class="productImage">
@@ -385,7 +387,7 @@
         </ul>
         <div class="d-flex justify-content-end align-items-center cart-totalPrice">
           <h4 class="m-0">總金額</h4>
-          <p id="grandTotal"></p>
+          <p id="grandTotal" class="custom-fs4"></p>
         </div>
         <ul class="cartBtn list-unstyled text-center">
           <li>
@@ -401,6 +403,8 @@
 
 
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <!-- sweetalert2 -->
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <script type="module" src="../qoq-main.js"></script>
       <script>
         $(document).ready(function () {
@@ -409,26 +413,25 @@
             let grandTotal = 0;
             const productTotals = {};
 
-            // 目前固定有五個商品 = 五個 product 包住判斷每一個單獨商品總價
-            // 酖因為大小尺寸各有五個 product，所以這裡加上 :visible，代表看的到的 product 才做計算
+            // 計算每個商品的總價
             $('.product:visible').each(function () {
               const productId = $(this).data('id');
               const totalPrice = parseInt($(this).find('.total-price').text().replace('$', ''));
 
-              // 因大小尺寸的 product 要做同步不能分開，要不然數量不同
-              // 在大享尺寸同個商品中加上 data-id="product-A"，才能連動大小尺寸
+              // 記錄每個商品的總價
               if (productTotals[productId]) {
                 productTotals[productId] += totalPrice;
               } else {
                 productTotals[productId] = totalPrice;
               }
             });
-            // 同上
+
+            // 累加總金額
             for (const id in productTotals) {
               grandTotal += productTotals[id];
             }
 
-            $('#grandTotal').text('$' + grandTotal);
+            $('#grandTotal').text(`$  ${grandTotal}`);
           }
 
           // 處理商品數量的變動
@@ -442,8 +445,43 @@
             // 增加或減少數量
             if ($(this).hasClass('plusBtn') && value < 9) {
               value += 1;
-            } else if ($(this).hasClass('minusBtn') && value > 1) {
-              value -= 1;
+            } else if ($(this).hasClass('minusBtn')) {
+              if (value > 1) {
+                value -= 1;
+              } else if (value === 1) {
+                // 當數量為1時，點擊減號按鈕會刪除該商品
+                const listItem = $(this).closest('.cartListProduct'); // 获取最近的cartListProduct元素
+                Swal.fire({
+                  title: '確定要刪除這個商品嗎？',
+                  icon: 'warning',
+                  showCancelButton: true,
+                  confirmButtonColor: '#7E7E7E',
+                  cancelButtonColor: '#AD4214',
+                  confirmButtonText: '確定',
+                  cancelButtonText: '取消',
+                  customClass: {
+                    popup: 'swal2-small-popup',  // 使用自定義類來調整小視窗
+                    title: 'swal2-small-title'   // 調整標題大小
+                  }
+                }).then((result) => {
+                  // 刪除按鈕跳出的對話框的結果
+                  if (result.isConfirmed) {
+                    Swal.fire({
+                      title: '商品已刪除！',
+                      icon: 'success',
+                      showConfirmButton: false,
+                      timer: 1000,
+                      position: 'top',
+                      toast: true
+                    });
+                    if (listItem.length) {
+                      listItem.remove(); // 刪除該商品的li元素
+                      updateGrandTotal(); // 刪除後更新總計
+                    }
+                  }
+                });
+                return; // 停止後續執行，避免在刪除後還繼續更新價格
+              }
             }
 
             // 同步更新相同 data-id 的其他元素
@@ -457,23 +495,48 @@
             updateGrandTotal();
           });
 
-          // 刪除功能
+          // 刪除功能 + 刪除確認對話框
           const deleteButtons = $('.delete-btn');
 
           deleteButtons.each(function () {
-            $(this).on('click', function () {
-              const listItem = $(this).closest('li');
-              if (listItem.length) {
-                listItem.remove();
-                // 更新所有商品的總計
-                updateGrandTotal();
-              }
+            $(this).on('click', function (event) {
+              event.preventDefault();  // 防止按鈕的預設行為
+              const listItem = $(this).closest('.cartListProduct');  // 获取最近的cartListProduct元素
+
+              // 顯示 SweetAlert2 確認對話框
+              Swal.fire({
+                title: '確定要刪除這個商品嗎？',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#7E7E7E',
+                cancelButtonColor: '#AD4214',
+                confirmButtonText: '確定',
+                cancelButtonText: '取消'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  Swal.fire({
+                    title: '商品已刪除！',
+                    icon: 'success',
+                    showConfirmButton: false,
+                    timer: 1000,
+                    position: 'top',
+                    toast: true
+                  });
+                  // 刪除商品並更新總計
+                  if (listItem.length) {
+                    listItem.remove();
+                    updateGrandTotal();
+                  }
+                }
+              });
             });
           });
 
           // 初次載入頁面時更新總計
           updateGrandTotal();
         });
+
+
       </script>
 </body>
 

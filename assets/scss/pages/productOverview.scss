@@ -1,335 +1,346 @@
 // 回上方按鈕
 .backTotop {
-    position: fixed;
-    display: none;
-    cursor: pointer;
-    z-index: 1000;
+  position: fixed;
+  display: none;
+  cursor: pointer;
+  z-index: 1000;
 }
 
 // 搜尋；分類框
 .searchBox {
-    background-image: url("../../images/qoq-imgs/bigBg.png");
-    padding: 60px 0 100px 0;
+  background-image: url("../../images/qoq-imgs/bigBg.png");
+  padding: 60px 0 100px 0;
 
-    .row {
-        gap: 20px;
-    }
+  .row {
+    gap: 20px;
+  }
 
-    //  分類搜尋框
-    .dropdown {
-        .btn {
-            border-radius: 4px;
-            border: 3px solid #ad4214;
-            padding: 12px 20px;
-            color: #ad4214;
-            width: 100%;
-            text-align: left;
-
-            &:focus {
-                box-shadow: none;
-                outline: none;
-                background-color: transparent;
-            }
-
-            &:hover {
-                background-color: transparent;
-            }
-        }
-
-        .dropdown-toggle {
-            &::after {
-                content: none;
-            }
-        }
-
-        .dropdown-menu {
-            padding: 5px;
-            border: 3px solid #ad4214;
-            border-radius: 4xp;
-            z-index: 1002;
-            width: 100%;
-
-            .dropdown-item {
-                padding: 12px 20px;
-                color: #ad4214;
-                text-align: left;
-                width: 100%;
-
-                &:hover {
-                    background-color: #ad4214;
-                    color: white;
-                }
-            }
-        }
-
-        svg {
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-    }
-
-    //  搜尋框
-    .input-group {
-        border-radius: 4px;
-        border: 3px solid #ad4214;
-        padding: 0;
-
-        .form-control {
-            padding: 12px 0 12px 56px;
-            cursor: pointer;
-        }
-
-        input {
-            border: none;
-            outline: none;
-
-            &::placeholder {
-                color: #ad4214;
-            }
-
-            &:focus {
-                box-shadow: none;
-            }
-        }
-
-        svg {
-            transform: translateY(-50%);
-            top: 50%;
-            left: 24px;
-            z-index: 1001;
-        }
-    }
-
+  //  分類搜尋框
+  .dropdown {
     .btn {
-        padding: 12px 40px;
+      border-radius: 4px;
+      border: 3px solid #ad4214;
+      padding: 12px 20px;
+      color: #ad4214;
+      width: 100%;
+      text-align: left;
+
+      &:focus {
+        box-shadow: none;
+        outline: none;
+        background-color: transparent;
+      }
+
+      &:hover {
+        background-color: transparent;
+      }
     }
 
-    @media (max-width: 576px) {
-        padding: 40px 0 60px 0;
+    .dropdown-toggle {
+      &::after {
+        content: none;
+      }
     }
-}
 
-@media (max-width: 992px) {
-    .btn {
+    .dropdown-menu {
+      padding: 5px;
+      border: 3px solid #ad4214;
+      border-radius: 4xp;
+      z-index: 1002;
+      width: 100%;
+
+      .dropdown-item {
+        padding: 12px 20px;
+        color: #ad4214;
+        text-align: left;
         width: 100%;
+
+        &:hover {
+          background-color: #ad4214;
+          color: white;
+        }
+      }
     }
+
+    svg {
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  //  搜尋框
+  .input-group {
+    border-radius: 4px;
+    border: 3px solid #ad4214;
+    padding: 0;
+
+    .form-control {
+      padding: 12px 0 12px 56px;
+      cursor: pointer;
+    }
+
+    input {
+      border: none;
+      outline: none;
+
+      &::placeholder {
+        color: #ad4214;
+      }
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    svg {
+      transform: translateY(-50%);
+      top: 50%;
+      left: 24px;
+      z-index: 1001;
+    }
+  }
+
+  .btn {
+    padding: 12px 40px;
+    @media (max-width: 992px) {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 576px) {
+    padding: 40px 0 60px 0;
+  }
 }
 
 // 熱門商品
 .popularProducts {
-    background-image: url("../../images/qoq-imgs/bigBg.png");
-    padding: 0 0 143px 0;
-
+  background-image: url("../../images/qoq-imgs/bigBg.png");
+  padding: 0 0 143px 0;
+  .popularProducts-list,
+  .swiper-slide {
     a {
-        transition: transform 0.3s ease;
+      transition: transform 0.3s ease;
 
-        &:hover {
-            transform: translateY(-6px);
-        }
+      &:hover {
+        // 浮起 + 陰影
+        transform: translateY(-2px) translateX(-2px);
+        filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+        // 原本卡片浮起效果
+        // transform: translateY(-6px);
+      }
     }
+  }
+
+  @media (max-width: 992px) {
+    padding: 0 0 60px 0;
+  }
+
+  .card {
+    background-color: #fffdfa;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-top: 0;
+    max-width: 306px;
+    margin: 156px 0 0 0;
 
     @media (max-width: 992px) {
-        padding: 0 0 60px 0;
+      margin: 104px 0 0 0;
     }
 
-    .card {
-        background-color: #fffdfa;
-        border-radius: 20px;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-top: 0;
-        max-width: 306px;
-        margin: 156px 0 0 0;
-
-        @media (max-width: 992px) {
-            margin: 104px 0 0 0;
-        }
-
-        @media (max-width: 375px) {
-            max-width: 152px;
-        }
-
-        .card-body {
-            padding: 102px 20px 28px 20px;
-
-            @media (max-width: 375px) {
-                padding: 72px 12px 12px 12px;
-            }
-
-            >div:first-child {
-                font-weight: bold;
-                font-size: 24px;
-                letter-spacing: 0.02em;
-                line-height: 1.2;
-
-                @media (max-width: 1200px) {
-                    font-weight: bold;
-                    font-size: 20px;
-                    letter-spacing: 0.02em;
-                    line-height: 1.2;
-                }
-            }
-        }
-
-        .card-title {
-            margin: 0 0 12px 0;
-        }
-
-        img {
-            width: 198px;
-            height: 198px;
-            left: 50%;
-            transform: translateX(-50%);
-            top: -116px;
-
-            @media (max-width: 992px) {
-                width: 128px;
-                height: 128px;
-                transform: translateX(-50%);
-                top: -64px;
-            }
-        }
-
-        .btn {
-            width: 48px;
-            height: 48px;
-            padding: 10px;
-
-            &:hover {
-                background-color: #8a3510;
-            }
-        }
+    @media (max-width: 375px) {
+      max-width: 152px;
     }
 
-    nav {
-        margin: 40px 0 0 0;
+    .card-body {
+      padding: 102px 20px 28px 20px;
 
-        .page-link {
-            color: #7e7e7e;
+      @media (max-width: 375px) {
+        padding: 72px 12px 12px 12px;
+      }
 
-            &:hover {
-                background-color: transparent;
-            }
+      > div:first-child {
+        font-weight: bold;
+        font-size: 24px;
+        letter-spacing: 0.02em;
+        line-height: 1.2;
+
+        @media (max-width: 1200px) {
+          font-weight: bold;
+          font-size: 20px;
+          letter-spacing: 0.02em;
+          line-height: 1.2;
         }
-
-        .pageActive {
-            color: #ad4214;
-        }
-
-        .page-link:focus {
-            background-color: 0;
-            box-shadow: 0;
-        }
+      }
     }
+
+    .card-title {
+      margin: 0 0 12px 0;
+    }
+
+    img {
+      width: 198px;
+      height: 198px;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -116px;
+
+      @media (max-width: 992px) {
+        width: 128px;
+        height: 128px;
+        transform: translateX(-50%);
+        top: -64px;
+      }
+    }
+
+    .btn {
+      width: 48px;
+      height: 48px;
+      padding: 10px;
+
+      &:hover {
+        background-color: #8a3510;
+      }
+    }
+  }
+
+  nav {
+    margin: 40px 0 0 0;
+
+    .page-link {
+      color: #7e7e7e;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+
+    .pageActive {
+      color: #ad4214;
+    }
+
+    .page-link:focus {
+      background-color: 0;
+      box-shadow: 0;
+    }
+  }
 }
 
 // 懶人分類
 .productCategory {
-    background-image: url("../../images/qoq-imgs/productCategoryBg.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    padding: 100px 0;
+  background-image: url("../../images/qoq-imgs/productCategoryBg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding: 100px 0;
+
+  @media (max-width: 992px) {
+    padding: 60px 0;
+  }
+
+  h2,
+  h3 {
+    padding: 0 0 40px 0;
 
     @media (max-width: 992px) {
-        padding: 60px 0;
+      padding: 0 0 28px 0;
     }
+  }
 
-    h2,
-    h3 {
-        padding: 0 0 40px 0;
+  // 分類內容
+  .tab-content {
+    img {
+      width: 198px;
+      height: 198px;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -116px;
 
-        @media (max-width: 992px) {
-            padding: 0 0 28px 0;
-        }
+      @media (max-width: 992px) {
+        width: 128px;
+        height: 128px;
+        transform: translateX(-50%);
+        top: -64px;
+      }
     }
+  }
 
-    // 分類內容
-    .tab-content {
-        img {
-            width: 198px;
-            height: 198px;
-            left: 50%;
-            transform: translateX(-50%);
-            top: -116px;
+  // 分類標籤
+  .nav-tabs {
+    gap: 40px;
+    font-size: 24px;
 
-            @media (max-width: 992px) {
-                width: 128px;
-                height: 128px;
-                transform: translateX(-50%);
-                top: -64px;
-            }
-        }
+    @media (max-width: 992px) {
+      font-size: 20px;
     }
+  }
 
-    // 分類標籤
-    .nav-tabs {
-        gap: 40px;
-        font-size: 24px;
+  .nav-link {
+    padding: 0 0 4px 0;
+  }
 
-        @media (max-width: 992px) {
-            font-size: 20px;
-        }
+  .nav-tabs .nav-link {
+    color: #7e7e7e;
+  }
+
+  .nav-link {
+    &:hover {
+      border-color: transparent;
     }
+  }
 
-    .nav-link {
-        padding: 0 0 4px 0;
+  .nav-tabs .nav-link.active {
+    color: #ad4214;
+    background-color: transparent;
+    border-color: transparent;
+    border-bottom: 3px solid #ad4214;
+  }
+
+  .quickCooking {
+    h2 {
+      padding: 100px 0 40px 0;
+
+      @media (max-width: 992px) {
+        padding: 60px 0 28px 0;
+      }
     }
-
-    .nav-tabs .nav-link {
-        color: #7e7e7e;
-    }
-
-    .nav-link {
-        &:hover {
-            border-color: transparent;
-        }
-    }
-
-    .nav-tabs .nav-link.active {
-        color: #ad4214;
-        background-color: transparent;
-        border-color: transparent;
-        border-bottom: 3px solid #ad4214;
-    }
-
-    .quickCooking {
-        h2 {
-            padding: 100px 0 40px 0;
-
-            @media (max-width: 992px) {
-                padding: 60px 0 28px 0;
-            }
-        }
-    }
+  }
 }
 
-.swiper-wrapper {
-    justify-content: center;
+// .pagination {
+//   a {
+//     &:hover {
+//       color: #8a3510;
+//     }
+//   }
+// }
 
-    @media (max-width: 992px) {
-        justify-content: flex-start;
-    }
+.swiper-wrapper {
+  justify-content: center;
+
+  @media (max-width: 992px) {
+    justify-content: flex-start;
+  }
 }
 
 .swiper-pagination-bullet-active {
-    background-color: #ad4214;
+  background-color: #ad4214;
 }
 
 // 遇到圓點分頁影響商品卡片下方邊框被遮住一點，或是圓點往下時被蓋過去不顯示，這邊先用高度撐高讓圓點分頁顯示
 .swiper-slide {
-    height: 364px;
+  height: 364px;
 
-    a {
-        transition: transform 0.3s ease;
+  a {
+    transition: transform 0.3s ease;
 
-        &:hover {
-            transform: translateY(-6px);
-        }
+    &:hover {
+      transform: translateY(-6px);
     }
+  }
 }
 
 #swal2-title {
-    margin: 12px 0 0 12px;
-    color: #ad4214;
+  margin: 12px 0 0 12px;
+  color: #ad4214;
 }
