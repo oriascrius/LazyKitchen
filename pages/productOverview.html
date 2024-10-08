@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>商品列表</title>
-    <!-- swipper -->
+    <!-- swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- sweetalert2 -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -94,7 +96,8 @@
                                             <p class="card-title">香草檸檬鮭魚</p>
                                             <p class="text-primary">$168</p>
                                         </div>
-                                        <button class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg
+                                        <button
+                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
                                                 width="28" height="28" viewBox="0 0 28 28" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0_893_540)">
@@ -123,7 +126,8 @@
                                             <p class="card-title">泰式咖哩雞</p>
                                             <p class="text-primary">$168</p>
                                         </div>
-                                        <button class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg
+                                        <button
+                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
                                                 width="28" height="28" viewBox="0 0 28 28" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0_893_540)">
@@ -152,7 +156,8 @@
                                             <p class="card-title">韓式辣炒年糕</p>
                                             <p class="text-primary">$168</p>
                                         </div>
-                                        <button class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg
+                                        <button
+                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
                                                 width="28" height="28" viewBox="0 0 28 28" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0_893_540)">
@@ -182,7 +187,8 @@
                                             <p class="card-title">冷凍雞塊</p>
                                             <p class="text-primary">$168</p>
                                         </div>
-                                        <button class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg
+                                        <button
+                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
                                                 width="28" height="28" viewBox="0 0 28 28" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0_893_540)">
@@ -211,7 +217,8 @@
                                             <p class="card-title">香草烤雞胸</p>
                                             <p class="text-primary">$168</p>
                                         </div>
-                                        <button class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg
+                                        <button
+                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
                                                 width="28" height="28" viewBox="0 0 28 28" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0_893_540)">
@@ -240,7 +247,8 @@
                                             <p class="card-title">松露薯條</p>
                                             <p class="text-primary">$168</p>
                                         </div>
-                                        <button class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg
+                                        <button
+                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
                                                 width="28" height="28" viewBox="0 0 28 28" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0_893_540)">
@@ -300,15 +308,15 @@
                     <!-- 分類標籤 -->
                     <ul class="nav nav-tabs d-flex justify-content-center border-0" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link active fw-bold" id="pork-tab" data-bs-toggle="tab"
+                            <button class="nav-link active fw-bold m-0" id="pork-tab" data-bs-toggle="tab"
                                 data-bs-target="#pork" type="button" role="tab">豬肉</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link fw-bold" id="beef-tab" data-bs-toggle="tab" data-bs-target="#beef"
-                                type="button" role="tab">牛肉</button>
+                            <button class="nav-link fw-bold m-0" id="beef-tab" data-bs-toggle="tab"
+                                data-bs-target="#beef" type="button" role="tab">牛肉</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link fw-bold" id="chicken-tab" data-bs-toggle="tab"
+                            <button class="nav-link fw-bold m-0" id="chicken-tab" data-bs-toggle="tab"
                                 data-bs-target="#chicken" type="button" role="tab">雞肉</button>
                         </li>
                     </ul>
@@ -330,7 +338,7 @@
                                                             <p class="text-primary">$168</p>
                                                         </div>
                                                         <button
-                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto">
+                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess">
                                                             <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
                                                                 xmlns="http://www.w3.org/2000/svg">
                                                                 <g clip-path="url(#clip0_893_540)">
@@ -360,7 +368,7 @@
                                                             <p class="text-primary">$168</p>
                                                         </div>
                                                         <button
-                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg
+                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
                                                                 width="28" height="28" viewBox="0 0 28 28" fill="none"
                                                                 xmlns="http://www.w3.org/2000/svg">
                                                                 <g clip-path="url(#clip0_893_540)">
@@ -390,7 +398,7 @@
                                                             <p class="text-primary">$168</p>
                                                         </div>
                                                         <button
-                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg
+                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
                                                                 width="28" height="28" viewBox="0 0 28 28" fill="none"
                                                                 xmlns="http://www.w3.org/2000/svg">
                                                                 <g clip-path="url(#clip0_893_540)">
@@ -433,7 +441,7 @@
                                                             <p class="text-primary">$168</p>
                                                         </div>
                                                         <button
-                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg
+                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
                                                                 width="28" height="28" viewBox="0 0 28 28" fill="none"
                                                                 xmlns="http://www.w3.org/2000/svg">
                                                                 <g clip-path="url(#clip0_893_540)">
@@ -463,7 +471,7 @@
                                                             <p class="text-primary">$168</p>
                                                         </div>
                                                         <button
-                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg
+                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
                                                                 width="28" height="28" viewBox="0 0 28 28" fill="none"
                                                                 xmlns="http://www.w3.org/2000/svg">
                                                                 <g clip-path="url(#clip0_893_540)">
@@ -493,7 +501,7 @@
                                                             <p class="text-primary">$168</p>
                                                         </div>
                                                         <button
-                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg
+                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
                                                                 width="28" height="28" viewBox="0 0 28 28" fill="none"
                                                                 xmlns="http://www.w3.org/2000/svg">
                                                                 <g clip-path="url(#clip0_893_540)">
@@ -535,7 +543,7 @@
                                                             <p class="text-primary">$168</p>
                                                         </div>
                                                         <button
-                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg
+                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
                                                                 width="28" height="28" viewBox="0 0 28 28" fill="none"
                                                                 xmlns="http://www.w3.org/2000/svg">
                                                                 <g clip-path="url(#clip0_893_540)">
@@ -565,7 +573,7 @@
                                                             <p class="text-primary">$168</p>
                                                         </div>
                                                         <button
-                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg
+                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
                                                                 width="28" height="28" viewBox="0 0 28 28" fill="none"
                                                                 xmlns="http://www.w3.org/2000/svg">
                                                                 <g clip-path="url(#clip0_893_540)">
@@ -595,7 +603,7 @@
                                                             <p class="text-primary">$168</p>
                                                         </div>
                                                         <button
-                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg
+                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
                                                                 width="28" height="28" viewBox="0 0 28 28" fill="none"
                                                                 xmlns="http://www.w3.org/2000/svg">
                                                                 <g clip-path="url(#clip0_893_540)">
@@ -665,7 +673,7 @@
                                                                 <p class="text-primary">$168</p>
                                                             </div>
                                                             <button
-                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto">
+                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess">
                                                                 <svg width="28" height="28" viewBox="0 0 28 28"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <g clip-path="url(#clip0_893_540)">
@@ -695,7 +703,7 @@
                                                                 <p class="text-primary">$128</p>
                                                             </div>
                                                             <button
-                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto">
+                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess">
                                                                 <svg width="28" height="28" viewBox="0 0 28 28"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <g clip-path="url(#clip0_893_540)">
@@ -725,7 +733,7 @@
                                                                 <p class="text-primary">$188</p>
                                                             </div>
                                                             <button
-                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto">
+                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess">
                                                                 <svg width="28" height="28" viewBox="0 0 28 28"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <g clip-path="url(#clip0_893_540)">
@@ -766,7 +774,7 @@
                                                                 <p class="text-primary">$188</p>
                                                             </div>
                                                             <button
-                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto">
+                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess">
                                                                 <svg width="28" height="28" viewBox="0 0 28 28"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <g clip-path="url(#clip0_893_540)">
@@ -796,7 +804,7 @@
                                                                 <p class="text-primary">$98</p>
                                                             </div>
                                                             <button
-                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto">
+                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess">
                                                                 <svg width="28" height="28" viewBox="0 0 28 28"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <g clip-path="url(#clip0_893_540)">
@@ -826,7 +834,7 @@
                                                                 <p class="text-primary">$98</p>
                                                             </div>
                                                             <button
-                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto">
+                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess">
                                                                 <svg width="28" height="28" viewBox="0 0 28 28"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <g clip-path="url(#clip0_893_540)">
@@ -866,7 +874,7 @@
                                                                 <p class="text-primary">$128</p>
                                                             </div>
                                                             <button
-                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto">
+                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess">
                                                                 <svg width="28" height="28" viewBox="0 0 28 28"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <g clip-path="url(#clip0_893_540)">
@@ -896,7 +904,7 @@
                                                                 <p class="text-primary">$128</p>
                                                             </div>
                                                             <button
-                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto">
+                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess">
                                                                 <svg width="28" height="28" viewBox="0 0 28 28"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <g clip-path="url(#clip0_893_540)">
@@ -926,7 +934,7 @@
                                                                 <p class="text-primary">$168</p>
                                                             </div>
                                                             <button
-                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto">
+                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess">
                                                                 <svg width="28" height="28" viewBox="0 0 28 28"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <g clip-path="url(#clip0_893_540)">
@@ -966,7 +974,7 @@
                                                                 <p class="text-primary">$168</p>
                                                             </div>
                                                             <button
-                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto">
+                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess">
                                                                 <svg width="28" height="28" viewBox="0 0 28 28"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <g clip-path="url(#clip0_893_540)">
@@ -996,7 +1004,7 @@
                                                                 <p class="text-primary">$98</p>
                                                             </div>
                                                             <button
-                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto">
+                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess">
                                                                 <svg width="28" height="28" viewBox="0 0 28 28"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <g clip-path="url(#clip0_893_540)">
@@ -1026,7 +1034,7 @@
                                                                 <p class="text-primary">$98</p>
                                                             </div>
                                                             <button
-                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto">
+                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess">
                                                                 <svg width="28" height="28" viewBox="0 0 28 28"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <g clip-path="url(#clip0_893_540)">
@@ -1055,7 +1063,6 @@
                 </section>
             </section>
         </main>
-
         <%- include('./layout/footer'); -%>
 
             <!-- 引入 jQuery -->
@@ -1064,6 +1071,9 @@
             <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
             <!-- 引入 Swiper -->
             <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+            <!-- sweetalert2 -->
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
             <script type="module" src="../qoq-main.js"></script>
 
             <script>
@@ -1124,8 +1134,33 @@
                 if (firstDropdownItem) {
                     firstDropdownItem.click();
                 }
-
-
+            </script>
+            <script>
+                // 購物車內商品數量的變量
+                let cartCount = 0;
+                // 選擇購物車數量顯示的元素
+                const cartCountElement = document.querySelector('.cart-count');
+                // 選擇所有具有 'showSuccess' class 的按鈕
+                document.querySelectorAll('.showSuccess').forEach(function (button) {
+                    button.addEventListener('click', function () {
+                        // 顯示 SweetAlert2 通知
+                        Swal.fire({
+                            title: '加入購物車囉！',
+                            icon: 'success',
+                            position: 'top',
+                            toast: true,
+                            showConfirmButton: false,
+                            timer: 1000,
+                            customClass: {
+                                popup: 'swal2-small'
+                            }
+                        });
+                        // 每次點擊，購物車數量增加
+                        cartCount++;
+                        // 更新購物車圖標顯示的數量
+                        cartCountElement.textContent = cartCount;
+                    });
+                });
             </script>
 </body>
 

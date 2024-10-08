@@ -272,9 +272,12 @@
         color: #7e7e7e;
     }
 
-    // .nav-tabs .nav-link:hover{
-    //     border: 0;
-    // }
+    .nav-link {
+        &:hover {
+            border-color: transparent;
+        }
+    }
+
     .nav-tabs .nav-link.active {
         color: #ad4214;
         background-color: transparent;
@@ -308,4 +311,9 @@
 // 遇到圓點分頁影響商品卡片下方邊框被遮住一點，或是圓點往下時被蓋過去不顯示，這邊先用高度撐高讓圓點分頁顯示
 .swiper-slide {
     height: 364px;
+}
+
+#swal2-title {
+    margin: 12px 0 0 12px;
+    color: #ad4214;
 }
