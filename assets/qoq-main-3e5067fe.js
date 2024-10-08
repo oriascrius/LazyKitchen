@@ -1,0 +1,1 @@
+import"./bootstrap.min-9e4fe982.js";$(document).ready(function(){const o=$(".backTotop");$(window).scroll(function(){const t=$(this).scrollTop(),c=$(document).height(),n=$(this).height();if(t>c/2-n/2){o.fadeIn();const i=$(this).width()>=992?"40px":"24px";o.css({right:i,top:"40px"})}else o.fadeOut()}),o.click(function(){$("html, body").animate({scrollTop:0},100)})});

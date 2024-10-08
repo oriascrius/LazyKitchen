@@ -6,12 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>商品列表</title>
-    <!-- swipper -->
+    <!-- swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <script type="module" crossorigin src="/LazyKitchen/assets/bootstrap.min-a386f140.js"></script>
-  <script type="module" crossorigin src="/LazyKitchen/assets/qoq-main-f7e59136.js"></script>
-  <link rel="stylesheet" href="/LazyKitchen/assets/bootstrap-4ca768ae.css">
-  <link rel="stylesheet" href="/LazyKitchen/assets/qoq-main-5674a137.css">
+    <!-- sweetalert2 -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet" />
+  <script type="module" crossorigin src="/LazyKitchen/assets/bootstrap.min-9e4fe982.js"></script>
+  <script type="module" crossorigin src="/LazyKitchen/assets/qoq-main-3e5067fe.js"></script>
+  <link rel="stylesheet" href="/LazyKitchen/assets/bootstrap-f84680c1.css">
+  <link rel="stylesheet" href="/LazyKitchen/assets/qoq-main-b754c6d2.css">
 </head>
 
 <body>
@@ -53,6 +55,7 @@
       <!-- 購物車圖示 (桌面版顯示) -->
       <li class="nav-item d-none d-lg-block">
         <a class="nav-link" href="./shoppingCart.html">
+          <div class="cart-count">0</div>
           <img src="/LazyKitchen/assets/shoppingcart-d4c436a0.svg" alt="Cart" class="購物車">
         </a>
       </li>
@@ -154,7 +157,8 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                                             <p class="card-title">香草檸檬鮭魚</p>
                                             <p class="text-primary">$168</p>
                                         </div>
-                                        <button class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg
+                                        <button
+                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
                                                 width="28" height="28" viewBox="0 0 28 28" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0_893_540)">
@@ -183,7 +187,8 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                                             <p class="card-title">泰式咖哩雞</p>
                                             <p class="text-primary">$168</p>
                                         </div>
-                                        <button class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg
+                                        <button
+                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
                                                 width="28" height="28" viewBox="0 0 28 28" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0_893_540)">
@@ -212,7 +217,8 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                                             <p class="card-title">韓式辣炒年糕</p>
                                             <p class="text-primary">$168</p>
                                         </div>
-                                        <button class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg
+                                        <button
+                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
                                                 width="28" height="28" viewBox="0 0 28 28" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0_893_540)">
@@ -242,7 +248,8 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                                             <p class="card-title">冷凍雞塊</p>
                                             <p class="text-primary">$168</p>
                                         </div>
-                                        <button class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg
+                                        <button
+                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
                                                 width="28" height="28" viewBox="0 0 28 28" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0_893_540)">
@@ -271,7 +278,8 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                                             <p class="card-title">香草烤雞胸</p>
                                             <p class="text-primary">$168</p>
                                         </div>
-                                        <button class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg
+                                        <button
+                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
                                                 width="28" height="28" viewBox="0 0 28 28" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0_893_540)">
@@ -300,7 +308,8 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                                             <p class="card-title">松露薯條</p>
                                             <p class="text-primary">$168</p>
                                         </div>
-                                        <button class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg
+                                        <button
+                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
                                                 width="28" height="28" viewBox="0 0 28 28" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0_893_540)">
@@ -360,15 +369,15 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                     <!-- 分類標籤 -->
                     <ul class="nav nav-tabs d-flex justify-content-center border-0" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link active fw-bold" id="pork-tab" data-bs-toggle="tab"
+                            <button class="nav-link active fw-bold m-0" id="pork-tab" data-bs-toggle="tab"
                                 data-bs-target="#pork" type="button" role="tab">豬肉</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link fw-bold" id="beef-tab" data-bs-toggle="tab" data-bs-target="#beef"
-                                type="button" role="tab">牛肉</button>
+                            <button class="nav-link fw-bold m-0" id="beef-tab" data-bs-toggle="tab"
+                                data-bs-target="#beef" type="button" role="tab">牛肉</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link fw-bold" id="chicken-tab" data-bs-toggle="tab"
+                            <button class="nav-link fw-bold m-0" id="chicken-tab" data-bs-toggle="tab"
                                 data-bs-target="#chicken" type="button" role="tab">雞肉</button>
                         </li>
                     </ul>
@@ -390,7 +399,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                                                             <p class="text-primary">$168</p>
                                                         </div>
                                                         <button
-                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto">
+                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess">
                                                             <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
                                                                 xmlns="http://www.w3.org/2000/svg">
                                                                 <g clip-path="url(#clip0_893_540)">
@@ -420,7 +429,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                                                             <p class="text-primary">$168</p>
                                                         </div>
                                                         <button
-                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg
+                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
                                                                 width="28" height="28" viewBox="0 0 28 28" fill="none"
                                                                 xmlns="http://www.w3.org/2000/svg">
                                                                 <g clip-path="url(#clip0_893_540)">
@@ -450,7 +459,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                                                             <p class="text-primary">$168</p>
                                                         </div>
                                                         <button
-                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg
+                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
                                                                 width="28" height="28" viewBox="0 0 28 28" fill="none"
                                                                 xmlns="http://www.w3.org/2000/svg">
                                                                 <g clip-path="url(#clip0_893_540)">
@@ -493,7 +502,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                                                             <p class="text-primary">$168</p>
                                                         </div>
                                                         <button
-                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg
+                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
                                                                 width="28" height="28" viewBox="0 0 28 28" fill="none"
                                                                 xmlns="http://www.w3.org/2000/svg">
                                                                 <g clip-path="url(#clip0_893_540)">
@@ -523,7 +532,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                                                             <p class="text-primary">$168</p>
                                                         </div>
                                                         <button
-                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg
+                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
                                                                 width="28" height="28" viewBox="0 0 28 28" fill="none"
                                                                 xmlns="http://www.w3.org/2000/svg">
                                                                 <g clip-path="url(#clip0_893_540)">
@@ -553,7 +562,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                                                             <p class="text-primary">$168</p>
                                                         </div>
                                                         <button
-                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg
+                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
                                                                 width="28" height="28" viewBox="0 0 28 28" fill="none"
                                                                 xmlns="http://www.w3.org/2000/svg">
                                                                 <g clip-path="url(#clip0_893_540)">
@@ -595,7 +604,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                                                             <p class="text-primary">$168</p>
                                                         </div>
                                                         <button
-                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg
+                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
                                                                 width="28" height="28" viewBox="0 0 28 28" fill="none"
                                                                 xmlns="http://www.w3.org/2000/svg">
                                                                 <g clip-path="url(#clip0_893_540)">
@@ -625,7 +634,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                                                             <p class="text-primary">$168</p>
                                                         </div>
                                                         <button
-                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg
+                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
                                                                 width="28" height="28" viewBox="0 0 28 28" fill="none"
                                                                 xmlns="http://www.w3.org/2000/svg">
                                                                 <g clip-path="url(#clip0_893_540)">
@@ -655,7 +664,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                                                             <p class="text-primary">$168</p>
                                                         </div>
                                                         <button
-                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto"><svg
+                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
                                                                 width="28" height="28" viewBox="0 0 28 28" fill="none"
                                                                 xmlns="http://www.w3.org/2000/svg">
                                                                 <g clip-path="url(#clip0_893_540)">
@@ -725,7 +734,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                                                                 <p class="text-primary">$168</p>
                                                             </div>
                                                             <button
-                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto">
+                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess">
                                                                 <svg width="28" height="28" viewBox="0 0 28 28"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <g clip-path="url(#clip0_893_540)">
@@ -755,7 +764,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                                                                 <p class="text-primary">$128</p>
                                                             </div>
                                                             <button
-                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto">
+                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess">
                                                                 <svg width="28" height="28" viewBox="0 0 28 28"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <g clip-path="url(#clip0_893_540)">
@@ -785,7 +794,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                                                                 <p class="text-primary">$188</p>
                                                             </div>
                                                             <button
-                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto">
+                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess">
                                                                 <svg width="28" height="28" viewBox="0 0 28 28"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <g clip-path="url(#clip0_893_540)">
@@ -826,7 +835,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                                                                 <p class="text-primary">$188</p>
                                                             </div>
                                                             <button
-                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto">
+                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess">
                                                                 <svg width="28" height="28" viewBox="0 0 28 28"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <g clip-path="url(#clip0_893_540)">
@@ -856,7 +865,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                                                                 <p class="text-primary">$98</p>
                                                             </div>
                                                             <button
-                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto">
+                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess">
                                                                 <svg width="28" height="28" viewBox="0 0 28 28"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <g clip-path="url(#clip0_893_540)">
@@ -886,7 +895,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                                                                 <p class="text-primary">$98</p>
                                                             </div>
                                                             <button
-                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto">
+                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess">
                                                                 <svg width="28" height="28" viewBox="0 0 28 28"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <g clip-path="url(#clip0_893_540)">
@@ -926,7 +935,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                                                                 <p class="text-primary">$128</p>
                                                             </div>
                                                             <button
-                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto">
+                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess">
                                                                 <svg width="28" height="28" viewBox="0 0 28 28"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <g clip-path="url(#clip0_893_540)">
@@ -956,7 +965,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                                                                 <p class="text-primary">$128</p>
                                                             </div>
                                                             <button
-                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto">
+                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess">
                                                                 <svg width="28" height="28" viewBox="0 0 28 28"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <g clip-path="url(#clip0_893_540)">
@@ -986,7 +995,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                                                                 <p class="text-primary">$168</p>
                                                             </div>
                                                             <button
-                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto">
+                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess">
                                                                 <svg width="28" height="28" viewBox="0 0 28 28"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <g clip-path="url(#clip0_893_540)">
@@ -1026,7 +1035,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                                                                 <p class="text-primary">$168</p>
                                                             </div>
                                                             <button
-                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto">
+                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess">
                                                                 <svg width="28" height="28" viewBox="0 0 28 28"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <g clip-path="url(#clip0_893_540)">
@@ -1056,7 +1065,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                                                                 <p class="text-primary">$98</p>
                                                             </div>
                                                             <button
-                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto">
+                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess">
                                                                 <svg width="28" height="28" viewBox="0 0 28 28"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <g clip-path="url(#clip0_893_540)">
@@ -1086,7 +1095,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                                                                 <p class="text-primary">$98</p>
                                                             </div>
                                                             <button
-                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto">
+                                                                class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess">
                                                                 <svg width="28" height="28" viewBox="0 0 28 28"
                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <g clip-path="url(#clip0_893_540)">
@@ -1115,7 +1124,6 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                 </section>
             </section>
         </main>
-
         <footer class="footer-bg">
     <div class="container p-0 footerWrapper">
         <h1> <a href="./index.html"><svg width="180" height="40" viewBox="0 0 180 40" fill="none"
@@ -1241,6 +1249,9 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
             <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
             <!-- 引入 Swiper -->
             <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+            <!-- sweetalert2 -->
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
             
 
             <script>
@@ -1301,8 +1312,33 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                 if (firstDropdownItem) {
                     firstDropdownItem.click();
                 }
-
-
+            </script>
+            <script>
+                // 購物車內商品數量的變量
+                let cartCount = 0;
+                // 選擇購物車數量顯示的元素
+                const cartCountElement = document.querySelector('.cart-count');
+                // 選擇所有具有 'showSuccess' class 的按鈕
+                document.querySelectorAll('.showSuccess').forEach(function (button) {
+                    button.addEventListener('click', function () {
+                        // 顯示 SweetAlert2 通知
+                        Swal.fire({
+                            title: '加入購物車囉！',
+                            icon: 'success',
+                            position: 'top',
+                            toast: true,
+                            showConfirmButton: false,
+                            timer: 1000,
+                            customClass: {
+                                popup: 'swal2-small'
+                            }
+                        });
+                        // 每次點擊，購物車數量增加
+                        cartCount++;
+                        // 更新購物車圖標顯示的數量
+                        cartCountElement.textContent = cartCount;
+                    });
+                });
             </script>
 </body>
 
