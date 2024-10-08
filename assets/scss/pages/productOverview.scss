@@ -121,6 +121,14 @@
     background-image: url("../../images/qoq-imgs/bigBg.png");
     padding: 0 0 143px 0;
 
+    a {
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-6px);
+        }
+    }
+
     @media (max-width: 992px) {
         padding: 0 0 60px 0;
     }
@@ -311,6 +319,14 @@
 // 遇到圓點分頁影響商品卡片下方邊框被遮住一點，或是圓點往下時被蓋過去不顯示，這邊先用高度撐高讓圓點分頁顯示
 .swiper-slide {
     height: 364px;
+
+    a {
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-6px);
+        }
+    }
 }
 
 #swal2-title {
