@@ -6,32 +6,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>商品細節</title>
   </head>
+  <body>  
+    <!-- header -->
+    <%- include('./layout/header'); -%>
+
+    <section class="bgTop">
+    <!-- banner -->
+    <div class="bannerImg"></div>
+    
+    <!-- 內容 -->
+    <div class="container">
+      <div class="productBreadcrumb" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb"><!--麵包屑-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">懶人分類</a></li>
+          <li class="breadcrumb-item"><a href="#">主食</a></li>
+          <li class="breadcrumb-item active" aria-current="page" style="color: #AD4214;">雞肉</li>
+        </ol>
+      </div>
+      <div class="row mainImgFlex align-items-center">
+        <div class="col-12 col-lg-6 content align-left">
+          <h1 class="h2 productName">春川炒雞</h1>
+          <p class="h4 sign">
+            <span class="primaryColor me-3">＃3-4人份</span>
+            <span class="primaryColor">＃新鮮冷藏</span>
+          </p>
+          <ul class="d-flex list-unstyled mb-4 pb-1">
+            <li class="grayColor">卡路里<br><span class="blackColor">732 kcal</span></li>
+            <li class="grayColor mx-4 px-1">料理時間<br><span class="blackColor">9 min</span></li>
+            <li class="grayColor">重量<br><span class="blackColor">468 g</span></li>
+          </ul>
+          <div class="price">
+            <p class="oPrice"><del>$175</del></p>
+            <p class="h2 sPrice">$169</p>
+          </div>
+          <div class="product-quantity d-flex">
+            <div class="d-flex">
+              <button class="minusBtn border-0"><img src="../assets/images/qoq-imgs/minusBtn.png" alt="減號"></button>
+              <div class="counter-value h4 m-0 primaryColor" id="counter">1</div>
+              <button class="plusBtn border-0"><img src="../assets/images/qoq-imgs/plusBtn.png" alt="加號"></button>
+            </div>
+            <a class="sCart" href="shoppingcart.html">加入購物車</a>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center">
+          <img class="mainImg img-fluid" src="../assets/images/productList/mainProduct.png" alt="春川炒雞圖">
+        </div>
+      </div>
+      <div class="row"><div class="col contentBorder"></div></div>
+    </div>
+    </section>
+    <div class="container">
+      <div class="row detail justify-content-center move-up">
+        <div class="col-12 col-lg-8 mb-25">
+          <img src="../assets/images/productList/sneakStep1.png" alt="">
+        </div>
+        <div class="col-12 col-lg-8  mb-25">
+          <img src="../assets/images/productList/sneakStep2.png" alt="">
+        </div>
+        <div class="col-12 col-lg-8  mb-25">
+          <img class="img-fluid mb-5" src="../assets/images/productList/sneakStep3.png" alt="">
+          <img class="img-fluid mb-5" src="../assets/images/productList/sneakStep4.png" alt="">
+          <img class="img-fluid mb-5" src="../assets/images/productList/sneakStep5.png" alt="">
+          <img class="img-fluid mb-5" src="../assets/images/productList/sneakStep6.png" alt="">
+          <img class="img-fluid" src="../assets/images/productList/sneakStep7.png" alt="">
+        </div>
+        <div class="col-10 col-lg-10  mb-25"></div>
+      </div>
+    </div>
+    <!-- footer -->
+    <%- include('./layout/footer'); -%>
+
+    <script type="module" src="../lll-main.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let counter = document.getElementById("counter");
+      let countValue = parseInt(counter.textContent);
+      const minusBtn = document.querySelector(".minusBtn");
+
+      // 更新減數按鈕顏色
+      function updateMinusBtnState() {
+        if (countValue <= 1) {
+          minusBtn.classList.remove('minus-active'); // 當數字 <= 1，按鈕為 #7E7E7E 且無 hover 效果
+          minusBtn.style.backgroundColor = "#7E7E7E"; 
+        } else {
+          minusBtn.classList.add('minus-active'); // 當數字 > 1，按鈕為 #AD4214，並啟用 hover 效果
+          minusBtn.style.backgroundColor = "#AD4214";
+        }
+      }
+
+      // 初始化按鈕顏色
+      updateMinusBtnState();
+
+      // 減數按鈕功能
+      minusBtn.addEventListener("click", function () {
+        if (countValue > 1) {  // 保持數字不會小於 1
+          countValue--;
+          counter.textContent = countValue;
+          updateMinusBtnState();  // 更新按鈕顏色和狀態
+        }
+      });
+
+      // 加數按鈕功能
+      document.querySelector(".plusBtn").addEventListener("click", function () {
+        countValue++;
+        counter.textContent = countValue;
+        updateMinusBtnState();  // 更新按鈕顏色和狀態
+      });
+    });
+  </script>
+  </body>
 <!--
 首頁      index.html
 商品總攬	productAll.html
 商品細節	productList.html
 購物車		shoppingcart.html
 懶人特色	feature.html -->
-  <body>
-    <!-- header -->
-    <%- include('./layout/header'); -%>
-
-    <!-- banner -->
-    <h1 class="h1">banner測試用可刪掉</h1>
-
-    <!-- feature-introduction 特色四格漫畫 -->
-    <%- include('./layout/feature-introduction'); -%>
-
-    <!-- 搜尋列 -->
-
-    <!-- 商品 -->
-
-    <!-- QA -->
-    <%- include('./layout/Q&A'); -%>
-
-    <!-- footer -->
-    <%- include('./layout/footer'); -%>
-
-    <script type="module" src="../lll-main.js"></script>
-  </body>
 </html>

@@ -1,0 +1,170 @@
+body{
+    background: url("../../images/productList/bg.png");
+  }
+  .bgTop{
+    background: url("../../images/productList/bg-3.png") no-repeat;
+    background-position: center bottom;
+    background-attachment: local;
+    @media (max-width: 992px) {  
+      background-size: auto 100%; /* 背景寬度撐滿，保持比例 */
+      background-position: center bottom; /* 讓背景圖片向上對齊 */    
+    }
+  }
+  
+  .bannerImg {/* banner摳泊岸的 */
+    background-image: url("../../images/qoq-imgs/cart-banner-lg.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 280px;
+    @media (max-width: 992px) {
+      background-image: url("../../images/qoq-imgs/cart-banner-sm.png");
+      height: 200px;
+    }
+  }
+  .productBreadcrumb{/* 麵包屑間距 */
+    margin: 40px auto 80px;
+    @media (max-width: 992px) {
+        margin: 28px auto;
+    }
+  }
+  .breadcrumb-item a{/* 麵包屑連結 */
+    display: inline-block;
+    color: #7E7E7E;
+  }
+  .productName{
+    margin-bottom: 1.7rem;
+    @media (max-width: 992px) {
+        margin: 1.3rem auto 1.7rem;
+    }
+  }
+  .content .sign{/* 關鍵字 */
+    margin-bottom: 3.8rem;
+    @media (max-width: 992px) {
+        margin-bottom: 1.7rem;
+    }
+  }
+  .price{/* 價格 */
+    margin-bottom: 5rem;
+    @media (max-width: 992px) {
+        margin-bottom: 1.7rem;
+    }
+  } 
+  .price .oPrice{/* 原價 */
+    margin-bottom: 12px;
+    color: #7E7E7E;
+  }
+  .price .sPrice{/* 特價 */
+    color: #AD4214;
+  }
+  .minusBtn, .plusBtn, .sCart{
+    background: #AD4214;
+    color: #fff;
+  }
+  .minusBtn, .plusBtn {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  }
+  .minusBtn img, .plusBtn img {
+  width: 20px;
+  height: 20px;
+  }
+  /* 按鈕在被按下時變更顏色 */
+  .minusBtn:active, .plusBtn:active, .sCart:active
+  .minusBtn:hover, .plusBtn:hover, .sCart:hover {
+    background-color: #8A3510;
+  }
+  /* 當數字大於1時，改變減數按鈕的顏色 */
+  .minus-active {
+    background-color: #AD4214 !important;
+  }
+  /* 當減數按鈕是 active 時的 hover 效果 */
+  .minus-active:hover {
+    background-color: #8A3510 !important;
+  }
+  .sCart{/* 購物車按鈕 */
+    padding: 12px 51px;
+    border-radius: 4px;
+    margin-left: 72px;
+    @media (max-width: 768px) {
+        display: block;
+        width: 100%; /* 占滿螢幕寬度 */
+        text-align: center; /* 讓文字居中 */
+        margin-top: 40px; /* 給一點上方間距，讓它和上方區塊分開 */
+        margin-left: 0;
+    }
+  }
+  @media (max-width: 768px) {
+    .product-quantity {
+        flex-direction: column; /* 垂直排列 */
+        align-items: center; /* 選擇性居中 */
+    }
+  }
+  .product-quantity .counter-value{/* 數字 */
+  width: 52px;
+  height: 48px;
+  text-align: center;
+  line-height: 48px; /* 垂直居中 */
+  display: inline-block;
+  }
+  @media (max-width: 992px) {
+    .mainImgFlex{
+      flex-direction: column-reverse;
+    }
+  }
+  .align-left {
+    align-self: flex-start;
+  }
+  .row .contentBorder{/* 產品下方底線 */
+    border-top: 2px solid #7E7E7E;
+    margin-top: 100px;
+    padding-bottom: 218px;
+    @media (max-width: 992px) {
+        margin-top: 40px;
+        padding-bottom: 181px;
+    }
+  }
+  .move-up {
+    position: relative;
+    top: -118px;
+  }
+  .detail .ingredientsDescription{/*材料包說明外框*/
+    background: #FFF7EB;
+    border: 4px solid #AD4214;
+    border-radius: 12px;
+    padding: 1.3rem 1.1rem;
+  }
+  .iDescriptionDotted{/*材料包說明內框*/
+    border: 4px dashed #AD4214;
+    border-radius: 10px;
+    padding: 2rem 2rem;
+  }
+  .list-unstyled .listStyle{/*材料包說明數字標題*/
+    background: #AD4214;
+    color: #fff;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    line-height: 48px; 
+    text-align: center;
+  }
+  
+
+  .product-quantity .primaryColor,
+  .iDescriptionDotted .primaryColor,
+  .primaryColor{/*主色*/
+    color: #AD4214;
+  }
+  .list-unstyled .grayColor, .grayColor{/*灰色*/
+    color: #7E7E7E
+  }
+  .blackColor{
+    color: #000;
+  }
+  .mb-25{
+    margin-bottom: 100px;
+  }
