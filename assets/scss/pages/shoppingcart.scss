@@ -3,6 +3,14 @@ img {
   height: auto;
   object-fit: cover;
 }
+
+
+.bigBg {
+  background-image: url(../../images/qoq-imgs/bigBg.png);
+  padding: 0 0 100px 0;
+}
+
+
 // 購物車banner
 .bannerImg {
   background-image: url("../../images/qoq-imgs/cart-banner-lg.png");
@@ -72,6 +80,47 @@ img {
 
 @media (max-width: 992px) {
   .shoppingSteps {
+    li {
+      padding: 12px;
+
+      &:nth-child(1) {
+        padding-left: 14.5px;
+        padding-right: 14.5px;
+      }
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        padding-left: 9.5px;
+        padding-right: 9.5px;
+      }
+
+      &:nth-child(4) {
+        padding-left: 19.5px;
+        padding-right: 19.5px;
+      }
+
+      h3 {
+        padding-bottom: 4px;
+        font-weight: 500;
+        font-size: 16px;
+        //letter-spacing: 0.15rem;
+        letter-spacing: 0.02em;
+        line-height: 1.5;
+      }
+
+      h4 {
+        font-weight: 500;
+        font-size: 16px;
+        //letter-spacing: 0.15rem;
+        letter-spacing: 0.02em;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .shoppingSteps {
     padding: 20px 0 40px;
     gap: 4px;
 
@@ -123,6 +172,7 @@ img {
     letter-spacing: 0.02em;
     line-height: 1.5;
   }
+
   p {
     font-weight: bold;
     font-size: 20px;
@@ -152,6 +202,7 @@ img {
         padding: 10px;
         background-color: #ad4214;
         border-radius: 4%;
+
         &:hover {
           background-color: #8a3510;
         }
@@ -208,7 +259,8 @@ img {
   display: flex;
   justify-content: end;
   gap: 24px;
-  margin-bottom: 100px;
+
+  // margin-bottom: 100px;
   a {
     padding: 12px 40px;
     width: 100%;
@@ -223,6 +275,7 @@ img {
   li:nth-child(1) {
     border: 1px solid #ad4214;
     background-color: #fff3e5;
+
     a {
       color: #ad4214;
     }
@@ -319,6 +372,7 @@ img {
   height: 522px;
   padding: 20px 30px;
   border: 1px solid #ccc9c9;
+
   @media (max-width: 992px) {
     margin: 0 0 20px 0;
   }
