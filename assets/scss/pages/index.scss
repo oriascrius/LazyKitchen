@@ -35,14 +35,16 @@ a {
 
 
 .banner-a {
-  transition: box-shadow 0.3s ease,
+  font-size: 20px;
+  transition: filter 0.3s ease,
               transform  0.3s ease;
 }
 
 
 .banner-a:hover {
-  transform: translate(-3px, -3px);
-  box-shadow: 5px 5px 10px #000000 ;
+  transform: translateY(-3px) translateX(-3px);
+
+  filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.5));
 }
 
 
@@ -188,7 +190,7 @@ a {
 
 .hot-a:hover {
   transform: translateX(-2px) translateY(-3px);
-  filter: drop-shadow(10px 10px 7px rgb(0, 0, 0));
+  filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.5));
 }
 
 
@@ -225,7 +227,7 @@ a {
   &.swiper-slide-active {
     transform: translateX(-2px) translateY(-3px) scale(1.1);
 
-    filter: drop-shadow(10px 10px 7px rgb(0, 0, 0));
+    filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.5));
 
     .slide-act {
     color: #AD4214;
@@ -243,7 +245,7 @@ a {
 
 .slide-a:hover {
   transform: translateX(-1px) translateY(-2px);
-  filter: drop-shadow(5px 5px 6px rgb(0, 0, 0));
+  filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.5));
 }
 
 
@@ -259,7 +261,7 @@ a {
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
   transform: translateX(-2px) translateY(-3px);
-  filter: drop-shadow(5px 5px 6px rgb(0, 0, 0));
+  filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.5));
 }
 
 
@@ -450,7 +452,7 @@ a {
 
   transform: translateY(-5px) translateX(-5px);
 
-  filter: drop-shadow(4px 4px 4px rgb(0, 0, 0));
+  filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.5));
 }
 
 
