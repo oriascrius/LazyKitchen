@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>商品總攬</title>
-    <script type="module" crossorigin src="/LazyKitchen/assets/bootstrap.min-008907fd.js"></script>
-    <link rel="stylesheet" href="/LazyKitchen/assets/bootstrap-a4d6d9c8.css">
-    <link rel="stylesheet" href="/LazyKitchen/assets/productAll-3deb1be7.css">
-  </head>
-  <body>
-      <!-- header -->
-      <header class="header" style="background: #AD4214;">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>商品總攬</title>
+
+  <!-----   Swiper CSS   ----->
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script type="module" crossorigin src="/LazyKitchen/assets/bootstrap.min-008907fd.js"></script>
+  <link rel="stylesheet" href="/LazyKitchen/assets/bootstrap-a4d6d9c8.css">
+  <link rel="stylesheet" href="/LazyKitchen/assets/productAll-88a88c55.css">
+</head>
+
+<body>
+  <!-- header -->
+  <header class="header" style="background: #AD4214;">
   <div class="container">
 
 <!-- Navbar -->
@@ -70,13 +76,603 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
 });
 </script>
 
-      <!-- banner -->
-      <div class="container banner-my-60 mx-auto">
-        <img class="w-100 banner-img" src="/LazyKitchen/assets/banner-a2cdc7ee.png" alt="banner-img">
-      </div>
+    <!-- banner -->
+    <div class="container banner-my-60 mx-auto">
+      <img class="w-100 banner-img" src="/LazyKitchen/assets/banner-a2cdc7ee.png" alt="banner-img">
+    </div>
 
-      <!-- footer -->
-      <footer class="footer-bg">
+    <!-- search -->
+    <div class="mx-auto bg-white">
+      <div class="container row flex-column flex-md-row justify-content-center w-100 mx-auto search-py search-box">
+        <div class="col col-md-2 search-mb mb-md-0">
+          <div class="dropdown border border-3 border-primary rounded-1">
+            <a class="d-flex justify-content-between align-items-center text-primary dropdown-a" href="#" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              請選擇分類
+              <img class="p-2" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAHCAYAAAA8sqwkAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACcSURBVHgBdY7BDYJAEEVnlpsnEqQAO9lgBxDPbAl2IHRAB8LZQAlmO7EAMd487jhjIhmS5Z9+5r8/MzgWuQOgKwZypX8NENF0zGoi7Ni2BgKlMiSD/WSzegPu2aYY8G0qP3eBm7GSgkVt6Z8D/sNbsW8MwEW8vAcJL1BwdZ+bX6bP65LSAouSVeHx8afDDnmLjcGbGm3u+No5ln0BuNs+kqRgJbsAAAAASUVORK5CYII=" alt="down-arrow">
+            </a>
+
+            <ul class="dropdown-menu w-100 border border-3 border-primary mt-1 dropdown-ul">
+              <li><a class="dropdown-item mb-3 p-1 rounded-1" href="#">牛肉</a></li>
+
+              <li><a class="dropdown-item mb-3 p-1 rounded-1" href="#">豬肉</a></li>
+
+              <li><a class="dropdown-item mb-3 p-1 rounded-1" href="#">雞肉</a></li>
+
+              <li><a class="dropdown-item mb-3 p-1 rounded-1" href="#">電鍋料理</a></li>
+
+              <li><a class="dropdown-item mb-3 p-1 rounded-1" href="#">氣炸鍋料理</a></li>
+
+              <li><a class="dropdown-item p-1 rounded-1" href="#">微波料理</a></li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="col col-md-5">
+          <div class="input-group border border-3 border-primary rounded-1 mb-md-0">
+            <label for="search-input">
+              <img class="input-group-text border-0 bg-danger me-2 input-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGgSURBVHgB7VRBUsJQDE1+u3aqcgC8Ad6g4gWsjGvwBHgD6AnoDaRrBnsDp57AegPc40zHrW1ifikiI+3vCEveDMzvT/NekiYBOMIArDJEruOAsocEOADgtr5jhASZE0W578XpAv4rEF2fDYnVWI5OhV8qP7/3vAzAAFVBHpTkL0RwpSg7FTLUZ2YMS9tk3m09mAS2MpCytEnZryWBjnC8y2nWbY0lspHO5JOyi/s4TaFJBmRZoxU5TqvINe7EhgixfvdE2bVZqO10sFNcEodgQJ6DX3r1GwswQyHgxcsYDLAhS0qvdmOBNR51ixrg1dS9RgAX+t8Bu2NynLktt/BATBoLEKxqz1bRIfWRWVzUXsraXMCmLEDgVJzcqNuqFJlrG+NAejxV9OXXCfyZ5Lkrw6NgsnriqSIM9UfXqyOT0lmSnQ7gh4B4cBt/hI0F1iKoeMSAToVTylDMwY1JZGcX9eJlgJRflmvhbX0vpO8kE44yvTKInj4X9wqnT+55vyKY/fBrbezMZG8Bk4iCA0Dvpk25Ng1wcOjhixpsgSO28A18uLM9sZn5WwAAAABJRU5ErkJggg=="
+                alt="search-img">
+            </label>
+
+            <input type="text" id="search-input" class="form-control border-0 bg-danger" placeholder="我想來點..."
+              aria-label="我想來點..." aria-describedby="basic-addon1">
+          </div>
+        </div>
+
+
+
+        <div class="col col-md-1">
+          <button type="button" class="btn btn-primary w-100 border border-3 border-primary rounded-1">查詢</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 熱門商品 -->
+    <div class="mx-auto bg-white">
+      <div>
+        <div class="container hot-box-py">
+          <h2 class="text-center fw-bold text-primary hot-h2">熱門商品</h2>
+
+          <!-----   SM 區塊   ----->
+
+          <div class="row row-cols-2 hot-row-mb d-sm-none">
+            <div class="col">
+              <div class="position-relative hot-a">
+                <a href="#">
+                  <div class="hot-card position-relative z-2">
+                    <div class="text-center">
+                      <img class="hot-img" src="/LazyKitchen/assets/img_糖醋里肌-50e0cc42.png" alt="pork">
+                    </div>
+
+                    <h4 class="fw-bold text-dark hot-h4">糖醋里肌</h4>
+
+                    <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
+                  </div>
+                </a>
+
+                <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+              </div>
+            </div>
+
+
+
+            <div class="col">
+              <div class="position-relative hot-a">
+                <a href="#">
+                  <div class="hot-card position-relative z-2">
+                    <div class="text-center">
+                      <img class="hot-img" src="/LazyKitchen/assets/img_蜜汁豬肉-6fca9623.png" alt="sweet-pork">
+                    </div>
+
+                    <h4 class="fw-bold text-dark hot-h4">蜜汁豬肉</h4>
+
+                    <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
+                  </div>
+                </a>
+
+                <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-----   MD 區塊   ----->
+
+          <div class="row d-none d-sm-block">
+            <div class="col-9 position-relative mx-auto px-5">
+              <div class="swiper lazy-swiper p-4">
+                <div class="swiper-wrapper pt-2 pb-3">
+
+                  <div class="swiper-slide">
+                    <div class="position-relative">
+                      <div class="hot-card position-relative z-2">
+                        <div class="text-center">
+                          <img class="hot-img" src="/LazyKitchen/assets/img_蜜汁豬肉-6fca9623.png" alt="sweet-pork">
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                          <div class="d-flex flex-column">
+                            <h4 class="fw-bold hot-h4 slide-act">蜜汁豬肉</h4>
+
+                            <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
+                          </div>
+
+                          <a class="align-self-end slide-a" href="#">
+                            <img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALqSURBVHgB7Zo9aBNhGMf/d2k7tKXNUFGrbQU7WAVr0cW4iEMSh4KNEKcWKnVxUqKuFRy12M1BQahdFGzj5seigom6aAO1HSJYK8HSDElpMpiP8/0fnCTSNrl7A9eD+0HJNbxveP7P1/u8JAoE82e9hzRP02NNwwnxrxe7HQVRtVS8PvI280Oh8WW16QucYHg1GbVcHFLLHs99OM944mXWqNCUC3AoTHkVzsbrdAFwBdiNK8BuXAF202Rm8X5fAAd85/Xn9UQMK6+fwW5MCTg6dgOdh4/pz72BMFr39mDpyRTsxJQAGtvtC+qGdw2eRn/oCvJrq5ClsLmBVOwlrKA8P9elwSTN7R0Ynl9GI0k8mERy7iHMYqmI6bFG539hMwsrmEqhSn4KAX3+sP68NDNlqRaCs59FOh5E9vuiZYdYbqPrCzGkF+L6c18gDLOwfmg8iU+OwypS54DhdRa1EY16aN3XowsgjGR+7ResIiWgKgr+S3Xv6x+Z+Of9bzP3IIP0SWxEgW11z3FfzfWV3mfXkfE+sVzEBkYUKGBgLIL83Z3PhSOjEf2V54eVtvk/0gIIDyEK4F9g9lNde5Jzj6S9TxoyzBkpUS/pRLwh3ifSEWD3MQry4+3LyCYXa+7JNWD8MJAWMCAGPMJ2mPpgbZ6RQUoA+7/hfcIiNkP+96r0SCIlgJ2EhUgRvX7zpzFJiy6Wkyhm6RR6H7mIU7em9WiYhQ7ISXYiS+P0bkK6jfKaORxdRuhNCgOjtWuAdcL1QXFe8HIki5QAXmwGr95Bc1sHDOO6z2xvFFsuRXI9U+7kzWn9M2SQE9DWWdWFiHFn3grOQVX7hfEtbTYKYBHyMlLJyqun2643JtfK/bYXMVOhPzSBlvZOvadzuNsJr4gQR48/4grJm1whtwEZ3C5kN64Au3EF2I0rwG5UBVoGDkaFonyFQxHf1L9QlVJx3IlRUICMRyteU/WfrJRLQ+K9KBwADRcv75RycYi2/wVlHQeMFCN33wAAAABJRU5ErkJggg==" alt="cart-img">
+                          </a>
+                        </div>
+
+                      </div>
+
+                      <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+                    </div>
+                  </div>
+
+
+                  <div class="swiper-slide">
+                    <div class="position-relative">
+                      <div class="hot-card position-relative z-2">
+                        <div class="text-center">
+                          <img class="hot-img" src="/LazyKitchen/assets/img_泡菜豬肉-d25ac7e7.png" alt="k-pork">
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                          <div class="d-flex flex-column">
+                            <h4 class="fw-bold hot-h4 slide-act">泡菜豬肉</h4>
+
+                            <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
+                          </div>
+
+                          <a class="align-self-end slide-a" href="#">
+                            <img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALqSURBVHgB7Zo9aBNhGMf/d2k7tKXNUFGrbQU7WAVr0cW4iEMSh4KNEKcWKnVxUqKuFRy12M1BQahdFGzj5seigom6aAO1HSJYK8HSDElpMpiP8/0fnCTSNrl7A9eD+0HJNbxveP7P1/u8JAoE82e9hzRP02NNwwnxrxe7HQVRtVS8PvI280Oh8WW16QucYHg1GbVcHFLLHs99OM944mXWqNCUC3AoTHkVzsbrdAFwBdiNK8BuXAF202Rm8X5fAAd85/Xn9UQMK6+fwW5MCTg6dgOdh4/pz72BMFr39mDpyRTsxJQAGtvtC+qGdw2eRn/oCvJrq5ClsLmBVOwlrKA8P9elwSTN7R0Ynl9GI0k8mERy7iHMYqmI6bFG539hMwsrmEqhSn4KAX3+sP68NDNlqRaCs59FOh5E9vuiZYdYbqPrCzGkF+L6c18gDLOwfmg8iU+OwypS54DhdRa1EY16aN3XowsgjGR+7ResIiWgKgr+S3Xv6x+Z+Of9bzP3IIP0SWxEgW11z3FfzfWV3mfXkfE+sVzEBkYUKGBgLIL83Z3PhSOjEf2V54eVtvk/0gIIDyEK4F9g9lNde5Jzj6S9TxoyzBkpUS/pRLwh3ifSEWD3MQry4+3LyCYXa+7JNWD8MJAWMCAGPMJ2mPpgbZ6RQUoA+7/hfcIiNkP+96r0SCIlgJ2EhUgRvX7zpzFJiy6Wkyhm6RR6H7mIU7em9WiYhQ7ISXYiS+P0bkK6jfKaORxdRuhNCgOjtWuAdcL1QXFe8HIki5QAXmwGr95Bc1sHDOO6z2xvFFsuRXI9U+7kzWn9M2SQE9DWWdWFiHFn3grOQVX7hfEtbTYKYBHyMlLJyqun2643JtfK/bYXMVOhPzSBlvZOvadzuNsJr4gQR48/4grJm1whtwEZ3C5kN64Au3EF2I0rwG5UBVoGDkaFonyFQxHf1L9QlVJx3IlRUICMRyteU/WfrJRLQ+K9KBwADRcv75RycYi2/wVlHQeMFCN33wAAAABJRU5ErkJggg==" alt="cart-img">
+                          </a>
+                        </div>
+                      </div>
+
+                      <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="swiper-slide">
+                    <div class="position-relative">
+                      <div class="hot-card position-relative z-2">
+                        <div class="text-center">
+                          <img class="hot-img" src="/LazyKitchen/assets/img_香草檸檬鮭魚-cae09ef2.png" alt="lemon-salmon">
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                          <div class="d-flex flex-column">
+                            <h4 class="fw-bold hot-h4 slide-act">香草檸檬鮭魚</h4>
+
+                            <h4 class="fw-bold text-primary m-0 hot-h4">$168</h4>
+                          </div>
+
+                          <a class="align-self-end slide-a" href="#">
+                            <img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALqSURBVHgB7Zo9aBNhGMf/d2k7tKXNUFGrbQU7WAVr0cW4iEMSh4KNEKcWKnVxUqKuFRy12M1BQahdFGzj5seigom6aAO1HSJYK8HSDElpMpiP8/0fnCTSNrl7A9eD+0HJNbxveP7P1/u8JAoE82e9hzRP02NNwwnxrxe7HQVRtVS8PvI280Oh8WW16QucYHg1GbVcHFLLHs99OM944mXWqNCUC3AoTHkVzsbrdAFwBdiNK8BuXAF202Rm8X5fAAd85/Xn9UQMK6+fwW5MCTg6dgOdh4/pz72BMFr39mDpyRTsxJQAGtvtC+qGdw2eRn/oCvJrq5ClsLmBVOwlrKA8P9elwSTN7R0Ynl9GI0k8mERy7iHMYqmI6bFG539hMwsrmEqhSn4KAX3+sP68NDNlqRaCs59FOh5E9vuiZYdYbqPrCzGkF+L6c18gDLOwfmg8iU+OwypS54DhdRa1EY16aN3XowsgjGR+7ResIiWgKgr+S3Xv6x+Z+Of9bzP3IIP0SWxEgW11z3FfzfWV3mfXkfE+sVzEBkYUKGBgLIL83Z3PhSOjEf2V54eVtvk/0gIIDyEK4F9g9lNde5Jzj6S9TxoyzBkpUS/pRLwh3ifSEWD3MQry4+3LyCYXa+7JNWD8MJAWMCAGPMJ2mPpgbZ6RQUoA+7/hfcIiNkP+96r0SCIlgJ2EhUgRvX7zpzFJiy6Wkyhm6RR6H7mIU7em9WiYhQ7ISXYiS+P0bkK6jfKaORxdRuhNCgOjtWuAdcL1QXFe8HIki5QAXmwGr95Bc1sHDOO6z2xvFFsuRXI9U+7kzWn9M2SQE9DWWdWFiHFn3grOQVX7hfEtbTYKYBHyMlLJyqun2643JtfK/bYXMVOhPzSBlvZOvadzuNsJr4gQR48/4grJm1whtwEZ3C5kN64Au3EF2I0rwG5UBVoGDkaFonyFQxHf1L9QlVJx3IlRUICMRyteU/WfrJRLQ+K9KBwADRcv75RycYi2/wVlHQeMFCN33wAAAABJRU5ErkJggg==" alt="cart-img">
+                          </a>
+                        </div>
+                      </div>
+
+                      <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="swiper-slide">
+                    <div class="position-relative">
+                      <div class="hot-card position-relative z-2">
+                        <div class="text-center">
+                          <img class="hot-img" src="/LazyKitchen/assets/img_糖醋里肌-50e0cc42.png" alt="sweet-sour-pork">
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                          <div class="d-flex flex-column">
+                            <h4 class="fw-bold hot-h4 slide-act">糖醋里肌</h4>
+
+                            <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
+                          </div>
+
+                          <a class="align-self-end slide-a" href="#">
+                            <img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALqSURBVHgB7Zo9aBNhGMf/d2k7tKXNUFGrbQU7WAVr0cW4iEMSh4KNEKcWKnVxUqKuFRy12M1BQahdFGzj5seigom6aAO1HSJYK8HSDElpMpiP8/0fnCTSNrl7A9eD+0HJNbxveP7P1/u8JAoE82e9hzRP02NNwwnxrxe7HQVRtVS8PvI280Oh8WW16QucYHg1GbVcHFLLHs99OM944mXWqNCUC3AoTHkVzsbrdAFwBdiNK8BuXAF202Rm8X5fAAd85/Xn9UQMK6+fwW5MCTg6dgOdh4/pz72BMFr39mDpyRTsxJQAGtvtC+qGdw2eRn/oCvJrq5ClsLmBVOwlrKA8P9elwSTN7R0Ynl9GI0k8mERy7iHMYqmI6bFG539hMwsrmEqhSn4KAX3+sP68NDNlqRaCs59FOh5E9vuiZYdYbqPrCzGkF+L6c18gDLOwfmg8iU+OwypS54DhdRa1EY16aN3XowsgjGR+7ResIiWgKgr+S3Xv6x+Z+Of9bzP3IIP0SWxEgW11z3FfzfWV3mfXkfE+sVzEBkYUKGBgLIL83Z3PhSOjEf2V54eVtvk/0gIIDyEK4F9g9lNde5Jzj6S9TxoyzBkpUS/pRLwh3ifSEWD3MQry4+3LyCYXa+7JNWD8MJAWMCAGPMJ2mPpgbZ6RQUoA+7/hfcIiNkP+96r0SCIlgJ2EhUgRvX7zpzFJiy6Wkyhm6RR6H7mIU7em9WiYhQ7ISXYiS+P0bkK6jfKaORxdRuhNCgOjtWuAdcL1QXFe8HIki5QAXmwGr95Bc1sHDOO6z2xvFFsuRXI9U+7kzWn9M2SQE9DWWdWFiHFn3grOQVX7hfEtbTYKYBHyMlLJyqun2643JtfK/bYXMVOhPzSBlvZOvadzuNsJr4gQR48/4grJm1whtwEZ3C5kN64Au3EF2I0rwG5UBVoGDkaFonyFQxHf1L9QlVJx3IlRUICMRyteU/WfrJRLQ+K9KBwADRcv75RycYi2/wVlHQeMFCN33wAAAABJRU5ErkJggg==" alt="cart-img">
+                          </a>
+                        </div>
+                      </div>
+
+                      <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="text-center">
+            <button class="bg-primary text-secondary border-0 rounded-1 d-sm-none hot-btn hot-a">查看更多</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 懶人分類 -->
+    <div class="lazy-f-bg">
+      <div class="f-level-bg">
+        <div class="container hot-box-py">
+          <h2 class="text-center fw-bold text-primary hot-h2">懶人分類</h2>
+
+          <div class="row">
+            <div class="col-6 col-sm-2 mx-auto lazy-ul">
+              <ul class="d-flex justify-content-between list-unstyled fw-bold m-0">
+                <li class="lazy-li pb-1"><a href="#">豬肉</a></li>
+                <li class="lazy-li pb-1"><a href="#">牛肉</a></li>
+                <li class="lazy-li pb-1"><a href="#">雞肉</a></li>
+              </ul>
+            </div>
+          </div>
+
+
+
+          <!-----   SM 區塊   ----->
+
+          <div class="row row-cols-2 hot-row-mb d-sm-none">
+            <div class="col">
+              <div class="position-relative hot-a">
+                <a href="#">
+                  <div class="hot-card position-relative z-2">
+                    <div class="text-center">
+                      <img class="hot-img" src="/LazyKitchen/assets/img_糖醋里肌-50e0cc42.png" alt="pork">
+                    </div>
+
+                    <h4 class="fw-bold text-dark hot-h4">糖醋里肌</h4>
+
+                    <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
+                  </div>
+                </a>
+
+                <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+              </div>
+            </div>
+
+
+
+            <div class="col">
+              <div class="position-relative hot-a">
+                <a href="#">
+                  <div class="hot-card position-relative z-2">
+                    <div class="text-center">
+                      <img class="hot-img" src="/LazyKitchen/assets/img_蜜汁豬肉-6fca9623.png" alt="sweet-pork">
+                    </div>
+
+                    <h4 class="fw-bold text-dark hot-h4">蜜汁豬肉</h4>
+
+                    <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
+                  </div>
+                </a>
+
+                <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-----   MD 區塊   ----->
+
+          <div class="row d-none d-sm-block">
+            <div class="col-9 position-relative mx-auto px-5">
+              <div class="swiper lazy-swiper p-4">
+                <div class="swiper-wrapper pt-2 pb-3">
+
+                  <div class="swiper-slide">
+                    <div class="position-relative">
+                      <div class="hot-card position-relative z-2">
+                        <div class="text-center">
+                          <img class="hot-img" src="/LazyKitchen/assets/img_蜜汁豬肉-6fca9623.png" alt="sweet-pork">
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                          <div class="d-flex flex-column">
+                            <h4 class="fw-bold hot-h4 slide-act">蜜汁豬肉</h4>
+
+                            <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
+                          </div>
+
+                          <a class="align-self-end slide-a" href="#">
+                            <img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALqSURBVHgB7Zo9aBNhGMf/d2k7tKXNUFGrbQU7WAVr0cW4iEMSh4KNEKcWKnVxUqKuFRy12M1BQahdFGzj5seigom6aAO1HSJYK8HSDElpMpiP8/0fnCTSNrl7A9eD+0HJNbxveP7P1/u8JAoE82e9hzRP02NNwwnxrxe7HQVRtVS8PvI280Oh8WW16QucYHg1GbVcHFLLHs99OM944mXWqNCUC3AoTHkVzsbrdAFwBdiNK8BuXAF202Rm8X5fAAd85/Xn9UQMK6+fwW5MCTg6dgOdh4/pz72BMFr39mDpyRTsxJQAGtvtC+qGdw2eRn/oCvJrq5ClsLmBVOwlrKA8P9elwSTN7R0Ynl9GI0k8mERy7iHMYqmI6bFG539hMwsrmEqhSn4KAX3+sP68NDNlqRaCs59FOh5E9vuiZYdYbqPrCzGkF+L6c18gDLOwfmg8iU+OwypS54DhdRa1EY16aN3XowsgjGR+7ResIiWgKgr+S3Xv6x+Z+Of9bzP3IIP0SWxEgW11z3FfzfWV3mfXkfE+sVzEBkYUKGBgLIL83Z3PhSOjEf2V54eVtvk/0gIIDyEK4F9g9lNde5Jzj6S9TxoyzBkpUS/pRLwh3ifSEWD3MQry4+3LyCYXa+7JNWD8MJAWMCAGPMJ2mPpgbZ6RQUoA+7/hfcIiNkP+96r0SCIlgJ2EhUgRvX7zpzFJiy6Wkyhm6RR6H7mIU7em9WiYhQ7ISXYiS+P0bkK6jfKaORxdRuhNCgOjtWuAdcL1QXFe8HIki5QAXmwGr95Bc1sHDOO6z2xvFFsuRXI9U+7kzWn9M2SQE9DWWdWFiHFn3grOQVX7hfEtbTYKYBHyMlLJyqun2643JtfK/bYXMVOhPzSBlvZOvadzuNsJr4gQR48/4grJm1whtwEZ3C5kN64Au3EF2I0rwG5UBVoGDkaFonyFQxHf1L9QlVJx3IlRUICMRyteU/WfrJRLQ+K9KBwADRcv75RycYi2/wVlHQeMFCN33wAAAABJRU5ErkJggg==" alt="cart-img">
+                          </a>
+                        </div>
+
+                      </div>
+
+                      <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+                    </div>
+                  </div>
+
+
+                  <div class="swiper-slide">
+                    <div class="position-relative">
+                      <div class="hot-card position-relative z-2">
+                        <div class="text-center">
+                          <img class="hot-img" src="/LazyKitchen/assets/img_泡菜豬肉-d25ac7e7.png" alt="k-pork">
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                          <div class="d-flex flex-column">
+                            <h4 class="fw-bold hot-h4 slide-act">泡菜豬肉</h4>
+
+                            <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
+                          </div>
+
+                          <a class="align-self-end slide-a" href="#">
+                            <img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALqSURBVHgB7Zo9aBNhGMf/d2k7tKXNUFGrbQU7WAVr0cW4iEMSh4KNEKcWKnVxUqKuFRy12M1BQahdFGzj5seigom6aAO1HSJYK8HSDElpMpiP8/0fnCTSNrl7A9eD+0HJNbxveP7P1/u8JAoE82e9hzRP02NNwwnxrxe7HQVRtVS8PvI280Oh8WW16QucYHg1GbVcHFLLHs99OM944mXWqNCUC3AoTHkVzsbrdAFwBdiNK8BuXAF202Rm8X5fAAd85/Xn9UQMK6+fwW5MCTg6dgOdh4/pz72BMFr39mDpyRTsxJQAGtvtC+qGdw2eRn/oCvJrq5ClsLmBVOwlrKA8P9elwSTN7R0Ynl9GI0k8mERy7iHMYqmI6bFG539hMwsrmEqhSn4KAX3+sP68NDNlqRaCs59FOh5E9vuiZYdYbqPrCzGkF+L6c18gDLOwfmg8iU+OwypS54DhdRa1EY16aN3XowsgjGR+7ResIiWgKgr+S3Xv6x+Z+Of9bzP3IIP0SWxEgW11z3FfzfWV3mfXkfE+sVzEBkYUKGBgLIL83Z3PhSOjEf2V54eVtvk/0gIIDyEK4F9g9lNde5Jzj6S9TxoyzBkpUS/pRLwh3ifSEWD3MQry4+3LyCYXa+7JNWD8MJAWMCAGPMJ2mPpgbZ6RQUoA+7/hfcIiNkP+96r0SCIlgJ2EhUgRvX7zpzFJiy6Wkyhm6RR6H7mIU7em9WiYhQ7ISXYiS+P0bkK6jfKaORxdRuhNCgOjtWuAdcL1QXFe8HIki5QAXmwGr95Bc1sHDOO6z2xvFFsuRXI9U+7kzWn9M2SQE9DWWdWFiHFn3grOQVX7hfEtbTYKYBHyMlLJyqun2643JtfK/bYXMVOhPzSBlvZOvadzuNsJr4gQR48/4grJm1whtwEZ3C5kN64Au3EF2I0rwG5UBVoGDkaFonyFQxHf1L9QlVJx3IlRUICMRyteU/WfrJRLQ+K9KBwADRcv75RycYi2/wVlHQeMFCN33wAAAABJRU5ErkJggg==" alt="cart-img">
+                          </a>
+                        </div>
+                      </div>
+
+                      <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="swiper-slide">
+                    <div class="position-relative">
+                      <div class="hot-card position-relative z-2">
+                        <div class="text-center">
+                          <img class="hot-img" src="/LazyKitchen/assets/img_香草檸檬鮭魚-cae09ef2.png" alt="lemon-salmon">
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                          <div class="d-flex flex-column">
+                            <h4 class="fw-bold hot-h4 slide-act">香草檸檬鮭魚</h4>
+
+                            <h4 class="fw-bold text-primary m-0 hot-h4">$168</h4>
+                          </div>
+
+                          <a class="align-self-end slide-a" href="#">
+                            <img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALqSURBVHgB7Zo9aBNhGMf/d2k7tKXNUFGrbQU7WAVr0cW4iEMSh4KNEKcWKnVxUqKuFRy12M1BQahdFGzj5seigom6aAO1HSJYK8HSDElpMpiP8/0fnCTSNrl7A9eD+0HJNbxveP7P1/u8JAoE82e9hzRP02NNwwnxrxe7HQVRtVS8PvI280Oh8WW16QucYHg1GbVcHFLLHs99OM944mXWqNCUC3AoTHkVzsbrdAFwBdiNK8BuXAF202Rm8X5fAAd85/Xn9UQMK6+fwW5MCTg6dgOdh4/pz72BMFr39mDpyRTsxJQAGtvtC+qGdw2eRn/oCvJrq5ClsLmBVOwlrKA8P9elwSTN7R0Ynl9GI0k8mERy7iHMYqmI6bFG539hMwsrmEqhSn4KAX3+sP68NDNlqRaCs59FOh5E9vuiZYdYbqPrCzGkF+L6c18gDLOwfmg8iU+OwypS54DhdRa1EY16aN3XowsgjGR+7ResIiWgKgr+S3Xv6x+Z+Of9bzP3IIP0SWxEgW11z3FfzfWV3mfXkfE+sVzEBkYUKGBgLIL83Z3PhSOjEf2V54eVtvk/0gIIDyEK4F9g9lNde5Jzj6S9TxoyzBkpUS/pRLwh3ifSEWD3MQry4+3LyCYXa+7JNWD8MJAWMCAGPMJ2mPpgbZ6RQUoA+7/hfcIiNkP+96r0SCIlgJ2EhUgRvX7zpzFJiy6Wkyhm6RR6H7mIU7em9WiYhQ7ISXYiS+P0bkK6jfKaORxdRuhNCgOjtWuAdcL1QXFe8HIki5QAXmwGr95Bc1sHDOO6z2xvFFsuRXI9U+7kzWn9M2SQE9DWWdWFiHFn3grOQVX7hfEtbTYKYBHyMlLJyqun2643JtfK/bYXMVOhPzSBlvZOvadzuNsJr4gQR48/4grJm1whtwEZ3C5kN64Au3EF2I0rwG5UBVoGDkaFonyFQxHf1L9QlVJx3IlRUICMRyteU/WfrJRLQ+K9KBwADRcv75RycYi2/wVlHQeMFCN33wAAAABJRU5ErkJggg==" alt="cart-img">
+                          </a>
+                        </div>
+                      </div>
+
+                      <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="swiper-slide">
+                    <div class="position-relative">
+                      <div class="hot-card position-relative z-2">
+                        <div class="text-center">
+                          <img class="hot-img" src="/LazyKitchen/assets/img_糖醋里肌-50e0cc42.png" alt="sweet-sour-pork">
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                          <div class="d-flex flex-column">
+                            <h4 class="fw-bold hot-h4 slide-act">糖醋里肌</h4>
+
+                            <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
+                          </div>
+
+                          <a class="align-self-end slide-a" href="#">
+                            <img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALqSURBVHgB7Zo9aBNhGMf/d2k7tKXNUFGrbQU7WAVr0cW4iEMSh4KNEKcWKnVxUqKuFRy12M1BQahdFGzj5seigom6aAO1HSJYK8HSDElpMpiP8/0fnCTSNrl7A9eD+0HJNbxveP7P1/u8JAoE82e9hzRP02NNwwnxrxe7HQVRtVS8PvI280Oh8WW16QucYHg1GbVcHFLLHs99OM944mXWqNCUC3AoTHkVzsbrdAFwBdiNK8BuXAF202Rm8X5fAAd85/Xn9UQMK6+fwW5MCTg6dgOdh4/pz72BMFr39mDpyRTsxJQAGtvtC+qGdw2eRn/oCvJrq5ClsLmBVOwlrKA8P9elwSTN7R0Ynl9GI0k8mERy7iHMYqmI6bFG539hMwsrmEqhSn4KAX3+sP68NDNlqRaCs59FOh5E9vuiZYdYbqPrCzGkF+L6c18gDLOwfmg8iU+OwypS54DhdRa1EY16aN3XowsgjGR+7ResIiWgKgr+S3Xv6x+Z+Of9bzP3IIP0SWxEgW11z3FfzfWV3mfXkfE+sVzEBkYUKGBgLIL83Z3PhSOjEf2V54eVtvk/0gIIDyEK4F9g9lNde5Jzj6S9TxoyzBkpUS/pRLwh3ifSEWD3MQry4+3LyCYXa+7JNWD8MJAWMCAGPMJ2mPpgbZ6RQUoA+7/hfcIiNkP+96r0SCIlgJ2EhUgRvX7zpzFJiy6Wkyhm6RR6H7mIU7em9WiYhQ7ISXYiS+P0bkK6jfKaORxdRuhNCgOjtWuAdcL1QXFe8HIki5QAXmwGr95Bc1sHDOO6z2xvFFsuRXI9U+7kzWn9M2SQE9DWWdWFiHFn3grOQVX7hfEtbTYKYBHyMlLJyqun2643JtfK/bYXMVOhPzSBlvZOvadzuNsJr4gQR48/4grJm1whtwEZ3C5kN64Au3EF2I0rwG5UBVoGDkaFonyFQxHf1L9QlVJx3IlRUICMRyteU/WfrJRLQ+K9KBwADRcv75RycYi2/wVlHQeMFCN33wAAAABJRU5ErkJggg==" alt="cart-img">
+                          </a>
+                        </div>
+                      </div>
+
+                      <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="text-center">
+            <button class="bg-primary text-secondary border-0 rounded-1 d-sm-none hot-btn hot-a">查看更多</button>
+          </div>
+        </div>
+
+
+
+        <!-----   快速烹飪   ----->
+
+
+
+        <div class="container hot-box-py pt-0">
+          <h2 class="text-center fw-bold text-primary hot-h2">快速烹飪</h2>
+
+          <div class="row">
+            <div class="col-10 col-sm-3 mx-auto lazy-ul">
+              <ul class="d-flex justify-content-between list-unstyled fw-bold m-0">
+                <li class="lazy-li pb-1"><a href="#">電鍋</a></li>
+                <li class="lazy-li pb-1"><a href="#">微波</a></li>
+                <li class="lazy-li pb-1"><a href="#">烤箱</a></li>
+                <li class="lazy-li pb-1"><a href="#">氣炸鍋</a></li>
+              </ul>
+            </div>
+          </div>
+
+
+
+          <!-----   SM 區塊   ----->
+
+          <div class="row row-cols-2 hot-row-mb d-sm-none">
+            <div class="col">
+              <div class="position-relative hot-a">
+                <a href="#">
+                  <div class="hot-card position-relative z-2">
+                    <div class="text-center">
+                      <img class="hot-img" src="/LazyKitchen/assets/img_紅酒燉牛肉-237d220e.png" alt="wine-beef">
+                    </div>
+
+                    <h4 class="fw-bold text-dark hot-h4">紅酒燉牛肉</h4>
+
+                    <h4 class="fw-bold text-primary m-0 hot-h4">$168</h4>
+                  </div>
+                </a>
+
+                <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+              </div>
+            </div>
+
+
+
+            <div class="col">
+              <div class="position-relative hot-a">
+                <a href="#">
+                  <div class="hot-card position-relative z-2">
+                    <div class="text-center">
+                      <img class="hot-img" src="/LazyKitchen/assets/img_奶油雞肉燉飯-20aaa046.png" alt="chicken-rice">
+                    </div>
+
+                    <h4 class="fw-bold text-dark hot-h4">奶油雞肉燉飯</h4>
+
+                    <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
+                  </div>
+                </a>
+
+                <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-----   MD 區塊   ----->
+
+          <div class="row d-none d-sm-block">
+            <div class="col-9 position-relative mx-auto px-5">
+              <div class="swiper fast-swiper p-4">
+                <div class="swiper-wrapper pt-2 pb-3">
+
+                  <div class="swiper-slide">
+                    <div class="position-relative">
+                      <div class="hot-card position-relative z-2">
+                        <div class="text-center">
+                          <img class="hot-img" src="/LazyKitchen/assets/img_奶油雞肉燉飯-20aaa046.png" alt="chicken-rice">
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                          <div class="d-flex flex-column">
+                            <h4 class="fw-bold hot-h4 slide-act">奶油雞肉燉飯</h4>
+
+                            <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
+                          </div>
+
+                          <a class="align-self-end slide-a" href="#">
+                            <img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALqSURBVHgB7Zo9aBNhGMf/d2k7tKXNUFGrbQU7WAVr0cW4iEMSh4KNEKcWKnVxUqKuFRy12M1BQahdFGzj5seigom6aAO1HSJYK8HSDElpMpiP8/0fnCTSNrl7A9eD+0HJNbxveP7P1/u8JAoE82e9hzRP02NNwwnxrxe7HQVRtVS8PvI280Oh8WW16QucYHg1GbVcHFLLHs99OM944mXWqNCUC3AoTHkVzsbrdAFwBdiNK8BuXAF202Rm8X5fAAd85/Xn9UQMK6+fwW5MCTg6dgOdh4/pz72BMFr39mDpyRTsxJQAGtvtC+qGdw2eRn/oCvJrq5ClsLmBVOwlrKA8P9elwSTN7R0Ynl9GI0k8mERy7iHMYqmI6bFG539hMwsrmEqhSn4KAX3+sP68NDNlqRaCs59FOh5E9vuiZYdYbqPrCzGkF+L6c18gDLOwfmg8iU+OwypS54DhdRa1EY16aN3XowsgjGR+7ResIiWgKgr+S3Xv6x+Z+Of9bzP3IIP0SWxEgW11z3FfzfWV3mfXkfE+sVzEBkYUKGBgLIL83Z3PhSOjEf2V54eVtvk/0gIIDyEK4F9g9lNde5Jzj6S9TxoyzBkpUS/pRLwh3ifSEWD3MQry4+3LyCYXa+7JNWD8MJAWMCAGPMJ2mPpgbZ6RQUoA+7/hfcIiNkP+96r0SCIlgJ2EhUgRvX7zpzFJiy6Wkyhm6RR6H7mIU7em9WiYhQ7ISXYiS+P0bkK6jfKaORxdRuhNCgOjtWuAdcL1QXFe8HIki5QAXmwGr95Bc1sHDOO6z2xvFFsuRXI9U+7kzWn9M2SQE9DWWdWFiHFn3grOQVX7hfEtbTYKYBHyMlLJyqun2643JtfK/bYXMVOhPzSBlvZOvadzuNsJr4gQR48/4grJm1whtwEZ3C5kN64Au3EF2I0rwG5UBVoGDkaFonyFQxHf1L9QlVJx3IlRUICMRyteU/WfrJRLQ+K9KBwADRcv75RycYi2/wVlHQeMFCN33wAAAABJRU5ErkJggg==" alt="cart-img">
+                          </a>
+                        </div>
+
+                      </div>
+
+                      <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+                    </div>
+                  </div>
+
+
+                  <div class="swiper-slide">
+                    <div class="position-relative">
+                      <div class="hot-card position-relative z-2">
+                        <div class="text-center">
+                          <img class="hot-img" src="/LazyKitchen/assets/img_燉排骨湯-81eb776a.png" alt="soup">
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                          <div class="d-flex flex-column">
+                            <h4 class="fw-bold hot-h4 slide-act">燉排骨湯</h4>
+
+                            <h4 class="fw-bold text-primary m-0 hot-h4">$188</h4>
+                          </div>
+
+                          <a class="align-self-end slide-a" href="#">
+                            <img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALqSURBVHgB7Zo9aBNhGMf/d2k7tKXNUFGrbQU7WAVr0cW4iEMSh4KNEKcWKnVxUqKuFRy12M1BQahdFGzj5seigom6aAO1HSJYK8HSDElpMpiP8/0fnCTSNrl7A9eD+0HJNbxveP7P1/u8JAoE82e9hzRP02NNwwnxrxe7HQVRtVS8PvI280Oh8WW16QucYHg1GbVcHFLLHs99OM944mXWqNCUC3AoTHkVzsbrdAFwBdiNK8BuXAF202Rm8X5fAAd85/Xn9UQMK6+fwW5MCTg6dgOdh4/pz72BMFr39mDpyRTsxJQAGtvtC+qGdw2eRn/oCvJrq5ClsLmBVOwlrKA8P9elwSTN7R0Ynl9GI0k8mERy7iHMYqmI6bFG539hMwsrmEqhSn4KAX3+sP68NDNlqRaCs59FOh5E9vuiZYdYbqPrCzGkF+L6c18gDLOwfmg8iU+OwypS54DhdRa1EY16aN3XowsgjGR+7ResIiWgKgr+S3Xv6x+Z+Of9bzP3IIP0SWxEgW11z3FfzfWV3mfXkfE+sVzEBkYUKGBgLIL83Z3PhSOjEf2V54eVtvk/0gIIDyEK4F9g9lNde5Jzj6S9TxoyzBkpUS/pRLwh3ifSEWD3MQry4+3LyCYXa+7JNWD8MJAWMCAGPMJ2mPpgbZ6RQUoA+7/hfcIiNkP+96r0SCIlgJ2EhUgRvX7zpzFJiy6Wkyhm6RR6H7mIU7em9WiYhQ7ISXYiS+P0bkK6jfKaORxdRuhNCgOjtWuAdcL1QXFe8HIki5QAXmwGr95Bc1sHDOO6z2xvFFsuRXI9U+7kzWn9M2SQE9DWWdWFiHFn3grOQVX7hfEtbTYKYBHyMlLJyqun2643JtfK/bYXMVOhPzSBlvZOvadzuNsJr4gQR48/4grJm1whtwEZ3C5kN64Au3EF2I0rwG5UBVoGDkaFonyFQxHf1L9QlVJx3IlRUICMRyteU/WfrJRLQ+K9KBwADRcv75RycYi2/wVlHQeMFCN33wAAAABJRU5ErkJggg==" alt="cart-img">
+                          </a>
+                        </div>
+                      </div>
+
+                      <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="swiper-slide">
+                    <div class="position-relative">
+                      <div class="hot-card position-relative z-2">
+                        <div class="text-center">
+                          <img class="hot-img" src="/LazyKitchen/assets/img_香草檸檬鮭魚-cae09ef2.png" alt="lemon-salmon">
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                          <div class="d-flex flex-column">
+                            <h4 class="fw-bold hot-h4 slide-act">香草檸檬鮭魚</h4>
+
+                            <h4 class="fw-bold text-primary m-0 hot-h4">$168</h4>
+                          </div>
+
+                          <a class="align-self-end slide-a" href="#">
+                            <img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALqSURBVHgB7Zo9aBNhGMf/d2k7tKXNUFGrbQU7WAVr0cW4iEMSh4KNEKcWKnVxUqKuFRy12M1BQahdFGzj5seigom6aAO1HSJYK8HSDElpMpiP8/0fnCTSNrl7A9eD+0HJNbxveP7P1/u8JAoE82e9hzRP02NNwwnxrxe7HQVRtVS8PvI280Oh8WW16QucYHg1GbVcHFLLHs99OM944mXWqNCUC3AoTHkVzsbrdAFwBdiNK8BuXAF202Rm8X5fAAd85/Xn9UQMK6+fwW5MCTg6dgOdh4/pz72BMFr39mDpyRTsxJQAGtvtC+qGdw2eRn/oCvJrq5ClsLmBVOwlrKA8P9elwSTN7R0Ynl9GI0k8mERy7iHMYqmI6bFG539hMwsrmEqhSn4KAX3+sP68NDNlqRaCs59FOh5E9vuiZYdYbqPrCzGkF+L6c18gDLOwfmg8iU+OwypS54DhdRa1EY16aN3XowsgjGR+7ResIiWgKgr+S3Xv6x+Z+Of9bzP3IIP0SWxEgW11z3FfzfWV3mfXkfE+sVzEBkYUKGBgLIL83Z3PhSOjEf2V54eVtvk/0gIIDyEK4F9g9lNde5Jzj6S9TxoyzBkpUS/pRLwh3ifSEWD3MQry4+3LyCYXa+7JNWD8MJAWMCAGPMJ2mPpgbZ6RQUoA+7/hfcIiNkP+96r0SCIlgJ2EhUgRvX7zpzFJiy6Wkyhm6RR6H7mIU7em9WiYhQ7ISXYiS+P0bkK6jfKaORxdRuhNCgOjtWuAdcL1QXFe8HIki5QAXmwGr95Bc1sHDOO6z2xvFFsuRXI9U+7kzWn9M2SQE9DWWdWFiHFn3grOQVX7hfEtbTYKYBHyMlLJyqun2643JtfK/bYXMVOhPzSBlvZOvadzuNsJr4gQR48/4grJm1whtwEZ3C5kN64Au3EF2I0rwG5UBVoGDkaFonyFQxHf1L9QlVJx3IlRUICMRyteU/WfrJRLQ+K9KBwADRcv75RycYi2/wVlHQeMFCN33wAAAABJRU5ErkJggg==" alt="cart-img">
+                          </a>
+                        </div>
+                      </div>
+
+                      <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="swiper-slide">
+                    <div class="position-relative">
+                      <div class="hot-card position-relative z-2">
+                        <div class="text-center">
+                          <img class="hot-img" src="/LazyKitchen/assets/img_紅酒燉牛肉-237d220e.png" alt="wine-beef">
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                          <div class="d-flex flex-column">
+                            <h4 class="fw-bold hot-h4 slide-act">紅酒燉牛肉</h4>
+
+                            <h4 class="fw-bold text-primary m-0 hot-h4">$168</h4>
+                          </div>
+
+                          <a class="align-self-end slide-a" href="#">
+                            <img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALqSURBVHgB7Zo9aBNhGMf/d2k7tKXNUFGrbQU7WAVr0cW4iEMSh4KNEKcWKnVxUqKuFRy12M1BQahdFGzj5seigom6aAO1HSJYK8HSDElpMpiP8/0fnCTSNrl7A9eD+0HJNbxveP7P1/u8JAoE82e9hzRP02NNwwnxrxe7HQVRtVS8PvI280Oh8WW16QucYHg1GbVcHFLLHs99OM944mXWqNCUC3AoTHkVzsbrdAFwBdiNK8BuXAF202Rm8X5fAAd85/Xn9UQMK6+fwW5MCTg6dgOdh4/pz72BMFr39mDpyRTsxJQAGtvtC+qGdw2eRn/oCvJrq5ClsLmBVOwlrKA8P9elwSTN7R0Ynl9GI0k8mERy7iHMYqmI6bFG539hMwsrmEqhSn4KAX3+sP68NDNlqRaCs59FOh5E9vuiZYdYbqPrCzGkF+L6c18gDLOwfmg8iU+OwypS54DhdRa1EY16aN3XowsgjGR+7ResIiWgKgr+S3Xv6x+Z+Of9bzP3IIP0SWxEgW11z3FfzfWV3mfXkfE+sVzEBkYUKGBgLIL83Z3PhSOjEf2V54eVtvk/0gIIDyEK4F9g9lNde5Jzj6S9TxoyzBkpUS/pRLwh3ifSEWD3MQry4+3LyCYXa+7JNWD8MJAWMCAGPMJ2mPpgbZ6RQUoA+7/hfcIiNkP+96r0SCIlgJ2EhUgRvX7zpzFJiy6Wkyhm6RR6H7mIU7em9WiYhQ7ISXYiS+P0bkK6jfKaORxdRuhNCgOjtWuAdcL1QXFe8HIki5QAXmwGr95Bc1sHDOO6z2xvFFsuRXI9U+7kzWn9M2SQE9DWWdWFiHFn3grOQVX7hfEtbTYKYBHyMlLJyqun2643JtfK/bYXMVOhPzSBlvZOvadzuNsJr4gQR48/4grJm1whtwEZ3C5kN64Au3EF2I0rwG5UBVoGDkaFonyFQxHf1L9QlVJx3IlRUICMRyteU/WfrJRLQ+K9KBwADRcv75RycYi2/wVlHQeMFCN33wAAAABJRU5ErkJggg==" alt="cart-img">
+                          </a>
+                        </div>
+                      </div>
+
+                      <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="text-center">
+            <button class="bg-primary text-secondary border-0 rounded-1 d-sm-none hot-btn hot-a">查看更多</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer-bg">
     <div class="container p-0 footerWrapper">
         <h1> <a href="./index.html"><svg width="180" height="40" viewBox="0 0 180 40" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -194,7 +790,37 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
             </footer>
         </div>
     </div>
-</footer>    
-    
-  </body>
+</footer>
+      
+
+      <!-----   Swiper JS   ----->
+
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <script>
+        // <-----   懶人分類   -----> //
+
+        var swiper = new Swiper(".lazy-swiper", {
+          slidesPerView: 3,
+          spaceBetween: 40,
+          loop: true,
+
+          centeredSlides: true,
+        });
+
+
+
+        // <-----   快速烹飪   -----> //
+
+
+
+        var swiper = new Swiper(".fast-swiper", {
+          slidesPerView: 3,
+          spaceBetween: 40,
+          loop: true,
+
+          centeredSlides: true,
+        });
+      </script>
+</body>
+
 </html>
