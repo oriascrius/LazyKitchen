@@ -1,12 +1,17 @@
 // 回上方按鈕
 .backTotop {
   position: fixed;
-  display: none;
   cursor: pointer;
   z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease, filter 0.5s ease;
+}
+.backTotop.show {
+  opacity: 1;
   transform: translateY(-5px) translateX(-5px);
   filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
 }
+
 .feature-banner {
   padding: 80px 0;
   background-color: #fff3e5;
@@ -54,7 +59,7 @@
   display: flex;
   justify-content: end;
   gap: 24px;
-
+  
   a {
     padding: 12px 40px;
     width: 100%;
@@ -63,11 +68,12 @@
   }
 
   li {
-    border-radius: 4%;
+    border-radius: 4px;
+    transition: filter 0.3s ease, transform 0.3s ease;
   }
 
   li:nth-child(1) {
-    border: 1px solid #ad4214;
+    border: 3px solid #ad4214;
     background-color: #fafcfe;
 
     &:hover {
@@ -92,13 +98,14 @@
     }
 
     a {
+      padding: 15px 40px;
       color: #fafcfe;
     }
   }
 }
 
 @media (max-width: 992px) {
-  .feature-cartBtn {
+  .featureBtn {
     text-align: center;
     flex-direction: column;
   }
@@ -194,7 +201,7 @@
     padding: 20px 40px;
 
     .accordion-body {
-      padding: 0;
+      padding: 20px 0 0 0;
     }
   }
 
