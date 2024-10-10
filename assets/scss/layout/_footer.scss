@@ -68,6 +68,7 @@ p {
   gap: 20px;
   padding-bottom: 28px;
   li {
+    transition: filter 0.3s ease, transform 0.3s ease;
     &:hover {
       // 浮起 + 陰影
       transform: translateY(-2px) translateX(-2px);
@@ -88,6 +89,7 @@ p {
     padding: 12px 0;
     background-color: #fff3e5;
     cursor: pointer;
+    transition: filter 0.3s ease, transform 0.3s ease;
     &:hover {
       // 浮起 + 陰影
       transform: translateY(-2px) translateX(-2px);

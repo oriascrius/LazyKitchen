@@ -4,12 +4,10 @@ img {
   object-fit: cover;
 }
 
-
 .bigBg {
   background-image: url(../../images/qoq-imgs/bigBg.png);
   padding: 0 0 100px 0;
 }
-
 
 // 購物車banner
 .bannerImg {
@@ -241,6 +239,7 @@ img {
 
   h4 {
     padding-right: 20px;
+    color: #7e7e7e;
   }
 
   p {
@@ -346,17 +345,17 @@ img {
   /* 設置 input 聚焦時的邊框和陰影顏色 */
   .form-control:focus {
     border-color: #7e7e7e;
-    /* 邊框顏色 */
     box-shadow: 0 0 5px #7e7e7e;
-    /* 光圈陰影效果 */
-    // outline: none; /* 移除默認的 outline */
   }
 }
 
 // 確認訂單資訊
 .card-custom {
   margin-bottom: 12px;
-
+  .card-title,
+  .card-text {
+    color: #7e7e7e;
+  }
   .card-img {
     width: 88px;
     height: 88px;
@@ -365,15 +364,27 @@ img {
 
 .info-item {
   padding-bottom: 30px;
+  color: #7e7e7e;
+  strong {
+    font-size: 18px;
+  }
+  p {
+    padding-top: 3px;
+  }
 }
 
 // 客戶資料
 .info-card {
   height: 522px;
   padding: 20px 30px;
-  border: 1px solid #ccc9c9;
-
+  // border: 1px solid #ccc9c9;
+  border: 1px solid #ccccccd7;
+  border-radius: 6px;
   @media (max-width: 992px) {
     margin: 0 0 20px 0;
   }
+}
+// 付款完成文字
+.completion-message {
+  color: #7e7e7e;
 }
