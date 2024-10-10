@@ -5,6 +5,96 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>商品細節</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+      .card .card-img-top {
+          width: 100px;
+          height: 100px;
+          object-fit: cover;
+          border-radius: 50%;
+          margin: 0 auto;
+          display: block;
+      }
+  
+      .bi-star-fill {
+          color: #AD4214;
+          font-weight: bold;
+      }
+  
+      .carousel-controls {
+          position: absolute;
+          top: 50%;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          transform: translateY(-50%);
+          z-index: 10; /* 確保按鈕在最上層 */
+      }
+  
+      .carousel-controls .carousel-control-prev,
+      .carousel-controls .carousel-control-next {
+          width: 40px;
+          height: 40px;
+          background-color: #FFF7EB;
+          border-radius: 50%;
+          color: #AD4214;
+          opacity: 1;
+          border: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          transition: background-color 0.3s, color 0.3s;
+          position: relative; /* 確保它們在自己的層次上 */
+          z-index: 5; /* 使按鈕層級高於其他元素 */
+          font-size: 24px; /* 字體大小 */
+      }
+  
+      .carousel-controls .carousel-control-prev:hover,
+      .carousel-controls .carousel-control-next:hover {
+          background-color: #AD4214;
+          color: #FFF7EB;
+      }
+  
+      /* 卡片容器調整 */
+      #carouselContent {
+          display: flex;
+          justify-content: center; /* 讓卡片居中 */
+      }
+  
+      .carousel-item {
+          display: flex;
+          justify-content: center;
+          width: 100%; /* 確保旋轉木馬項目寬度為 100% */
+      }
+  
+      .card {
+          flex: 0 0 27%; /* 每張卡片佔據 30% 的寬度 */
+          margin: 0 1%; /* 添加 margin 以便於卡片之間有距離 */
+      }
+
+      /* 回到最上面按鈕 */
+.btt-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  z-index: 4;
+  opacity: 0;
+  transition: opacity   0.5s ease, 
+              transform 0.5s ease,
+              filter    0.5s ease;
+}
+
+.scrolled {
+  opacity: 1;
+  transform: translateY(-5px) translateX(-5px);
+  filter: drop-shadow(4px 4px 4px rgb(0, 0, 0, 0.5));
+}
+
+    </style>
   </head>
   <body>  
     <!-- header -->
@@ -70,11 +160,33 @@
           <img class="img-fluid mb-5" src="../assets/images/productList/sneakStep6.png" alt="">
           <img class="img-fluid" src="../assets/images/productList/sneakStep7.png" alt="">
         </div>
-        <div class="col-10 col-lg-10  mb-25"></div>
+        <div class="col-12 col-lg-10  mb-25">
+          <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row" id="carouselContent"></div>
+              </div>
+            </div>
+            <div class="carousel-controls">
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                <span class="visually-hidden">Previous</span>
+                <i class="bi bi-chevron-left"></i> <!-- 使用 Bootstrap 的 Chevron Left -->
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                <span class="visually-hidden">Next</span>
+                <i class="bi bi-chevron-right"></i> <!-- 使用 Bootstrap 的 Chevron Right -->
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <!-- footer -->
     <%- include('./layout/footer'); -%>
+<!-----   回到最上面按鈕   ----->
+<a id="btt" class="border-0 p-0 btt-btn" href="#">
+  <img class="w-100" src="/assets/images/dog-house/back-to-top.png" alt="back-to-top-img">
+</a>
 
     <script type="module" src="../lll-main.js"></script>
     <script>
@@ -113,6 +225,93 @@
         updateMinusBtnState();  // 更新按鈕顏色和狀態
       });
     });
+    </script>
+  <script>
+    const cards = [
+        {
+            img: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            text: "非常方便！只要動動手指，就能在家享受到新鮮的食材。",
+        },
+        {
+            img: "https://images.pexels.com/photos/1181424/pexels-photo-1181424.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            text: "省了我很多時間，不用再花時間去超市，簡直是生活救星！",
+        },
+        {
+            img: "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            text: "有很多選擇，無論是肉類還是素食，都能找到適合的料理。",
+        },
+        {
+            img: "https://images.pexels.com/photos/556068/pexels-photo-556068.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            text: "省了我很多時間，不用再花時間去超市，簡直是生活救星！",
+        },
+        {
+            img: "https://images.pexels.com/photos/1752126/pexels-photo-1752126.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            text: "價格公道，對於這樣的便利和食材品質，真的很值！",
+        },
+        {
+            img: "https://images.pexels.com/photos/1468379/pexels-photo-1468379.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            text: "食材非常新鮮，烹飪後口感很好，家人都很喜歡。",
+        }
+    ];
+
+    let currentIndex = 0;
+
+document.querySelector('.carousel-control-next').addEventListener('click', () => {
+    showNextCards();
+});
+
+document.querySelector('.carousel-control-prev').addEventListener('click', () => {
+    showPrevCards();
+});
+
+function showNextCards() {
+    currentIndex = (currentIndex + 1) % cards.length; // 從下一張開始
+    updateCarousel();
+}
+
+function showPrevCards() {
+    currentIndex = (currentIndex - 1 + cards.length) % cards.length; // 從上一張開始
+    updateCarousel();
+}
+
+function updateCarousel() {
+    const carouselContent = document.getElementById('carouselContent');
+    carouselContent.innerHTML = '';
+    for (let i = 0; i < 3; i++) {
+        const cardIndex = (currentIndex + i) % cards.length; // 確保卡片的索引依照組合循環
+        const card = `
+            <div class="card">
+                <img src="${cards[cardIndex].img}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </h5>
+                    <p class="card-text">${cards[cardIndex].text}</p>
+                </div>
+            </div>
+        `;
+        carouselContent.innerHTML += card;
+    }
+}
+
+// 初始化顯示前三張卡片
+updateCarousel();
+  </script>
+  <script>
+    window.onscroll = function() {
+
+      let button = document.getElementById('btt');
+
+      if (window.scrollY > 700) {
+        button.classList.add('scrolled');
+        } else {
+          button.classList.remove('scrolled');
+        }
+      };
   </script>
   </body>
 <!--
