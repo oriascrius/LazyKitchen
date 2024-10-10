@@ -10,9 +10,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- sweetalert2 -->
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet" />
-  <script type="module" crossorigin src="/LazyKitchen/assets/bootstrap.min-008907fd.js"></script>
-  <link rel="stylesheet" href="/LazyKitchen/assets/bootstrap-a4d6d9c8.css">
-  <link rel="stylesheet" href="/LazyKitchen/assets/feature-fe63d440.css">
+  <script type="module" crossorigin src="/LazyKitchen/assets/bootstrap.min-487c5bde.js"></script>
+  <script type="module" crossorigin src="/LazyKitchen/assets/qoq-main-a5d8599b.js"></script>
+  <link rel="stylesheet" href="/LazyKitchen/assets/bootstrap-138f1b2c.css">
+  <link rel="stylesheet" href="/LazyKitchen/assets/qoq-main-01802eae.css">
 </head>
 
 <body>
@@ -1253,34 +1254,6 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
 
             
 
-            <script>
-                // 回到按鈕上方
-                $(document).ready(function () {
-                    const $backToTop = $(".backTotop");
-
-                    $(window).scroll(function () {
-                        const windowScrollTop = $(this).scrollTop(); // 取得當前滾動高度
-                        const documentHeight = $(document).height(); // 取得文件總高度
-                        const windowHeight = $(this).height(); // 取得視窗高度
-
-                        // 判斷是否需要顯示按鈕
-                        if (windowScrollTop > documentHeight / 2 - windowHeight / 2) {
-                            $backToTop.fadeIn();
-
-                            // 根據視窗寬度設置 right 值
-                            const rightValue = $(this).width() >= 992 ? "40px" : "24px";
-                            $backToTop.css({ right: rightValue, top: "40px" }); // 固定 top 為 40px
-                        } else {
-                            $backToTop.fadeOut(); // 隱藏按鈕
-                        }
-                    });
-
-                    $backToTop.click(function () {
-                        $("html, body").animate({ scrollTop: 0 }, 100); // 返回頂端
-                    });
-                });
-
-            </script>
             <script>
                 const swiper = new Swiper('.mySwiper', {
                     loop: true,
