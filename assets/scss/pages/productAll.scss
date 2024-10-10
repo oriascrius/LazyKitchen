@@ -11,3 +11,371 @@ a {
 }
 
 // banner
+
+// search
+.bg-white{
+    background: white;
+}
+
+.dropdown-a {
+    padding: 12px 20px;
+}
+
+.dropdown-ul {
+    padding: 12px 20px;
+}
+
+.dropdown-ul a {
+    color: #AD4214;
+
+    transition: background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.dropdown-ul a:hover {
+    background-color: #AD4214;
+
+    color: #FFF7EB;
+}
+
+.form-control::placeholder {
+    color: #AD4214;
+}
+
+.form-control {
+    padding: 12px 20px 12px 0px;
+}
+
+.input-img {
+    padding: 12px 0px 12px 20px;
+}
+
+.btn {
+    padding: 12px 20px;
+}
+
+// <-----   熱門商品   -----> //
+
+
+
+.hot-box-py {
+    padding: 60px 12px;
+}
+
+.hot-card {
+    padding: 12px;
+}
+
+.hot-h2 {
+    font-size: 32px;
+
+    margin-bottom: 28px;
+}
+
+.hot-row-mb {
+    margin-bottom: 28px;
+}
+
+.hot-h4 {
+    font-size: 20px;
+
+    margin-bottom: 12px;
+}
+
+.hot-a {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.hot-a:hover {
+    transform: translateX(-2px) translateY(-3px);
+    filter: drop-shadow(10px 10px 7px rgb(0, 0, 0));
+}
+
+.hot-btn {
+    padding: 12px 40px;
+
+    font-size: 20px;
+}
+
+.hot-swiper {
+    margin-bottom: 40px;
+
+    padding-bottom: 60px;
+
+    padding-right: 20px;
+
+    padding-left: 20px;
+}
+
+.slide-act {
+    color: #201B11;
+}
+
+.swiper-slide {
+    transition: transform 0.5s ease;
+
+    &.swiper-slide-active {
+        transform: translateX(-2px) translateY(-3px) scale(1.1);
+
+        filter: drop-shadow(10px 10px 7px rgb(0, 0, 0));
+
+        .slide-act {
+            color: #AD4214;
+        }
+    }
+}
+
+.slide-a {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+
+
+.slide-a:hover {
+    transform: translateX(-1px) translateY(-2px);
+    filter: drop-shadow(5px 5px 6px rgb(0, 0, 0));
+}
+
+
+
+.swiper-button-prev,
+.swiper-button-next {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    transform: translateX(-2px) translateY(-3px);
+    filter: drop-shadow(5px 5px 6px rgb(0, 0, 0));
+}
+
+
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    background-color: #FFF7EB;
+    font-size: 20px;
+    font-weight: bold;
+    color: #AD4214;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 15px;
+
+    border-radius: 50%;
+}
+
+
+
+.swiper-pagination-bullet {
+    background-color: #7E7E7E;
+
+    width: 12px;
+    height: 12px;
+
+    &.swiper-pagination-bullet-active {
+        background-color: #FFF7EB;
+    }
+}
+
+// <-----   懶人分類   -----> //
+.lazy-ul {
+    font-size: 20px;
+    color: #7E7E7E;
+
+    margin-bottom: 32px;
+}
+
+
+
+.lazy-li {
+    border-bottom: 3px solid #ad421400;
+
+    transition: border-bottom 0.3s ease, color 0.3s ease;
+}
+
+
+
+.lazy-li:hover {
+    color: #AD4214;
+
+    border-bottom: 3px solid #AD4214;
+}
+
+// <-----   R－W－D   -----> //
+
+
+
+
+
+
+// <-----   螢幕寬度 576px 以下   -----> //
+
+
+
+@media (max-width: 576px) {
+    // <-----   熱門商品   -----> //
+    .f-level-bg {
+      background-image: url(/assets/images/kiwi-imgs/bg-sm.png);
+  
+      background-repeat: no-repeat;
+  
+      background-size: cover;
+    }
+  
+  
+  
+    .s-level-bg {
+      background-image: url(/assets/images/dog-house/bg-sm-3.png);
+  
+      background-repeat: no-repeat;
+  
+      background-size: cover;
+  
+      background-position: 0 100%;
+    }
+  
+  
+  
+    .hot-img {
+      margin-bottom: 17px;
+  
+      width: 90%;
+    }
+  
+  
+  
+    .hot-card-bg {
+      height: 66%;
+  
+      background-color: #FFFDFA;
+  
+      border-radius: 12px;
+    }
+  
+  
+  
+  
+  
+  
+    // <-----   懶人分類   -----> //
+  
+  
+  
+    .lazy-f-bg {
+      background-image: url(/assets/images/dog-house/bg-sm-1.png);
+    }
+  }
+  
+  
+  
+  
+  // <-----   螢幕寬度 576px 以上   -----> //
+  
+  
+  
+  @media (min-width: 577px) {
+    // <-----   搜尋區塊   -----> //
+  
+  
+  
+    .search-py {
+      padding: 51px 0px;
+    }
+  
+  
+  
+    .search-mb {
+      margin-bottom: 20px;
+    }
+  
+  
+  
+    .input-group {
+      margin-bottom: 20px;
+    }
+  
+  
+  
+  
+  
+  
+    // <-----   熱門商品   -----> //
+  
+  
+  
+    .hot-f-bg {
+      background-image: url(/assets/images/kiwi-imgs/bg-md.png);
+  
+      background-repeat: no-repeat;
+  
+      background-size: cover;
+    }
+    
+    
+    
+    .f-level-bg {
+      background-image: url(/assets/images/kiwi-imgs/bg-md.png);
+  
+      background-repeat: no-repeat;
+  
+      background-size: cover;
+  
+      padding-bottom: 50px;
+  
+      background-position: 0 100%;
+      
+    }
+  
+  
+  
+    .s-level-bg {
+      background-image: url(/assets/images/dog-house/bg-md-3.png);
+  
+      background-repeat: no-repeat;
+  
+      background-size: cover;
+  
+      padding-bottom: 40px;
+  
+      background-position: 0 100%;
+    }
+  
+  
+  
+    .hot-img {
+      margin-bottom: 34px;
+  
+      width: 90%;
+    }
+  
+  
+  
+    .hot-card-bg {
+      height: 61%;
+  
+      background-color: #FFFDFA;
+  
+      border-radius: 12px;
+    }
+
+    // <-----   懶人分類   -----> //
+  
+  
+  
+    .lazy-f-bg {
+      background-image: url(/assets/images/dog-house/bg-md-5.png);
+  
+      background-repeat: no-repeat;
+  
+      background-size: cover;
+    }
+
+  }

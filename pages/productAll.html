@@ -1,23 +1,649 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>商品總攬</title>
-  </head>
-  <body>
-      <!-- header -->
-      <%- include('./layout/header'); -%>
 
-      <!-- banner -->
-      <div class="container banner-my-60 mx-auto">
-        <img class="w-100 banner-img" src="/assets/images/kiwi-imgs/banner.png" alt="banner-img">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>商品總攬</title>
+
+  <!-----   Swiper CSS   ----->
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+  <!-- header -->
+  <%- include('./layout/header'); -%>
+
+    <!-- banner -->
+    <div class="container banner-my-60 mx-auto">
+      <img class="w-100 banner-img" src="/assets/images/kiwi-imgs/banner.png" alt="banner-img">
+    </div>
+
+    <!-- search -->
+    <div class="mx-auto bg-white">
+      <div class="container row flex-column flex-md-row justify-content-center w-100 mx-auto search-py search-box">
+        <div class="col col-md-2 search-mb mb-md-0">
+          <div class="dropdown border border-3 border-primary rounded-1">
+            <a class="d-flex justify-content-between align-items-center text-primary dropdown-a" href="#" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              請選擇分類
+              <img class="p-2" src="/assets/images/dog-house/Vector.png" alt="down-arrow">
+            </a>
+
+            <ul class="dropdown-menu w-100 border border-3 border-primary mt-1 dropdown-ul">
+              <li><a class="dropdown-item mb-3 p-1 rounded-1" href="#">牛肉</a></li>
+
+              <li><a class="dropdown-item mb-3 p-1 rounded-1" href="#">豬肉</a></li>
+
+              <li><a class="dropdown-item mb-3 p-1 rounded-1" href="#">雞肉</a></li>
+
+              <li><a class="dropdown-item mb-3 p-1 rounded-1" href="#">電鍋料理</a></li>
+
+              <li><a class="dropdown-item mb-3 p-1 rounded-1" href="#">氣炸鍋料理</a></li>
+
+              <li><a class="dropdown-item p-1 rounded-1" href="#">微波料理</a></li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="col col-md-5">
+          <div class="input-group border border-3 border-primary rounded-1 mb-md-0">
+            <label for="search-input">
+              <img class="input-group-text border-0 bg-danger me-2 input-img" src="/assets/images/dog-house/Outline.png"
+                alt="search-img">
+            </label>
+
+            <input type="text" id="search-input" class="form-control border-0 bg-danger" placeholder="我想來點..."
+              aria-label="我想來點..." aria-describedby="basic-addon1">
+          </div>
+        </div>
+
+
+
+        <div class="col col-md-1">
+          <button type="button" class="btn btn-primary w-100 border border-3 border-primary rounded-1">查詢</button>
+        </div>
       </div>
-
-      <!-- footer -->
-      <%- include('./layout/footer'); -%>
+    </div>
     
-    <script type="module" src="../kkk-main.js"></script>
-  </body>
+    <!-- 熱門商品 -->
+    <div class="mx-auto bg-white">
+      <div>
+        <div class="container hot-box-py">
+          <h2 class="text-center fw-bold text-primary hot-h2">熱門商品</h2>
+
+          <!-----   SM 區塊   ----->
+
+          <div class="row row-cols-2 hot-row-mb d-sm-none">
+            <div class="col">
+              <div class="position-relative hot-a">
+                <a href="#">
+                  <div class="hot-card position-relative z-2">
+                    <div class="text-center">
+                      <img class="hot-img" src="/assets/images/dog-house/img_糖醋里肌.png" alt="pork">
+                    </div>
+
+                    <h4 class="fw-bold text-dark hot-h4">糖醋里肌</h4>
+
+                    <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
+                  </div>
+                </a>
+
+                <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+              </div>
+            </div>
+
+
+
+            <div class="col">
+              <div class="position-relative hot-a">
+                <a href="#">
+                  <div class="hot-card position-relative z-2">
+                    <div class="text-center">
+                      <img class="hot-img" src="/assets/images/dog-house/img_蜜汁豬肉.png" alt="sweet-pork">
+                    </div>
+
+                    <h4 class="fw-bold text-dark hot-h4">蜜汁豬肉</h4>
+
+                    <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
+                  </div>
+                </a>
+
+                <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-----   MD 區塊   ----->
+
+          <div class="row d-none d-sm-block">
+            <div class="col-9 position-relative mx-auto px-5">
+              <div class="swiper lazy-swiper p-4">
+                <div class="swiper-wrapper pt-2 pb-3">
+
+                  <div class="swiper-slide">
+                    <div class="position-relative">
+                      <div class="hot-card position-relative z-2">
+                        <div class="text-center">
+                          <img class="hot-img" src="/assets/images/dog-house/img_蜜汁豬肉.png" alt="sweet-pork">
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                          <div class="d-flex flex-column">
+                            <h4 class="fw-bold hot-h4 slide-act">蜜汁豬肉</h4>
+
+                            <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
+                          </div>
+
+                          <a class="align-self-end slide-a" href="#">
+                            <img class="w-100" src="/assets/images/dog-house/cart.png" alt="cart-img">
+                          </a>
+                        </div>
+
+                      </div>
+
+                      <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+                    </div>
+                  </div>
+
+
+                  <div class="swiper-slide">
+                    <div class="position-relative">
+                      <div class="hot-card position-relative z-2">
+                        <div class="text-center">
+                          <img class="hot-img" src="/assets/images/dog-house/img_泡菜豬肉.png" alt="k-pork">
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                          <div class="d-flex flex-column">
+                            <h4 class="fw-bold hot-h4 slide-act">泡菜豬肉</h4>
+
+                            <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
+                          </div>
+
+                          <a class="align-self-end slide-a" href="#">
+                            <img class="w-100" src="/assets/images/dog-house/cart.png" alt="cart-img">
+                          </a>
+                        </div>
+                      </div>
+
+                      <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="swiper-slide">
+                    <div class="position-relative">
+                      <div class="hot-card position-relative z-2">
+                        <div class="text-center">
+                          <img class="hot-img" src="/assets/images/dog-house/img_香草檸檬鮭魚.png" alt="lemon-salmon">
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                          <div class="d-flex flex-column">
+                            <h4 class="fw-bold hot-h4 slide-act">香草檸檬鮭魚</h4>
+
+                            <h4 class="fw-bold text-primary m-0 hot-h4">$168</h4>
+                          </div>
+
+                          <a class="align-self-end slide-a" href="#">
+                            <img class="w-100" src="/assets/images/dog-house/cart.png" alt="cart-img">
+                          </a>
+                        </div>
+                      </div>
+
+                      <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="swiper-slide">
+                    <div class="position-relative">
+                      <div class="hot-card position-relative z-2">
+                        <div class="text-center">
+                          <img class="hot-img" src="/assets/images/dog-house/img_糖醋里肌.png" alt="sweet-sour-pork">
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                          <div class="d-flex flex-column">
+                            <h4 class="fw-bold hot-h4 slide-act">糖醋里肌</h4>
+
+                            <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
+                          </div>
+
+                          <a class="align-self-end slide-a" href="#">
+                            <img class="w-100" src="/assets/images/dog-house/cart.png" alt="cart-img">
+                          </a>
+                        </div>
+                      </div>
+
+                      <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="text-center">
+            <button class="bg-primary text-secondary border-0 rounded-1 d-sm-none hot-btn hot-a">查看更多</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 懶人分類 -->
+    <div class="lazy-f-bg">
+      <div class="f-level-bg">
+        <div class="container hot-box-py">
+          <h2 class="text-center fw-bold text-primary hot-h2">懶人分類</h2>
+
+          <div class="row">
+            <div class="col-6 col-sm-2 mx-auto lazy-ul">
+              <ul class="d-flex justify-content-between list-unstyled fw-bold m-0">
+                <li class="lazy-li pb-1"><a href="#">豬肉</a></li>
+                <li class="lazy-li pb-1"><a href="#">牛肉</a></li>
+                <li class="lazy-li pb-1"><a href="#">雞肉</a></li>
+              </ul>
+            </div>
+          </div>
+
+
+
+          <!-----   SM 區塊   ----->
+
+          <div class="row row-cols-2 hot-row-mb d-sm-none">
+            <div class="col">
+              <div class="position-relative hot-a">
+                <a href="#">
+                  <div class="hot-card position-relative z-2">
+                    <div class="text-center">
+                      <img class="hot-img" src="/assets/images/dog-house/img_糖醋里肌.png" alt="pork">
+                    </div>
+
+                    <h4 class="fw-bold text-dark hot-h4">糖醋里肌</h4>
+
+                    <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
+                  </div>
+                </a>
+
+                <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+              </div>
+            </div>
+
+
+
+            <div class="col">
+              <div class="position-relative hot-a">
+                <a href="#">
+                  <div class="hot-card position-relative z-2">
+                    <div class="text-center">
+                      <img class="hot-img" src="/assets/images/dog-house/img_蜜汁豬肉.png" alt="sweet-pork">
+                    </div>
+
+                    <h4 class="fw-bold text-dark hot-h4">蜜汁豬肉</h4>
+
+                    <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
+                  </div>
+                </a>
+
+                <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-----   MD 區塊   ----->
+
+          <div class="row d-none d-sm-block">
+            <div class="col-9 position-relative mx-auto px-5">
+              <div class="swiper lazy-swiper p-4">
+                <div class="swiper-wrapper pt-2 pb-3">
+
+                  <div class="swiper-slide">
+                    <div class="position-relative">
+                      <div class="hot-card position-relative z-2">
+                        <div class="text-center">
+                          <img class="hot-img" src="/assets/images/dog-house/img_蜜汁豬肉.png" alt="sweet-pork">
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                          <div class="d-flex flex-column">
+                            <h4 class="fw-bold hot-h4 slide-act">蜜汁豬肉</h4>
+
+                            <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
+                          </div>
+
+                          <a class="align-self-end slide-a" href="#">
+                            <img class="w-100" src="/assets/images/dog-house/cart.png" alt="cart-img">
+                          </a>
+                        </div>
+
+                      </div>
+
+                      <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+                    </div>
+                  </div>
+
+
+                  <div class="swiper-slide">
+                    <div class="position-relative">
+                      <div class="hot-card position-relative z-2">
+                        <div class="text-center">
+                          <img class="hot-img" src="/assets/images/dog-house/img_泡菜豬肉.png" alt="k-pork">
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                          <div class="d-flex flex-column">
+                            <h4 class="fw-bold hot-h4 slide-act">泡菜豬肉</h4>
+
+                            <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
+                          </div>
+
+                          <a class="align-self-end slide-a" href="#">
+                            <img class="w-100" src="/assets/images/dog-house/cart.png" alt="cart-img">
+                          </a>
+                        </div>
+                      </div>
+
+                      <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="swiper-slide">
+                    <div class="position-relative">
+                      <div class="hot-card position-relative z-2">
+                        <div class="text-center">
+                          <img class="hot-img" src="/assets/images/dog-house/img_香草檸檬鮭魚.png" alt="lemon-salmon">
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                          <div class="d-flex flex-column">
+                            <h4 class="fw-bold hot-h4 slide-act">香草檸檬鮭魚</h4>
+
+                            <h4 class="fw-bold text-primary m-0 hot-h4">$168</h4>
+                          </div>
+
+                          <a class="align-self-end slide-a" href="#">
+                            <img class="w-100" src="/assets/images/dog-house/cart.png" alt="cart-img">
+                          </a>
+                        </div>
+                      </div>
+
+                      <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="swiper-slide">
+                    <div class="position-relative">
+                      <div class="hot-card position-relative z-2">
+                        <div class="text-center">
+                          <img class="hot-img" src="/assets/images/dog-house/img_糖醋里肌.png" alt="sweet-sour-pork">
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                          <div class="d-flex flex-column">
+                            <h4 class="fw-bold hot-h4 slide-act">糖醋里肌</h4>
+
+                            <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
+                          </div>
+
+                          <a class="align-self-end slide-a" href="#">
+                            <img class="w-100" src="/assets/images/dog-house/cart.png" alt="cart-img">
+                          </a>
+                        </div>
+                      </div>
+
+                      <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="text-center">
+            <button class="bg-primary text-secondary border-0 rounded-1 d-sm-none hot-btn hot-a">查看更多</button>
+          </div>
+        </div>
+
+
+
+        <!-----   快速烹飪   ----->
+
+
+
+        <div class="container hot-box-py pt-0">
+          <h2 class="text-center fw-bold text-primary hot-h2">快速烹飪</h2>
+
+          <div class="row">
+            <div class="col-10 col-sm-3 mx-auto lazy-ul">
+              <ul class="d-flex justify-content-between list-unstyled fw-bold m-0">
+                <li class="lazy-li pb-1"><a href="#">電鍋</a></li>
+                <li class="lazy-li pb-1"><a href="#">微波</a></li>
+                <li class="lazy-li pb-1"><a href="#">烤箱</a></li>
+                <li class="lazy-li pb-1"><a href="#">氣炸鍋</a></li>
+              </ul>
+            </div>
+          </div>
+
+
+
+          <!-----   SM 區塊   ----->
+
+          <div class="row row-cols-2 hot-row-mb d-sm-none">
+            <div class="col">
+              <div class="position-relative hot-a">
+                <a href="#">
+                  <div class="hot-card position-relative z-2">
+                    <div class="text-center">
+                      <img class="hot-img" src="/assets/images/dog-house/img_紅酒燉牛肉.png" alt="wine-beef">
+                    </div>
+
+                    <h4 class="fw-bold text-dark hot-h4">紅酒燉牛肉</h4>
+
+                    <h4 class="fw-bold text-primary m-0 hot-h4">$168</h4>
+                  </div>
+                </a>
+
+                <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+              </div>
+            </div>
+
+
+
+            <div class="col">
+              <div class="position-relative hot-a">
+                <a href="#">
+                  <div class="hot-card position-relative z-2">
+                    <div class="text-center">
+                      <img class="hot-img" src="/assets/images/dog-house/img_奶油雞肉燉飯.png" alt="chicken-rice">
+                    </div>
+
+                    <h4 class="fw-bold text-dark hot-h4">奶油雞肉燉飯</h4>
+
+                    <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
+                  </div>
+                </a>
+
+                <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-----   MD 區塊   ----->
+
+          <div class="row d-none d-sm-block">
+            <div class="col-9 position-relative mx-auto px-5">
+              <div class="swiper fast-swiper p-4">
+                <div class="swiper-wrapper pt-2 pb-3">
+
+                  <div class="swiper-slide">
+                    <div class="position-relative">
+                      <div class="hot-card position-relative z-2">
+                        <div class="text-center">
+                          <img class="hot-img" src="/assets/images/dog-house/img_奶油雞肉燉飯.png" alt="chicken-rice">
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                          <div class="d-flex flex-column">
+                            <h4 class="fw-bold hot-h4 slide-act">奶油雞肉燉飯</h4>
+
+                            <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
+                          </div>
+
+                          <a class="align-self-end slide-a" href="#">
+                            <img class="w-100" src="/assets/images/dog-house/cart.png" alt="cart-img">
+                          </a>
+                        </div>
+
+                      </div>
+
+                      <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+                    </div>
+                  </div>
+
+
+                  <div class="swiper-slide">
+                    <div class="position-relative">
+                      <div class="hot-card position-relative z-2">
+                        <div class="text-center">
+                          <img class="hot-img" src="/assets/images/dog-house/img_燉排骨湯.png" alt="soup">
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                          <div class="d-flex flex-column">
+                            <h4 class="fw-bold hot-h4 slide-act">燉排骨湯</h4>
+
+                            <h4 class="fw-bold text-primary m-0 hot-h4">$188</h4>
+                          </div>
+
+                          <a class="align-self-end slide-a" href="#">
+                            <img class="w-100" src="/assets/images/dog-house/cart.png" alt="cart-img">
+                          </a>
+                        </div>
+                      </div>
+
+                      <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="swiper-slide">
+                    <div class="position-relative">
+                      <div class="hot-card position-relative z-2">
+                        <div class="text-center">
+                          <img class="hot-img" src="/assets/images/dog-house/img_香草檸檬鮭魚.png" alt="lemon-salmon">
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                          <div class="d-flex flex-column">
+                            <h4 class="fw-bold hot-h4 slide-act">香草檸檬鮭魚</h4>
+
+                            <h4 class="fw-bold text-primary m-0 hot-h4">$168</h4>
+                          </div>
+
+                          <a class="align-self-end slide-a" href="#">
+                            <img class="w-100" src="/assets/images/dog-house/cart.png" alt="cart-img">
+                          </a>
+                        </div>
+                      </div>
+
+                      <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="swiper-slide">
+                    <div class="position-relative">
+                      <div class="hot-card position-relative z-2">
+                        <div class="text-center">
+                          <img class="hot-img" src="/assets/images/dog-house/img_紅酒燉牛肉.png" alt="wine-beef">
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                          <div class="d-flex flex-column">
+                            <h4 class="fw-bold hot-h4 slide-act">紅酒燉牛肉</h4>
+
+                            <h4 class="fw-bold text-primary m-0 hot-h4">$168</h4>
+                          </div>
+
+                          <a class="align-self-end slide-a" href="#">
+                            <img class="w-100" src="/assets/images/dog-house/cart.png" alt="cart-img">
+                          </a>
+                        </div>
+                      </div>
+
+                      <div class="position-absolute bottom-0 w-100 z-1 hot-card-bg"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="text-center">
+            <button class="bg-primary text-secondary border-0 rounded-1 d-sm-none hot-btn hot-a">查看更多</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <%- include('./layout/footer'); -%>
+
+      <script type="module" src="../kkk-main.js"></script>
+
+      <!-----   Swiper JS   ----->
+
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <script>
+        // <-----   懶人分類   -----> //
+
+        var swiper = new Swiper(".lazy-swiper", {
+          slidesPerView: 3,
+          spaceBetween: 40,
+          loop: true,
+
+          centeredSlides: true,
+        });
+
+
+
+        // <-----   快速烹飪   -----> //
+
+
+
+        var swiper = new Swiper(".fast-swiper", {
+          slidesPerView: 3,
+          spaceBetween: 40,
+          loop: true,
+
+          centeredSlides: true,
+        });
+      </script>
+</body>
+
 </html>
