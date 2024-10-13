@@ -5,11 +5,12 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/LazyKitchen/assets/FaviconIcon-ee563fd9.ico" type="image/x-icon" />
   <title>訂購資訊</title>
   <script type="module" crossorigin src="/LazyKitchen/assets/bootstrap.min-487c5bde.js"></script>
-  <script type="module" crossorigin src="/LazyKitchen/assets/qoq-main-a5d8599b.js"></script>
+  <script type="module" crossorigin src="/LazyKitchen/assets/qoq-main-3dd35e9f.js"></script>
   <link rel="stylesheet" href="/LazyKitchen/assets/bootstrap-138f1b2c.css">
-  <link rel="stylesheet" href="/LazyKitchen/assets/qoq-main-01802eae.css">
+  <link rel="stylesheet" href="/LazyKitchen/assets/qoq-main-56fa6ae1.css">
 </head>
 
 <body>
@@ -272,7 +273,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
       
       <script>
         $(document).ready(function () {
-          // jquery 驗證
+          // jQuery 验证
           $.validator.addMethod("phonePattern", function (value, element) {
             return this.optional(element) || /^09\d{2}-\d{3}-\d{3}$/.test(value);
           }, "請輸入有效的電話號碼，格式為 0912-123-123。");
@@ -295,6 +296,9 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
               },
               payment: {
                 required: true
+              },
+              note: { // 为备註字段添加必填验证
+                required: true // 如果希望备註也为必填
               }
             },
             messages: {
@@ -308,7 +312,8 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                 email: "請輸入有效的電子信箱。"
               },
               address: "請輸入收件地址。",
-              payment: "請選擇付款方式。"
+              payment: "請選擇付款方式。",
+              note: "請輸入備註。" // 验证信息
             },
             errorElement: 'div',
             errorPlacement: function (error, element) {
@@ -322,7 +327,20 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
               $(element).addClass('is-valid').removeClass('is-invalid');
             }
           });
+
+          // 按下 "前往付款" 按鈕時驗證表單
+          $('a[href="./paymentConfirmation.html"]').on('click', function (event) {
+            if ($('#orderForm').valid()) {
+              // 如果表单有效，允许跳转
+              window.location.href = './paymentConfirmation.html';
+            } else {
+              // 如果表单无效，阻止默认跳转
+              event.preventDefault();
+            }
+          });
         });
+
+
       </script>
 </body>
 
