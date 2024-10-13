@@ -1,3 +1,9 @@
+// 與 JS  載入延遲，以防剛跳轉跑版
+// body {
+//   display: none;
+//   opacity: 0;
+//   transition: opacity 0.3s ease;
+// }
 // 回上方按鈕
 .backTotop {
   position: fixed;
@@ -21,11 +27,10 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-
   img {
     margin: 0 0 60px 0;
-    width: 1076px;
-    height: 434px;
+    max-width: 1076px;
+    max-height: 434px;
   }
 
   h2 {
@@ -37,14 +42,85 @@
   }
 }
 
+// 測試跳動
+// @keyframes smooth-bounce-in {
+//   0% {
+//     transform: translateX(-100%) translateY(0); /* 从左侧开始 */
+//   }
+//   20% {
+//     transform: translateX(-50%) translateY(-30px); /* 大跳 */
+//   }
+//   40% {
+//     transform: translateX(-20%) translateY(-15px); /* 中等跳 */
+//   }
+//   60% {
+//     transform: translateX(-10%) translateY(-5px); /* 较小跳 */
+//   }
+//   80% {
+//     transform: translateX(-5%) translateY(-3px); /* 轻微跳 */
+//   }
+//   100% {
+//     transform: translateX(0) translateY(0); /* 保持在终点位置 */
+//   }
+// }
+
+// .feature-banner-title {
+//   display: inline-block;
+//   animation: smooth-bounce-in 2s ease-in-out forwards; /* 动画持续2秒，使用平滑的缓动函数 */
+// }
+
+// 循環跳動
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.feature-banner-title {
+  display: inline-block;
+  animation: bounce 3s ease infinite;
+}
+
+// 跑馬燈備用
+// .feature-banner-title {
+//   overflow: hidden;
+//   white-space: nowrap;
+//   display: inline-block;
+//   position: relative;
+// }
+
+// .feature-banner-title  {
+//   display: inline-block;
+//   animation: marquee 8s linear infinite;
+// }
+
+// @keyframes marquee {
+//   0% {
+//     transform: translateX(100%); /* 从右边开始 */
+//   }
+//   100% {
+//     transform: translateX(-100%); /* 向左滚动到看不到 */
+//   }
+// }
+
 @media (max-width: 576px) {
   .feature-banner {
     padding: 60px 0;
     text-align: center;
 
     img {
-      width: 351px;
-      height: 144px;
+      max-width: 351px;
+      max-height: 144px;
       margin: 0 0 40px 0;
     }
 
@@ -59,7 +135,7 @@
   display: flex;
   justify-content: end;
   gap: 24px;
-  
+
   a {
     padding: 12px 40px;
     width: 100%;
