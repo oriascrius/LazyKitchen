@@ -6,13 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>👑懶人廚房✨</title>
 
+    <link rel="icon" href="/LazyKitchen/assets/patten (3)-a490a7f5.png" type="image/png">
 
     <!-----   Swiper CSS   ----->
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+
+    <!-----   AOS CSS   ----->
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script type="module" crossorigin src="/LazyKitchen/assets/bootstrap.min-487c5bde.js"></script>
     <link rel="stylesheet" href="/LazyKitchen/assets/bootstrap-138f1b2c.css">
-    <link rel="stylesheet" href="/LazyKitchen/assets/index-6c8e5ee0.css">
+    <link rel="stylesheet" href="/LazyKitchen/assets/index-293c5a1e.css">
   </head>
 
   <body>
@@ -85,20 +91,20 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
     
     
     <div class="container banner-my-60 mx-auto">
-      <img class="w-100 banner-img" src="/LazyKitchen/assets/banner-4fdfeedf.png" alt="banner-img">
+      <img class="w-100 banner-img" src="/LazyKitchen/assets/banner-4fdfeedf.png" alt="banner-img" data-aos="fade-left">
 
-      <div class="d-flex flex-column text-center flex-sm-row justify-content-sm-center banner-h2-mb">
+      <div class="d-flex flex-column text-center flex-sm-row justify-content-sm-center banner-h2-mb banner-bounce">
         <h2 class="text-primary fw-bold me-sm-2 mb-sm-0">懶人必備!</h2>
         <h2 class="fw-bold mb-0">下單即送到府</h2>
       </div>
 
-      <div class="row row-cols-1 flex-column align-items-center justify-content-center flex-sm-row ">
+      <div class="row row-cols-1 flex-column align-items-center justify-content-center flex-sm-row">
         <div class="col w-auto">
           <a class="d-block bg-danger text-primary fw-bold border border-3 border-primary rounded-1 banner-a banner-a-p banner-a-mb " href="#">懶人指引</a>
         </div>
 
         <div class="col w-auto">
-          <a class="d-block bg-primary text-danger fw-bold border border-3 border-primary rounded-1 banner-a banner-a-p" href="#">前往商品</a>
+          <a class="d-block bg-primary text-danger fw-bold border border-3 border-primary rounded-1 banner-a banner-a-p" href="/pages/productOverview.html">前往商品</a>
         </div>
       </div>
     </div>
@@ -115,7 +121,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
 
         <div class="container">
   <div class="row row-cols-2 row-cols-sm-1 g-3 justify-content-sm-center intro-comic-py">
-    <div class="col col-sm-8 mt-0 intro-col-mb">
+    <div class="col col-sm-8 mt-0 intro-col-mb" data-aos="fade-left">
       <div class="d-flex flex-column flex-sm-row-reverse align-items-center justify-content-sm-end p-2 p-sm-0 h-100 intro-comic">
         <h3 class="text-primary fw-bold m-0 intro-h3">1. 平日繁忙,沒時間料理?</h3>
 
@@ -125,7 +131,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
 
 
 
-    <div class="col col-sm-8 mt-0 intro-col-mb">
+    <div class="col col-sm-8 mt-0 intro-col-mb" data-aos="fade-right">
       <div class="d-flex flex-column flex-sm-row align-items-center justify-content-sm-start p-2 p-sm-0 h-100 intro-comic">
         <h3 class="text-primary fw-bold m-0 intro-h3">2. 輕鬆下單,選擇你喜愛的餐點</h3>
 
@@ -135,7 +141,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
 
 
 
-    <div class="col col-sm-8 mt-sm-0 intro-col-mb">
+    <div class="col col-sm-8 mt-sm-0 intro-col-mb" data-aos="fade-left">
       <div class="d-flex flex-column flex-sm-row-reverse align-items-center justify-content-sm-end p-2 p-sm-0 h-100 intro-comic">
         <h3 class="text-primary fw-bold m-0 intro-h3">3.新鮮食材送到府,簡單烹飪</h3>
 
@@ -145,7 +151,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
 
 
 
-    <div class="col col-sm-8 mt-sm-0 intro-col-mb">
+    <div class="col col-sm-8 mt-sm-0 intro-col-mb" data-aos="fade-right">
       <div class="d-flex flex-column flex-sm-row align-items-center justify-content-sm-start p-2 p-sm-0 h-100 intro-comic">
         <h3 class="text-primary fw-bold m-0 intro-h3">4. 立即享受健康美味,輕鬆自在!</h3>
 
@@ -154,6 +160,19 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
         
         <!-- 搜尋區塊 -->
@@ -230,7 +249,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
           <div class="row row-cols-2 hot-row-mb d-sm-none">
             <div class="col">
               <div class="position-relative hot-a">
-                <a href="#">
+                <a href="./productList.html">
                   <div class="hot-card position-relative z-2">
                     <div class="text-center">
                       <img class="hot-img" src="/LazyKitchen/assets/img_香草檸檬鮭魚-cae09ef2.png" alt="lemon-salmon">
@@ -250,7 +269,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
             
             <div class="col">
               <div class="position-relative hot-a">
-                <a href="#">
+                <a href="./productList.html">
                   <div class="hot-card position-relative z-2">
                     <div class="text-center">
                       <img class="hot-img" src="/LazyKitchen/assets/img_泰式咖哩雞-73f07bd3.png" alt="lemon-salmon">
@@ -281,7 +300,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                     <div class="position-relative">
                       <div class="hot-card position-relative z-2">
                         <div class="text-center">
-                          <img class="hot-img" src="/LazyKitchen/assets/img_泰式咖哩雞-73f07bd3.png" alt="curry-chicken">
+                          <a class="rounded-circle" href="./productList.html"><img class="rounded-circle hot-img" src="/LazyKitchen/assets/img_泰式咖哩雞-73f07bd3.png" alt="curry-chicken"></a>
                         </div>
           
                           <div class="d-flex justify-content-between">
@@ -291,7 +310,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                               <h4 class="fw-bold text-primary m-0 hot-h4">$168</h4>
                             </div>
 
-                            <a class="align-self-end slide-a" href="#">
+                            <a class="align-self-end slide-a" href="./shoppingcart.html">
                               <img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALqSURBVHgB7Zo9aBNhGMf/d2k7tKXNUFGrbQU7WAVr0cW4iEMSh4KNEKcWKnVxUqKuFRy12M1BQahdFGzj5seigom6aAO1HSJYK8HSDElpMpiP8/0fnCTSNrl7A9eD+0HJNbxveP7P1/u8JAoE82e9hzRP02NNwwnxrxe7HQVRtVS8PvI280Oh8WW16QucYHg1GbVcHFLLHs99OM944mXWqNCUC3AoTHkVzsbrdAFwBdiNK8BuXAF202Rm8X5fAAd85/Xn9UQMK6+fwW5MCTg6dgOdh4/pz72BMFr39mDpyRTsxJQAGtvtC+qGdw2eRn/oCvJrq5ClsLmBVOwlrKA8P9elwSTN7R0Ynl9GI0k8mERy7iHMYqmI6bFG539hMwsrmEqhSn4KAX3+sP68NDNlqRaCs59FOh5E9vuiZYdYbqPrCzGkF+L6c18gDLOwfmg8iU+OwypS54DhdRa1EY16aN3XowsgjGR+7ResIiWgKgr+S3Xv6x+Z+Of9bzP3IIP0SWxEgW11z3FfzfWV3mfXkfE+sVzEBkYUKGBgLIL83Z3PhSOjEf2V54eVtvk/0gIIDyEK4F9g9lNde5Jzj6S9TxoyzBkpUS/pRLwh3ifSEWD3MQry4+3LyCYXa+7JNWD8MJAWMCAGPMJ2mPpgbZ6RQUoA+7/hfcIiNkP+96r0SCIlgJ2EhUgRvX7zpzFJiy6Wkyhm6RR6H7mIU7em9WiYhQ7ISXYiS+P0bkK6jfKaORxdRuhNCgOjtWuAdcL1QXFe8HIki5QAXmwGr95Bc1sHDOO6z2xvFFsuRXI9U+7kzWn9M2SQE9DWWdWFiHFn3grOQVX7hfEtbTYKYBHyMlLJyqun2643JtfK/bYXMVOhPzSBlvZOvadzuNsJr4gQR48/4grJm1whtwEZ3C5kN64Au3EF2I0rwG5UBVoGDkaFonyFQxHf1L9QlVJx3IlRUICMRyteU/WfrJRLQ+K9KBwADRcv75RycYi2/wVlHQeMFCN33wAAAABJRU5ErkJggg==" alt="cart-img">
                             </a>
                           </div>
@@ -306,7 +325,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                     <div class="position-relative">
                       <div class="hot-card position-relative z-2">
                         <div class="text-center">
-                          <img class="hot-img" src="/LazyKitchen/assets/img_韓式辣炒年糕-f7e9f316.png" alt="Fried-rice-cake">
+                          <a class="rounded-circle" href="./productList.html"><img class="rounded-circle hot-img" src="/LazyKitchen/assets/img_韓式辣炒年糕-f7e9f316.png" alt="Fried-rice-cake"></a>
                         </div>
           
                           <div class="d-flex justify-content-between">
@@ -316,7 +335,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                               <h4 class="fw-bold text-primary m-0 hot-h4">$168</h4>
                             </div>
 
-                            <a class="align-self-end slide-a" href="#">
+                            <a class="align-self-end slide-a" href="./shoppingcart.html">
                               <img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALqSURBVHgB7Zo9aBNhGMf/d2k7tKXNUFGrbQU7WAVr0cW4iEMSh4KNEKcWKnVxUqKuFRy12M1BQahdFGzj5seigom6aAO1HSJYK8HSDElpMpiP8/0fnCTSNrl7A9eD+0HJNbxveP7P1/u8JAoE82e9hzRP02NNwwnxrxe7HQVRtVS8PvI280Oh8WW16QucYHg1GbVcHFLLHs99OM944mXWqNCUC3AoTHkVzsbrdAFwBdiNK8BuXAF202Rm8X5fAAd85/Xn9UQMK6+fwW5MCTg6dgOdh4/pz72BMFr39mDpyRTsxJQAGtvtC+qGdw2eRn/oCvJrq5ClsLmBVOwlrKA8P9elwSTN7R0Ynl9GI0k8mERy7iHMYqmI6bFG539hMwsrmEqhSn4KAX3+sP68NDNlqRaCs59FOh5E9vuiZYdYbqPrCzGkF+L6c18gDLOwfmg8iU+OwypS54DhdRa1EY16aN3XowsgjGR+7ResIiWgKgr+S3Xv6x+Z+Of9bzP3IIP0SWxEgW11z3FfzfWV3mfXkfE+sVzEBkYUKGBgLIL83Z3PhSOjEf2V54eVtvk/0gIIDyEK4F9g9lNde5Jzj6S9TxoyzBkpUS/pRLwh3ifSEWD3MQry4+3LyCYXa+7JNWD8MJAWMCAGPMJ2mPpgbZ6RQUoA+7/hfcIiNkP+96r0SCIlgJ2EhUgRvX7zpzFJiy6Wkyhm6RR6H7mIU7em9WiYhQ7ISXYiS+P0bkK6jfKaORxdRuhNCgOjtWuAdcL1QXFe8HIki5QAXmwGr95Bc1sHDOO6z2xvFFsuRXI9U+7kzWn9M2SQE9DWWdWFiHFn3grOQVX7hfEtbTYKYBHyMlLJyqun2643JtfK/bYXMVOhPzSBlvZOvadzuNsJr4gQR48/4grJm1whtwEZ3C5kN64Au3EF2I0rwG5UBVoGDkaFonyFQxHf1L9QlVJx3IlRUICMRyteU/WfrJRLQ+K9KBwADRcv75RycYi2/wVlHQeMFCN33wAAAABJRU5ErkJggg==" alt="cart-img">
                             </a>
                           </div>
@@ -332,7 +351,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                     <div class="position-relative">
                       <div class="hot-card position-relative z-2">
                         <div class="text-center">
-                          <img class="hot-img" src="/LazyKitchen/assets/img_香草檸檬鮭魚-cae09ef2.png" alt="lemon-salmon">
+                          <a class="rounded-circle" href="./productList.html"><img class="rounded-circle hot-img" src="/LazyKitchen/assets/img_香草檸檬鮭魚-cae09ef2.png" alt="lemon-salmon"></a>
                         </div>
           
                           <div class="d-flex justify-content-between">
@@ -342,7 +361,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                               <h4 class="fw-bold text-primary m-0 hot-h4">$168</h4>
                             </div>
 
-                            <a class="align-self-end slide-a" href="#">
+                            <a class="align-self-end slide-a" href="./shoppingcart.html">
                               <img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALqSURBVHgB7Zo9aBNhGMf/d2k7tKXNUFGrbQU7WAVr0cW4iEMSh4KNEKcWKnVxUqKuFRy12M1BQahdFGzj5seigom6aAO1HSJYK8HSDElpMpiP8/0fnCTSNrl7A9eD+0HJNbxveP7P1/u8JAoE82e9hzRP02NNwwnxrxe7HQVRtVS8PvI280Oh8WW16QucYHg1GbVcHFLLHs99OM944mXWqNCUC3AoTHkVzsbrdAFwBdiNK8BuXAF202Rm8X5fAAd85/Xn9UQMK6+fwW5MCTg6dgOdh4/pz72BMFr39mDpyRTsxJQAGtvtC+qGdw2eRn/oCvJrq5ClsLmBVOwlrKA8P9elwSTN7R0Ynl9GI0k8mERy7iHMYqmI6bFG539hMwsrmEqhSn4KAX3+sP68NDNlqRaCs59FOh5E9vuiZYdYbqPrCzGkF+L6c18gDLOwfmg8iU+OwypS54DhdRa1EY16aN3XowsgjGR+7ResIiWgKgr+S3Xv6x+Z+Of9bzP3IIP0SWxEgW11z3FfzfWV3mfXkfE+sVzEBkYUKGBgLIL83Z3PhSOjEf2V54eVtvk/0gIIDyEK4F9g9lNde5Jzj6S9TxoyzBkpUS/pRLwh3ifSEWD3MQry4+3LyCYXa+7JNWD8MJAWMCAGPMJ2mPpgbZ6RQUoA+7/hfcIiNkP+96r0SCIlgJ2EhUgRvX7zpzFJiy6Wkyhm6RR6H7mIU7em9WiYhQ7ISXYiS+P0bkK6jfKaORxdRuhNCgOjtWuAdcL1QXFe8HIki5QAXmwGr95Bc1sHDOO6z2xvFFsuRXI9U+7kzWn9M2SQE9DWWdWFiHFn3grOQVX7hfEtbTYKYBHyMlLJyqun2643JtfK/bYXMVOhPzSBlvZOvadzuNsJr4gQR48/4grJm1whtwEZ3C5kN64Au3EF2I0rwG5UBVoGDkaFonyFQxHf1L9QlVJx3IlRUICMRyteU/WfrJRLQ+K9KBwADRcv75RycYi2/wVlHQeMFCN33wAAAABJRU5ErkJggg==" alt="cart-img">
                             </a>
                           </div>
@@ -358,7 +377,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                     <div class="position-relative">
                       <div class="hot-card position-relative z-2">
                         <div class="text-center">
-                          <img class="hot-img" src="/LazyKitchen/assets/img_燉排骨湯-81eb776a.png" alt="soup">
+                          <a class="rounded-circle" href="./productList.html"><img class="rounded-circle hot-img" src="/LazyKitchen/assets/img_燉排骨湯-81eb776a.png" alt="soup"></a>
                         </div>
           
                           <div class="d-flex justify-content-between">
@@ -368,7 +387,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                               <h4 class="fw-bold text-primary m-0 hot-h4">$168</h4>
                             </div>
 
-                            <a class="align-self-end slide-a" href="#">
+                            <a class="align-self-end slide-a" href="./shoppingcart.html">
                               <img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALqSURBVHgB7Zo9aBNhGMf/d2k7tKXNUFGrbQU7WAVr0cW4iEMSh4KNEKcWKnVxUqKuFRy12M1BQahdFGzj5seigom6aAO1HSJYK8HSDElpMpiP8/0fnCTSNrl7A9eD+0HJNbxveP7P1/u8JAoE82e9hzRP02NNwwnxrxe7HQVRtVS8PvI280Oh8WW16QucYHg1GbVcHFLLHs99OM944mXWqNCUC3AoTHkVzsbrdAFwBdiNK8BuXAF202Rm8X5fAAd85/Xn9UQMK6+fwW5MCTg6dgOdh4/pz72BMFr39mDpyRTsxJQAGtvtC+qGdw2eRn/oCvJrq5ClsLmBVOwlrKA8P9elwSTN7R0Ynl9GI0k8mERy7iHMYqmI6bFG539hMwsrmEqhSn4KAX3+sP68NDNlqRaCs59FOh5E9vuiZYdYbqPrCzGkF+L6c18gDLOwfmg8iU+OwypS54DhdRa1EY16aN3XowsgjGR+7ResIiWgKgr+S3Xv6x+Z+Of9bzP3IIP0SWxEgW11z3FfzfWV3mfXkfE+sVzEBkYUKGBgLIL83Z3PhSOjEf2V54eVtvk/0gIIDyEK4F9g9lNde5Jzj6S9TxoyzBkpUS/pRLwh3ifSEWD3MQry4+3LyCYXa+7JNWD8MJAWMCAGPMJ2mPpgbZ6RQUoA+7/hfcIiNkP+96r0SCIlgJ2EhUgRvX7zpzFJiy6Wkyhm6RR6H7mIU7em9WiYhQ7ISXYiS+P0bkK6jfKaORxdRuhNCgOjtWuAdcL1QXFe8HIki5QAXmwGr95Bc1sHDOO6z2xvFFsuRXI9U+7kzWn9M2SQE9DWWdWFiHFn3grOQVX7hfEtbTYKYBHyMlLJyqun2643JtfK/bYXMVOhPzSBlvZOvadzuNsJr4gQR48/4grJm1whtwEZ3C5kN64Au3EF2I0rwG5UBVoGDkaFonyFQxHf1L9QlVJx3IlRUICMRyteU/WfrJRLQ+K9KBwADRcv75RycYi2/wVlHQeMFCN33wAAAABJRU5ErkJggg==" alt="cart-img">
                             </a>
                           </div>
@@ -394,7 +413,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
         
 
           <div class="text-center">
-            <button class="bg-secondary text-primary fw-bold border-0 rounded-1 hot-btn hot-a">查看更多</button>
+            <a href="./productOverview.html"><button class="bg-secondary text-primary fw-bold border-0 rounded-1 hot-btn hot-a">查看更多</button></a>
           </div>
         </div>
       </div>
@@ -427,7 +446,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
           <div class="row row-cols-2 hot-row-mb d-sm-none">
             <div class="col">
               <div class="position-relative hot-a">
-                <a href="#">
+                <a href="./productList.html">
                   <div class="hot-card position-relative z-2">
                     <div class="text-center">
                       <img class="hot-img" src="/LazyKitchen/assets/img_糖醋里肌-50e0cc42.png" alt="pork">
@@ -447,7 +466,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
             
             <div class="col">
               <div class="position-relative hot-a">
-                <a href="#">
+                <a href="./productList.html">
                   <div class="hot-card position-relative z-2">
                     <div class="text-center">
                       <img class="hot-img" src="/LazyKitchen/assets/img_蜜汁豬肉-6fca9623.png" alt="sweet-pork">
@@ -477,7 +496,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                     <div class="position-relative">
                       <div class="hot-card position-relative z-2">
                         <div class="text-center">
-                          <img class="hot-img" src="/LazyKitchen/assets/img_蜜汁豬肉-6fca9623.png" alt="sweet-pork">
+                          <a class="rounded-circle" href="./productList.html"><img class="rounded-circle hot-img" src="/LazyKitchen/assets/img_蜜汁豬肉-6fca9623.png" alt="sweet-pork"></a>
                         </div>
           
                         <div class="d-flex justify-content-between">
@@ -487,7 +506,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                             <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
                           </div>
 
-                          <a class="align-self-end slide-a" href="#">
+                          <a class="align-self-end slide-a" href="./shoppingcart.html">
                             <img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALqSURBVHgB7Zo9aBNhGMf/d2k7tKXNUFGrbQU7WAVr0cW4iEMSh4KNEKcWKnVxUqKuFRy12M1BQahdFGzj5seigom6aAO1HSJYK8HSDElpMpiP8/0fnCTSNrl7A9eD+0HJNbxveP7P1/u8JAoE82e9hzRP02NNwwnxrxe7HQVRtVS8PvI280Oh8WW16QucYHg1GbVcHFLLHs99OM944mXWqNCUC3AoTHkVzsbrdAFwBdiNK8BuXAF202Rm8X5fAAd85/Xn9UQMK6+fwW5MCTg6dgOdh4/pz72BMFr39mDpyRTsxJQAGtvtC+qGdw2eRn/oCvJrq5ClsLmBVOwlrKA8P9elwSTN7R0Ynl9GI0k8mERy7iHMYqmI6bFG539hMwsrmEqhSn4KAX3+sP68NDNlqRaCs59FOh5E9vuiZYdYbqPrCzGkF+L6c18gDLOwfmg8iU+OwypS54DhdRa1EY16aN3XowsgjGR+7ResIiWgKgr+S3Xv6x+Z+Of9bzP3IIP0SWxEgW11z3FfzfWV3mfXkfE+sVzEBkYUKGBgLIL83Z3PhSOjEf2V54eVtvk/0gIIDyEK4F9g9lNde5Jzj6S9TxoyzBkpUS/pRLwh3ifSEWD3MQry4+3LyCYXa+7JNWD8MJAWMCAGPMJ2mPpgbZ6RQUoA+7/hfcIiNkP+96r0SCIlgJ2EhUgRvX7zpzFJiy6Wkyhm6RR6H7mIU7em9WiYhQ7ISXYiS+P0bkK6jfKaORxdRuhNCgOjtWuAdcL1QXFe8HIki5QAXmwGr95Bc1sHDOO6z2xvFFsuRXI9U+7kzWn9M2SQE9DWWdWFiHFn3grOQVX7hfEtbTYKYBHyMlLJyqun2643JtfK/bYXMVOhPzSBlvZOvadzuNsJr4gQR48/4grJm1whtwEZ3C5kN64Au3EF2I0rwG5UBVoGDkaFonyFQxHf1L9QlVJx3IlRUICMRyteU/WfrJRLQ+K9KBwADRcv75RycYi2/wVlHQeMFCN33wAAAABJRU5ErkJggg==" alt="cart-img">
                           </a>
                         </div>
@@ -503,7 +522,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                     <div class="position-relative">
                       <div class="hot-card position-relative z-2">
                         <div class="text-center">
-                          <img class="hot-img" src="/LazyKitchen/assets/img_泡菜豬肉-d25ac7e7.png" alt="k-pork">
+                          <a class="rounded-circle" href="./productList.html"><img class="rounded-circle hot-img" src="/LazyKitchen/assets/img_泡菜豬肉-d25ac7e7.png" alt="k-pork"></a>
                         </div>
           
                         <div class="d-flex justify-content-between">
@@ -513,7 +532,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                             <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
                           </div>
 
-                          <a class="align-self-end slide-a" href="#">
+                          <a class="align-self-end slide-a" href="./shoppingcart.html">
                             <img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALqSURBVHgB7Zo9aBNhGMf/d2k7tKXNUFGrbQU7WAVr0cW4iEMSh4KNEKcWKnVxUqKuFRy12M1BQahdFGzj5seigom6aAO1HSJYK8HSDElpMpiP8/0fnCTSNrl7A9eD+0HJNbxveP7P1/u8JAoE82e9hzRP02NNwwnxrxe7HQVRtVS8PvI280Oh8WW16QucYHg1GbVcHFLLHs99OM944mXWqNCUC3AoTHkVzsbrdAFwBdiNK8BuXAF202Rm8X5fAAd85/Xn9UQMK6+fwW5MCTg6dgOdh4/pz72BMFr39mDpyRTsxJQAGtvtC+qGdw2eRn/oCvJrq5ClsLmBVOwlrKA8P9elwSTN7R0Ynl9GI0k8mERy7iHMYqmI6bFG539hMwsrmEqhSn4KAX3+sP68NDNlqRaCs59FOh5E9vuiZYdYbqPrCzGkF+L6c18gDLOwfmg8iU+OwypS54DhdRa1EY16aN3XowsgjGR+7ResIiWgKgr+S3Xv6x+Z+Of9bzP3IIP0SWxEgW11z3FfzfWV3mfXkfE+sVzEBkYUKGBgLIL83Z3PhSOjEf2V54eVtvk/0gIIDyEK4F9g9lNde5Jzj6S9TxoyzBkpUS/pRLwh3ifSEWD3MQry4+3LyCYXa+7JNWD8MJAWMCAGPMJ2mPpgbZ6RQUoA+7/hfcIiNkP+96r0SCIlgJ2EhUgRvX7zpzFJiy6Wkyhm6RR6H7mIU7em9WiYhQ7ISXYiS+P0bkK6jfKaORxdRuhNCgOjtWuAdcL1QXFe8HIki5QAXmwGr95Bc1sHDOO6z2xvFFsuRXI9U+7kzWn9M2SQE9DWWdWFiHFn3grOQVX7hfEtbTYKYBHyMlLJyqun2643JtfK/bYXMVOhPzSBlvZOvadzuNsJr4gQR48/4grJm1whtwEZ3C5kN64Au3EF2I0rwG5UBVoGDkaFonyFQxHf1L9QlVJx3IlRUICMRyteU/WfrJRLQ+K9KBwADRcv75RycYi2/wVlHQeMFCN33wAAAABJRU5ErkJggg==" alt="cart-img">
                           </a>
                         </div>
@@ -529,7 +548,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                     <div class="position-relative">
                       <div class="hot-card position-relative z-2">
                         <div class="text-center">
-                          <img class="hot-img" src="/LazyKitchen/assets/img_香草檸檬鮭魚-cae09ef2.png" alt="lemon-salmon">
+                          <a class="rounded-circle" href="./productList.html"><img class="rounded-circle hot-img" src="/LazyKitchen/assets/img_香草檸檬鮭魚-cae09ef2.png" alt="lemon-salmon"></a>
                         </div>
           
                         <div class="d-flex justify-content-between">
@@ -539,7 +558,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                             <h4 class="fw-bold text-primary m-0 hot-h4">$168</h4>
                           </div>
 
-                          <a class="align-self-end slide-a" href="#">
+                          <a class="align-self-end slide-a" href="./shoppingcart.html">
                             <img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALqSURBVHgB7Zo9aBNhGMf/d2k7tKXNUFGrbQU7WAVr0cW4iEMSh4KNEKcWKnVxUqKuFRy12M1BQahdFGzj5seigom6aAO1HSJYK8HSDElpMpiP8/0fnCTSNrl7A9eD+0HJNbxveP7P1/u8JAoE82e9hzRP02NNwwnxrxe7HQVRtVS8PvI280Oh8WW16QucYHg1GbVcHFLLHs99OM944mXWqNCUC3AoTHkVzsbrdAFwBdiNK8BuXAF202Rm8X5fAAd85/Xn9UQMK6+fwW5MCTg6dgOdh4/pz72BMFr39mDpyRTsxJQAGtvtC+qGdw2eRn/oCvJrq5ClsLmBVOwlrKA8P9elwSTN7R0Ynl9GI0k8mERy7iHMYqmI6bFG539hMwsrmEqhSn4KAX3+sP68NDNlqRaCs59FOh5E9vuiZYdYbqPrCzGkF+L6c18gDLOwfmg8iU+OwypS54DhdRa1EY16aN3XowsgjGR+7ResIiWgKgr+S3Xv6x+Z+Of9bzP3IIP0SWxEgW11z3FfzfWV3mfXkfE+sVzEBkYUKGBgLIL83Z3PhSOjEf2V54eVtvk/0gIIDyEK4F9g9lNde5Jzj6S9TxoyzBkpUS/pRLwh3ifSEWD3MQry4+3LyCYXa+7JNWD8MJAWMCAGPMJ2mPpgbZ6RQUoA+7/hfcIiNkP+96r0SCIlgJ2EhUgRvX7zpzFJiy6Wkyhm6RR6H7mIU7em9WiYhQ7ISXYiS+P0bkK6jfKaORxdRuhNCgOjtWuAdcL1QXFe8HIki5QAXmwGr95Bc1sHDOO6z2xvFFsuRXI9U+7kzWn9M2SQE9DWWdWFiHFn3grOQVX7hfEtbTYKYBHyMlLJyqun2643JtfK/bYXMVOhPzSBlvZOvadzuNsJr4gQR48/4grJm1whtwEZ3C5kN64Au3EF2I0rwG5UBVoGDkaFonyFQxHf1L9QlVJx3IlRUICMRyteU/WfrJRLQ+K9KBwADRcv75RycYi2/wVlHQeMFCN33wAAAABJRU5ErkJggg==" alt="cart-img">
                           </a>
                         </div>
@@ -555,7 +574,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                     <div class="position-relative">
                       <div class="hot-card position-relative z-2">
                         <div class="text-center">
-                          <img class="hot-img" src="/LazyKitchen/assets/img_糖醋里肌-50e0cc42.png" alt="sweet-sour-pork">
+                          <a class="rounded-circle" href="./productList.html"><img class="rounded-circle hot-img" src="/LazyKitchen/assets/img_糖醋里肌-50e0cc42.png" alt="sweet-sour-pork"></a>
                         </div>
           
                         <div class="d-flex justify-content-between">
@@ -565,7 +584,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                             <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
                           </div>
 
-                          <a class="align-self-end slide-a" href="#">
+                          <a class="align-self-end slide-a" href="./shoppingcart.html">
                             <img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALqSURBVHgB7Zo9aBNhGMf/d2k7tKXNUFGrbQU7WAVr0cW4iEMSh4KNEKcWKnVxUqKuFRy12M1BQahdFGzj5seigom6aAO1HSJYK8HSDElpMpiP8/0fnCTSNrl7A9eD+0HJNbxveP7P1/u8JAoE82e9hzRP02NNwwnxrxe7HQVRtVS8PvI280Oh8WW16QucYHg1GbVcHFLLHs99OM944mXWqNCUC3AoTHkVzsbrdAFwBdiNK8BuXAF202Rm8X5fAAd85/Xn9UQMK6+fwW5MCTg6dgOdh4/pz72BMFr39mDpyRTsxJQAGtvtC+qGdw2eRn/oCvJrq5ClsLmBVOwlrKA8P9elwSTN7R0Ynl9GI0k8mERy7iHMYqmI6bFG539hMwsrmEqhSn4KAX3+sP68NDNlqRaCs59FOh5E9vuiZYdYbqPrCzGkF+L6c18gDLOwfmg8iU+OwypS54DhdRa1EY16aN3XowsgjGR+7ResIiWgKgr+S3Xv6x+Z+Of9bzP3IIP0SWxEgW11z3FfzfWV3mfXkfE+sVzEBkYUKGBgLIL83Z3PhSOjEf2V54eVtvk/0gIIDyEK4F9g9lNde5Jzj6S9TxoyzBkpUS/pRLwh3ifSEWD3MQry4+3LyCYXa+7JNWD8MJAWMCAGPMJ2mPpgbZ6RQUoA+7/hfcIiNkP+96r0SCIlgJ2EhUgRvX7zpzFJiy6Wkyhm6RR6H7mIU7em9WiYhQ7ISXYiS+P0bkK6jfKaORxdRuhNCgOjtWuAdcL1QXFe8HIki5QAXmwGr95Bc1sHDOO6z2xvFFsuRXI9U+7kzWn9M2SQE9DWWdWFiHFn3grOQVX7hfEtbTYKYBHyMlLJyqun2643JtfK/bYXMVOhPzSBlvZOvadzuNsJr4gQR48/4grJm1whtwEZ3C5kN64Au3EF2I0rwG5UBVoGDkaFonyFQxHf1L9QlVJx3IlRUICMRyteU/WfrJRLQ+K9KBwADRcv75RycYi2/wVlHQeMFCN33wAAAABJRU5ErkJggg==" alt="cart-img">
                           </a>
                         </div>
@@ -582,7 +601,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
 
 
           <div class="text-center">
-            <button class="bg-primary text-secondary border-0 rounded-1 d-sm-none hot-btn hot-a">查看更多</button>
+            <a href="./productOverview.html"><button class="bg-primary text-secondary border-0 rounded-1 d-sm-none hot-btn hot-a">查看更多</button></a>
           </div>
         </div>
 
@@ -613,7 +632,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
           <div class="row row-cols-2 hot-row-mb d-sm-none">
             <div class="col">
               <div class="position-relative hot-a">
-                <a href="#">
+                <a href="./productList.html">
                   <div class="hot-card position-relative z-2">
                     <div class="text-center">
                       <img class="hot-img" src="/LazyKitchen/assets/img_紅酒燉牛肉-237d220e.png" alt="wine-beef">
@@ -633,7 +652,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
             
             <div class="col">
               <div class="position-relative hot-a">
-                <a href="#">
+                <a href="./productList.html">
                   <div class="hot-card position-relative z-2">
                     <div class="text-center">
                       <img class="hot-img" src="/LazyKitchen/assets/img_奶油雞肉燉飯-20aaa046.png" alt="chicken-rice">
@@ -663,7 +682,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                     <div class="position-relative">
                       <div class="hot-card position-relative z-2">
                         <div class="text-center">
-                          <img class="hot-img" src="/LazyKitchen/assets/img_奶油雞肉燉飯-20aaa046.png" alt="chicken-rice">
+                          <a class="rounded-circle" href="./productList.html"><img class="rounded-circle hot-img" src="/LazyKitchen/assets/img_奶油雞肉燉飯-20aaa046.png" alt="chicken-rice"></a>
                         </div>
           
                         <div class="d-flex justify-content-between">
@@ -673,7 +692,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                             <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
                           </div>
 
-                          <a class="align-self-end slide-a" href="#">
+                          <a class="align-self-end slide-a" href="./shoppingcart.html">
                             <img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALqSURBVHgB7Zo9aBNhGMf/d2k7tKXNUFGrbQU7WAVr0cW4iEMSh4KNEKcWKnVxUqKuFRy12M1BQahdFGzj5seigom6aAO1HSJYK8HSDElpMpiP8/0fnCTSNrl7A9eD+0HJNbxveP7P1/u8JAoE82e9hzRP02NNwwnxrxe7HQVRtVS8PvI280Oh8WW16QucYHg1GbVcHFLLHs99OM944mXWqNCUC3AoTHkVzsbrdAFwBdiNK8BuXAF202Rm8X5fAAd85/Xn9UQMK6+fwW5MCTg6dgOdh4/pz72BMFr39mDpyRTsxJQAGtvtC+qGdw2eRn/oCvJrq5ClsLmBVOwlrKA8P9elwSTN7R0Ynl9GI0k8mERy7iHMYqmI6bFG539hMwsrmEqhSn4KAX3+sP68NDNlqRaCs59FOh5E9vuiZYdYbqPrCzGkF+L6c18gDLOwfmg8iU+OwypS54DhdRa1EY16aN3XowsgjGR+7ResIiWgKgr+S3Xv6x+Z+Of9bzP3IIP0SWxEgW11z3FfzfWV3mfXkfE+sVzEBkYUKGBgLIL83Z3PhSOjEf2V54eVtvk/0gIIDyEK4F9g9lNde5Jzj6S9TxoyzBkpUS/pRLwh3ifSEWD3MQry4+3LyCYXa+7JNWD8MJAWMCAGPMJ2mPpgbZ6RQUoA+7/hfcIiNkP+96r0SCIlgJ2EhUgRvX7zpzFJiy6Wkyhm6RR6H7mIU7em9WiYhQ7ISXYiS+P0bkK6jfKaORxdRuhNCgOjtWuAdcL1QXFe8HIki5QAXmwGr95Bc1sHDOO6z2xvFFsuRXI9U+7kzWn9M2SQE9DWWdWFiHFn3grOQVX7hfEtbTYKYBHyMlLJyqun2643JtfK/bYXMVOhPzSBlvZOvadzuNsJr4gQR48/4grJm1whtwEZ3C5kN64Au3EF2I0rwG5UBVoGDkaFonyFQxHf1L9QlVJx3IlRUICMRyteU/WfrJRLQ+K9KBwADRcv75RycYi2/wVlHQeMFCN33wAAAABJRU5ErkJggg==" alt="cart-img">
                           </a>
                         </div>
@@ -689,7 +708,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                     <div class="position-relative">
                       <div class="hot-card position-relative z-2">
                         <div class="text-center">
-                          <img class="hot-img" src="/LazyKitchen/assets/img_燉排骨湯-81eb776a.png" alt="soup">
+                          <a class="rounded-circle" href="./productList.html"><img class="rounded-circle hot-img" src="/LazyKitchen/assets/img_燉排骨湯-81eb776a.png" alt="soup"></a>
                         </div>
           
                         <div class="d-flex justify-content-between">
@@ -699,7 +718,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                             <h4 class="fw-bold text-primary m-0 hot-h4">$188</h4>
                           </div>
 
-                          <a class="align-self-end slide-a" href="#">
+                          <a class="align-self-end slide-a" href="./shoppingcart.html">
                             <img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALqSURBVHgB7Zo9aBNhGMf/d2k7tKXNUFGrbQU7WAVr0cW4iEMSh4KNEKcWKnVxUqKuFRy12M1BQahdFGzj5seigom6aAO1HSJYK8HSDElpMpiP8/0fnCTSNrl7A9eD+0HJNbxveP7P1/u8JAoE82e9hzRP02NNwwnxrxe7HQVRtVS8PvI280Oh8WW16QucYHg1GbVcHFLLHs99OM944mXWqNCUC3AoTHkVzsbrdAFwBdiNK8BuXAF202Rm8X5fAAd85/Xn9UQMK6+fwW5MCTg6dgOdh4/pz72BMFr39mDpyRTsxJQAGtvtC+qGdw2eRn/oCvJrq5ClsLmBVOwlrKA8P9elwSTN7R0Ynl9GI0k8mERy7iHMYqmI6bFG539hMwsrmEqhSn4KAX3+sP68NDNlqRaCs59FOh5E9vuiZYdYbqPrCzGkF+L6c18gDLOwfmg8iU+OwypS54DhdRa1EY16aN3XowsgjGR+7ResIiWgKgr+S3Xv6x+Z+Of9bzP3IIP0SWxEgW11z3FfzfWV3mfXkfE+sVzEBkYUKGBgLIL83Z3PhSOjEf2V54eVtvk/0gIIDyEK4F9g9lNde5Jzj6S9TxoyzBkpUS/pRLwh3ifSEWD3MQry4+3LyCYXa+7JNWD8MJAWMCAGPMJ2mPpgbZ6RQUoA+7/hfcIiNkP+96r0SCIlgJ2EhUgRvX7zpzFJiy6Wkyhm6RR6H7mIU7em9WiYhQ7ISXYiS+P0bkK6jfKaORxdRuhNCgOjtWuAdcL1QXFe8HIki5QAXmwGr95Bc1sHDOO6z2xvFFsuRXI9U+7kzWn9M2SQE9DWWdWFiHFn3grOQVX7hfEtbTYKYBHyMlLJyqun2643JtfK/bYXMVOhPzSBlvZOvadzuNsJr4gQR48/4grJm1whtwEZ3C5kN64Au3EF2I0rwG5UBVoGDkaFonyFQxHf1L9QlVJx3IlRUICMRyteU/WfrJRLQ+K9KBwADRcv75RycYi2/wVlHQeMFCN33wAAAABJRU5ErkJggg==" alt="cart-img">
                           </a>
                         </div>
@@ -715,7 +734,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                     <div class="position-relative">
                       <div class="hot-card position-relative z-2">
                         <div class="text-center">
-                          <img class="hot-img" src="/LazyKitchen/assets/img_香草檸檬鮭魚-cae09ef2.png" alt="lemon-salmon">
+                          <a class="rounded-circle" href="./productList.html"><img class="rounded-circle hot-img" src="/LazyKitchen/assets/img_香草檸檬鮭魚-cae09ef2.png" alt="lemon-salmon"></a>
                         </div>
           
                         <div class="d-flex justify-content-between">
@@ -725,7 +744,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                             <h4 class="fw-bold text-primary m-0 hot-h4">$168</h4>
                           </div>
 
-                          <a class="align-self-end slide-a" href="#">
+                          <a class="align-self-end slide-a" href="./shoppingcart.html">
                             <img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALqSURBVHgB7Zo9aBNhGMf/d2k7tKXNUFGrbQU7WAVr0cW4iEMSh4KNEKcWKnVxUqKuFRy12M1BQahdFGzj5seigom6aAO1HSJYK8HSDElpMpiP8/0fnCTSNrl7A9eD+0HJNbxveP7P1/u8JAoE82e9hzRP02NNwwnxrxe7HQVRtVS8PvI280Oh8WW16QucYHg1GbVcHFLLHs99OM944mXWqNCUC3AoTHkVzsbrdAFwBdiNK8BuXAF202Rm8X5fAAd85/Xn9UQMK6+fwW5MCTg6dgOdh4/pz72BMFr39mDpyRTsxJQAGtvtC+qGdw2eRn/oCvJrq5ClsLmBVOwlrKA8P9elwSTN7R0Ynl9GI0k8mERy7iHMYqmI6bFG539hMwsrmEqhSn4KAX3+sP68NDNlqRaCs59FOh5E9vuiZYdYbqPrCzGkF+L6c18gDLOwfmg8iU+OwypS54DhdRa1EY16aN3XowsgjGR+7ResIiWgKgr+S3Xv6x+Z+Of9bzP3IIP0SWxEgW11z3FfzfWV3mfXkfE+sVzEBkYUKGBgLIL83Z3PhSOjEf2V54eVtvk/0gIIDyEK4F9g9lNde5Jzj6S9TxoyzBkpUS/pRLwh3ifSEWD3MQry4+3LyCYXa+7JNWD8MJAWMCAGPMJ2mPpgbZ6RQUoA+7/hfcIiNkP+96r0SCIlgJ2EhUgRvX7zpzFJiy6Wkyhm6RR6H7mIU7em9WiYhQ7ISXYiS+P0bkK6jfKaORxdRuhNCgOjtWuAdcL1QXFe8HIki5QAXmwGr95Bc1sHDOO6z2xvFFsuRXI9U+7kzWn9M2SQE9DWWdWFiHFn3grOQVX7hfEtbTYKYBHyMlLJyqun2643JtfK/bYXMVOhPzSBlvZOvadzuNsJr4gQR48/4grJm1whtwEZ3C5kN64Au3EF2I0rwG5UBVoGDkaFonyFQxHf1L9QlVJx3IlRUICMRyteU/WfrJRLQ+K9KBwADRcv75RycYi2/wVlHQeMFCN33wAAAABJRU5ErkJggg==" alt="cart-img">
                           </a>
                         </div>
@@ -741,7 +760,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                     <div class="position-relative">
                       <div class="hot-card position-relative z-2">
                         <div class="text-center">
-                          <img class="hot-img" src="/LazyKitchen/assets/img_紅酒燉牛肉-237d220e.png" alt="wine-beef">
+                          <a class="rounded-circle" href="./productList.html"><img class="rounded-circle hot-img" src="/LazyKitchen/assets/img_紅酒燉牛肉-237d220e.png" alt="wine-beef"></a>
                         </div>
           
                         <div class="d-flex justify-content-between">
@@ -751,7 +770,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                             <h4 class="fw-bold text-primary m-0 hot-h4">$168</h4>
                           </div>
 
-                          <a class="align-self-end slide-a" href="#">
+                          <a class="align-self-end slide-a" href="./shoppingcart.html">
                             <img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALqSURBVHgB7Zo9aBNhGMf/d2k7tKXNUFGrbQU7WAVr0cW4iEMSh4KNEKcWKnVxUqKuFRy12M1BQahdFGzj5seigom6aAO1HSJYK8HSDElpMpiP8/0fnCTSNrl7A9eD+0HJNbxveP7P1/u8JAoE82e9hzRP02NNwwnxrxe7HQVRtVS8PvI280Oh8WW16QucYHg1GbVcHFLLHs99OM944mXWqNCUC3AoTHkVzsbrdAFwBdiNK8BuXAF202Rm8X5fAAd85/Xn9UQMK6+fwW5MCTg6dgOdh4/pz72BMFr39mDpyRTsxJQAGtvtC+qGdw2eRn/oCvJrq5ClsLmBVOwlrKA8P9elwSTN7R0Ynl9GI0k8mERy7iHMYqmI6bFG539hMwsrmEqhSn4KAX3+sP68NDNlqRaCs59FOh5E9vuiZYdYbqPrCzGkF+L6c18gDLOwfmg8iU+OwypS54DhdRa1EY16aN3XowsgjGR+7ResIiWgKgr+S3Xv6x+Z+Of9bzP3IIP0SWxEgW11z3FfzfWV3mfXkfE+sVzEBkYUKGBgLIL83Z3PhSOjEf2V54eVtvk/0gIIDyEK4F9g9lNde5Jzj6S9TxoyzBkpUS/pRLwh3ifSEWD3MQry4+3LyCYXa+7JNWD8MJAWMCAGPMJ2mPpgbZ6RQUoA+7/hfcIiNkP+96r0SCIlgJ2EhUgRvX7zpzFJiy6Wkyhm6RR6H7mIU7em9WiYhQ7ISXYiS+P0bkK6jfKaORxdRuhNCgOjtWuAdcL1QXFe8HIki5QAXmwGr95Bc1sHDOO6z2xvFFsuRXI9U+7kzWn9M2SQE9DWWdWFiHFn3grOQVX7hfEtbTYKYBHyMlLJyqun2643JtfK/bYXMVOhPzSBlvZOvadzuNsJr4gQR48/4grJm1whtwEZ3C5kN64Au3EF2I0rwG5UBVoGDkaFonyFQxHf1L9QlVJx3IlRUICMRyteU/WfrJRLQ+K9KBwADRcv75RycYi2/wVlHQeMFCN33wAAAABJRU5ErkJggg==" alt="cart-img">
                           </a>
                         </div>
@@ -768,7 +787,7 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
 
 
           <div class="text-center">
-            <button class="bg-primary text-secondary border-0 rounded-1 d-sm-none hot-btn hot-a">查看更多</button>
+            <a href="./productOverview.html"><button class="bg-primary text-secondary border-0 rounded-1 d-sm-none hot-btn hot-a">查看更多</button></a>
           </div>
         </div>
       </div>
@@ -780,12 +799,14 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
 
 
     <div class="qa-bg">
-  <div class="container qa-py">
+  <div class="container qa-py" data-aos="fade-down"
+  data-aos-duration="1000" data-aos-offset="-200">
     <h2 class="text-center fw-bold text-primary qa-fz">Ｑ＆Ａ</h2>
 
     
     <div class="row">
-      <div class="col col-sm-8 mx-auto">
+      <div class="col col-sm-8 mx-auto" data-aos="fade-down"
+      data-aos-duration="1000" data-aos-offset="-200">
         <div class="accordion" id="accordionExample">
           <div class="accordion-item mb-4 bg-secondary">
             <button class="accordion-button bg-secondary fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#qa-1" aria-expanded="true" aria-controls="qa-1">
@@ -801,7 +822,8 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
     
     
     
-          <div class="accordion-item mb-4 bg-secondary">
+          <div class="accordion-item mb-4 bg-secondary" data-aos="fade-down"
+          data-aos-duration="1000" data-aos-offset="-200">
             <button class="accordion-button bg-secondary fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#qa-2" aria-expanded="false" aria-controls="qa-2">
               2. 收到的商品有問題，我該怎麼辦？
             </button>
@@ -815,7 +837,8 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
     
     
     
-          <div class="accordion-item mb-4 bg-secondary">
+          <div class="accordion-item mb-4 bg-secondary" data-aos="fade-down"
+          data-aos-duration="1000" data-aos-offset="-200">
             <button class="accordion-button bg-secondary fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#qa-3" aria-expanded="false" aria-controls="qa-3">
               3. 付款方式有什麼選擇？
             </button>
@@ -829,7 +852,8 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
     
     
     
-          <div class="accordion-item mb-4 bg-secondary">
+          <div class="accordion-item mb-4 bg-secondary" data-aos="fade-down"
+          data-aos-duration="1000" data-aos-offset="-200">
             <button class="accordion-button bg-secondary fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#qa-4" aria-expanded="false" aria-controls="qa-4">
               4. 商品如何保存？
             </button>
@@ -843,7 +867,8 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
     
     
     
-          <div class="accordion-item mb-4 bg-secondary">
+          <div class="accordion-item mb-4 bg-secondary" data-aos="fade-down"
+          data-aos-duration="1000" data-aos-offset="-300">
             <button class="accordion-button bg-secondary fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#qa-5" aria-expanded="false" aria-controls="qa-5">
               5. 是否提供團購服務？
             </button>
@@ -1010,6 +1035,21 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
 
 
 
+    <!-----   AOS JS   ----->
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      AOS.init({
+        offset: 500, // 預設是 120，您可以依據需求進行調整
+        duration: 500, // 動畫持續時間
+        easing: 'ease-in-out', // 動畫的速度曲線
+        once: false, // 是否只觸發一次
+      });
+    </script>
+
+
+
     <!-----   Swiper JS   ----->
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -1027,6 +1067,11 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
         slidesPerView: 3,
         spaceBetween: 40,
         loop: true,
+
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
         
         centeredSlides: true,
         
@@ -1052,6 +1097,11 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
         slidesPerView: 3,
         spaceBetween: 40,
         loop: true,
+
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
         
         centeredSlides: true,
       });
@@ -1066,6 +1116,11 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
         slidesPerView: 3,
         spaceBetween: 40,
         loop: true,
+
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
         
         centeredSlides: true,
       });
