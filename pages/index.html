@@ -6,10 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>👑懶人廚房✨</title>
 
+    <link rel="icon" href="/assets/images/dog-house/patten (3).png" type="image/png">
 
     <!-----   Swiper CSS   ----->
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+
+    <!-----   AOS CSS   ----->
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
 
   <body>
@@ -25,20 +31,20 @@
     
     
     <div class="container banner-my-60 mx-auto">
-      <img class="w-100 banner-img" src="/assets/images/dog-house/banner.png" alt="banner-img">
+      <img class="w-100 banner-img" src="/assets/images/dog-house/banner.png" alt="banner-img" data-aos="fade-left">
 
-      <div class="d-flex flex-column text-center flex-sm-row justify-content-sm-center banner-h2-mb">
+      <div class="d-flex flex-column text-center flex-sm-row justify-content-sm-center banner-h2-mb banner-bounce">
         <h2 class="text-primary fw-bold me-sm-2 mb-sm-0">懶人必備!</h2>
         <h2 class="fw-bold mb-0">下單即送到府</h2>
       </div>
 
-      <div class="row row-cols-1 flex-column align-items-center justify-content-center flex-sm-row ">
+      <div class="row row-cols-1 flex-column align-items-center justify-content-center flex-sm-row">
         <div class="col w-auto">
           <a class="d-block bg-danger text-primary fw-bold border border-3 border-primary rounded-1 banner-a banner-a-p banner-a-mb " href="#">懶人指引</a>
         </div>
 
         <div class="col w-auto">
-          <a class="d-block bg-primary text-danger fw-bold border border-3 border-primary rounded-1 banner-a banner-a-p" href="#">前往商品</a>
+          <a class="d-block bg-primary text-danger fw-bold border border-3 border-primary rounded-1 banner-a banner-a-p" href="/pages/productOverview.html">前往商品</a>
         </div>
       </div>
     </div>
@@ -131,7 +137,7 @@
           <div class="row row-cols-2 hot-row-mb d-sm-none">
             <div class="col">
               <div class="position-relative hot-a">
-                <a href="#">
+                <a href="./productList.html">
                   <div class="hot-card position-relative z-2">
                     <div class="text-center">
                       <img class="hot-img" src="/assets/images/dog-house/img_香草檸檬鮭魚.png" alt="lemon-salmon">
@@ -151,7 +157,7 @@
             
             <div class="col">
               <div class="position-relative hot-a">
-                <a href="#">
+                <a href="./productList.html">
                   <div class="hot-card position-relative z-2">
                     <div class="text-center">
                       <img class="hot-img" src="/assets/images/dog-house/img_泰式咖哩雞.png" alt="lemon-salmon">
@@ -182,7 +188,7 @@
                     <div class="position-relative">
                       <div class="hot-card position-relative z-2">
                         <div class="text-center">
-                          <img class="hot-img" src="/assets/images/dog-house/img_泰式咖哩雞.png" alt="curry-chicken">
+                          <a class="rounded-circle" href="./productList.html"><img class="rounded-circle hot-img" src="/assets/images/dog-house/img_泰式咖哩雞.png" alt="curry-chicken"></a>
                         </div>
           
                           <div class="d-flex justify-content-between">
@@ -192,7 +198,7 @@
                               <h4 class="fw-bold text-primary m-0 hot-h4">$168</h4>
                             </div>
 
-                            <a class="align-self-end slide-a" href="#">
+                            <a class="align-self-end slide-a" href="./shoppingcart.html">
                               <img class="w-100" src="/assets/images/dog-house/cart.png" alt="cart-img">
                             </a>
                           </div>
@@ -207,7 +213,7 @@
                     <div class="position-relative">
                       <div class="hot-card position-relative z-2">
                         <div class="text-center">
-                          <img class="hot-img" src="/assets/images/dog-house/img_韓式辣炒年糕.png" alt="Fried-rice-cake">
+                          <a class="rounded-circle" href="./productList.html"><img class="rounded-circle hot-img" src="/assets/images/dog-house/img_韓式辣炒年糕.png" alt="Fried-rice-cake"></a>
                         </div>
           
                           <div class="d-flex justify-content-between">
@@ -217,7 +223,7 @@
                               <h4 class="fw-bold text-primary m-0 hot-h4">$168</h4>
                             </div>
 
-                            <a class="align-self-end slide-a" href="#">
+                            <a class="align-self-end slide-a" href="./shoppingcart.html">
                               <img class="w-100" src="/assets/images/dog-house/cart.png" alt="cart-img">
                             </a>
                           </div>
@@ -233,7 +239,7 @@
                     <div class="position-relative">
                       <div class="hot-card position-relative z-2">
                         <div class="text-center">
-                          <img class="hot-img" src="/assets/images/dog-house/img_香草檸檬鮭魚.png" alt="lemon-salmon">
+                          <a class="rounded-circle" href="./productList.html"><img class="rounded-circle hot-img" src="/assets/images/dog-house/img_香草檸檬鮭魚.png" alt="lemon-salmon"></a>
                         </div>
           
                           <div class="d-flex justify-content-between">
@@ -243,7 +249,7 @@
                               <h4 class="fw-bold text-primary m-0 hot-h4">$168</h4>
                             </div>
 
-                            <a class="align-self-end slide-a" href="#">
+                            <a class="align-self-end slide-a" href="./shoppingcart.html">
                               <img class="w-100" src="/assets/images/dog-house/cart.png" alt="cart-img">
                             </a>
                           </div>
@@ -259,7 +265,7 @@
                     <div class="position-relative">
                       <div class="hot-card position-relative z-2">
                         <div class="text-center">
-                          <img class="hot-img" src="/assets/images/dog-house/img_燉排骨湯.png" alt="soup">
+                          <a class="rounded-circle" href="./productList.html"><img class="rounded-circle hot-img" src="/assets/images/dog-house/img_燉排骨湯.png" alt="soup"></a>
                         </div>
           
                           <div class="d-flex justify-content-between">
@@ -269,7 +275,7 @@
                               <h4 class="fw-bold text-primary m-0 hot-h4">$168</h4>
                             </div>
 
-                            <a class="align-self-end slide-a" href="#">
+                            <a class="align-self-end slide-a" href="./shoppingcart.html">
                               <img class="w-100" src="/assets/images/dog-house/cart.png" alt="cart-img">
                             </a>
                           </div>
@@ -295,7 +301,7 @@
         
 
           <div class="text-center">
-            <button class="bg-secondary text-primary fw-bold border-0 rounded-1 hot-btn hot-a">查看更多</button>
+            <a href="./productOverview.html"><button class="bg-secondary text-primary fw-bold border-0 rounded-1 hot-btn hot-a">查看更多</button></a>
           </div>
         </div>
       </div>
@@ -328,7 +334,7 @@
           <div class="row row-cols-2 hot-row-mb d-sm-none">
             <div class="col">
               <div class="position-relative hot-a">
-                <a href="#">
+                <a href="./productList.html">
                   <div class="hot-card position-relative z-2">
                     <div class="text-center">
                       <img class="hot-img" src="/assets/images/dog-house/img_糖醋里肌.png" alt="pork">
@@ -348,7 +354,7 @@
             
             <div class="col">
               <div class="position-relative hot-a">
-                <a href="#">
+                <a href="./productList.html">
                   <div class="hot-card position-relative z-2">
                     <div class="text-center">
                       <img class="hot-img" src="/assets/images/dog-house/img_蜜汁豬肉.png" alt="sweet-pork">
@@ -378,7 +384,7 @@
                     <div class="position-relative">
                       <div class="hot-card position-relative z-2">
                         <div class="text-center">
-                          <img class="hot-img" src="/assets/images/dog-house/img_蜜汁豬肉.png" alt="sweet-pork">
+                          <a class="rounded-circle" href="./productList.html"><img class="rounded-circle hot-img" src="/assets/images/dog-house/img_蜜汁豬肉.png" alt="sweet-pork"></a>
                         </div>
           
                         <div class="d-flex justify-content-between">
@@ -388,7 +394,7 @@
                             <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
                           </div>
 
-                          <a class="align-self-end slide-a" href="#">
+                          <a class="align-self-end slide-a" href="./shoppingcart.html">
                             <img class="w-100" src="/assets/images/dog-house/cart.png" alt="cart-img">
                           </a>
                         </div>
@@ -404,7 +410,7 @@
                     <div class="position-relative">
                       <div class="hot-card position-relative z-2">
                         <div class="text-center">
-                          <img class="hot-img" src="/assets/images/dog-house/img_泡菜豬肉.png" alt="k-pork">
+                          <a class="rounded-circle" href="./productList.html"><img class="rounded-circle hot-img" src="/assets/images/dog-house/img_泡菜豬肉.png" alt="k-pork"></a>
                         </div>
           
                         <div class="d-flex justify-content-between">
@@ -414,7 +420,7 @@
                             <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
                           </div>
 
-                          <a class="align-self-end slide-a" href="#">
+                          <a class="align-self-end slide-a" href="./shoppingcart.html">
                             <img class="w-100" src="/assets/images/dog-house/cart.png" alt="cart-img">
                           </a>
                         </div>
@@ -430,7 +436,7 @@
                     <div class="position-relative">
                       <div class="hot-card position-relative z-2">
                         <div class="text-center">
-                          <img class="hot-img" src="/assets/images/dog-house/img_香草檸檬鮭魚.png" alt="lemon-salmon">
+                          <a class="rounded-circle" href="./productList.html"><img class="rounded-circle hot-img" src="/assets/images/dog-house/img_香草檸檬鮭魚.png" alt="lemon-salmon"></a>
                         </div>
           
                         <div class="d-flex justify-content-between">
@@ -440,7 +446,7 @@
                             <h4 class="fw-bold text-primary m-0 hot-h4">$168</h4>
                           </div>
 
-                          <a class="align-self-end slide-a" href="#">
+                          <a class="align-self-end slide-a" href="./shoppingcart.html">
                             <img class="w-100" src="/assets/images/dog-house/cart.png" alt="cart-img">
                           </a>
                         </div>
@@ -456,7 +462,7 @@
                     <div class="position-relative">
                       <div class="hot-card position-relative z-2">
                         <div class="text-center">
-                          <img class="hot-img" src="/assets/images/dog-house/img_糖醋里肌.png" alt="sweet-sour-pork">
+                          <a class="rounded-circle" href="./productList.html"><img class="rounded-circle hot-img" src="/assets/images/dog-house/img_糖醋里肌.png" alt="sweet-sour-pork"></a>
                         </div>
           
                         <div class="d-flex justify-content-between">
@@ -466,7 +472,7 @@
                             <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
                           </div>
 
-                          <a class="align-self-end slide-a" href="#">
+                          <a class="align-self-end slide-a" href="./shoppingcart.html">
                             <img class="w-100" src="/assets/images/dog-house/cart.png" alt="cart-img">
                           </a>
                         </div>
@@ -483,7 +489,7 @@
 
 
           <div class="text-center">
-            <button class="bg-primary text-secondary border-0 rounded-1 d-sm-none hot-btn hot-a">查看更多</button>
+            <a href="./productOverview.html"><button class="bg-primary text-secondary border-0 rounded-1 d-sm-none hot-btn hot-a">查看更多</button></a>
           </div>
         </div>
 
@@ -514,7 +520,7 @@
           <div class="row row-cols-2 hot-row-mb d-sm-none">
             <div class="col">
               <div class="position-relative hot-a">
-                <a href="#">
+                <a href="./productList.html">
                   <div class="hot-card position-relative z-2">
                     <div class="text-center">
                       <img class="hot-img" src="/assets/images/dog-house/img_紅酒燉牛肉.png" alt="wine-beef">
@@ -534,7 +540,7 @@
             
             <div class="col">
               <div class="position-relative hot-a">
-                <a href="#">
+                <a href="./productList.html">
                   <div class="hot-card position-relative z-2">
                     <div class="text-center">
                       <img class="hot-img" src="/assets/images/dog-house/img_奶油雞肉燉飯.png" alt="chicken-rice">
@@ -564,7 +570,7 @@
                     <div class="position-relative">
                       <div class="hot-card position-relative z-2">
                         <div class="text-center">
-                          <img class="hot-img" src="/assets/images/dog-house/img_奶油雞肉燉飯.png" alt="chicken-rice">
+                          <a class="rounded-circle" href="./productList.html"><img class="rounded-circle hot-img" src="/assets/images/dog-house/img_奶油雞肉燉飯.png" alt="chicken-rice"></a>
                         </div>
           
                         <div class="d-flex justify-content-between">
@@ -574,7 +580,7 @@
                             <h4 class="fw-bold text-primary m-0 hot-h4">$128</h4>
                           </div>
 
-                          <a class="align-self-end slide-a" href="#">
+                          <a class="align-self-end slide-a" href="./shoppingcart.html">
                             <img class="w-100" src="/assets/images/dog-house/cart.png" alt="cart-img">
                           </a>
                         </div>
@@ -590,7 +596,7 @@
                     <div class="position-relative">
                       <div class="hot-card position-relative z-2">
                         <div class="text-center">
-                          <img class="hot-img" src="/assets/images/dog-house/img_燉排骨湯.png" alt="soup">
+                          <a class="rounded-circle" href="./productList.html"><img class="rounded-circle hot-img" src="/assets/images/dog-house/img_燉排骨湯.png" alt="soup"></a>
                         </div>
           
                         <div class="d-flex justify-content-between">
@@ -600,7 +606,7 @@
                             <h4 class="fw-bold text-primary m-0 hot-h4">$188</h4>
                           </div>
 
-                          <a class="align-self-end slide-a" href="#">
+                          <a class="align-self-end slide-a" href="./shoppingcart.html">
                             <img class="w-100" src="/assets/images/dog-house/cart.png" alt="cart-img">
                           </a>
                         </div>
@@ -616,7 +622,7 @@
                     <div class="position-relative">
                       <div class="hot-card position-relative z-2">
                         <div class="text-center">
-                          <img class="hot-img" src="/assets/images/dog-house/img_香草檸檬鮭魚.png" alt="lemon-salmon">
+                          <a class="rounded-circle" href="./productList.html"><img class="rounded-circle hot-img" src="/assets/images/dog-house/img_香草檸檬鮭魚.png" alt="lemon-salmon"></a>
                         </div>
           
                         <div class="d-flex justify-content-between">
@@ -626,7 +632,7 @@
                             <h4 class="fw-bold text-primary m-0 hot-h4">$168</h4>
                           </div>
 
-                          <a class="align-self-end slide-a" href="#">
+                          <a class="align-self-end slide-a" href="./shoppingcart.html">
                             <img class="w-100" src="/assets/images/dog-house/cart.png" alt="cart-img">
                           </a>
                         </div>
@@ -642,7 +648,7 @@
                     <div class="position-relative">
                       <div class="hot-card position-relative z-2">
                         <div class="text-center">
-                          <img class="hot-img" src="/assets/images/dog-house/img_紅酒燉牛肉.png" alt="wine-beef">
+                          <a class="rounded-circle" href="./productList.html"><img class="rounded-circle hot-img" src="/assets/images/dog-house/img_紅酒燉牛肉.png" alt="wine-beef"></a>
                         </div>
           
                         <div class="d-flex justify-content-between">
@@ -652,7 +658,7 @@
                             <h4 class="fw-bold text-primary m-0 hot-h4">$168</h4>
                           </div>
 
-                          <a class="align-self-end slide-a" href="#">
+                          <a class="align-self-end slide-a" href="./shoppingcart.html">
                             <img class="w-100" src="/assets/images/dog-house/cart.png" alt="cart-img">
                           </a>
                         </div>
@@ -669,7 +675,7 @@
 
 
           <div class="text-center">
-            <button class="bg-primary text-secondary border-0 rounded-1 d-sm-none hot-btn hot-a">查看更多</button>
+            <a href="./productOverview.html"><button class="bg-primary text-secondary border-0 rounded-1 d-sm-none hot-btn hot-a">查看更多</button></a>
           </div>
         </div>
       </div>
@@ -715,6 +721,21 @@
 
 
 
+    <!-----   AOS JS   ----->
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      AOS.init({
+        offset: 500, // 預設是 120，您可以依據需求進行調整
+        duration: 500, // 動畫持續時間
+        easing: 'ease-in-out', // 動畫的速度曲線
+        once: false, // 是否只觸發一次
+      });
+    </script>
+
+
+
     <!-----   Swiper JS   ----->
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -732,6 +753,11 @@
         slidesPerView: 3,
         spaceBetween: 40,
         loop: true,
+
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
         
         centeredSlides: true,
         
@@ -757,6 +783,11 @@
         slidesPerView: 3,
         spaceBetween: 40,
         loop: true,
+
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
         
         centeredSlides: true,
       });
@@ -771,6 +802,11 @@
         slidesPerView: 3,
         spaceBetween: 40,
         loop: true,
+
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
         
         centeredSlides: true,
       });
