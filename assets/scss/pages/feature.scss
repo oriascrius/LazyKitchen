@@ -1,9 +1,36 @@
-// 與 JS  載入延遲，以防剛跳轉跑版
-// body {
-//   display: none;
-//   opacity: 0;
-//   transition: opacity 0.3s ease;
-// }
+/* loading */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色背景 */
+  display: flex; /* 默认显示 */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* 确保遮罩在最上层 */
+}
+
+.logo-loading {
+  width: 100px;
+  height: 100px;
+  animation: swing 1s ease-in-out infinite; /* 左右摇摆动画 */
+}
+
+@keyframes swing {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-30deg);
+  } /* 逆时针旋转，增加角度 */
+  75% {
+    transform: rotate(30deg);
+  } /* 顺时针旋转，增加角度 */
+}
+
 // 回上方按鈕
 .backTotop {
   position: fixed;
