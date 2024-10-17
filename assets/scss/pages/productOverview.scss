@@ -120,6 +120,10 @@
         // 原本卡片浮起效果
         // transform: translateY(-6px);
       }
+      &:hover .card-title {
+        color: #ad4214;
+      }
+  
     }
   }
 

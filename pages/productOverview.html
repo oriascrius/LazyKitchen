@@ -17,6 +17,10 @@
 
 <body>
     <%- include('./layout/header'); -%>
+        <!-- loading -->
+        <div id="loading-overlay" class="loading-overlay">
+            <img src="../assets/images/qoq-imgs/FaviconIcon.ico" alt="Logo" class="logo-loading">
+        </div>
         <!-- 回到上方按鈕 -->
         <div class="backTotop">
             <img src="../assets/images/qoq-imgs/backTotop.png" alt="返回上方按鈕">
@@ -1170,6 +1174,14 @@
                         // 更新購物車圖標顯示的數量
                         cartCountElement.textContent = cartCount;
                     });
+                });
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    setTimeout(() => {
+                        const loadingOverlay = document.getElementById("loading-overlay");
+                        loadingOverlay.style.display = "none";
+                    }, 1000);
                 });
             </script>
 </body>
