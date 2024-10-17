@@ -10,9 +10,9 @@
   <!-- 引入 AOS 的 CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
   <script type="module" crossorigin src="/LazyKitchen/assets/bootstrap.min-487c5bde.js"></script>
-  <script type="module" crossorigin src="/LazyKitchen/assets/qoq-main-3dd35e9f.js"></script>
+  <script type="module" crossorigin src="/LazyKitchen/assets/qoq-main-528c74d9.js"></script>
   <link rel="stylesheet" href="/LazyKitchen/assets/bootstrap-138f1b2c.css">
-  <link rel="stylesheet" href="/LazyKitchen/assets/qoq-main-56fa6ae1.css">
+  <link rel="stylesheet" href="/LazyKitchen/assets/qoq-main-0521675d.css">
 </head>
 
 <body>
@@ -74,10 +74,14 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
   togglerIcon.classList.toggle('open'); // 切換 'open' 類別
 });
 </script>
+    <!-- loading -->
+    <div id="loading-overlay" class="loading-overlay">
+      <img src="/LazyKitchen/assets/FaviconIcon-ee563fd9.ico" alt="Logo" class="logo-loading">
+    </div>
     <!-- 回到上方按鈕 -->
-    <!-- <div class="backTotop">
-      <img src="../assets/images/qoq-imgs/backTotop.png" alt="返回上方按鈕">
-    </div> -->
+    <div class="backTotop">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAQBSURBVHgB1Zq9bxNJGMafdzZBOXPifCJIp9NJ2IiGKjldc6JhkwLRQQgQKIAgQZ0gQKLD6SnCX0CoEIRg6IAmG5Cg4cOiosMIhIJIxCoQC7A9wzuL1vgrtne9a3t/zX7afp6dd2bfmdeEAEib8Xhe9B8woIZASEDRMEHFFRD/dRdllVJZImSIKENFY2nMWs6iTQg+0aKl6JtmQXuUggkf8OcyQtBsO2Y8GygJB6Yqn3C70JyQxoxXI54MLIwOpoIXXomUmDlsraRavb8lA2nzr4SiQloRhtEBiPsLSWOkldYQzW5YMLdOKlF40SnxGgWVkPybN8ytB5rd29CADhkIuhpmyDQg3icoPW+yhgYYG11wxAOX0GV4lDMPb4/RfDZn1b1e7+Qtbjpi9+ghSKrJg9bqtZrz1SecDqtjvjth0whbyL5/qzt2TR9QorjYg+I18SKPhNUnKwzouNcjAHoU7g/DC+ZgRb8shZAOHR66XqP3sddkIXnKsm19UGoBKYpdH3FaJL4FfVPugdMCEXr6LqVWcFqAn76JaFFqBccA5+5TiBic2ph6S2GGz7ah3ejfvAXvH99DGHAY/Wkc2fGbTpiaJk1e2XXiHP67MIt/RvY7xysvnyBoNgl6ZUwkYyd5/38EiBa/6/i50rFuCU3QJnTabRzdEbvI+wkERLn49eW3KHxZQ//vf4RlYtk4ktycQkCpQ7X4R+fH8ebBPP7evS8kE2pAh9AsAqCe+NyHd8ivr3Envh+SCYI2kEKbbCTeJUQTA20baCbeJSwTxtFkbJq3A/BBq+JdwjAhFMiGD7yKd8l9eIuH5w8hx59xv2fn2Gn4Q2U5lVAZ+GD73gln60W8S7WJnQfPwA9K8XuA+4B+iXl+ka2zCPntK55dnvYk3sUNJ15DwfLTRXx69Rxe4QnOHbo5um2SF2WvIoIonuiLfpm/g4iSR3FJjPGkgJvCQsTQK9vHLDv7cz6gomeAHTgZxM85sSxc4bmlr+G0W+jw0VvHgBNGQCA5UWdQczp89N6vdaEItcJ3WZxx90sGItMKEin36Wtq1kZvjwx2tBbgCS4Sji+uJstP1ayNflOFsR4NJfu7Ko5Un6wxoJtHSTqLHqMg1any0HGpW6EZtz7O8YUUegWO+wlrtW7GsGGF5sbr3NKxZEznWia6CYsft1ZmNrrctEqpqzWiO3Uym6sy0/WqMuW0VGa9bsYTm8hY5Pw1gQ6g85w8Dyb1Yr4aT4Xu9OjgJRlu37A5ZGYbhUw1nv9q4LSGMLiWQJMIDkf4GgpX3MJFq/j+s4c2YsAwBdEU+XzxcahYOhP2I9zFt4FyXDOGoCFthueqCVTW2licXjxw5t9ZRZT5XMzf9Su6nB+GEfSUXjR78wAAAABJRU5ErkJggg==" alt="返回上方按鈕">
+    </div>
     <main class="overflow-ridden">
       <!-- banner -->
       <section class="container-fluid feature-banner">
@@ -85,10 +89,6 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
           data-aos-duration="600">
         <h2 class="position-relative feature-banner-title">
           <span>懶人必備!</span> 下單即送到府
-          <!-- 跑馬燈備用 -->
-          <!-- <span>懶人必備! 下單即送到府&nbsp;</span>
-          <span>懶人必備! 下單即送到府&nbsp;</span>
-          <span>懶人必備! 下單即送到府&nbsp;</span> -->
         </h2>
         <ul class="featureBtn list-unstyled text-center position-relative">
           <li>
@@ -330,6 +330,45 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
       <!-- 引入 AOS 的 JavaScript -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
       
+      <script>
+        // 回到上方按鈕判斷
+        $(document).ready(function () {
+          const $backToTop = $(".backTotop");
+
+          $(window).scroll(function () {
+            const windowScrollTop = $(this).scrollTop(); // 取得当前滚动高度
+            const documentHeight = $(document).height(); // 取得文件总高度
+            const windowHeight = $(this).height(); // 取得窗口高度
+
+            // 判断是否需要显示按钮
+            if (windowScrollTop > documentHeight / 2 - windowHeight / 2) {
+              if (!$backToTop.hasClass("show")) {
+                $backToTop.addClass("show");
+              }
+
+              // 根据窗口宽度设置 right 值
+              const rightValue = $(this).width() >= 992 ? "40px" : "24px";
+              $backToTop.css({ right: rightValue, top: "40px" }); // 固定 top 为 40px
+            } else {
+              if ($backToTop.hasClass("show")) {
+                $backToTop.removeClass("show");
+              }
+            }
+          });
+
+          $backToTop.click(function () {
+            $("html, body").animate({ scrollTop: 0 }, 100);
+          });
+        });
+      </script>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          setTimeout(() => {
+            const loadingOverlay = document.getElementById("loading-overlay");
+            loadingOverlay.style.display = "none";
+          }, 1000);
+        });
+      </script>
 </body>
 
 </html>
