@@ -1,10 +1,11 @@
-// 通用設定
+// 通用設定 暫放在 footer
 // $link-decoration: underline !default;
 a {
   text-decoration: none;
   color: inherit;
   display: block;
 }
+
 ul,
 p {
   margin: 0;
@@ -18,6 +19,7 @@ p {
   letter-spacing: 0.15em;
   line-height: 1.2;
 }
+
 .custom-fs2 {
   font-weight: bold;
   font-size: 36px;
@@ -25,6 +27,7 @@ p {
   letter-spacing: 0.02em;
   line-height: 1.2;
 }
+
 .custom-fs3 {
   font-weight: bold;
   font-size: 24px;
@@ -32,6 +35,7 @@ p {
   letter-spacing: 0.02em;
   line-height: 1.2;
 }
+
 .custom-fs4 {
   font-weight: bold;
   font-size: 20px;
@@ -39,6 +43,7 @@ p {
   letter-spacing: 0.02em;
   line-height: 1.2;
 }
+
 .custom-fsSmall {
   font-weight: medium;
   font-size: 12px;
@@ -46,6 +51,7 @@ p {
   letter-spacing: 0.02em;
   line-height: 1.5;
 }
+
 .custom-fsBody {
   font-weight: medium;
   font-size: 16px;
@@ -53,68 +59,152 @@ p {
   letter-spacing: 0.02em;
   line-height: 1.5;
 }
+
 // footer
 .footer-bg {
   background-color: #ad4214;
   padding: 60px 0;
 }
+
 .footerWrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-.footerIcon {
-  display: flex;
-  gap: 20px;
-  padding-bottom: 28px;
-  li {
-    transition: filter 0.3s ease, transform 0.3s ease;
-    &:hover {
-      // 浮起 + 陰影
-      transform: translateY(-2px) translateX(-2px);
-      filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
-      // svg 變白色
-      // svg rect {
-      //   fill: #fafcfe;
-      // }
+
+
+  // Logo hover 彈跳效果
+  h1 {
+    a {
+      display: inline-block;
+      /* 使動畫效果更好控制 */
+      transition: transform 0.3s ease;
+
+      &:hover {
+        animation: bounce 0.8s ease;
+        /* 觸發彈跳動畫 */
+      }
     }
   }
-}
-.footerLink {
-  display: flex;
-  gap: 16px;
-  flex-direction: column;
-  li {
-    text-align: center;
-    padding: 12px 0;
-    background-color: #fff3e5;
-    cursor: pointer;
-    transition: filter 0.3s ease, transform 0.3s ease;
-    &:hover {
-      // 浮起 + 陰影
-      transform: translateY(-2px) translateX(-2px);
-      filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
-      // background-color: #fafcfe;
+
+  /* 定義彈跳動畫 */
+  @keyframes bounce {
+
+    0%,
+    100% {
+      transform: translateY(0);
+      /* 回到初始位置 */
+    }
+
+    20% {
+      transform: translateY(-30px);
+      /* 向上跳得更高 */
+    }
+
+    40% {
+      transform: translateY(-20px);
+      /* 第二次跳 */
+    }
+
+    60% {
+      transform: translateY(-10px);
+      /* 第三次跳 */
+    }
+
+    80% {
+      transform: translateY(-5px);
+      /* 第四次跳，幅度更小 */
     }
   }
-  a {
-    color: #ad4214;
-  }
-}
-.footerText {
-  address {
-    margin-bottom: 28px;
-  }
-}
-@media (max-width: 992px) {
-  .footer-bg {
-    padding: 40px 16px;
-  }
-  .footerWrapper {
-    flex-direction: column;
-    gap: 28px;
-  }
+  // Logo hover 彈跳效果
+
+
+
   .footerIcon {
-    padding-bottom: 0;
+    display: flex;
+    gap: 20px;
+    padding-bottom: 28px;
+
+    li {
+      transition: filter 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+        // 浮起 + 陰影
+        transform: translateY(-2px) translateX(-2px);
+        filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+        // svg 變白色
+        // svg rect {
+        //   fill: #fafcfe;
+        // }
+      }
+    }
+  }
+
+  .footerLink {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+
+    li {
+      text-align: center;
+      padding: 12px 0;
+      background-color: #fff3e5;
+      cursor: pointer;
+      transition: filter 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+        // 浮起 + 陰影
+        transform: translateY(-2px) translateX(-2px);
+        filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+        // background-color: #fafcfe;
+      }
+    }
+
+    a {
+      color: #ad4214;
+    }
+  }
+
+  .footerText {
+    address {
+      margin-bottom: 28px;
+    }
+
+    // a 連結 hover 左到右線條效果
+    a {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 5px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #fff;
+        transition: width 0.3s ease-out;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+
+  }
+
+  @media (max-width: 992px) {
+    .footer-bg {
+      padding: 40px 16px;
+    }
+
+    .footerWrapper {
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .footerIcon {
+      padding-bottom: 0;
+    }
   }
 }

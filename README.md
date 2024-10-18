@@ -35,9 +35,20 @@
 ---
 
 ##  網站導覽
-### 【 前台畫面 】
 ### 首頁
-
+![首頁](./assets/images/qoq-imgs/README-imgs/LazyKitchen-index.png)
+### 商品列表
+![商品列表](./assets/images/qoq-imgs/README-imgs/LazyKitchen-productOverview.png)
+### 商品細項
+![商品細項](./assets/images/qoq-imgs/README-imgs/LazyKitchen-productList.png)
+### 購物車
+![購物車](./assets/images/qoq-imgs/README-imgs/LazyKitchen-shoppingcart.png)
+### 訂單資訊
+![訂單資訊](./assets/images/qoq-imgs/README-imgs/LazyKitchen-orderInfo.png)
+### 付款資訊
+![付款資訊](./assets/images/qoq-imgs/README-imgs/LazyKitchen-paymentConfirmation.png)
+### 完成訂購
+![完成訂購](./assets/images/qoq-imgs/README-imgs/LazyKitchen-orderConfirmation.png)
 
 ---
 
@@ -49,9 +60,9 @@
 ---
 
 ### 圖片素材來源
-- [Designed by Freepik](www.freepik.com)
+- [Midjourney](https://www.midjourney.com/home)
 - [Pixels](https://www.pexels.com/zh-tw/)
-- [Unsplash](https://unsplash.com/)
+<!-- - [Unsplash](https://unsplash.com/) -->
 
 ---
 
