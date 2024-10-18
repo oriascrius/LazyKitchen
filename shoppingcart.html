@@ -11,6 +11,8 @@
   <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet" />
   <!-- 引入 AOS 的 CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <!-- Toastify JS 的 CSS 引入-->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
   <script type="module" crossorigin src="/LazyKitchen/assets/bootstrap.min-4ec6636f.js"></script>
   <script type="module" crossorigin src="/LazyKitchen/assets/qoq-main-6841adbb.js"></script>
   <link rel="stylesheet" href="/LazyKitchen/assets/bootstrap-d982a8cd.css">
@@ -597,6 +599,8 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <!-- 引入 AOS 的 JavaScript -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+      <!-- Toastify JS 的 JS 引入  -->
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
       
       <script>
         $(document).ready(function () {
@@ -730,6 +734,71 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
           updateGrandTotal();
         });
 
+      </script>
+      <!--  const plusBtn_buttons = document.querySelectorAll('.plusBtn'); -->
+      <!-- Toastify JS -->
+      <script>
+        // 商品 + 1
+        const plusBtn_buttons = document.querySelectorAll('.plusBtn'); // 選取所有減少按鈕
+        const plusBtn_counterElement = document.getElementById('counter'); // 獲取顯示數量的元素
+
+        plusBtn_buttons.forEach(button => {
+          button.addEventListener('click', function () {
+            const plusBtn_currentCount = parseInt(plusBtn_counterElement.textContent, 10); // 獲取當前數量並轉換為整數
+
+            // 判斷當前數量是否小於或等於 9
+            if (plusBtn_currentCount >= 9) {
+              // 如果小於或等於 9，不觸發吐司提醒，直接返回
+              return;
+            }
+
+            // 顯示吐司提醒
+            Toastify({
+              text: "商品增加一個！",
+              duration: 3000, // 持續時間，單位是毫秒
+              gravity: "top", // 吐司出現的位置，top 或 bottom
+              position: 'right', // 吐司在螢幕中的位置，left、center 或 right
+              style: {
+                background: "linear-gradient(to right, #00b09b, #96c93d)" // 使用 style.background 設置背景顏色
+              },
+              stopOnFocus: true, // 滑鼠懸停時是否停止計時
+            }).showToast();
+
+            // 減少數量
+            // counterElement.textContent = currentCount - 1; // 更新顯示的數量
+          });
+        });
+        // ------------------------------------------------------
+        // 商品 - 1
+        const minusBtn_buttons = document.querySelectorAll('.minusBtn'); // 選取所有減少按鈕
+        const minusBtn_counterElement = document.getElementById('counter'); // 獲取顯示數量的元素
+
+        minusBtn_buttons.forEach(button => {
+          button.addEventListener('click', function () {
+            const minusBtn_currentCount = parseInt(minusBtn_counterElement.textContent, 10); // 獲取當前數量並轉換為整數
+
+            // 判斷當前數量是否小於或等於 1
+            if (minusBtn_currentCount <= 1) {
+              // 如果小於或等於 1，不觸發吐司提醒，直接返回
+              return;
+            }
+
+            // 顯示吐司提醒
+            Toastify({
+              text: "商品減少一個！",
+              duration: 3000, // 持續時間，單位是毫秒
+              gravity: "top", // 吐司出現的位置，top 或 bottom
+              position: 'right', // 吐司在螢幕中的位置，left、center 或 right
+              style: {
+                background: "linear-gradient(to right, #ff3f34, #ffafbd)" // 使用 style.background 設置背景顏色
+              },
+              stopOnFocus: true, // 滑鼠懸停時是否停止計時
+            }).showToast();
+
+            // 減少數量
+            // counterElement.textContent = currentCount - 1; // 更新顯示的數量
+          });
+        });
       </script>
 </body>
 
