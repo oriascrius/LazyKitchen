@@ -6,95 +6,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>商品細節</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" rel="stylesheet">
-    <style>
-      .card .card-img-top {
-          width: 100px;
-          height: 100px;
-          object-fit: cover;
-          border-radius: 50%;
-          margin: 0 auto;
-          display: block;
-      }
+    <link rel="icon" href="/LazyKitchen/assets/FaviconIcon-ee563fd9.ico" type="image/x-icon">
+  <style>
+.card .card-img-top {
+width: 100px;
+height: 100px;
+object-fit: cover;
+border-radius: 50%;
+margin: 0 auto;
+display: block;
+}
   
-      .bi-star-fill {
-          color: #AD4214;
-          font-weight: bold;
-      }
+.bi-star-fill {
+color: #AD4214;
+font-weight: bold;
+}
   
-      .carousel-controls {
-          position: absolute;
-          top: 50%;
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-          transform: translateY(-50%);
-          z-index: 10; /* 確保按鈕在最上層 */
-      }
+.carousel-controls {
+position: absolute;
+top: 50%;
+width: 100%;
+display: flex;
+justify-content: space-between;
+transform: translateY(-50%);
+z-index: 10; /* 確保按鈕在最上層 */
+}
   
-      .carousel-controls .carousel-control-prev,
-      .carousel-controls .carousel-control-next {
-          width: 40px;
-          height: 40px;
-          background-color: #FFF7EB;
-          border-radius: 50%;
-          color: #AD4214;
-          opacity: 1;
-          border: none;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          cursor: pointer;
-          transition: background-color 0.3s, color 0.3s;
-          position: relative; /* 確保它們在自己的層次上 */
-          z-index: 5; /* 使按鈕層級高於其他元素 */
-          font-size: 24px; /* 字體大小 */
-      }
+.carousel-controls .carousel-control-prev,
+.carousel-controls .carousel-control-next {
+width: 40px;
+height: 40px;
+background-color: #FFF7EB;
+border-radius: 50%;
+color: #AD4214;
+opacity: 1;
+border: none;
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+transition: background-color 0.3s, color 0.3s;
+position: relative; /* 確保它們在自己的層次上 */
+z-index: 5; /* 使按鈕層級高於其他元素 */
+font-size: 24px; /* 字體大小 */
+}
   
-      .carousel-controls .carousel-control-prev:hover,
-      .carousel-controls .carousel-control-next:hover {
-          background-color: #AD4214;
-          color: #FFF7EB;
-      }
+.carousel-controls .carousel-control-prev:hover,
+.carousel-controls .carousel-control-next:hover {
+background-color: #AD4214;
+color: #FFF7EB;
+}
   
-      /* 卡片容器調整 */
-      #carouselContent {
-          display: flex;
-          justify-content: center; /* 讓卡片居中 */
-      }
+/* 卡片容器調整 */
+#carouselContent {
+display: flex;
+justify-content: center; /* 讓卡片居中 */
+}
   
-      .carousel-item {
-          display: flex;
-          justify-content: center;
-          width: 100%; /* 確保旋轉木馬項目寬度為 100% */
-      }
+.carousel-item {
+display: flex;
+justify-content: center;
+width: 100%; /* 確保旋轉木馬項目寬度為 100% */
+}
   
-      .card {
-          flex: 0 0 27%; /* 每張卡片佔據 30% 的寬度 */
-          margin: 0 1%; /* 添加 margin 以便於卡片之間有距離 */
-      }
-
-      /* 回到最上面按鈕 */
-.btt-btn {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  position: fixed;
-  top: 30px;
-  right: 30px;
-  z-index: 4;
-  opacity: 0;
-  transition: opacity   0.5s ease, 
-              transform 0.5s ease,
-              filter    0.5s ease;
+.card {
+flex: 0 0 27%; /* 電腦版：每張卡片佔據 27% 的寬度 */
+margin: 0 1%; /* 卡片之間的距離 */
 }
 
-.scrolled {
-  opacity: 1;
-  transform: translateY(-5px) translateX(-5px);
-  filter: drop-shadow(4px 4px 4px rgb(0, 0, 0, 0.5));
+/* 手機版調整，每次顯示一張卡片，佔據滿版寬度 */
+@media (max-width: 768px) {
+.carousel-item {
+display: flex;
+justify-content: center;
+width: 100%; /* 確保carousel-item佔據全寬 */
+}
+.card {
+flex: 0 0 80%; /* 手機版：每次顯示一張卡片，佔據100%寬度 */
+max-width: 100%; /* 確保卡片最大寬度為100% */
+}
+.carousel-controls .carousel-control-prev,
+.carousel-controls .carousel-control-next {
+display: none;
+}
 }
 
-    </style>
+  </style>
   </head>
   <body>  
     <!-- header -->
@@ -117,7 +114,7 @@
         <div class="col-12 col-lg-6 content align-left">
           <h1 class="h2 productName">春川炒雞</h1>
           <p class="h4 sign">
-            <span class="primaryColor me-3">＃3-4人份</span>
+            <span class="primaryColor me-3">＃2-3人份</span>
             <span class="primaryColor">＃新鮮冷藏</span>
           </p>
           <ul class="d-flex list-unstyled mb-4 pb-1">
@@ -147,20 +144,28 @@
     </section>
     <div class="container">
       <div class="row detail justify-content-center move-up">
+        <!--食材包有什麼？-->
         <div class="col-12 col-lg-8 mb-25">
-          <img src="../assets/images/productList/sneakStep1.png" alt="">
+          <img class="img-fluid" src="../assets/images/productList/sneakStep1.png" alt="">
         </div>
+        <!--食材有哪些？-->
         <div class="col-12 col-lg-8  mb-25">
-          <img src="../assets/images/productList/sneakStep2.png" alt="">
+          <h2 class="h2 primaryColor text-center mb-10">食材有哪些？</h2>
+          <img class="img-fluid mb-10" src="../assets/images/productList/sneakStep2.png" alt="">
+          <p class="h4 grayColor text-center">*需備100cc水(約半碗水量)</p>
         </div>
+        <!--最佳烹調方式-->
         <div class="col-12 col-lg-8  mb-25">
+          <h2 class="h2 primaryColor text-center mb-10">最佳烹調方式</h2>
           <img class="img-fluid mb-5" src="../assets/images/productList/sneakStep3.png" alt="">
           <img class="img-fluid mb-5" src="../assets/images/productList/sneakStep4.png" alt="">
           <img class="img-fluid mb-5" src="../assets/images/productList/sneakStep5.png" alt="">
           <img class="img-fluid mb-5" src="../assets/images/productList/sneakStep6.png" alt="">
           <img class="img-fluid" src="../assets/images/productList/sneakStep7.png" alt="">
         </div>
+        <!--顧客評論-->
         <div class="col-12 col-lg-10  mb-25">
+          <h2 class="h2 primaryColor text-center mb-10">顧客評論</h2>
           <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
@@ -226,43 +231,48 @@
       });
     });
     </script>
-  <script>
-    const cards = [
-        {
-            img: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            text: "非常方便！只要動動手指，就能在家享受到新鮮的食材。",
-        },
-        {
-            img: "https://images.pexels.com/photos/1181424/pexels-photo-1181424.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            text: "省了我很多時間，不用再花時間去超市，簡直是生活救星！",
-        },
-        {
-            img: "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            text: "有很多選擇，無論是肉類還是素食，都能找到適合的料理。",
-        },
-        {
-            img: "https://images.pexels.com/photos/556068/pexels-photo-556068.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            text: "省了我很多時間，不用再花時間去超市，簡直是生活救星！",
-        },
-        {
-            img: "https://images.pexels.com/photos/1752126/pexels-photo-1752126.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            text: "價格公道，對於這樣的便利和食材品質，真的很值！",
-        },
-        {
-            img: "https://images.pexels.com/photos/1468379/pexels-photo-1468379.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            text: "食材非常新鮮，烹飪後口感很好，家人都很喜歡。",
+    <script>
+    /* 回到最上面按鈕 摳C大的 */
+    window.onscroll = function() {
+
+      let button = document.getElementById('btt');
+
+      if (window.scrollY > 700) {
+        button.classList.add('scrolled');
+        } else {
+          button.classList.remove('scrolled');
         }
-    ];
+      };
+    </script>
+  <script>
+const cards = [
+    {
+        img: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        text: "非常方便！只要動動手指，就能在家享受到新鮮的食材。",
+    },
+    {
+        img: "https://images.pexels.com/photos/1181424/pexels-photo-1181424.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        text: "省了我很多時間，不用再花時間去超市，簡直是生活救星！",
+    },
+    {
+        img: "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        text: "有很多選擇，無論是肉類還是素食，都能找到適合的料理。",
+    },
+    {
+        img: "https://images.pexels.com/photos/556068/pexels-photo-556068.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        text: "省了我很多時間，不用再花時間去超市，簡直是生活救星！",
+    },
+    {
+        img: "https://images.pexels.com/photos/1752126/pexels-photo-1752126.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        text: "價格公道，對於這樣的便利和食材品質，真的很值！",
+    },
+    {
+        img: "https://images.pexels.com/photos/1468379/pexels-photo-1468379.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        text: "食材非常新鮮，烹飪後口感很好，家人都很喜歡。",
+    }
+];
 
-    let currentIndex = 0;
-
-document.querySelector('.carousel-control-next').addEventListener('click', () => {
-    showNextCards();
-});
-
-document.querySelector('.carousel-control-prev').addEventListener('click', () => {
-    showPrevCards();
-});
+let currentIndex = 0;
 
 function showNextCards() {
     currentIndex = (currentIndex + 1) % cards.length; // 從下一張開始
@@ -276,9 +286,19 @@ function showPrevCards() {
 
 function updateCarousel() {
     const carouselContent = document.getElementById('carouselContent');
+    const screenWidth = window.innerWidth;
+    let cardsToShow = 3; // 預設電腦版顯示 3 張
+
+    // 如果螢幕寬度小於等於 768px，顯示 1 張卡片
+    if (screenWidth <= 768) {
+        cardsToShow = 1;
+    }
+
+    // 根據卡片數量設定顯示邏輯
     carouselContent.innerHTML = '';
-    for (let i = 0; i < 3; i++) {
-        const cardIndex = (currentIndex + i) % cards.length; // 確保卡片的索引依照組合循環
+    for (let i = 0; i < cardsToShow; i++) {
+        // 循環顯示卡片，確保順序根據要求循環
+        const cardIndex = (currentIndex + i) % cards.length;
         const card = `
             <div class="card">
                 <img src="${cards[cardIndex].img}" class="card-img-top" alt="...">
@@ -300,19 +320,20 @@ function updateCarousel() {
 
 // 初始化顯示前三張卡片
 updateCarousel();
-  </script>
-  <script>
-    window.onscroll = function() {
 
-      let button = document.getElementById('btt');
+// 每 5 秒自動輪播下一張卡片
+setInterval(showNextCards, 5000);
 
-      if (window.scrollY > 700) {
-        button.classList.add('scrolled');
-        } else {
-          button.classList.remove('scrolled');
-        }
-      };
+// 手動點擊下一張和上一張卡片的控制
+document.querySelector('.carousel-control-next').addEventListener('click', () => {
+    showNextCards();
+});
+
+document.querySelector('.carousel-control-prev').addEventListener('click', () => {
+    showPrevCards();
+});
   </script>
+  
   </body>
 <!--
 首頁      index.html
