@@ -237,11 +237,27 @@ h1 {
   }
   // a 連結 hover 購物車 icon 效果
   li:nth-child(3) a {
-    display: inline-block;
-    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* 使用弹性过渡 */
+    animation: pulse 1s infinite;
+  }
 
-    &:hover {
-      transform: rotate(20deg) scale(1.2); /* 旋转 20 度并放大 1.2 倍 */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
     }
   }
+  // 向右旋轉效果
+  // li:nth-child(3) a {
+  //   display: inline-block;
+  //   transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* 使用弹性过渡 */
+
+  //   &:hover {
+  //     transform: rotate(20deg) scale(1.2); /* 旋转 20 度并放大 1.2 倍 */
+  //   }
+  // }
 }
