@@ -7,9 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="/LazyKitchen/assets/FaviconIcon-ee563fd9.ico" type="image/x-icon" />
   <title>訂購資訊</title>
-  <script type="module" crossorigin src="/LazyKitchen/assets/bootstrap.min-e7121c8d.js"></script>
-  <script type="module" crossorigin src="/LazyKitchen/assets/qoq-main-603954a7.js"></script>
-  <link rel="stylesheet" href="/LazyKitchen/assets/bootstrap-a71bf0d2.css">
+  <!-- 引入 AOS 的 CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <script type="module" crossorigin src="/LazyKitchen/assets/bootstrap.min-63b81767.js"></script>
+  <script type="module" crossorigin src="/LazyKitchen/assets/qoq-main-859b94c6.js"></script>
+  <link rel="stylesheet" href="/LazyKitchen/assets/bootstrap-daa8f5b2.css">
   <link rel="stylesheet" href="/LazyKitchen/assets/qoq-main-1c0640ee.css">
 </head>
 
@@ -22,8 +24,8 @@
       <div class="container-fluid">
         <!-- 左邊的Logo -->
         <!-- <a class="navbar-brand" href="./index.html">
-    <img src="../assets/images/svg/logo-white.svg" alt="懶人廚房">
-  </a> -->
+              <img src="../assets/images/svg/logo-white.svg" alt="懶人廚房">
+             </a> -->
         <h1 class="wavy-text m-0 pt-1">
           <a href="./index.html">
             <!-- logo圖 svg -->
@@ -49,8 +51,6 @@
           </a>
         </h1>
 
-
-
         <!-- 手機版右側購物車圖示 + 漢堡按鈕，兩者並排並且保持 16px 間距 -->
         <div class="d-lg-none d-flex justify-content-end align-items-center">
           <!-- 購物車圖示 -->
@@ -69,10 +69,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <!-- 文字連結 -->
-            <li class="nav-item">
+            <li class="nav-item me-3">
               <a class="nav-link active h4" href="./productOverview.html">懶人商品</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item me-3">
               <a class="nav-link active h4" href="./feature.html">懶人特色</a>
             </li>
 
@@ -100,7 +100,7 @@
   });
 </script>    <main class="bigBg">
       <!-- banner -->
-      <section class="bannerImg"></section>
+      <section class="bannerImg" data-aos="fade-left" data-aos-duration="600"></section>
       <!-- 購物車步驟 -->
       <section class="container">
         <div class="row">
@@ -354,6 +354,8 @@
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <!-- 引入 jQuery Validation Plugin -->
       <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+      <!-- 引入 AOS 的 JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
       
       <script>
         $(document).ready(function () {
@@ -383,9 +385,9 @@
               payment: {
                 required: true
               },
-              note: {
-                required: true
-              }
+              // note: {
+              //   required: true
+              // }
             },
             messages: {
               name: "請輸入收件人姓名。",
@@ -399,7 +401,7 @@
               },
               address: "請輸入收件地址。",
               payment: "請選擇付款方式。",
-              note: "請輸入備註。"
+              // note: "請輸入備註。"  
             },
             errorElement: 'div',
             errorPlacement: function (error, element) {
