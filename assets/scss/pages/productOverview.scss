@@ -1,3 +1,17 @@
+// 回上方按鈕
+.backTotop {
+  position: fixed;
+  cursor: pointer;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease, filter 0.5s ease;
+}
+.backTotop.show {
+  opacity: 1;
+  transform: translateY(-5px) translateX(-5px);
+  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+}
+
 // 搜尋；分類框
 .searchBox {
   background-image: url("../../images/qoq-imgs/bigBg.png");
@@ -123,7 +137,6 @@
       &:hover .card-title {
         color: #ad4214;
       }
-  
     }
   }
 
