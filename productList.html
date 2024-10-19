@@ -1,107 +1,120 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>商品細節</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" rel="stylesheet">
-    <style>
-      .card .card-img-top {
-          width: 100px;
-          height: 100px;
-          object-fit: cover;
-          border-radius: 50%;
-          margin: 0 auto;
-          display: block;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/LazyKitchen/assets/FaviconIcon-ee563fd9.ico" type="image/x-icon" />
+  <title>商品細節</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css"
+    rel="stylesheet">
+  <link rel="icon" href="/LazyKitchen/assets/FaviconIcon-ee563fd9.ico" type="image/x-icon">
+  <style>
+    .card .card-img-top {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .bi-star-fill {
+      color: #AD4214;
+      font-weight: bold;
+    }
+
+    .carousel-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      z-index: 10;
+      /* 確保按鈕在最上層 */
+    }
+
+    .carousel-controls .carousel-control-prev,
+    .carousel-controls .carousel-control-next {
+      width: 40px;
+      height: 40px;
+      background-color: #FFF7EB;
+      border-radius: 50%;
+      color: #AD4214;
+      opacity: 1;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+      position: relative;
+      /* 確保它們在自己的層次上 */
+      z-index: 5;
+      /* 使按鈕層級高於其他元素 */
+      font-size: 24px;
+      /* 字體大小 */
+    }
+
+    .carousel-controls .carousel-control-prev:hover,
+    .carousel-controls .carousel-control-next:hover {
+      background-color: #AD4214;
+      color: #FFF7EB;
+    }
+
+    /* 卡片容器調整 */
+    #carouselContent {
+      display: flex;
+      justify-content: center;
+      /* 讓卡片居中 */
+    }
+
+    .carousel-item {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      /* 確保旋轉木馬項目寬度為 100% */
+    }
+
+    .card {
+      flex: 0 0 27%;
+      /* 電腦版：每張卡片佔據 27% 的寬度 */
+      margin: 0 1%;
+      /* 卡片之間的距離 */
+    }
+
+    /* 手機版調整，每次顯示一張卡片，佔據滿版寬度 */
+    @media (max-width: 768px) {
+      .carousel-item {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        /* 確保carousel-item佔據全寬 */
       }
-  
-      .bi-star-fill {
-          color: #AD4214;
-          font-weight: bold;
+
+      .card {
+        flex: 0 0 80%;
+        /* 手機版：每次顯示一張卡片，佔據100%寬度 */
+        max-width: 100%;
+        /* 確保卡片最大寬度為100% */
       }
-  
-      .carousel-controls {
-          position: absolute;
-          top: 50%;
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-          transform: translateY(-50%);
-          z-index: 10; /* 確保按鈕在最上層 */
-      }
-  
+
       .carousel-controls .carousel-control-prev,
       .carousel-controls .carousel-control-next {
-          width: 40px;
-          height: 40px;
-          background-color: #FFF7EB;
-          border-radius: 50%;
-          color: #AD4214;
-          opacity: 1;
-          border: none;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          cursor: pointer;
-          transition: background-color 0.3s, color 0.3s;
-          position: relative; /* 確保它們在自己的層次上 */
-          z-index: 5; /* 使按鈕層級高於其他元素 */
-          font-size: 24px; /* 字體大小 */
+        display: none;
       }
-  
-      .carousel-controls .carousel-control-prev:hover,
-      .carousel-controls .carousel-control-next:hover {
-          background-color: #AD4214;
-          color: #FFF7EB;
-      }
-  
-      /* 卡片容器調整 */
-      #carouselContent {
-          display: flex;
-          justify-content: center; /* 讓卡片居中 */
-      }
-  
-      .carousel-item {
-          display: flex;
-          justify-content: center;
-          width: 100%; /* 確保旋轉木馬項目寬度為 100% */
-      }
-  
-      .card {
-          flex: 0 0 27%; /* 每張卡片佔據 30% 的寬度 */
-          margin: 0 1%; /* 添加 margin 以便於卡片之間有距離 */
-      }
+    }
+  </style>
+  <script type="module" crossorigin src="/LazyKitchen/assets/bootstrap.min-837d0615.js"></script>
+  <link rel="stylesheet" href="/LazyKitchen/assets/bootstrap-285f64d1.css">
+  <link rel="stylesheet" href="/LazyKitchen/assets/productList-e15a5041.css">
+</head>
 
-      /* 回到最上面按鈕 */
-.btt-btn {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  position: fixed;
-  top: 30px;
-  right: 30px;
-  z-index: 4;
-  opacity: 0;
-  transition: opacity   0.5s ease, 
-              transform 0.5s ease,
-              filter    0.5s ease;
-}
-
-.scrolled {
-  opacity: 1;
-  transform: translateY(-5px) translateX(-5px);
-  filter: drop-shadow(4px 4px 4px rgb(0, 0, 0, 0.5));
-}
-
-    </style>
-    <script type="module" crossorigin src="/LazyKitchen/assets/bootstrap.min-4ec6636f.js"></script>
-    <link rel="stylesheet" href="/LazyKitchen/assets/bootstrap-d982a8cd.css">
-    <link rel="stylesheet" href="/LazyKitchen/assets/productList-ecadbfe6.css">
-  </head>
-  <body>  
-    <!-- header -->
-    <header class="header" style="background: #AD4214;">
+<body>
+  <!-- header -->
+  <header class="header" style="background: #AD4214;">
   <div class="container">
 
 <!-- Navbar -->
@@ -161,66 +174,76 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
 </script>
 
     <section class="bgTop">
-    <!-- banner -->
-    <div class="bannerImg"></div>
-    
-    <!-- 內容 -->
-    <div class="container">
-      <div class="productBreadcrumb" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb"><!--麵包屑-->
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="#">懶人分類</a></li>
-          <li class="breadcrumb-item"><a href="#">主食</a></li>
-          <li class="breadcrumb-item active" aria-current="page" style="color: #AD4214;">雞肉</li>
-        </ol>
-      </div>
-      <div class="row mainImgFlex align-items-center">
-        <div class="col-12 col-lg-6 content align-left">
-          <h1 class="h2 productName">春川炒雞</h1>
-          <p class="h4 sign">
-            <span class="primaryColor me-3">＃3-4人份</span>
-            <span class="primaryColor">＃新鮮冷藏</span>
-          </p>
-          <ul class="d-flex list-unstyled mb-4 pb-1">
-            <li class="grayColor">卡路里<br><span class="blackColor">732 kcal</span></li>
-            <li class="grayColor mx-4 px-1">料理時間<br><span class="blackColor">9 min</span></li>
-            <li class="grayColor">重量<br><span class="blackColor">468 g</span></li>
-          </ul>
-          <div class="price">
-            <p class="oPrice"><del>$175</del></p>
-            <p class="h2 sPrice">$169</p>
-          </div>
-          <div class="product-quantity d-flex">
-            <div class="d-flex">
-              <button class="minusBtn border-0"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABFSURBVHgB7c0xCgAhEEPRzLKw7R5NT+gVPJqtIIw2goWljfBflUAgEgDgOrYWbzXILI346xT3aO+XZ302k3NnUhEA4H4d4XUIBJeJ+CcAAAAASUVORK5CYII=" alt="減號"></button>
-              <div class="counter-value h4 m-0 primaryColor" id="counter">1</div>
-              <button class="plusBtn border-0"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACCSURBVHgB7ZZLCoAwDEQnonuP4FW8/8Ij6BFcK3b8oIiKViOULvKWoeVR6CQBjBggmSMkdH3FoaugIIUK/QsTBMaEJoxfKOfCHGpvzohivd3gmRaSlSLSboVD8JeW5Xq8hv4jkuwyNXRdPbW2Ggrsl5rQhBd0E5/4H+bPztCLlHHHCN99KHIPINTNAAAAAElFTkSuQmCC" alt="加號"></button>
+      <!-- banner -->
+      <div class="bannerImg"></div>
+
+      <!-- 內容 -->
+      <div class="container">
+        <div class="productBreadcrumb" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb"><!--麵包屑-->
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">懶人分類</a></li>
+            <li class="breadcrumb-item"><a href="#">主食</a></li>
+            <li class="breadcrumb-item active" aria-current="page" style="color: #AD4214;">雞肉</li>
+          </ol>
+        </div>
+        <div class="row mainImgFlex align-items-center">
+          <div class="col-12 col-lg-6 content align-left">
+            <h1 class="h2 productName">春川炒雞</h1>
+            <p class="h4 sign">
+              <span class="primaryColor me-3">＃2-3人份</span>
+              <span class="primaryColor">＃新鮮冷藏</span>
+            </p>
+            <ul class="d-flex list-unstyled mb-4 pb-1">
+              <li class="grayColor">卡路里<br><span class="blackColor">732 kcal</span></li>
+              <li class="grayColor mx-4 px-1">料理時間<br><span class="blackColor">9 min</span></li>
+              <li class="grayColor">重量<br><span class="blackColor">468 g</span></li>
+            </ul>
+            <div class="price">
+              <p class="oPrice"><del>$175</del></p>
+              <p class="h2 sPrice">$169</p>
             </div>
-            <a class="sCart" href="shoppingcart.html">加入購物車</a>
+            <div class="product-quantity d-flex">
+              <div class="d-flex">
+                <button class="minusBtn border-0"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABFSURBVHgB7c0xCgAhEEPRzLKw7R5NT+gVPJqtIIw2goWljfBflUAgEgDgOrYWbzXILI346xT3aO+XZ302k3NnUhEA4H4d4XUIBJeJ+CcAAAAASUVORK5CYII=" alt="減號"></button>
+                <div class="counter-value h4 m-0 primaryColor" id="counter">1</div>
+                <button class="plusBtn border-0"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACCSURBVHgB7ZZLCoAwDEQnonuP4FW8/8Ij6BFcK3b8oIiKViOULvKWoeVR6CQBjBggmSMkdH3FoaugIIUK/QsTBMaEJoxfKOfCHGpvzohivd3gmRaSlSLSboVD8JeW5Xq8hv4jkuwyNXRdPbW2Ggrsl5rQhBd0E5/4H+bPztCLlHHHCN99KHIPINTNAAAAAElFTkSuQmCC" alt="加號"></button>
+              </div>
+              <a class="sCart" href="shoppingcart.html">加入購物車</a>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center">
+            <img class="mainImg img-fluid" src="/LazyKitchen/assets/mainProduct-b88293d6.png" alt="春川炒雞圖">
           </div>
         </div>
-        <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center">
-          <img class="mainImg img-fluid" src="/LazyKitchen/assets/mainProduct-67611256.png" alt="春川炒雞圖">
+        <div class="row">
+          <div class="col contentBorder"></div>
         </div>
       </div>
-      <div class="row"><div class="col contentBorder"></div></div>
-    </div>
     </section>
     <div class="container">
       <div class="row detail justify-content-center move-up">
+        <!--食材包有什麼？-->
         <div class="col-12 col-lg-8 mb-25">
-          <img src="/LazyKitchen/assets/sneakStep1-7ae23f5c.png" alt="">
+          <img class="img-fluid" src="/LazyKitchen/assets/sneakStep1-7ae23f5c.png" alt="">
         </div>
+        <!--食材有哪些？-->
         <div class="col-12 col-lg-8  mb-25">
-          <img src="/LazyKitchen/assets/sneakStep2-2eb7a8a1.png" alt="">
+          <h2 class="h2 primaryColor text-center mb-10">食材有哪些？</h2>
+          <img class="img-fluid mb-10" src="/LazyKitchen/assets/sneakStep2-00c12df5.png" alt="">
+          <p class="h4 grayColor text-center">*需備100cc水(約半碗水量)</p>
         </div>
+        <!--最佳烹調方式-->
         <div class="col-12 col-lg-8  mb-25">
+          <h2 class="h2 primaryColor text-center mb-10">最佳烹調方式</h2>
           <img class="img-fluid mb-5" src="/LazyKitchen/assets/sneakStep3-a0a26695.png" alt="">
           <img class="img-fluid mb-5" src="/LazyKitchen/assets/sneakStep4-a9ba2e4a.png" alt="">
           <img class="img-fluid mb-5" src="/LazyKitchen/assets/sneakStep5-3e926c3a.png" alt="">
           <img class="img-fluid mb-5" src="/LazyKitchen/assets/sneakStep6-f2b9bb05.png" alt="">
           <img class="img-fluid" src="/LazyKitchen/assets/sneakStep7-78f178fd.png" alt="">
         </div>
+        <!--顧客評論-->
         <div class="col-12 col-lg-10  mb-25">
+          <h2 class="h2 primaryColor text-center mb-10">顧客評論</h2>
           <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
@@ -228,11 +251,13 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
               </div>
             </div>
             <div class="carousel-controls">
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                data-bs-slide="prev">
                 <span class="visually-hidden">Previous</span>
                 <i class="bi bi-chevron-left"></i> <!-- 使用 Bootstrap 的 Chevron Left -->
               </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                data-bs-slide="next">
                 <span class="visually-hidden">Next</span>
                 <i class="bi bi-chevron-right"></i> <!-- 使用 Bootstrap 的 Chevron Right -->
               </button>
@@ -242,9 +267,17 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
       </div>
     </div>
     <!-- footer -->
-    <footer class="footer-bg">
-    <div class="container p-0 footerWrapper">
-        <h1> <a href="./index.html"><svg width="180" height="40" viewBox="0 0 180 40" fill="none"
+    <footer class="footer-bg overflow-hidden">
+    <div class="container footerWrapper ">
+
+
+
+        <!-- 左 - Logo 文字 -->
+        <div class="mb-3">
+            <h2 class="wavy-text">
+                <a href="./index.html">
+                    <!-- logo圖加文字 svg -->
+                    <!-- <svg width="180" height="40" viewBox="0 0 180 40" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M66.8969 18.44C66.4559 18.248 66.3089 17.96 66.4529 17.576C66.8999 16.343 67.1579 14.744 67.2209 12.776C67.2209 12.233 67.4759 11.999 67.9889 12.08C68.4059 12.128 68.6129 12.359 68.6129 12.776C68.6129 13.721 68.5409 14.672 68.3969 15.632C68.2679 16.64 68.0699 17.471 67.7969 18.128C67.6379 18.527 67.3379 18.632 66.8969 18.44ZM70.1249 29.696C69.4679 29.696 69.1409 29.369 69.1409 28.712V8.67199C69.1409 8.01499 69.4679 7.68799 70.1249 7.68799C70.7819 7.68799 71.1089 8.01499 71.1089 8.67199V28.712C71.1089 29.369 70.7819 29.696 70.1249 29.696ZM76.4849 29.696C75.8279 29.696 75.5009 29.375 75.5009 28.736V23.312C74.8919 24.833 74.2529 26.081 73.5809 27.056C73.2929 27.425 73.0439 27.593 72.8369 27.56C72.6299 27.527 72.4199 27.296 72.2129 26.864C71.9579 26.321 72.0119 25.856 72.3809 25.472C73.3079 24.353 74.1329 22.871 74.8529 21.032H73.7729C73.4999 21.032 73.2809 20.948 73.1129 20.78C72.9449 20.612 72.8609 20.393 72.8609 20.12V14.696L72.3569 14.888C72.1319 14.984 72.0059 14.927 71.9729 14.72C71.8919 14.081 71.7089 13.265 71.4209 12.272C71.2769 11.825 71.4209 11.528 71.8529 11.384C72.2369 11.273 72.5159 11.408 72.6929 11.792C73.0139 12.737 73.2209 13.535 73.3169 14.192H75.5009V12.008H73.6529C73.0619 12.008 72.7649 11.705 72.7649 11.096C72.7649 10.487 73.0619 10.208 73.6529 10.208H75.5009V8.64799C75.5009 8.00899 75.8279 7.68799 76.4849 7.68799C77.1419 7.68799 77.4449 8.00899 77.4449 8.64799V10.208H79.2929C79.8839 10.208 80.1809 10.505 80.1809 11.096C80.1809 11.687 79.8839 12.008 79.2929 12.008H77.4449V14.192H78.8609C79.2449 14.192 79.5539 14.309 79.7849 14.54C80.0159 14.771 80.1329 15.08 80.1329 15.464V19.472C80.1329 19.937 79.9889 20.312 79.7009 20.6C79.4129 20.888 79.0379 21.032 78.5729 21.032H77.4449V21.152C78.0689 21.713 78.9959 22.673 80.2289 24.032C80.3879 24.209 80.4539 24.368 80.4209 24.512C80.4059 24.623 80.3159 24.8 80.1569 25.04C79.9319 25.376 79.7339 25.559 79.5569 25.592C79.3799 25.625 79.1819 25.481 78.9569 25.16C78.4769 24.521 77.9729 23.888 77.4449 23.264V28.736C77.4449 29.375 77.1239 29.696 76.4849 29.696ZM74.9489 19.28H75.7649V15.944H74.3729V18.704C74.3729 19.088 74.5649 19.28 74.9489 19.28ZM77.1809 19.28H77.9729C78.3569 19.28 78.5489 19.088 78.5489 18.704V16.52C78.5489 16.136 78.3569 15.944 77.9729 15.944H77.1809V19.28ZM80.4209 29.552C80.2139 29.537 79.9889 29.423 79.7489 29.216C79.1729 28.703 79.2209 28.199 79.8929 27.704C80.4359 27.272 80.9399 26.759 81.4049 26.168C81.6929 25.721 82.1159 25.583 82.6769 25.76C83.4119 26 83.5799 26.423 83.1809 27.032C82.9259 27.368 82.6139 27.737 82.2449 28.136C81.9419 28.487 81.5579 28.865 81.0929 29.264C80.8379 29.456 80.6129 29.552 80.4209 29.552ZM80.3489 14.336L80.3249 14.312L80.3009 14.288C79.9019 13.889 79.9799 13.52 80.5409 13.184C81.4679 12.497 82.0679 11.456 82.3409 10.064H81.3089C80.7479 10.064 80.4689 9.78499 80.4689 9.22399C80.4689 8.66299 80.7479 8.38399 81.3089 8.38399H86.5409C87.5969 8.38399 88.0919 9.25699 88.0289 11C87.9479 12.551 87.7679 13.499 87.4889 13.844C87.2099 14.189 86.8199 14.384 86.3249 14.432C86.1329 14.48 85.8599 14.504 85.5089 14.504C84.8849 14.504 84.5489 14.249 84.5009 13.736C84.5009 13.703 84.4919 13.661 84.4769 13.604C84.4619 13.547 84.4439 13.505 84.4289 13.472C84.3479 13.232 84.3659 13.052 84.4769 12.932C84.5879 12.812 84.7889 12.761 85.0769 12.776H85.3169C85.5569 12.776 85.7159 12.713 85.7969 12.584C85.9259 12.377 86.0129 11.855 86.0609 11.024C86.0759 10.655 86.0459 10.4 85.9649 10.256C85.8839 10.127 85.7399 10.064 85.5329 10.064H84.2369C83.8859 12.143 83.0519 13.655 81.7409 14.6C81.1319 14.936 80.6699 14.849 80.3489 14.336ZM82.4849 25.256C82.0199 25.256 81.6449 25.112 81.3569 24.824C81.0689 24.536 80.9249 24.161 80.9249 23.696V16.808C80.9249 16.343 81.0689 15.968 81.3569 15.68C81.6449 15.392 82.0199 15.248 82.4849 15.248H86.2049C86.6699 15.248 87.0449 15.392 87.3329 15.68C87.6209 15.968 87.7649 16.343 87.7649 16.808V23.696C87.7649 24.161 87.6209 24.536 87.3329 24.824C87.0449 25.112 86.6699 25.256 86.2049 25.256H82.4849ZM82.6769 18.152H85.9169V17.36C85.9169 16.976 85.7249 16.784 85.3409 16.784H83.2529C82.8689 16.784 82.6769 16.976 82.6769 17.36V18.152ZM82.6769 20.912H85.9169V19.544H82.6769V20.912ZM83.2529 23.696H85.3409C85.7249 23.696 85.9169 23.504 85.9169 23.12V22.304H82.6769V23.12C82.6769 23.504 82.8689 23.696 83.2529 23.696ZM86.5409 28.904C86.2859 28.52 86.0939 28.223 85.9649 28.016C85.8209 27.791 85.5899 27.455 85.2689 27.008C84.8369 26.48 84.9479 26.057 85.6049 25.736C86.0369 25.511 86.4209 25.583 86.7569 25.952C87.2999 26.591 87.8129 27.305 88.2929 28.088C88.4519 28.361 88.4939 28.583 88.4129 28.76C88.3499 28.937 88.1639 29.105 87.8609 29.264C87.2699 29.567 86.8289 29.447 86.5409 28.904Z"
@@ -269,30 +302,64 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                         fill="#FAFCFE" />
                     <path d="M51.684 25.253C51.621 25.328 51.573 25.382 51.684 25.253Z" fill="#FAFCFE" />
                     <path d="M32.4661 31.376C32.8351 31.412 32.5711 31.391 32.4661 31.376Z" fill="#FAFCFE" />
-                </svg></a></h1>
+                </svg> -->
 
-        <h1 class="wavy-text">
-            <span>懶</span>
-            <span>人</span>
-            <span>廚</span>
-            <span>房</span>
-        </h1>
-        <div class="text-white text-center d-none d-lg-block footerText flex-grow-1">
-            <address>
-                <p class="m-0 mb-1">客服專線：<a href="tel:0800123456" class="d-inline-block">0800 123 456</a></p>
-                <p class="m-0 mb-2">服務時間：<time datetime="08:00">周一至周日 08:00~17:00</time></p>
-                <p class="m-0" style="margin-bottom: 28px;">客服信箱：<a href="mailto:service@lazy_kitchen.com"
-                        class="d-inline-block">service@lazy_kitchen.com</a></p>
-            </address>
-            <footer>
-                <p class="m-0 mb-1">Copyright &copy; 2024 <span>Search for Meow</span> All rights reserved.</p>
-                <p class="m-0">本專題僅為學習用途, 不做任何商業使用, 圖片來源請見 <a href="https://github.com/oriascrius/LazyKitchen/tree/dev"
-                        class="d-inline-block">GitHub
-                        repo</a></p>
-            </footer>
+                    <!-- logo圖 svg -->
+                    <span>
+                        <svg width="188" height="140" viewBox="0 0 188 140" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M121.716 39.53C129.299 37.5405 136.882 35.5509 144.465 33.5614C146.463 33.0284 147.912 30.7413 147.275 28.6922C146.632 26.6226 144.583 25.3016 142.439 25.8624C138.366 26.9268 134.306 27.9988 130.232 29.0632C135.173 22.0879 140.116 15.123 145.056 8.14774C145.954 6.87554 145.632 4.8632 144.744 3.72687C143.731 2.44804 142.215 1.95162 140.623 2.28824C132.194 4.08619 123.774 5.88143 115.342 7.66911C113.316 8.09941 111.913 10.561 112.531 12.5383C113.195 14.6901 115.196 15.8262 117.367 15.3681C122.43 14.2923 127.48 13.209 132.543 12.1333C127.46 19.3115 122.364 26.4821 117.28 33.6602C115.22 36.5715 118.608 40.3258 121.71 39.5095L121.716 39.53Z"
+                                fill="#FFFDFA" />
+                            <path
+                                d="M82.661 75.3783L105.41 69.4097C107.408 68.8768 108.857 66.5897 108.22 64.5405C107.578 62.4709 105.528 61.15 103.384 61.7107C99.3113 62.7751 95.251 63.8471 91.1778 64.9115C96.1181 57.9363 101.061 50.9713 106.001 43.9961C106.9 42.7239 106.577 40.7115 105.689 39.5752C104.677 38.2964 103.16 37.7999 101.569 38.1366C93.1389 39.9345 84.7193 41.7298 76.2868 43.5174C74.2616 43.9477 72.8581 46.4094 73.4764 48.3866C74.1407 50.5384 76.1416 51.6745 78.3122 51.2164C83.3752 50.1407 88.4254 49.0574 93.4884 47.9816C88.4051 55.1598 83.3089 62.3304 78.2256 69.5086C76.1657 72.4199 79.5536 76.1741 82.6556 75.3578L82.661 75.3783Z"
+                                fill="#FFFDFA" />
+                            <path
+                                d="M169.712 27.9261C169.03 26.1635 168.295 24.4043 167.524 22.6764C166.386 20.1346 162.53 19.3285 160.311 20.7661C157.703 22.4616 157.197 25.3098 158.414 28.0282C158.681 28.6272 158.937 29.229 159.191 29.8204C159.191 29.8204 159.194 29.8307 159.196 29.8409C159.379 30.2866 159.554 30.7452 159.727 31.1935C160.332 32.7897 160.887 34.3996 161.383 36.036C161.97 37.9776 162.483 39.928 162.897 41.9159C163.096 42.8404 163.265 43.773 163.414 44.7111C163.493 45.2174 163.558 45.7162 163.637 46.2225C163.661 46.4798 163.698 46.7446 163.722 47.0018C163.948 49.3143 164.047 51.6389 163.972 53.9659C163.946 55.0275 163.876 56.0897 163.773 57.1499C163.719 57.6915 163.655 58.2359 163.591 58.7803C163.594 58.7906 163.594 58.7906 163.589 58.8138C163.52 59.1729 163.474 59.5367 163.404 59.8957C162.955 62.3774 162.298 64.8156 161.439 67.1872C161.313 67.5392 161.177 67.894 161.039 68.2386C160.994 68.3603 160.91 68.5366 160.843 68.6972C160.89 68.5858 160.955 68.4587 161.042 68.2926C160.719 68.972 160.434 69.6741 160.109 70.3432C158.746 73.1674 157.108 75.8565 155.255 78.3939C155.2 78.4746 155.134 78.5579 155.079 78.6385C154.88 78.8783 154.687 79.1386 154.491 79.3886C153.94 80.0738 153.374 80.7412 152.795 81.401C151.755 82.5902 150.67 83.7362 149.542 84.8391C148.328 86.0307 147.07 87.1792 145.768 88.2845C145.154 88.8109 144.514 89.3222 143.884 89.8307C143.874 89.8335 143.863 89.8362 143.866 89.8464C143.831 89.8779 143.803 89.8963 143.767 89.9277C143.406 90.2109 143.031 90.4867 142.663 90.7494C139.893 92.7846 136.997 94.6336 134.002 96.3113C132.481 97.1673 130.937 97.9746 129.359 98.7361C128.594 99.1049 127.819 99.4764 127.049 99.8246C126.66 100.005 126.268 100.176 125.877 100.346C125.681 100.431 125.485 100.516 125.289 100.602C125.249 100.612 125.19 100.639 125.111 100.671C124.844 100.775 124.45 100.935 124.361 100.97C124.015 101.106 123.659 101.245 123.313 101.381C122.412 101.732 121.506 102.061 120.597 102.38C118.919 102.971 117.228 103.51 115.526 104.007C112.122 105.003 108.66 105.817 105.156 106.433C104.311 106.581 103.464 106.719 102.614 106.847C102.246 106.901 101.868 106.958 101.498 107.002C101.286 107.026 101.074 107.049 100.865 107.083C100.926 107.067 100.979 107.063 101.043 107.057C101.023 107.063 101.013 107.066 101.002 107.068C99.2555 107.271 97.5052 107.419 95.7543 107.523C92.2933 107.721 88.8319 107.711 85.3751 107.468C83.7081 107.353 82.0489 107.059 80.3846 106.954C80.295 106.945 80.2128 106.923 80.1231 106.914C79.7231 106.845 79.3129 106.778 78.9129 106.709C78.0666 106.561 77.215 106.393 76.3708 106.212C73.143 105.513 69.963 104.581 66.8868 103.38C66.5602 103.259 66.2412 103.124 65.9119 102.992C65.827 102.96 65.7395 102.917 65.6648 102.882C64.8977 102.538 64.1408 102.19 63.3961 101.807C61.951 101.082 60.5331 100.296 59.1628 99.4422C58.4971 99.0265 57.8388 98.5979 57.1982 98.1536C56.8521 97.9163 56.5162 97.6763 56.1777 97.4261C55.9347 97.2492 55.7047 97.0798 55.472 96.9002C55.4306 96.8673 55.3865 96.8241 55.3037 96.7583C53.4767 95.2463 51.7381 93.6557 50.1153 91.9243C49.6297 91.4057 49.1822 90.8659 48.7245 90.3289C51.6917 88.4609 54.539 85.8888 56.636 82.3305C65.3242 67.6214 55.6388 45.6519 48.5597 44.8705C46.8304 44.6836 44.775 45.7042 43.7731 47.2457C40.5126 52.3118 50.0114 61.0056 46.84 66.037C45.6636 67.9107 42.8178 69.1202 40.719 68.4825C34.931 66.7196 37.6662 51.8187 31.2244 49.3952C28.8868 48.5137 25.8506 49.4553 24.5006 51.1666C23.4773 52.4612 23.3364 54.2894 25.4576 64.8411C26.6146 70.6075 27.1361 72.4239 25.9779 73.9522C24.6013 75.7695 21.1995 76.7317 19.0207 75.5002C13.8332 72.5774 19.0993 59.2096 13.8508 56.1383C11.6973 54.8781 8.34732 55.7056 6.48035 57.401C0.391622 62.9139 3.76041 83.1846 16.372 91.4766C23.5336 96.1798 31.2978 95.4602 34.0341 95.2028C34.6422 95.1504 36.2974 94.9726 38.498 94.4626C41.3315 98.2659 44.6003 101.733 48.3611 104.707C60.3675 114.182 75.4556 118.243 90.5672 118.288C105.986 118.34 121.402 114.481 135.216 107.643C148.064 101.283 159.996 91.7293 167.335 79.1926C171.896 71.3959 174.354 62.4902 174.507 53.452C174.653 44.7566 172.799 36.012 169.671 27.937L169.712 27.9261Z"
+                                fill="#FFFDFA" />
+                            <path d="M160.866 68.702C160.605 69.244 160.72 69.0157 160.866 68.702V68.702Z"
+                                fill="#FFFDFA" />
+                            <path d="M101.069 107.072C101.439 107.028 102.355 106.86 101.069 107.072V107.072Z"
+                                fill="#FFFDFA" />
+                        </svg>
+                    </span>
+                    <span>懶</span>
+                    <span>人</span>
+                    <span>廚</span>
+                    <span>房</span>
+                </a>
+            </h2>
         </div>
+
+
+
+
+        <!-- 中 - 文字 flex-grow-1 -->
+        <div class="text-white text-center footerText">
+            <div class=" d-none d-lg-block">
+                <address>
+                    <p class="m-0 mb-1">客服專線：<a href="tel:0800123456" class="d-inline-block">0800 123 456</a>
+                    </p>
+                    <p class="m-0 mb-2">服務時間：<time datetime="08:00">周一至周日 08:00~17:00</time></p>
+                    <p class="m-0" style="margin-bottom: 28px;">客服信箱：<a href="mailto:service@lazy_kitchen.com"
+                            class="d-inline-block">service@lazy_kitchen.com</a></p>
+                </address>
+                <footer>
+                    <p class="m-0 mb-1">Copyright &copy; 2024 <span>Search for Meow</span> All rights reserved.
+                    </p>
+                    <p class="m-0">本專題僅為學習用途, 不做任何商業使用, 圖片來源請見 <a
+                            href="https://github.com/oriascrius/LazyKitchen/tree/dev" class="d-inline-block">GitHub
+                            repo</a></p>
+                </footer>
+            </div>
+        </div>
+
+
+
+
+        <!-- 右 - icon + a 連結 -->
         <div>
-            <ul class="list-unstyled m-0 footerIcon">
+            <ul class="list-unstyled footerIcon d-flex justify-content-center mb-28">
                 <li><a href="#"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <rect width="48" height="48" rx="24" fill="#FFF3E5" />
@@ -348,7 +415,8 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                 <li><a href="./shoppingcart.html" class="custom-fs4">購物車</a></li>
             </ul>
         </div>
-        <ul class="list-unstyled m-0 d-flex d-lg-none footerLink w-100">
+        <!-- sm a 連結 -->
+        <ul class="list-unstyled d-flex d-lg-none footerLink w-100 mb-28">
             <li><a href="./productOverview.html" class="custom-fs4">懶人商品</a></li>
             <li><a href="./feature.html" class="custom-fs4">懶人特色</a></li>
             <li><a href="./shoppingcart.html" class="custom-fs4">購物車</a></li>
@@ -368,104 +436,125 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
                         repo</a></p>
             </footer>
         </div>
+
+
+
+
+
+
     </div>
-</footer><!-----   回到最上面按鈕   ----->
-<a id="btt" class="border-0 p-0 btt-btn" href="#">
-  <img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAOqSURBVHgB1ZpLTxNRFMf/51I2aqQGVm5oo0sSMHFjTLDCwriShyS6Qj4Bj4VbinsNxA9gWRqenwBbEtxSPgElbDRAMhBlU+Yezx2Y2vdrpqXzS5rp3LlDz/+ec58Hgg9sxcJhrbrHoHgQjAiYhgAOy6Pw/1qUIeIME9LElCY7mxpPWhl4hNAkxmio0KwYFGNGDE1gxCjQshcxDQtwDdfAHApa2CucUNpealRIQwK2RvoW/Te8EAXEx3dOl+qtX5cAafWI3RXaIsYQ2gJllM6+rMcbqlaFzdHeaa1C++0z3sAR85vro71jtWpWFbAhIcNMCbQwZKoQltFqy4RttUpdlR5sXL8Yxy3DQOx99A6+H16myj0v2weM64x6dBCk+cNE8my1pLy4wHRYE3+4nbCphqX01ZPijl3SB2RG/YHOM94QNiNhcWGBgOu45wg6FDMSio3xgjL3y03oHKLzsS70VXQmaVnmJucB3dW1iGAQvq9Cc+6N44EAtb5LzguOB6TjxhAscl5wBMg6fRYBgwgvnGsAwyeHhNEDFcDwyXFXdoGKoVuyyuy+14Nnn1bx9ONX53srUIShkCIalC2hrxiDhz9vo+fxgHNvrrsLY8j+OYevaI4oWS5H4CPFxht6Hg1g+Mu2754gaXzl59Kh2PjL38fOx9AaERyuuSOrl3LG7y68cT4tFOGPgErGX/46dj6tFCEdmS14oJrxLq0UIcOo8iSg/9W7qsa7lBPx8PlreENOL2SvloYHTtN7jlGnBz8rGu+SLyL79wInB3vwBh/R+kjvMoECtxYyMNGK0lCePHCbKBv7qltntxFQCNmUkl2+JUvTJAKGzMJpc0LhzAM2I4WgYWPZXBwBIX217HU+aDcmfMzVEWDCyAatIDBQwj3gyi0lguQFOXrP5Q9yAgLkhYIsTsnZ6OZo3z63NRdQPzLhZiZ2TqL5ZSWrUbKvxjsxlKSlLZKsTXF5iQDjHtZqHh2G1jxTLuVUdj8wmTxJSDKv7kRbG1h6mzwru2KomKFZO7xMTkXvyCTdXA7YR5Ymd07jlR7WzFKux3rHlMI3BrU1Z2BinsHzkztniRr1amNO71gSH9ym3AGZf0eQwaSeNGtDie41SS5Ip2nZMbxpdRtYmaoSMmXeaQwn6U3dcTkQnoZPuIab1cD4TeKigXebwzkUhpyrKjbH3INojpSMdslmDHdpWkA+rhhWGFLEg5oRlT/cn/cjlhh6Ltd9GQyO5JqW9cx2s0bn8w8eYbMorrBACQAAAABJRU5ErkJggg==" alt="back-to-top-img">
-</a>
+</footer>      <!-----   回到最上面按鈕   ----->
+      <a id="btt" class="border-0 p-0 btt-btn" href="#">
+        <img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAOqSURBVHgB1ZpLTxNRFMf/51I2aqQGVm5oo0sSMHFjTLDCwriShyS6Qj4Bj4VbinsNxA9gWRqenwBbEtxSPgElbDRAMhBlU+Yezx2Y2vdrpqXzS5rp3LlDz/+ec58Hgg9sxcJhrbrHoHgQjAiYhgAOy6Pw/1qUIeIME9LElCY7mxpPWhl4hNAkxmio0KwYFGNGDE1gxCjQshcxDQtwDdfAHApa2CucUNpealRIQwK2RvoW/Te8EAXEx3dOl+qtX5cAafWI3RXaIsYQ2gJllM6+rMcbqlaFzdHeaa1C++0z3sAR85vro71jtWpWFbAhIcNMCbQwZKoQltFqy4RttUpdlR5sXL8Yxy3DQOx99A6+H16myj0v2weM64x6dBCk+cNE8my1pLy4wHRYE3+4nbCphqX01ZPijl3SB2RG/YHOM94QNiNhcWGBgOu45wg6FDMSio3xgjL3y03oHKLzsS70VXQmaVnmJucB3dW1iGAQvq9Cc+6N44EAtb5LzguOB6TjxhAscl5wBMg6fRYBgwgvnGsAwyeHhNEDFcDwyXFXdoGKoVuyyuy+14Nnn1bx9ONX53srUIShkCIalC2hrxiDhz9vo+fxgHNvrrsLY8j+OYevaI4oWS5H4CPFxht6Hg1g+Mu2754gaXzl59Kh2PjL38fOx9AaERyuuSOrl3LG7y68cT4tFOGPgErGX/46dj6tFCEdmS14oJrxLq0UIcOo8iSg/9W7qsa7lBPx8PlreENOL2SvloYHTtN7jlGnBz8rGu+SLyL79wInB3vwBh/R+kjvMoECtxYyMNGK0lCePHCbKBv7qltntxFQCNmUkl2+JUvTJAKGzMJpc0LhzAM2I4WgYWPZXBwBIX217HU+aDcmfMzVEWDCyAatIDBQwj3gyi0lguQFOXrP5Q9yAgLkhYIsTsnZ6OZo3z63NRdQPzLhZiZ2TqL5ZSWrUbKvxjsxlKSlLZKsTXF5iQDjHtZqHh2G1jxTLuVUdj8wmTxJSDKv7kRbG1h6mzwru2KomKFZO7xMTkXvyCTdXA7YR5Ymd07jlR7WzFKux3rHlMI3BrU1Z2BinsHzkztniRr1amNO71gSH9ym3AGZf0eQwaSeNGtDie41SS5Ip2nZMbxpdRtYmaoSMmXeaQwn6U3dcTkQnoZPuIab1cD4TeKigXebwzkUhpyrKjbH3INojpSMdslmDHdpWkA+rhhWGFLEg5oRlT/cn/cjlhh6Ltd9GQyO5JqW9cx2s0bn8w8eYbMorrBACQAAAABJRU5ErkJggg==" alt="back-to-top-img">
+      </a>
 
-    
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      let counter = document.getElementById("counter");
-      let countValue = parseInt(counter.textContent);
-      const minusBtn = document.querySelector(".minusBtn");
+      
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          let counter = document.getElementById("counter");
+          let countValue = parseInt(counter.textContent);
+          const minusBtn = document.querySelector(".minusBtn");
 
-      // 更新減數按鈕顏色
-      function updateMinusBtnState() {
-        if (countValue <= 1) {
-          minusBtn.classList.remove('minus-active'); // 當數字 <= 1，按鈕為 #7E7E7E 且無 hover 效果
-          minusBtn.style.backgroundColor = "#7E7E7E"; 
-        } else {
-          minusBtn.classList.add('minus-active'); // 當數字 > 1，按鈕為 #AD4214，並啟用 hover 效果
-          minusBtn.style.backgroundColor = "#AD4214";
-        }
-      }
+          // 更新減數按鈕顏色
+          function updateMinusBtnState() {
+            if (countValue <= 1) {
+              minusBtn.classList.remove('minus-active'); // 當數字 <= 1，按鈕為 #7E7E7E 且無 hover 效果
+              minusBtn.style.backgroundColor = "#7E7E7E";
+            } else {
+              minusBtn.classList.add('minus-active'); // 當數字 > 1，按鈕為 #AD4214，並啟用 hover 效果
+              minusBtn.style.backgroundColor = "#AD4214";
+            }
+          }
 
-      // 初始化按鈕顏色
-      updateMinusBtnState();
+          // 初始化按鈕顏色
+          updateMinusBtnState();
 
-      // 減數按鈕功能
-      minusBtn.addEventListener("click", function () {
-        if (countValue > 1) {  // 保持數字不會小於 1
-          countValue--;
-          counter.textContent = countValue;
-          updateMinusBtnState();  // 更新按鈕顏色和狀態
-        }
-      });
+          // 減數按鈕功能
+          minusBtn.addEventListener("click", function () {
+            if (countValue > 1) {  // 保持數字不會小於 1
+              countValue--;
+              counter.textContent = countValue;
+              updateMinusBtnState();  // 更新按鈕顏色和狀態
+            }
+          });
 
-      // 加數按鈕功能
-      document.querySelector(".plusBtn").addEventListener("click", function () {
-        countValue++;
-        counter.textContent = countValue;
-        updateMinusBtnState();  // 更新按鈕顏色和狀態
-      });
-    });
-    </script>
-  <script>
-    const cards = [
-        {
+          // 加數按鈕功能
+          document.querySelector(".plusBtn").addEventListener("click", function () {
+            countValue++;
+            counter.textContent = countValue;
+            updateMinusBtnState();  // 更新按鈕顏色和狀態
+          });
+        });
+      </script>
+      <script>
+        /* 回到最上面按鈕 摳C大的 */
+        window.onscroll = function () {
+
+          let button = document.getElementById('btt');
+
+          if (window.scrollY > 700) {
+            button.classList.add('scrolled');
+          } else {
+            button.classList.remove('scrolled');
+          }
+        };
+      </script>
+      <script>
+        const cards = [
+          {
             img: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             text: "非常方便！只要動動手指，就能在家享受到新鮮的食材。",
-        },
-        {
+          },
+          {
             img: "https://images.pexels.com/photos/1181424/pexels-photo-1181424.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             text: "省了我很多時間，不用再花時間去超市，簡直是生活救星！",
-        },
-        {
+          },
+          {
             img: "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             text: "有很多選擇，無論是肉類還是素食，都能找到適合的料理。",
-        },
-        {
+          },
+          {
             img: "https://images.pexels.com/photos/556068/pexels-photo-556068.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             text: "省了我很多時間，不用再花時間去超市，簡直是生活救星！",
-        },
-        {
+          },
+          {
             img: "https://images.pexels.com/photos/1752126/pexels-photo-1752126.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             text: "價格公道，對於這樣的便利和食材品質，真的很值！",
-        },
-        {
+          },
+          {
             img: "https://images.pexels.com/photos/1468379/pexels-photo-1468379.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             text: "食材非常新鮮，烹飪後口感很好，家人都很喜歡。",
+          }
+        ];
+
+        let currentIndex = 0;
+
+        function showNextCards() {
+          currentIndex = (currentIndex + 1) % cards.length; // 從下一張開始
+          updateCarousel();
         }
-    ];
 
-    let currentIndex = 0;
+        function showPrevCards() {
+          currentIndex = (currentIndex - 1 + cards.length) % cards.length; // 從上一張開始
+          updateCarousel();
+        }
 
-document.querySelector('.carousel-control-next').addEventListener('click', () => {
-    showNextCards();
-});
+        function updateCarousel() {
+          const carouselContent = document.getElementById('carouselContent');
+          const screenWidth = window.innerWidth;
+          let cardsToShow = 3; // 預設電腦版顯示 3 張
 
-document.querySelector('.carousel-control-prev').addEventListener('click', () => {
-    showPrevCards();
-});
+          // 如果螢幕寬度小於等於 768px，顯示 1 張卡片
+          if (screenWidth <= 768) {
+            cardsToShow = 1;
+          }
 
-function showNextCards() {
-    currentIndex = (currentIndex + 1) % cards.length; // 從下一張開始
-    updateCarousel();
-}
-
-function showPrevCards() {
-    currentIndex = (currentIndex - 1 + cards.length) % cards.length; // 從上一張開始
-    updateCarousel();
-}
-
-function updateCarousel() {
-    const carouselContent = document.getElementById('carouselContent');
-    carouselContent.innerHTML = '';
-    for (let i = 0; i < 3; i++) {
-        const cardIndex = (currentIndex + i) % cards.length; // 確保卡片的索引依照組合循環
-        const card = `
+          // 根據卡片數量設定顯示邏輯
+          carouselContent.innerHTML = '';
+          for (let i = 0; i < cardsToShow; i++) {
+            // 循環顯示卡片，確保順序根據要求循環
+            const cardIndex = (currentIndex + i) % cards.length;
+            const card = `
             <div class="card">
                 <img src="${cards[cardIndex].img}" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -480,30 +569,32 @@ function updateCarousel() {
                 </div>
             </div>
         `;
-        carouselContent.innerHTML += card;
-    }
-}
-
-// 初始化顯示前三張卡片
-updateCarousel();
-  </script>
-  <script>
-    window.onscroll = function() {
-
-      let button = document.getElementById('btt');
-
-      if (window.scrollY > 700) {
-        button.classList.add('scrolled');
-        } else {
-          button.classList.remove('scrolled');
+            carouselContent.innerHTML += card;
+          }
         }
-      };
-  </script>
-  </body>
+
+        // 初始化顯示前三張卡片
+        updateCarousel();
+
+        // 每 5 秒自動輪播下一張卡片
+        setInterval(showNextCards, 5000);
+
+        // 手動點擊下一張和上一張卡片的控制
+        document.querySelector('.carousel-control-next').addEventListener('click', () => {
+          showNextCards();
+        });
+
+        document.querySelector('.carousel-control-prev').addEventListener('click', () => {
+          showPrevCards();
+        });
+      </script>
+
+</body>
 <!--
 首頁      index.html
 商品總攬	productAll.html
 商品細節	productList.html
 購物車		shoppingcart.html
 懶人特色	feature.html -->
+
 </html>
