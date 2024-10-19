@@ -212,3 +212,36 @@ h1 {
     transform: translateY(0);
   }
 }
+
+.navbar {
+  // qoq 自定義
+  // a 連結 hover 左到右線條效果
+  li:nth-child(-n + 2) a {
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #fff;
+      transition: width 0.3s ease-out;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+  // a 連結 hover 購物車 icon 效果
+  li:nth-child(3) a {
+    display: inline-block;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* 使用弹性过渡 */
+
+    &:hover {
+      transform: rotate(20deg) scale(1.2); /* 旋转 20 度并放大 1.2 倍 */
+    }
+  }
+}
