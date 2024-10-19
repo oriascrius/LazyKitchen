@@ -5,26 +5,36 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="../assets/images/qoq-imgs/FaviconIcon.ico" type="image/x-icon" />
   <title>懶人特色</title>
+  <!-- 引入 AOS 的 CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 </head>
 
 <body>
   <%- include('./layout/header'); -%>
+    <!-- loading -->
+    <div id="loading-overlay" class="loading-overlay">
+      <img src="../assets/images/qoq-imgs/FaviconIcon.ico" alt="Logo" class="logo-loading">
+    </div>
     <!-- 回到上方按鈕 -->
     <div class="backTotop">
       <img src="../assets/images/qoq-imgs/backTotop.png" alt="返回上方按鈕">
     </div>
-    <main>
+    <main class="overflow-ridden">
       <!-- banner -->
       <section class="container-fluid feature-banner">
-        <img src="../assets/images/qoq-imgs/indexBanner.png" alt="indexBanner">
-        <h2 class="position-relative"><span>懶人必備!</span>下單即送到府</h2>
+        <img src="../assets/images/qoq-imgs/indexBanner.png" alt="indexBanner" data-aos="fade-left"
+          data-aos-duration="600">
+        <h2 class="position-relative feature-banner-title">
+          <span>懶人必備!</span> 下單即送到府
+        </h2>
         <ul class="featureBtn list-unstyled text-center position-relative">
           <li>
-            <a href="./productAll.html" class="custom-fs4">懶人指引</a>
+            <a href="./productOverview.html" class="custom-fs4">懶人指引</a>
           </li>
           <li>
-            <a href="./productAll.html" class="custom-fs4">前往商品</a>
+            <a href="./productOverview.html" class="custom-fs4">前往商品</a>
           </li>
         </ul>
       </section>
@@ -32,19 +42,19 @@
       <section class="featureIntroduce">
         <div class="container">
           <ul class="row featureIntroduce-list list-unstyled">
-            <li class="col-6 col-lg-12">
+            <li class="col-6 col-lg-12" data-aos="fade-left" data-aos-duration="600">
               <p class="custom-fs2">1. 平日繁忙，沒時間料理?</p>
               <img src="../assets/images/qoq-imgs/featureIntroduce_1.png" alt="平日繁忙，沒時間料理?">
             </li>
-            <li class="col-6 col-lg-12">
+            <li class="col-6 col-lg-12" data-aos="fade-right" data-aos-duration="600">
               <p class="custom-fs2">2. 稍稍下單，選擇你喜愛的餐點</p>
               <img src="../assets/images/qoq-imgs/featureIntroduce_2.png" alt="稍稍下單，選擇你喜愛的餐點">
             </li>
-            <li class="col-6 col-lg-12">
+            <li class="col-6 col-lg-12" data-aos="fade-left" data-aos-duration="600">
               <p class="custom-fs2">3. 新鮮食材沒煩惱，無壓享受</p>
               <img src="../assets/images/qoq-imgs/featureIntroduce_3.png" alt="新鮮食材沒煩惱，無壓享受">
             </li>
-            <li class="col-6 col-lg-12">
+            <li class="col-6 col-lg-12" data-aos="fade-right" data-aos-duration="600">
               <p class="custom-fs2">4. 立即享受健康美味，輕鬆自在!</p>
               <img src="../assets/images/qoq-imgs/featureIntroduce_4.png" alt="立即享受健康美味，輕鬆自在!">
             </li>
@@ -58,7 +68,7 @@
             <div class="col col-md-8">
               <h2 class="text-center">Q & A</h2>
               <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
+                <div class="accordion-item" data-aos="fade-down" data-aos-duration="600">
                   <h2 class="accordion-header m-0 p-0" id="headingOne">
                     <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse"
                       data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -72,7 +82,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item">
+                <div class="accordion-item" data-aos="fade-down" data-aos-duration="600">
                   <h2 class="accordion-header m-0 p-0" id="headingTwo">
                     <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
                       data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -86,7 +96,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item">
+                <div class="accordion-item" data-aos="fade-down" data-aos-duration="600">
                   <h2 class="accordion-header m-0 p-0" id="headingThree">
                     <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
                       data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -100,7 +110,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item">
+                <div class="accordion-item" data-aos="fade-down" data-aos-duration="600">
                   <h2 class="accordion-header m-0 p-0" id="headingFour">
                     <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
                       data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
@@ -114,7 +124,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item">
+                <div class="accordion-item" data-aos="fade-down" data-aos-duration="600">
                   <h2 class="accordion-header m-0 p-0" id="headingFire">
                     <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
                       data-bs-target="#collapseFire" aria-expanded="false" aria-controls="collapseFire">
@@ -139,7 +149,48 @@
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <!-- 引入 jQuery Validation Plugin -->
       <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+      <!-- 引入 AOS 的 JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
       <script type="module" src="../qoq-main.js"></script>
+      <script>
+        // 回到上方按鈕判斷
+        $(document).ready(function () {
+          const $backToTop = $(".backTotop");
+
+          $(window).scroll(function () {
+            const windowScrollTop = $(this).scrollTop(); // 取得当前滚动高度
+            const documentHeight = $(document).height(); // 取得文件总高度
+            const windowHeight = $(this).height(); // 取得窗口高度
+
+            // 判断是否需要显示按钮
+            if (windowScrollTop > documentHeight / 2 - windowHeight / 2) {
+              if (!$backToTop.hasClass("show")) {
+                $backToTop.addClass("show");
+              }
+
+              // 根据窗口宽度设置 right 值
+              const rightValue = $(this).width() >= 992 ? "40px" : "24px";
+              $backToTop.css({ right: rightValue, top: "40px" }); // 固定 top 为 40px
+            } else {
+              if ($backToTop.hasClass("show")) {
+                $backToTop.removeClass("show");
+              }
+            }
+          });
+
+          $backToTop.click(function () {
+            $("html, body").animate({ scrollTop: 0 }, 100);
+          });
+        });
+      </script>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          setTimeout(() => {
+            const loadingOverlay = document.getElementById("loading-overlay");
+            loadingOverlay.style.display = "none";
+          }, 1000);
+        });
+      </script>
 </body>
 
 </html>

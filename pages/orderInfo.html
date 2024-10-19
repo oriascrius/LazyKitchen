@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="../assets/images/qoq-imgs/FaviconIcon.ico" type="image/x-icon" />
   <title>訂購資訊</title>
 </head>
 
@@ -94,9 +95,11 @@
       <script type="module" src="../qoq-main.js"></script>
       <script>
         $(document).ready(function () {
-          // jquery 驗證
+          // jQuery 验证
           $.validator.addMethod("phonePattern", function (value, element) {
-            return this.optional(element) || /^09\d{2}-\d{3}-\d{3}$/.test(value);
+            // /^09\d{2}-\d{3}-\d{3}$/ 這個判斷內容是輸入 09xx-xxx-xxx
+            // /^09\d{8}$/ 這個判斷內容 則是 09xxxxxxxx 
+            return this.optional(element) || /^09\d{8}$/.test(value);
           }, "請輸入有效的電話號碼，格式為 0912-123-123。");
 
           $('#orderForm').validate({
@@ -117,6 +120,9 @@
               },
               payment: {
                 required: true
+              },
+              note: {
+                required: true
               }
             },
             messages: {
@@ -130,7 +136,8 @@
                 email: "請輸入有效的電子信箱。"
               },
               address: "請輸入收件地址。",
-              payment: "請選擇付款方式。"
+              payment: "請選擇付款方式。",
+              note: "請輸入備註。"
             },
             errorElement: 'div',
             errorPlacement: function (error, element) {
@@ -144,7 +151,20 @@
               $(element).addClass('is-valid').removeClass('is-invalid');
             }
           });
+
+          // 按下 "前往付款" 按鈕時驗證表單
+          $('a[href="./paymentConfirmation.html"]').on('click', function (event) {
+            if ($('#orderForm').valid()) {
+              // 如果表單有效，允許跳轉
+              window.location.href = './paymentConfirmation.html';
+            } else {
+              // 如果表單無效，阻止默認跳轉
+              event.preventDefault();
+            }
+          });
         });
+
+
       </script>
 </body>
 

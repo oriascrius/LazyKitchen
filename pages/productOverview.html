@@ -5,22 +5,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../assets/images/qoq-imgs/FaviconIcon.ico" type="image/x-icon" />
     <title>商品列表</title>
     <!-- swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- sweetalert2 -->
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet" />
+    <!-- 引入 AOS 的 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 </head>
 
 <body>
     <%- include('./layout/header'); -%>
+        <!-- loading -->
+        <div id="loading-overlay" class="loading-overlay">
+            <img src="../assets/images/qoq-imgs/FaviconIcon.ico" alt="Logo" class="logo-loading">
+        </div>
         <!-- 回到上方按鈕 -->
         <div class="backTotop">
             <img src="../assets/images/qoq-imgs/backTotop.png" alt="返回上方按鈕">
         </div>
         <main>
             <!-- banner -->
-            <section class="container-fluid p-0">
+            <section class="container-fluid p-0" data-aos="fade-left" data-aos-duration="600">
                 <picture>
                     <source media="(max-width: 576px)" srcset="../assets/images/qoq-imgs/productOverview-sm.png">
                     <!-- 默認圖片 -->
@@ -181,11 +188,11 @@
                         <div class="col-6 col-lg-3">
                             <a href="./productList.html">
                                 <div class="card position-relative">
-                                    <img src="../assets/images/qoq-imgs/img_chickenNuggets.png"
-                                        class="position-absolute" alt="冷凍雞塊">
+                                    <img src="../assets/images/productList/mainProduct.png" alt="春川炒雞"
+                                        class="position-absolute">
                                     <div class="card-body d-flex">
                                         <div>
-                                            <p class="card-title">冷凍雞塊</p>
+                                            <p class="card-title">春川炒雞</p>
                                             <p class="text-primary">$168</p>
                                         </div>
                                         <button
@@ -325,105 +332,105 @@
                     <div class="tab-content" id="myTabContent">
                         <!-- 豬肉 -->
                         <div class="tab-pane fade show active" id="pork" role="tabpanel">
-                            <div class="row">
-                                <div class="swiper mySwiper">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <a href="./productList.html">
-                                                <div class="card position-relative">
-                                                    <img src="../assets/images/qoq-imgs/img_sweetSourPork.png"
-                                                        class="position-absolute" alt="糖醋肌肉">
-                                                    <div class="card-body d-flex">
-                                                        <div>
-                                                            <p class="card-title">糖醋肌肉</p>
-                                                            <p class="text-primary">$168</p>
-                                                        </div>
-                                                        <button
-                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess">
-                                                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
-                                                                xmlns="http://www.w3.org/2000/svg">
-                                                                <g clip-path="url(#clip0_893_540)">
-                                                                    <path
-                                                                        d="M18.1418 15.1666C19.0168 15.1666 19.7867 14.6883 20.1834 13.965L24.3601 6.39331C24.7917 5.62331 24.2318 4.66665 23.3451 4.66665H6.07841L5.61194 3.67414C5.2273 2.85577 4.40446 2.33331 3.50021 2.33331H2.33341C1.68908 2.33331 1.16675 2.85565 1.16675 3.49998C1.16675 4.14431 1.68908 4.66665 2.33341 4.66665H3.50008L7.70008 13.5216L6.12508 16.3683C5.27342 17.9316 6.39341 19.8333 8.16675 19.8333H21.0001C21.6444 19.8333 22.1667 19.311 22.1667 18.6666C22.1667 18.0223 21.6444 17.5 21.0001 17.5H8.16675L9.45008 15.1666H18.1418ZM7.18675 6.99998H21.3617L18.1418 12.8333H9.95175L7.18675 6.99998ZM8.16675 21C6.88342 21 5.84508 22.05 5.84508 23.3333C5.84508 24.6166 6.88342 25.6666 8.16675 25.6666C9.45008 25.6666 10.5001 24.6166 10.5001 23.3333C10.5001 22.05 9.45008 21 8.16675 21ZM19.8334 21C18.5501 21 17.5117 22.05 17.5117 23.3333C17.5117 24.6166 18.5501 25.6666 19.8334 25.6666C21.1167 25.6666 22.1667 24.6166 22.1667 23.3333C22.1667 22.05 21.1167 21 19.8334 21Z"
-                                                                        fill="#FFFDFA" />
-                                                                </g>
-                                                                <defs>
-                                                                    <clipPath id="clip0_893_540">
-                                                                        <rect width="28" height="28" fill="white" />
-                                                                    </clipPath>
-                                                                </defs>
-                                                            </svg>
-                                                        </button>
+                            <!-- <div class="row"> -->
+                            <div class="swiper mySwiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <a href="./productList.html">
+                                            <div class="card position-relative">
+                                                <img src="../assets/images/qoq-imgs/img_sweetSourPork.png"
+                                                    class="position-absolute" alt="糖醋肌肉">
+                                                <div class="card-body d-flex">
+                                                    <div>
+                                                        <p class="card-title">糖醋肌肉</p>
+                                                        <p class="text-primary">$168</p>
                                                     </div>
+                                                    <button
+                                                        class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess">
+                                                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <g clip-path="url(#clip0_893_540)">
+                                                                <path
+                                                                    d="M18.1418 15.1666C19.0168 15.1666 19.7867 14.6883 20.1834 13.965L24.3601 6.39331C24.7917 5.62331 24.2318 4.66665 23.3451 4.66665H6.07841L5.61194 3.67414C5.2273 2.85577 4.40446 2.33331 3.50021 2.33331H2.33341C1.68908 2.33331 1.16675 2.85565 1.16675 3.49998C1.16675 4.14431 1.68908 4.66665 2.33341 4.66665H3.50008L7.70008 13.5216L6.12508 16.3683C5.27342 17.9316 6.39341 19.8333 8.16675 19.8333H21.0001C21.6444 19.8333 22.1667 19.311 22.1667 18.6666C22.1667 18.0223 21.6444 17.5 21.0001 17.5H8.16675L9.45008 15.1666H18.1418ZM7.18675 6.99998H21.3617L18.1418 12.8333H9.95175L7.18675 6.99998ZM8.16675 21C6.88342 21 5.84508 22.05 5.84508 23.3333C5.84508 24.6166 6.88342 25.6666 8.16675 25.6666C9.45008 25.6666 10.5001 24.6166 10.5001 23.3333C10.5001 22.05 9.45008 21 8.16675 21ZM19.8334 21C18.5501 21 17.5117 22.05 17.5117 23.3333C17.5117 24.6166 18.5501 25.6666 19.8334 25.6666C21.1167 25.6666 22.1667 24.6166 22.1667 23.3333C22.1667 22.05 21.1167 21 19.8334 21Z"
+                                                                    fill="#FFFDFA" />
+                                                            </g>
+                                                            <defs>
+                                                                <clipPath id="clip0_893_540">
+                                                                    <rect width="28" height="28" fill="white" />
+                                                                </clipPath>
+                                                            </defs>
+                                                        </svg>
+                                                    </button>
                                                 </div>
-                                            </a>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <a href="./productList.html">
-                                                <div class="card position-relative">
-                                                    <img src="../assets/images/qoq-imgs/img-honeyGlazedPork.png"
-                                                        class="position-absolute" alt="蜜汁豬肉">
-                                                    <div class="card-body d-flex">
-                                                        <div>
-                                                            <p class="card-title">蜜汁豬肉</p>
-                                                            <p class="text-primary">$168</p>
-                                                        </div>
-                                                        <button
-                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
-                                                                width="28" height="28" viewBox="0 0 28 28" fill="none"
-                                                                xmlns="http://www.w3.org/2000/svg">
-                                                                <g clip-path="url(#clip0_893_540)">
-                                                                    <path
-                                                                        d="M18.1418 15.1666C19.0168 15.1666 19.7867 14.6883 20.1834 13.965L24.3601 6.39331C24.7917 5.62331 24.2318 4.66665 23.3451 4.66665H6.07841L5.61194 3.67414C5.2273 2.85577 4.40446 2.33331 3.50021 2.33331H2.33341C1.68908 2.33331 1.16675 2.85565 1.16675 3.49998C1.16675 4.14431 1.68908 4.66665 2.33341 4.66665H3.50008L7.70008 13.5216L6.12508 16.3683C5.27342 17.9316 6.39341 19.8333 8.16675 19.8333H21.0001C21.6444 19.8333 22.1667 19.311 22.1667 18.6666C22.1667 18.0223 21.6444 17.5 21.0001 17.5H8.16675L9.45008 15.1666H18.1418ZM7.18675 6.99998H21.3617L18.1418 12.8333H9.95175L7.18675 6.99998ZM8.16675 21C6.88342 21 5.84508 22.05 5.84508 23.3333C5.84508 24.6166 6.88342 25.6666 8.16675 25.6666C9.45008 25.6666 10.5001 24.6166 10.5001 23.3333C10.5001 22.05 9.45008 21 8.16675 21ZM19.8334 21C18.5501 21 17.5117 22.05 17.5117 23.3333C17.5117 24.6166 18.5501 25.6666 19.8334 25.6666C21.1167 25.6666 22.1667 24.6166 22.1667 23.3333C22.1667 22.05 21.1167 21 19.8334 21Z"
-                                                                        fill="#FFFDFA" />
-                                                                </g>
-                                                                <defs>
-                                                                    <clipPath id="clip0_893_540">
-                                                                        <rect width="28" height="28" fill="white" />
-                                                                    </clipPath>
-                                                                </defs>
-                                                            </svg>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <a href="./productList.html">
-                                                <div class="card position-relative">
-                                                    <img src="../assets/images/qoq-imgs/img_kimchiPork.png"
-                                                        class="position-absolute" alt="泡菜豬肉">
-                                                    <div class="card-body d-flex">
-                                                        <div>
-                                                            <p class="card-title">泡菜豬肉</p>
-                                                            <p class="text-primary">$168</p>
-                                                        </div>
-                                                        <button
-                                                            class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
-                                                                width="28" height="28" viewBox="0 0 28 28" fill="none"
-                                                                xmlns="http://www.w3.org/2000/svg">
-                                                                <g clip-path="url(#clip0_893_540)">
-                                                                    <path
-                                                                        d="M18.1418 15.1666C19.0168 15.1666 19.7867 14.6883 20.1834 13.965L24.3601 6.39331C24.7917 5.62331 24.2318 4.66665 23.3451 4.66665H6.07841L5.61194 3.67414C5.2273 2.85577 4.40446 2.33331 3.50021 2.33331H2.33341C1.68908 2.33331 1.16675 2.85565 1.16675 3.49998C1.16675 4.14431 1.68908 4.66665 2.33341 4.66665H3.50008L7.70008 13.5216L6.12508 16.3683C5.27342 17.9316 6.39341 19.8333 8.16675 19.8333H21.0001C21.6444 19.8333 22.1667 19.311 22.1667 18.6666C22.1667 18.0223 21.6444 17.5 21.0001 17.5H8.16675L9.45008 15.1666H18.1418ZM7.18675 6.99998H21.3617L18.1418 12.8333H9.95175L7.18675 6.99998ZM8.16675 21C6.88342 21 5.84508 22.05 5.84508 23.3333C5.84508 24.6166 6.88342 25.6666 8.16675 25.6666C9.45008 25.6666 10.5001 24.6166 10.5001 23.3333C10.5001 22.05 9.45008 21 8.16675 21ZM19.8334 21C18.5501 21 17.5117 22.05 17.5117 23.3333C17.5117 24.6166 18.5501 25.6666 19.8334 25.6666C21.1167 25.6666 22.1667 24.6166 22.1667 23.3333C22.1667 22.05 21.1167 21 19.8334 21Z"
-                                                                        fill="#FFFDFA" />
-                                                                </g>
-                                                                <defs>
-                                                                    <clipPath id="clip0_893_540">
-                                                                        <rect width="28" height="28" fill="white" />
-                                                                    </clipPath>
-                                                                </defs>
-                                                            </svg>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="d-none d-lg-block"></div>
-
+                                            </div>
+                                        </a>
                                     </div>
-                                    <div class="swiper-pagination"></div>
+                                    <div class="swiper-slide">
+                                        <a href="./productList.html">
+                                            <div class="card position-relative">
+                                                <img src="../assets/images/qoq-imgs/img-honeyGlazedPork.png"
+                                                    class="position-absolute" alt="蜜汁豬肉">
+                                                <div class="card-body d-flex">
+                                                    <div>
+                                                        <p class="card-title">蜜汁豬肉</p>
+                                                        <p class="text-primary">$168</p>
+                                                    </div>
+                                                    <button
+                                                        class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
+                                                            width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <g clip-path="url(#clip0_893_540)">
+                                                                <path
+                                                                    d="M18.1418 15.1666C19.0168 15.1666 19.7867 14.6883 20.1834 13.965L24.3601 6.39331C24.7917 5.62331 24.2318 4.66665 23.3451 4.66665H6.07841L5.61194 3.67414C5.2273 2.85577 4.40446 2.33331 3.50021 2.33331H2.33341C1.68908 2.33331 1.16675 2.85565 1.16675 3.49998C1.16675 4.14431 1.68908 4.66665 2.33341 4.66665H3.50008L7.70008 13.5216L6.12508 16.3683C5.27342 17.9316 6.39341 19.8333 8.16675 19.8333H21.0001C21.6444 19.8333 22.1667 19.311 22.1667 18.6666C22.1667 18.0223 21.6444 17.5 21.0001 17.5H8.16675L9.45008 15.1666H18.1418ZM7.18675 6.99998H21.3617L18.1418 12.8333H9.95175L7.18675 6.99998ZM8.16675 21C6.88342 21 5.84508 22.05 5.84508 23.3333C5.84508 24.6166 6.88342 25.6666 8.16675 25.6666C9.45008 25.6666 10.5001 24.6166 10.5001 23.3333C10.5001 22.05 9.45008 21 8.16675 21ZM19.8334 21C18.5501 21 17.5117 22.05 17.5117 23.3333C17.5117 24.6166 18.5501 25.6666 19.8334 25.6666C21.1167 25.6666 22.1667 24.6166 22.1667 23.3333C22.1667 22.05 21.1167 21 19.8334 21Z"
+                                                                    fill="#FFFDFA" />
+                                                            </g>
+                                                            <defs>
+                                                                <clipPath id="clip0_893_540">
+                                                                    <rect width="28" height="28" fill="white" />
+                                                                </clipPath>
+                                                            </defs>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="./productList.html">
+                                            <div class="card position-relative">
+                                                <img src="../assets/images/qoq-imgs/img_kimchiPork.png"
+                                                    class="position-absolute" alt="泡菜豬肉">
+                                                <div class="card-body d-flex">
+                                                    <div>
+                                                        <p class="card-title">泡菜豬肉</p>
+                                                        <p class="text-primary">$168</p>
+                                                    </div>
+                                                    <button
+                                                        class="btn btn-primary d-none d-md-block ms-auto mt-auto showSuccess"><svg
+                                                            width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <g clip-path="url(#clip0_893_540)">
+                                                                <path
+                                                                    d="M18.1418 15.1666C19.0168 15.1666 19.7867 14.6883 20.1834 13.965L24.3601 6.39331C24.7917 5.62331 24.2318 4.66665 23.3451 4.66665H6.07841L5.61194 3.67414C5.2273 2.85577 4.40446 2.33331 3.50021 2.33331H2.33341C1.68908 2.33331 1.16675 2.85565 1.16675 3.49998C1.16675 4.14431 1.68908 4.66665 2.33341 4.66665H3.50008L7.70008 13.5216L6.12508 16.3683C5.27342 17.9316 6.39341 19.8333 8.16675 19.8333H21.0001C21.6444 19.8333 22.1667 19.311 22.1667 18.6666C22.1667 18.0223 21.6444 17.5 21.0001 17.5H8.16675L9.45008 15.1666H18.1418ZM7.18675 6.99998H21.3617L18.1418 12.8333H9.95175L7.18675 6.99998ZM8.16675 21C6.88342 21 5.84508 22.05 5.84508 23.3333C5.84508 24.6166 6.88342 25.6666 8.16675 25.6666C9.45008 25.6666 10.5001 24.6166 10.5001 23.3333C10.5001 22.05 9.45008 21 8.16675 21ZM19.8334 21C18.5501 21 17.5117 22.05 17.5117 23.3333C17.5117 24.6166 18.5501 25.6666 19.8334 25.6666C21.1167 25.6666 22.1667 24.6166 22.1667 23.3333C22.1667 22.05 21.1167 21 19.8334 21Z"
+                                                                    fill="#FFFDFA" />
+                                                            </g>
+                                                            <defs>
+                                                                <clipPath id="clip0_893_540">
+                                                                    <rect width="28" height="28" fill="white" />
+                                                                </clipPath>
+                                                            </defs>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="d-none d-lg-block"></div>
+
                                 </div>
+                                <div class="swiper-pagination"></div>
                             </div>
+                            <!-- </div> -->
                         </div>
 
                         <!-- 牛肉 -->
@@ -1073,11 +1080,22 @@
             <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
             <!-- sweetalert2 -->
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+            <!-- 引入 AOS 的 JavaScript -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
             <script type="module" src="../qoq-main.js"></script>
-
+            <script>
+                // 頁面剛進入先回到頂部，因下方用來控制下拉選框跑到該分類的 JS 會讓連接到商品列表頁面跑到最下面，所以這邊先強制回到頂部
+                window.onload = function () {
+                    window.scrollTo(0, 0);
+                };
+            </script>
             <script>
                 const swiper = new Swiper('.mySwiper', {
+                    autoplay: {
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    },
                     loop: true,
                     slidesPerView: 2,
                     spaceBetween: 16,
@@ -1101,32 +1119,27 @@
                 });
             </script>
             <script>
-                // 處理下拉菜單項目的點擊事件
                 document.querySelectorAll('.dropdown-item').forEach(link => {
                     link.addEventListener('click', function (event) {
-                        // 阻止預設行為（跳轉）
                         event.preventDefault();
-                        // 獲取目標元素的ID
                         const targetId = this.getAttribute('href');
-
-                        // 啟用相應的標籤
                         const targetTab = document.querySelector(targetId + '-tab');
                         if (targetTab) {
-                            targetTab.click();  // 觸發標籤點擊事件
+                            targetTab.click();
                         }
 
-                        // 跳轉到目標位置，並向上滾動一些
                         const targetElement = document.querySelector(targetId);
                         if (targetElement) {
-                            // 計算滾動位置，向上偏移 100 像素
+                            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
                             const scrollOptions = {
-                                top: targetElement.offsetTop - 100, // 向上滾動 100 像素
+                                top: targetPosition - 100,
                                 behavior: 'smooth'
                             };
                             window.scrollTo(scrollOptions);
                         }
                     });
                 });
+
 
                 // 預設啟用第一個標籤
                 const firstDropdownItem = document.querySelector('.dropdown-item');
@@ -1161,6 +1174,14 @@
                         // 更新購物車圖標顯示的數量
                         cartCountElement.textContent = cartCount;
                     });
+                });
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    setTimeout(() => {
+                        const loadingOverlay = document.getElementById("loading-overlay");
+                        loadingOverlay.style.display = "none";
+                    }, 1000);
                 });
             </script>
 </body>

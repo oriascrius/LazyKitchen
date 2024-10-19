@@ -113,7 +113,6 @@
   .swiper-slide {
     a {
       transition: transform 0.3s ease;
-
       &:hover {
         // 浮起 + 陰影
         transform: translateY(-2px) translateX(-2px);
@@ -121,6 +120,10 @@
         // 原本卡片浮起效果
         // transform: translateY(-6px);
       }
+      &:hover .card-title {
+        color: #ad4214;
+      }
+  
     }
   }
 

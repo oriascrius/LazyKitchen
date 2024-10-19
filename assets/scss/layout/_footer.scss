@@ -1,10 +1,11 @@
-// 通用設定
+// 通用設定 暫放在 footer
 // $link-decoration: underline !default;
 a {
   text-decoration: none;
   color: inherit;
   display: block;
 }
+
 ul,
 p {
   margin: 0;
@@ -18,6 +19,7 @@ p {
   letter-spacing: 0.15em;
   line-height: 1.2;
 }
+
 .custom-fs2 {
   font-weight: bold;
   font-size: 36px;
@@ -25,6 +27,7 @@ p {
   letter-spacing: 0.02em;
   line-height: 1.2;
 }
+
 .custom-fs3 {
   font-weight: bold;
   font-size: 24px;
@@ -32,6 +35,7 @@ p {
   letter-spacing: 0.02em;
   line-height: 1.2;
 }
+
 .custom-fs4 {
   font-weight: bold;
   font-size: 20px;
@@ -39,6 +43,7 @@ p {
   letter-spacing: 0.02em;
   line-height: 1.2;
 }
+
 .custom-fsSmall {
   font-weight: medium;
   font-size: 12px;
@@ -46,6 +51,7 @@ p {
   letter-spacing: 0.02em;
   line-height: 1.5;
 }
+
 .custom-fsBody {
   font-weight: medium;
   font-size: 16px;
@@ -53,67 +59,182 @@ p {
   letter-spacing: 0.02em;
   line-height: 1.5;
 }
+
+.mb-28 {
+  margin-bottom: 28px;
+}
 // footer
 .footer-bg {
   background-color: #ad4214;
   padding: 60px 0;
 }
+
 .footerWrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-.footerIcon {
-  display: flex;
-  gap: 20px;
-  padding-bottom: 28px;
-  li {
-    transition: filter 0.3s ease, transform 0.3s ease;
-    &:hover {
-      // 浮起 + 陰影
-      transform: translateY(-2px) translateX(-2px);
-      filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
-      // svg 變白色
-      // svg rect {
-      //   fill: #fafcfe;
-      // }
+  padding-right: 20px;
+  h2 {
+    svg {
+      max-width: 60px;
+      height: 40px;
+    }
+  }
+
+  // Logo hover 彈跳效果
+  .wavy-text {
+    color: #fff;
+    display: inline-block;
+  }
+
+  .wavy-text span {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    /* 平滑轉換 */
+  }
+
+  .wavy-text:hover span {
+    animation: wave 0.5s forwards;
+    /* 使用波浪動畫 */
+  }
+
+  .wavy-text:hover span:nth-child(1) {
+    animation-delay: 0s;
+    /* 第一個字母立即跳動 */
+  }
+
+  .wavy-text:hover span:nth-child(2) {
+    animation-delay: 0.1s;
+    /* 第二個字母延遲 0.1 秒跳動 */
+  }
+
+  .wavy-text:hover span:nth-child(3) {
+    animation-delay: 0.2s;
+    /* 第三個字母延遲 0.2 秒跳動 */
+  }
+
+  .wavy-text:hover span:nth-child(4) {
+    animation-delay: 0.3s;
+    /* 第四個字母延遲 0.3 秒跳動 */
+  }
+  .wavy-text:hover span:nth-child(5) {
+    animation-delay: 0.4s;
+    /* 第五個字母延遲 0.4 秒跳動 */
+  }
+
+  @keyframes wave {
+    0% {
+      transform: translateY(0);
+    }
+
+    20% {
+      transform: translateY(-20px);
+      /* 向上移動 */
+    }
+
+    40% {
+      transform: translateY(-15px);
+    }
+
+    60% {
+      transform: translateY(-10px);
+    }
+
+    80% {
+      transform: translateY(-5px);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .footerIcon {
+    gap: 20px;
+    // padding-bottom: 28px;
+
+    li {
+      transition: filter 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+        // 浮起 + 陰影
+        transform: translateY(-2px) translateX(-2px);
+        filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+        // svg 變白色
+        // svg rect {
+        //   fill: #fafcfe;
+        // }
+      }
+    }
+    @media (max-width: 992px) {
+      padding-bottom: 0;
+    }
+  }
+
+  .footerLink {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+
+    li {
+      text-align: center;
+      padding: 12px 0;
+      background-color: #fff3e5;
+      cursor: pointer;
+      transition: filter 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+        // 浮起 + 陰影
+        transform: translateY(-2px) translateX(-2px);
+        filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+        // background-color: #fafcfe;
+      }
+    }
+
+    a {
+      color: #ad4214;
+    }
+  }
+
+  .footerText {
+    address {
+      margin-bottom: 28px;
+    }
+
+    // a 連結 hover 左到右線條效果
+    a {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 5px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #fff;
+        transition: width 0.3s ease-out;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
     }
   }
 }
-.footerLink {
-  display: flex;
-  gap: 16px;
-  flex-direction: column;
-  li {
-    text-align: center;
-    padding: 12px 0;
-    background-color: #fff3e5;
-    cursor: pointer;
-    transition: filter 0.3s ease, transform 0.3s ease;
-    &:hover {
-      // 浮起 + 陰影
-      transform: translateY(-2px) translateX(-2px);
-      filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
-      // background-color: #fafcfe;
-    }
-  }
-  a {
-    color: #ad4214;
-  }
-}
-.footerText {
-  address {
-    margin-bottom: 28px;
-  }
-}
+
 @media (max-width: 992px) {
   .footer-bg {
-    padding: 40px 16px;
+    padding: 40px 0;
   }
+
   .footerWrapper {
     flex-direction: column;
-    gap: 28px;
+    // gap: 28px;
   }
+
   .footerIcon {
     padding-bottom: 0;
   }

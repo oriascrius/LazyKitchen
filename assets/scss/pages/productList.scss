@@ -12,6 +12,31 @@ body{
     }
   }
   
+  .btt-btn {/* 回到最上面按鈕 摳C大的 */
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    z-index: 4;
+    opacity: 0;
+    transition: opacity   0.5s ease, 
+                transform 0.5s ease,
+                filter    0.5s ease;
+  }
+  .scrolled {/* 摳C大的  */
+    opacity: 1;
+    transform: translateY(-5px) translateX(-5px);
+    filter: drop-shadow(4px 4px 4px rgb(0, 0, 0, 0.5));
+  }
+  @media (max-width: 768px) {
+    .btt-btn{
+    width: 30px;
+    height: 30px;
+    right: 10px;
+    }
+      }
   .bannerImg {/* banner摳泊岸的 */
     background-image: url("../../images/qoq-imgs/cart-banner-lg.png");
     background-repeat: no-repeat;
@@ -165,6 +190,9 @@ body{
   }
   .blackColor{
     color: #000;
+  }
+  .mb-10{
+    margin-bottom: 40px;
   }
   .mb-25{
     margin-bottom: 100px;
