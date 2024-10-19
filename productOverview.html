@@ -1345,10 +1345,35 @@
 
             
             <script>
-                // 頁面剛進入先回到頂部，因下方用來控制下拉選框跑到該分類的 JS 會讓連接到商品列表頁面跑到最下面，所以這邊先強制回到頂部
-                window.onload = function () {
-                    window.scrollTo(0, 0);
-                };
+                // 回到上方按鈕判斷
+                $(document).ready(function () {
+                    const $backToTop = $(".backTotop");
+
+                    $(window).scroll(function () {
+                        const windowScrollTop = $(this).scrollTop(); // 取得当前滚动高度
+                        const documentHeight = $(document).height(); // 取得文件总高度
+                        const windowHeight = $(this).height(); // 取得窗口高度
+
+                        // 判断是否需要显示按钮
+                        if (windowScrollTop > documentHeight / 2 - windowHeight / 2) {
+                            if (!$backToTop.hasClass("show")) {
+                                $backToTop.addClass("show");
+                            }
+
+                            // 根据窗口宽度设置 right 值
+                            const rightValue = $(this).width() >= 992 ? "40px" : "24px";
+                            $backToTop.css({ right: rightValue, top: "40px" }); // 固定 top 为 40px
+                        } else {
+                            if ($backToTop.hasClass("show")) {
+                                $backToTop.removeClass("show");
+                            }
+                        }
+                    });
+
+                    $backToTop.click(function () {
+                        $("html, body").animate({ scrollTop: 0 }, 100);
+                    });
+                });
             </script>
             <script>
                 const swiper = new Swiper('.mySwiper', {
@@ -1379,34 +1404,31 @@
                 });
             </script>
             <script>
-                document.querySelectorAll('.dropdown-item').forEach(link => {
-                    link.addEventListener('click', function (event) {
-                        event.preventDefault();
-                        const targetId = this.getAttribute('href');
-                        const targetTab = document.querySelector(targetId + '-tab');
-                        if (targetTab) {
-                            targetTab.click();
-                        }
+                document.addEventListener('DOMContentLoaded', function () {
+                    document.querySelectorAll('.dropdown-item').forEach(link => {
+                        link.addEventListener('click', function (event) {
+                            event.preventDefault();
+                            const targetId = this.getAttribute('href');
+                            const targetTab = document.querySelector(targetId + '-tab');
+                            if (targetTab) {
+                                targetTab.click();
+                            }
 
-                        const targetElement = document.querySelector(targetId);
-                        if (targetElement) {
-                            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                            const scrollOptions = {
-                                top: targetPosition - 100,
-                                behavior: 'smooth'
-                            };
-                            window.scrollTo(scrollOptions);
-                        }
+                            const targetElement = document.querySelector(targetId);
+                            if (targetElement) {
+                                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                                const scrollOptions = {
+                                    top: targetPosition - 100,
+                                    behavior: 'smooth'
+                                };
+                                window.scrollTo(scrollOptions);
+                            }
+                        });
                     });
+
                 });
-
-
-                // 預設啟用第一個標籤
-                const firstDropdownItem = document.querySelector('.dropdown-item');
-                if (firstDropdownItem) {
-                    firstDropdownItem.click();
-                }
             </script>
+
             <script>
                 // 購物車內商品數量的變量
                 let cartCount = 0;

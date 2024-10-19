@@ -5,111 +5,13 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="/LazyKitchen/assets/FaviconIcon-ee563fd9.ico" type="image/x-icon" />
   <title>商品細節</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css"
     rel="stylesheet">
   <link rel="icon" href="/LazyKitchen/assets/FaviconIcon-ee563fd9.ico" type="image/x-icon">
-  <style>
-    .card .card-img-top {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin: 0 auto;
-      display: block;
-    }
-
-    .bi-star-fill {
-      color: #AD4214;
-      font-weight: bold;
-    }
-
-    .carousel-controls {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-      z-index: 10;
-      /* 確保按鈕在最上層 */
-    }
-
-    .carousel-controls .carousel-control-prev,
-    .carousel-controls .carousel-control-next {
-      width: 40px;
-      height: 40px;
-      background-color: #FFF7EB;
-      border-radius: 50%;
-      color: #AD4214;
-      opacity: 1;
-      border: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      transition: background-color 0.3s, color 0.3s;
-      position: relative;
-      /* 確保它們在自己的層次上 */
-      z-index: 5;
-      /* 使按鈕層級高於其他元素 */
-      font-size: 24px;
-      /* 字體大小 */
-    }
-
-    .carousel-controls .carousel-control-prev:hover,
-    .carousel-controls .carousel-control-next:hover {
-      background-color: #AD4214;
-      color: #FFF7EB;
-    }
-
-    /* 卡片容器調整 */
-    #carouselContent {
-      display: flex;
-      justify-content: center;
-      /* 讓卡片居中 */
-    }
-
-    .carousel-item {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      /* 確保旋轉木馬項目寬度為 100% */
-    }
-
-    .card {
-      flex: 0 0 27%;
-      /* 電腦版：每張卡片佔據 27% 的寬度 */
-      margin: 0 1%;
-      /* 卡片之間的距離 */
-    }
-
-    /* 手機版調整，每次顯示一張卡片，佔據滿版寬度 */
-    @media (max-width: 768px) {
-      .carousel-item {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        /* 確保carousel-item佔據全寬 */
-      }
-
-      .card {
-        flex: 0 0 80%;
-        /* 手機版：每次顯示一張卡片，佔據100%寬度 */
-        max-width: 100%;
-        /* 確保卡片最大寬度為100% */
-      }
-
-      .carousel-controls .carousel-control-prev,
-      .carousel-controls .carousel-control-next {
-        display: none;
-      }
-    }
-  </style>
   <script type="module" crossorigin src="/LazyKitchen/assets/bootstrap.min-c66f22d5.js"></script>
   <link rel="stylesheet" href="/LazyKitchen/assets/bootstrap-03a3afaf.css">
-  <link rel="stylesheet" href="/LazyKitchen/assets/productList-e15a5041.css">
+  <link rel="stylesheet" href="/LazyKitchen/assets/productList-fa381edf.css">
 </head>
 
 <body>
@@ -196,8 +98,7 @@
     const togglerIcon = this.querySelector('.navbar-toggler-icon');
     togglerIcon.classList.toggle('open'); // 切換 'open' 類別
   });
-</script>
-    <section class="bgTop">
+</script>    <section class="bgTop">
       <!-- banner -->
       <div class="bannerImg"></div>
 
@@ -250,7 +151,7 @@
           </div>
 
 
-          <div class="row">
+          <div class="row d-none d-lg-block">
             <div class="col contentBorder"></div>
           </div>
         </div>
