@@ -60,6 +60,9 @@ p {
   line-height: 1.5;
 }
 
+.mb-28 {
+  margin-bottom: 28px;
+}
 // footer
 .footer-bg {
   background-color: #ad4214;
@@ -70,55 +73,14 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-
-  // Logo hover 彈跳效果
-  h1 {
-    a {
-      display: inline-block;
-      /* 使動畫效果更好控制 */
-      transition: transform 0.3s ease;
-
-      &:hover {
-        animation: bounce 0.8s ease;
-        /* 觸發彈跳動畫 */
-      }
-    }
-  }
-
-  /* 定義彈跳動畫 */
-  @keyframes bounce {
-
-    0%,
-    100% {
-      transform: translateY(0);
-      /* 回到初始位置 */
-    }
-
-    20% {
-      transform: translateY(-30px);
-      /* 向上跳得更高 */
-    }
-
-    40% {
-      transform: translateY(-20px);
-      /* 第二次跳 */
-    }
-
-    60% {
-      transform: translateY(-10px);
-      /* 第三次跳 */
-    }
-
-    80% {
-      transform: translateY(-5px);
-      /* 第四次跳，幅度更小 */
+  h2 {
+    svg {
+      max-width: 60px;
+      height: 40px;
     }
   }
 
   // Logo hover 彈跳效果
-
-  // 測試
   .wavy-text {
     color: #fff;
     display: inline-block;
@@ -154,6 +116,10 @@ p {
     animation-delay: 0.3s;
     /* 第四個字母延遲 0.3 秒跳動 */
   }
+  .wavy-text:hover span:nth-child(5) {
+    animation-delay: 0.4s;
+    /* 第五個字母延遲 0.4 秒跳動 */
+  }
 
   @keyframes wave {
     0% {
@@ -163,22 +129,18 @@ p {
     20% {
       transform: translateY(-20px);
       /* 向上移動 */
-      color: #ad4214;
     }
 
     40% {
       transform: translateY(-15px);
-      color: #ad4214;
     }
 
     60% {
       transform: translateY(-10px);
-      color: #ad4214;
     }
 
     80% {
       transform: translateY(-5px);
-      color: #ad4214;
     }
 
     100% {
@@ -186,17 +148,9 @@ p {
     }
   }
 
-  // 測試
-
-
-
-
-
-
   .footerIcon {
-    display: flex;
     gap: 20px;
-    padding-bottom: 28px;
+    // padding-bottom: 28px;
 
     li {
       transition: filter 0.3s ease, transform 0.3s ease;
@@ -210,6 +164,9 @@ p {
         //   fill: #fafcfe;
         // }
       }
+    }
+    @media (max-width: 992px) {
+      padding-bottom: 0;
     }
   }
 
@@ -250,7 +207,7 @@ p {
       padding-bottom: 5px;
 
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         width: 0;
         height: 2px;
@@ -264,21 +221,20 @@ p {
         width: 100%;
       }
     }
+  }
+}
 
+@media (max-width: 992px) {
+  .footer-bg {
+    padding: 40px 0;
   }
 
-  @media (max-width: 992px) {
-    .footer-bg {
-      padding: 40px 16px;
-    }
+  .footerWrapper {
+    flex-direction: column;
+    // gap: 28px;
+  }
 
-    .footerWrapper {
-      flex-direction: column;
-      gap: 28px;
-    }
-
-    .footerIcon {
-      padding-bottom: 0;
-    }
+  .footerIcon {
+    padding-bottom: 0;
   }
 }
