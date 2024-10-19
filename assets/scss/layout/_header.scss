@@ -134,3 +134,81 @@
   justify-content: center;
   align-items: center;
 }
+
+// qoq 自定義
+// 與 footer Logo hover 控制相同
+h1 {
+  font-size: 24px;
+  svg {
+    max-width: 60px;
+    height: 40px;
+  }
+}
+
+// Logo hover 彈跳效果
+.wavy-text {
+  color: #fff;
+  display: inline-block;
+}
+
+.wavy-text span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  /* 平滑轉換 */
+}
+
+.wavy-text:hover span {
+  animation: wave 0.5s forwards;
+  /* 使用波浪動畫 */
+}
+
+.wavy-text:hover span:nth-child(1) {
+  animation-delay: 0s;
+  /* 第一個字母立即跳動 */
+}
+
+.wavy-text:hover span:nth-child(2) {
+  animation-delay: 0.1s;
+  /* 第二個字母延遲 0.1 秒跳動 */
+}
+
+.wavy-text:hover span:nth-child(3) {
+  animation-delay: 0.2s;
+  /* 第三個字母延遲 0.2 秒跳動 */
+}
+
+.wavy-text:hover span:nth-child(4) {
+  animation-delay: 0.3s;
+  /* 第四個字母延遲 0.3 秒跳動 */
+}
+.wavy-text:hover span:nth-child(5) {
+  animation-delay: 0.4s;
+  /* 第五個字母延遲 0.4 秒跳動 */
+}
+
+@keyframes wave {
+  0% {
+    transform: translateY(0);
+  }
+
+  20% {
+    transform: translateY(-20px);
+    /* 向上移動 */
+  }
+
+  40% {
+    transform: translateY(-15px);
+  }
+
+  60% {
+    transform: translateY(-10px);
+  }
+
+  80% {
+    transform: translateY(-5px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
