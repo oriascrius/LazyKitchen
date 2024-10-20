@@ -7,13 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="../assets/images/qoq-imgs/FaviconIcon.ico" type="image/x-icon" />
   <title>訂購資訊</title>
+  <!-- 引入 AOS 的 CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 </head>
 
 <body>
   <%- include('./layout/header'); -%>
     <main class="bigBg">
       <!-- banner -->
-      <section class="bannerImg"></section>
+      <section class="bannerImg" data-aos="fade-left" data-aos-duration="600"></section>
       <!-- 購物車步驟 -->
       <section class="container">
         <div class="row">
@@ -92,6 +94,8 @@
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <!-- 引入 jQuery Validation Plugin -->
       <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+      <!-- 引入 AOS 的 JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
       <script type="module" src="../qoq-main.js"></script>
       <script>
         $(document).ready(function () {
@@ -121,9 +125,9 @@
               payment: {
                 required: true
               },
-              note: {
-                required: true
-              }
+              // note: {
+              //   required: true
+              // }
             },
             messages: {
               name: "請輸入收件人姓名。",
@@ -137,7 +141,7 @@
               },
               address: "請輸入收件地址。",
               payment: "請選擇付款方式。",
-              note: "請輸入備註。"
+              // note: "請輸入備註。"  
             },
             errorElement: 'div',
             errorPlacement: function (error, element) {

@@ -7,13 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="../assets/images/qoq-imgs/FaviconIcon.ico" type="image/x-icon" />
     <title>完成訂購</title>
+    <!-- 引入 AOS 的 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 </head>
 
 <body>
     <%- include('./layout/header'); -%>
         <main class="bigBg">
             <!-- banner -->
-            <section class="bannerImg"></section>
+            <section class="bannerImg" data-aos="fade-left" data-aos-duration="600"></section>
             <!-- 購物車步驟 -->
             <section class="container">
                 <div class="row">
@@ -70,6 +72,8 @@
 
         </main>
         <%- include('./layout/footer'); -%>
+            <!-- 引入 AOS 的 JavaScript -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
             <script type="module" src="../qoq-main.js"></script>
 </body>
 
