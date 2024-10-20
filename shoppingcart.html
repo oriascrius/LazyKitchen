@@ -776,7 +776,7 @@
 
               // 顯示 SweetAlert2 確認對話框
               Swal.fire({
-                title: "確定要取消這個商品嗎？",
+                title: "確定要刪除這個商品嗎？",
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#7E7E7E",
@@ -786,7 +786,7 @@
               }).then((result) => {
                 if (result.isConfirmed) {
                   Swal.fire({
-                    title: "商品已取消！",
+                    title: "商品已刪除！",
                     icon: "success",
                     showConfirmButton: false,
                     timer: 1000,
